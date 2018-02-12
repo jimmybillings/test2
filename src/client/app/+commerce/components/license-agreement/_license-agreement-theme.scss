@@ -1,0 +1,24 @@
+@mixin wz-commerce-license-agreement-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  license-agreement-component .wz-dialog.license-agreements {
+    .mat-tab-body-wrapper, .mat-dialog-content {
+      border-color:  mat-color($foreground, divider);
+    }
+    .asset-carousel.grid ul.asset-list {
+      background-color: mat-color($foreground, base, .2);
+    }
+    .license.legal-txt {
+      border-color:  mat-color($foreground, divider);
+      a {
+        color: mat-color($primary);
+      }
+      .warn {
+        color: mat-color($warn, darker);
+      }
+    }
+  }
+}

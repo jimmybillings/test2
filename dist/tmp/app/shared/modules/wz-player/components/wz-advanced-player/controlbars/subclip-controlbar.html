@@ -1,0 +1,26 @@
+<section flex="80"  layout-align="start stretch">
+  <wz-marker-seek-button [type]="'in'" [playerState]="playerState" (request)="forward($event)"></wz-marker-seek-button>
+  <wz-marker-time-display [type]="'in'" [playerState]="playerState"></wz-marker-time-display>
+  <wz-marker-set-button [type]="'in'" [playerState]="playerState" (request)="forward($event)"></wz-marker-set-button>
+  <wz-markers-playback-button [playerState]="playerState" (request)="forward($event)"></wz-markers-playback-button>
+  <wz-marker-set-button [type]="'out'" [playerState]="playerState" (request)="forward($event)"></wz-marker-set-button>
+  <wz-marker-time-display [type]="'out'" [playerState]="playerState"></wz-marker-time-display>
+  <wz-marker-seek-button [type]="'out'" [playerState]="playerState" (request)="forward($event)"></wz-marker-seek-button>
+  <wz-markers-clear-button [playerState]="playerState" (request)="forward($event)"></wz-markers-clear-button>
+</section>
+
+<nav *ngIf="displayAllControls" class="subclip-options" flex="20" layout-align="end stretch">
+  <button *ngIf="false" mat-icon-button title="{{ 'ASSET.ADV_PLAYER.SIMPLE_BTN_TITLE' | translate }}">
+    <mat-icon>ondemand_video</mat-icon>
+  </button>
+  <button *ngIf="false" mat-icon-button title="{{ 'ASSET.ADV_PLAYER.MORE_BTN_TITLE' | translate }}" 
+    [mat-menu-trigger-for]="morePlayerOptions">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</nav>
+
+<mat-menu *ngIf="false" class="more-options-menu" x-position="before" #morePlayerOptions="matMenu">
+  <button mat-menu-item><mat-icon>fullscreen</mat-icon>Show full screen</button>
+  <button mat-menu-item><mat-icon>av_timer</mat-icon>Show timecode formats</button>
+  <button mat-menu-item><mat-icon>keyboard</mat-icon>Show keyboard shortcuts</button>
+</mat-menu>

@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+collection/+index/collections.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/+collection/+index/</a> collections.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.9% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>77/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.87% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>26/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.96% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>66/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CollectionShareComponent } from '../components/collection-share.component';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { Collection, CollectionActionType, CollectionSummary, CollectionSummaryItem } from '../../shared/interfaces/collection.interface';
+import { CollectionsService } from '../../shared/services/collections.service';
+import { Router } from '@angular/router';
+import { CurrentUserService } from '../../shared/services/current-user.service';
+import { WzEvent, Pojo } from '../../shared/interfaces/common.interface';
+import { Subscription } from 'rxjs/Subscription';
+import { CollectionContextService } from '../../shared/services/collection-context.service';
+import { CollectionLinkComponent } from '../components/collection-link.component';
+import { CollectionFormComponent } from '../../application/collection-tray/components/collection-form.component';
+import { CollectionShareMembersComponent } from '../components/collection-share-members.component';
+import { WzDialogService } from '../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { AppStore } from '../../app.store';
+import { Common } from '../../shared/utilities/common.functions';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'collections-component',
+  templateUrl: 'collections.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class CollectionsComponent {
+  public collectionSearchIsShowing: boolean = false;
+  public filterOptions: Array&lt;any&gt; = [];
+  public sortOptions: Array&lt;any&gt; = [];
+&nbsp;
+  constructor(
+    public router: Router,
+    public collections: CollectionsService,
+    public collectionContext: CollectionContextService,
+    public currentUser: CurrentUserService,
+    private dialogService: WzDialogService,
+    private store: AppStore
+  ) {
+    this.filterOptions = [
+      {
+        'first': {
+          'id': 0, 'name': 'COLLECTION.INDEX.FILTER_DD_MENU.ALL', 'value': 'all',
+          'access': { 'accessLevel': 'all' }
+        },
+        'second': {
+          'id': 1, 'name': 'COLLECTION.INDEX.FILTER_DD_MENU.OWNER',
+          'value': 'owner',
+          'access': { 'accessLevel': 'owner' }
+        }
+      },
+      {
+        'first': {
+          'id': 2, 'name': 'COLLECTION.INDEX.FILTER_DD_MENU.EDITOR',
+          'value': 'editor',
+          'access': { 'accessLevel': 'editor' }
+        },
+        'second': {
+          'id': 3, 'name':
+            'COLLECTION.INDEX.FILTER_DD_MENU.VIEWER',
+          'value': 'viewer',
+          'access': { 'accessLevel': 'viewer' }
+        }
+      },
+      {
+        'first': {
+          'id': 4,
+          'name': 'COLLECTION.INDEX.FILTER_DD_MENU.RESEARCHER',
+          'value': 'researcher',
+          'access': { 'accessLevel': 'researcher' }
+        }
+      }
+    ];
+    this.sortOptions = [
+      {
+        'first': {
+          'id': 0,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.DATE_MOD_NEWEST',
+          'value': 'modNewest',
+          'sort': { 's': 'lastUpdated', 'd': true }
+        },
+        'second': {
+          'id': 1,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.DATE_MOD_OLDEST',
+          'value': 'modOldest',
+          'sort': {
+            's': 'lastUpdated', 'd': false
+          }
+        }
+      },
+      {
+        'first': {
+          'id': 2,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.DATE_CREATE_NEWEST',
+          'value': 'createNewest',
+          'sort': {
+            's': 'createdOn', 'd': true
+          }
+        },
+        'second': {
+          'id': 3,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.DATE_CREATE_OLDEST',
+          'value': 'createOldest',
+          'sort': { 's': 'createdOn', 'd': false }
+        }
+      },
+      {
+        'first': {
+          'id': 4,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.LIST_COLL_ASC',
+          'value': 'alphaAsc',
+          'sort': { 's': 'name', 'd': false }
+        },
+        'second': {
+          'id': 5,
+          'name': 'COLLECTION.INDEX.SORT_DD_MENU.LIST_COLL_DESC',
+          'value': 'alphaDesc',
+          'sort': { 's': 'name', 'd': true }
+        }
+      }
+    ];
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get collectionContextData() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.collectionContext.data;</span>
+  }
+&nbsp;
+  public get activeCollection(): Observable&lt;Collection&gt; {
+    return this.store.select(state =&gt; state.activeCollection.collection);
+  }
+&nbsp;
+  public toggleCollectionSearch() {
+    this.collectionSearchIsShowing = !this.collectionSearchIsShowing;
+  }
+&nbsp;
+  public selectActiveCollection(id: number): void {
+    this.store.dispatch(factory =&gt; factory.activeCollection.set(id));
+  }
+&nbsp;
+  public setCollectionForDelete(collection: CollectionSummaryItem): void {
+    this.store.dispatch(factory =&gt; factory.dialog.showConfirmation({
+      title: { key: 'COLLECTION.INDEX.CONFIRMATION_TITLE', values: { collectionName: collection.name } },
+      message: { key: 'COLLECTION.INDEX.CONFIRMATION_SUBTITLE', values: { collectionName: collection.name } },
+      decline: 'COLLECTION.INDEX.CONFIRMATION_CANCEL_BTN_TITLE',
+      accept: 'COLLECTION.INDEX.CONFIRMATION_DELETE_BTN_TITLE',
+    }, <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.deleteCollection(collection.id))</span>);
+  }
+&nbsp;
+  public deleteCollection(id: number, ): void {
+    this.collections.delete(id, true).subscribe();
+  }
+&nbsp;
+  public search(query: string) {
+    this.collectionContext.updateCollectionOptions({ currentSearchQuery: query });
+    this.collections.load(query, true).subscribe();
+  }
+&nbsp;
+  public onFilterCollections(filter: Pojo) {
+    this.collectionContext.updateCollectionOptions({ currentFilter: filter });
+    this.collections.load(filter.access, true).subscribe();
+  }
+&nbsp;
+  public onSortCollections(sort: Pojo) {
+    this.collectionContext.updateCollectionOptions({ currentSort: sort });
+    this.collections.load(sort.sort, true).subscribe();
+  }
+&nbsp;
+  public isActiveCollection(collectionId: number): boolean {
+    return this.store.match(collectionId, state =&gt; state.activeCollection.collection.id);
+  }
+&nbsp;
+  public getAssetsForLink(collectionId: number): void {
+    this.collections.getItems(collectionId).subscribe(data =&gt; {
+      this.dialogService.openComponentInDialog(
+        {
+          componentType: CollectionLinkComponent,
+          inputOptions: { assets: data.items }
+        }
+      );
+    });
+  }
+&nbsp;
+  public editCollection(collection: CollectionSummaryItem) {
+    this.dialogService.openComponentInDialog(
+      this.collectionFormComponentOptions('edit', Common.clone(collection))
+    );
+  }
+&nbsp;
+  public showShareMembers(collection: CollectionSummaryItem) {
+    this.dialogService.openComponentInDialog(
+      {
+        componentType: CollectionShareMembersComponent,
+        dialogConfig: { position: { top: '12%' } },
+        inputOptions: {
+          collection: Common.clone(collection),
+        },
+        outputOptions: [{
+          event: 'close',
+          callback: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>true,</span>
+          closeOnEvent: true
+        }]
+      }
+    );
+  }
+&nbsp;
+  public createCollection() {
+    this.dialogService.openComponentInDialog(
+      this.collectionFormComponentOptions('create')
+    );
+  }
+&nbsp;
+  public onDuplicateCollection(collectionId: number) {
+    this.collections.getByIdAndDuplicate(collectionId)
+      .subscribe(collection =&gt; {
+        this.dialogService.openComponentInDialog(
+          this.collectionFormComponentOptions('duplicate', collection)
+        );
+      });
+  }
+&nbsp;
+  public onCreateShareDialog(collection: Collection) {
+    this.dialogService.openComponentInDialog(
+      {
+        componentType: CollectionShareComponent,
+        dialogConfig: { position: { top: '3%' }, panelClass: 'wz-share-dialog' },
+        inputOptions: {
+          reloadType: 'collections',
+          collection: Common.clone(collection),
+        },
+        outputOptions: [{
+          event: 'closeRequest',
+          callback: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>true,</span>
+          closeOnEvent: true
+        }]
+      }
+    );
+  }
+&nbsp;
+  private collectionFormComponentOptions(actionType: CollectionActionType, collection: Pojo | boolean = false) {
+    return {
+      componentType: CollectionFormComponent,
+      inputOptions: {
+        collection: collection,
+        fields: this.formFields,
+        collectionActionType: actionType
+      },
+      outputOptions: [{
+        event: 'collectionSaved',
+        callback: <span class="fstat-no" title="function not covered" >(event: WzEvent)</span> =&gt; <span class="cstat-no" title="statement not covered" >true,</span>
+        closeOnEvent: true
+      }]
+    };
+  }
+&nbsp;
+  private get formFields() {
+    return this.store.snapshotCloned(state =&gt; state.uiConfig.components.collection.config);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

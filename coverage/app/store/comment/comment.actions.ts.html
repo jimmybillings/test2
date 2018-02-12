@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/comment/comment.actions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/comment/</a> comment.actions.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>96/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>31/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>73/73</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Action } from '@ngrx/store';
+&nbsp;
+import {
+  Comment, Comments, ObjectType, CommentFormMode, CommentParentObject, CommentCounts
+} from '../../shared/interfaces/comment.interface';
+&nbsp;
+export class ActionFactory {
+  public load(parentObject: CommentParentObject): Load {
+    return new Load(parentObject);
+  }
+&nbsp;
+  public formSubmit(parentObject: CommentParentObject, comment: Comment): FormSubmit {
+    return new FormSubmit(parentObject, comment);
+  }
+&nbsp;
+  public remove(parentObject: CommentParentObject, commentId: number): Remove {
+    return new Remove(parentObject, commentId);
+  }
+&nbsp;
+  public changeFormModeToAdd(): ChangeFormModeToAdd {
+    return new ChangeFormModeToAdd();
+  }
+&nbsp;
+  public changeFormModeToEdit(commentBeingEdited: Comment): ChangeFormModeToEdit {
+    return new ChangeFormModeToEdit(commentBeingEdited);
+  }
+&nbsp;
+  public getCounts(parentObject: CommentParentObject): GetCounts {
+    return new GetCounts(parentObject);
+  }
+}
+&nbsp;
+export class InternalActionFactory {
+  public loadSuccess(comments: Comments): LoadSuccess {
+    return new LoadSuccess(comments);
+  }
+&nbsp;
+  public formSubmitSuccess(comments: Comments): FormSubmitSuccess {
+    return new FormSubmitSuccess(comments);
+  }
+&nbsp;
+  public removeSuccess(comments: Comments): RemoveSuccess {
+    return new RemoveSuccess(comments);
+  }
+&nbsp;
+  public getCountsSuccess(counts: CommentCounts): GetCountsSuccess {
+    return new GetCountsSuccess(counts);
+  }
+}
+&nbsp;
+export class Load implements Action {
+  public static readonly Type = '[Comment] Load';
+  public readonly type = Load.Type;
+  constructor(public readonly parentObject: CommentParentObject) { }
+}
+&nbsp;
+export class FormSubmit implements Action {
+  public static readonly Type = '[Comment] Form Submit';
+  public readonly type = FormSubmit.Type;
+  constructor(public readonly parentObject: CommentParentObject, public readonly comment: Comment) { }
+}
+&nbsp;
+export class Remove implements Action {
+  public static readonly Type = '[Comment] Remove';
+  public readonly type = Remove.Type;
+  constructor(public readonly parentObject: CommentParentObject, public readonly commentId: number) { }
+}
+&nbsp;
+export class ChangeFormModeToAdd implements Action {
+  public static readonly Type = '[Comment] Change Form Mode To ADD';
+  public readonly type = ChangeFormModeToAdd.Type;
+}
+&nbsp;
+export class ChangeFormModeToEdit implements Action {
+  public static readonly Type = '[Comment] Change Form Mode To EDIT';
+  public readonly type = ChangeFormModeToEdit.Type;
+  constructor(public readonly commentBeingEdited: Comment) { }
+}
+&nbsp;
+export class GetCounts {
+  public static readonly Type = '[Comment] Get Counts';
+  public readonly type = GetCounts.Type;
+  constructor(public readonly parentObject: CommentParentObject) { }
+}
+&nbsp;
+export class LoadSuccess implements Action {
+  public static readonly Type = '[Comment] Load Success';
+  public readonly type = LoadSuccess.Type;
+  constructor(public readonly comments: Comments) { }
+}
+&nbsp;
+export class FormSubmitSuccess implements Action {
+  public static readonly Type = '[Comment] Form Submit Success';
+  public readonly type = FormSubmitSuccess.Type;
+  constructor(public readonly comments: Comments) { }
+}
+&nbsp;
+export class RemoveSuccess implements Action {
+  public static readonly Type = '[Comment] Remove Success';
+  public readonly type = RemoveSuccess.Type;
+  constructor(public readonly comments: Comments) { }
+}
+&nbsp;
+export class GetCountsSuccess {
+  public static readonly Type = '[Comment] Get Counts Success';
+  public readonly type = GetCountsSuccess.Type;
+  constructor(public readonly counts: CommentCounts) { }
+}
+&nbsp;
+export type Any = Load | FormSubmit | ChangeFormModeToAdd | ChangeFormModeToEdit | GetCounts |
+  LoadSuccess | FormSubmitSuccess | Remove | RemoveSuccess | GetCountsSuccess;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

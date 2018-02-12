@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-dialog/components/wz.notification-dialog.component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-dialog/components/</a> wz.notification-dialog.component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>18/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.31% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>15/15</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var WzNotificationDialogComponent = (function () {
+    function WzNotificationDialogComponent() {
+    }
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], WzNotificationDialogComponent.prototype, "strings", void 0);
+    WzNotificationDialogComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'wz-notification-dialog',
+            template: "\n    &lt;h1 mat-dialog-title&gt;{{ strings.title | translate }}&lt;/h1&gt;\n    &lt;mat-dialog-content layout=\"row\"&gt;\n      &lt;div flex&gt;{{ strings.message | translate }}&lt;/div&gt;\n    &lt;/mat-dialog-content&gt;\n    &lt;mat-dialog-actions layout=\"row\" layout-align=\"end end\"&gt;\n      &lt;button mat-button mat-dialog-close color=\"primary\" title=\"{{ strings.prompt | translate }}\"&gt;\n        {{ strings.prompt | translate }}\n      &lt;/button&gt;\n    &lt;/mat-dialog-actions&gt;\n  "
+        })
+    ], WzNotificationDialogComponent);
+    return WzNotificationDialogComponent;
+}());
+exports.WzNotificationDialogComponent = WzNotificationDialogComponent;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvbW9kdWxlcy93ei1kaWFsb2cvY29tcG9uZW50cy93ei5ub3RpZmljYXRpb24tZGlhbG9nLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUFBLHNDQUFpRDtBQWlCakQ7SUFBQTtJQUVBLENBQUM7SUFEVTtRQUFSLFlBQUssRUFBRTs7a0VBQWM7SUFEWCw2QkFBNkI7UUFmekMsZ0JBQVMsQ0FBQztZQUNULFFBQVEsRUFBRSxNQUFNLENBQUMsRUFBRTtZQUNuQixRQUFRLEVBQUUsd0JBQXdCO1lBQ2xDLFFBQVEsRUFBRSxtY0FVVDtTQUNGLENBQUM7T0FDVyw2QkFBNkIsQ0FFekM7SUFBRCxvQ0FBQztDQUZELEFBRUMsSUFBQTtBQUZZLHNFQUE2QiIsImZpbGUiOiJhcHAvc2hhcmVkL21vZHVsZXMvd3otZGlhbG9nL2NvbXBvbmVudHMvd3oubm90aWZpY2F0aW9uLWRpYWxvZy5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5cbkBDb21wb25lbnQoe1xuICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICBzZWxlY3RvcjogJ3d6LW5vdGlmaWNhdGlvbi1kaWFsb2cnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxoMSBtYXQtZGlhbG9nLXRpdGxlPnt7IHN0cmluZ3MudGl0bGUgfCB0cmFuc2xhdGUgfX08L2gxPlxuICAgIDxtYXQtZGlhbG9nLWNvbnRlbnQgbGF5b3V0PVwicm93XCI+XG4gICAgICA8ZGl2IGZsZXg+e3sgc3RyaW5ncy5tZXNzYWdlIHwgdHJhbnNsYXRlIH19PC9kaXY+XG4gICAgPC9tYXQtZGlhbG9nLWNvbnRlbnQ+XG4gICAgPG1hdC1kaWFsb2ctYWN0aW9ucyBsYXlvdXQ9XCJyb3dcIiBsYXlvdXQtYWxpZ249XCJlbmQgZW5kXCI+XG4gICAgICA8YnV0dG9uIG1hdC1idXR0b24gbWF0LWRpYWxvZy1jbG9zZSBjb2xvcj1cInByaW1hcnlcIiB0aXRsZT1cInt7IHN0cmluZ3MucHJvbXB0IHwgdHJhbnNsYXRlIH19XCI+XG4gICAgICAgIHt7IHN0cmluZ3MucHJvbXB0IHwgdHJhbnNsYXRlIH19XG4gICAgICA8L2J1dHRvbj5cbiAgICA8L21hdC1kaWFsb2ctYWN0aW9ucz5cbiAgYFxufSlcbmV4cG9ydCBjbGFzcyBXek5vdGlmaWNhdGlvbkRpYWxvZ0NvbXBvbmVudCB7XG4gIEBJbnB1dCgpIHN0cmluZ3M6IGFueTtcbn1cbiJdfQ==
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

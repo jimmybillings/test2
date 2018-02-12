@@ -1,0 +1,17 @@
+
+<ul class="breadcrumbs" flex="100">
+  <li *ngFor="let filter of activeFilters">
+      <button *ngIf="filter.active" class="breadcrumb" mat-button (click)="toggleFilter(filter)" title="{{ 'SEARCH.BREADCRUMBS.CLEAR_SPECIFIC_FILTER_BTN_TITLE' | translate:{filterName:filter.name} }}">
+        {{filter.name}} 
+        <span *ngIf="filter.filterValue">
+           - {{formattedValueFor(filter)}}
+        </span>
+        <mat-icon>clear</mat-icon>
+      </button>
+  </li>
+  <li *ngIf="activeFilters.length > 0">
+    <button mat-button color="primary" class="breadcrumb-clear-all is-outlined" (click)="clearFilters()">
+      {{ 'SEARCH.BREADCRUMBS.CLEAR_FILTERS_BTN_LABEL' | translate }}
+    </button>  
+  </li>
+</ul> 

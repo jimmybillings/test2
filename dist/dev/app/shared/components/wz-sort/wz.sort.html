@@ -1,0 +1,8 @@
+<div class="dense group" *ngFor="let section of items">
+  <div class="select-dd" *ngFor="let item of section | values" [ngClass]="{'active': section[item.key].id === current.id}">
+    <button mat-menu-item (click)="applySort(section[item.key])" [disabled]="section[item.key].value === 'researcher'">
+      <mat-icon>check</mat-icon>{{ section[item.key].name | translate }}
+    </button>
+  </div>
+  <mat-divider *ngIf="!(items.length - 1 === items.indexOf(section))"></mat-divider>
+</div>

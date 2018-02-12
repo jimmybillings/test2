@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/tabs/commerce-confirm-tab.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/tabs/</a> commerce-confirm-tab.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/66</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.89% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.93% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/57</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Output, EventEmitter } from '@angular/core';
+import { CartService } from '../../../shared/services/cart.service';
+import { QuoteService } from '../../../shared/services/quote.service';
+import { Tab } from './tab';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { ViewAddress } from '../../../shared/interfaces/user.interface';
+import { CartState, QuoteState, PaymentOption, Project } from '../../../shared/interfaces/commerce.interface';
+import { CommerceCapabilities } from '../../services/commerce.capabilities';
+import { WzDialogService } from '../../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { Common } from '../../../shared/utilities/common.functions';
+import { AppStore, CheckoutState } from '../../../app.store';
+&nbsp;
+export class CommerceConfirmTab extends Tab {
+  @Output() tabNotify: EventEmitter&lt;Object&gt; = this.notify;
+  public storeSubscription: Subscription;
+  public licensesAreAgreedTo: boolean = false;
+&nbsp;
+  constructor(
+    protected router: Router,
+    public commerceService: CartService | QuoteService,
+    protected dialogService: WzDialogService,
+    public userCan: CommerceCapabilities,
+    protected store: AppStore
+  ) {
+    super();
+  }
+&nbsp;
+  public get hasDiscount(): boolean {
+    return !!this.commerceService.state.data.discount;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get orderInProgress(): Observable&lt;CheckoutState&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.checkout)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get data(): Observable&lt;any&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.commerceService.data.map(<span class="fstat-no" title="function not covered" >(state: QuoteState | CartState)</span> =&gt; <span class="cstat-no" title="statement not covered" >state.data)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get projects(): Observable&lt;Project[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.commerceService.projects;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get paymentType(): Observable&lt;PaymentOption&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.checkout.selectedPaymentType)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get purchaseOrderId(): Observable&lt;string&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.checkout.purchaseOrderId)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get showPurchaseBtn(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.checkout.selectedPaymentType === 'CreditCard')</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get showPurchaseOnCreditBtn(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.checkout.selectedPaymentType === 'PurchaseOnCredit')</span>;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public purchase(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.commerceService.purchase().subscribe(<span class="fstat-no" title="function not covered" >(orderId: Number)</span> =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      this.router.navigate(['/orders', orderId])</span>
+      , <span class="fstat-no" title="function not covered" >(error: any)</span> =&gt; { });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public format(address: ViewAddress)</span>: string {
+<span class="cstat-no" title="statement not covered" >    if (address.address) {</span>
+<span class="cstat-no" title="statement not covered" >      return Object.keys(address.address).reduce(<span class="fstat-no" title="function not covered" >(previous: string, current: string)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (current === 'address' || current === 'zipcode' || current === 'phone') {</span>
+<span class="cstat-no" title="statement not covered" >          previous += `${address.address[current]}&lt;br&gt;`;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          previous += `${address.address[current]}, `;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return previous;</span>
+      }, '');
+    } else {
+<span class="cstat-no" title="statement not covered" >      return `There is no address on record for this ${address.type}`;</span>
+    }
+  }
+&nbsp;
+  public lineOneFor(address: ViewAddress): string {
+    return this.addressJoinSegment(address, 'address', 'address2');
+  }
+&nbsp;
+  public cityFor(address: ViewAddress): string {
+    return this.addressSegmentWithComma(address, 'city');
+  }
+&nbsp;
+  public stateFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'state');
+  }
+&nbsp;
+  public zipcodeFor(address: ViewAddress): string {
+    return this.addressSegmentWithComma(address, 'zipcode');
+  }
+&nbsp;
+  public countryFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'country');
+  }
+&nbsp;
+  public phoneFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'phone');
+  }
+&nbsp;
+  private addressSegment(address: ViewAddress, segment: string): string | null {
+    return address.address &amp;&amp; address.address[segment] ? address.address[segment] : null;
+  }
+&nbsp;
+  private addressSegmentWithComma(address: ViewAddress, segment: string): string {
+    return this.addressSegment(address, segment) ? this.addressSegment(address, segment) + ',' : '';
+  }
+&nbsp;
+  private addressJoinSegment(address: ViewAddress, segmentOne: string, segmentTwo: string): string {
+    return (address.address[segmentOne] ? address.address[segmentOne] : <span class="branch-1 cbranch-no" title="branch not covered" >'')</span> +
+      (address.address[segmentTwo] ? ', ' + address.address[segmentTwo] : '');
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

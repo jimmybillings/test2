@@ -1,0 +1,135 @@
+collection-show .collection-head {
+  position: relative;
+  @include mat-elevation(2);
+}
+collection-show .asset-results-header {
+  padding-left: 16px;
+  padding-right: 16px;
+  header {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    position: relative;
+    .mat-display-1 {
+      margin: 0;
+      width: calc(100% - 120px);
+      font-size: 26px;
+    }
+  }
+  .tools {
+    text-align: right;
+    white-space: nowrap;
+  }
+}
+collection-show .search-results > div > div {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+collection-show .collections-list {
+  ul {
+    padding: 3px 8px;
+    margin-top: 0;
+  }
+  li.collection {
+    position: static;
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+    border-radius: 0;
+    border-width: 0;
+    transition: $swift-ease-out;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding-top: 40px;
+    }
+    & > div[layout="row"] > div[layout-padding]:first-child {
+      padding-left: 0;
+      padding-top: 4px;
+      padding-right: 16px;
+      padding-bottom: 0;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        padding-right: 0;
+      }
+    }
+    & > div[layout="row"] > div[layout-padding]:last-child {
+      padding: 0;
+    }
+    .actions {
+      position: absolute;
+      top: 11px;
+      text-align: right;
+      right: 8px;
+      @media screen and (min-width: $layout-breakpoint-md) {
+        right: calc(2.5% + 8px);
+      }
+      span.comment-count {
+        position: absolute;
+        top:0;
+        right: -2px;
+        border-radius: 2px;
+        min-width: 14px;
+        font-size: .8em;
+        line-height: 1;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 1px 2px;
+        border-width: 1px;
+        border-style: solid;
+      }
+    }
+  }
+}
+
+// When the edit sub-clipping dialog is opened
+// override dialog container padding as well as specific styles for the editing dialog
+wz-subclip-editor > section {
+  padding: 14px 12px 11px 12px;
+  [mat-button].is-outlined {
+    line-height: 35px;
+    padding: 0 16px;
+    height: 35px;
+    margin-left: 5px;
+    &[disabled] {
+      opacity: .35;
+    }
+  }
+  &.current-in-out-markers {
+    padding: 5px 12px;
+    background-color: rgba(0, 0, 0, 0.09);
+    span {
+      font-size: .75em;
+      line-height: 1;
+      &:first-child {
+        font-weight: 500;
+        padding-right: 10px;
+      }
+      &:last-child {
+        font-weight: 300;
+        font-size: .72em;
+        line-height: 1.1;
+      }
+    }
+  }
+}
+.subclipping-edit-open .cdk-overlay-pane mat-dialog-container.mat-dialog-container {
+  padding: 2px;
+  min-height: 330px;
+  wz-subclip-edit-actions {
+    text-align: right;
+    padding: 16px 16px 16px 0;
+    [mat-button].is-outlined {
+      line-height: 35px;
+      padding: 0 16px;
+      height: 35px;
+      margin-left: 5px;
+      &[disabled] {
+        opacity: .35;
+      }
+    }
+  }
+  subclip-controlbar {
+    position: relative;
+    markers-clear-button {
+      position: absolute;
+      right: 1px;
+    }
+  }
+}

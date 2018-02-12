@@ -1,0 +1,24 @@
+@mixin wz-error-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  section.error {
+    background-image:
+    linear-gradient(mat-color($mat-grey, 900, .85), mat-color($mat-grey, 900, .75)),
+    url($bk-img-user-management);
+
+    .hero {
+      .mat-display-4 {
+        color: mat-color($accent, 500);
+      }
+      .mat-display-1 {
+        color: mat-color($mat-grey, 300, .9);
+      }
+      .mat-title {
+        color: mat-color($mat-grey, 300, .9);
+        a {
+          color: mat-color($accent, 500);
+        }
+      }
+    }
+  }
+}

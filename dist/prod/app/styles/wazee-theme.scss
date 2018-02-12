@@ -1,0 +1,145 @@
+@import '../+asset/components/asset-data-theme';
+@import '../+asset/components/asset-detail-theme';
+@import '../+asset/components/asset-save-subclip-theme';
+@import '../+asset/components/asset-share-theme';
+
+@import '../+collection/+index/collections-theme';
+@import '../+collection/+show/collection-show-theme';
+@import '../+collection/components/collection-share-members-theme';
+
+@import '../+commerce/+cart/cart-theme';
+@import '../+commerce/+order/+show/order-show-theme';
+@import '../+commerce/+order/components/invoice-theme';
+@import '../+commerce/+quote/+show/quote-show-theme';
+@import '../+commerce/+quote/+edit/quote-edit-theme';
+@import '../+commerce/+quote/components/quote-info-theme';
+@import '../+commerce/components/commerce-header/commerce-header-theme';
+@import '../+commerce/components/commerce-list/commerce-list-theme';
+@import '../+commerce/components/line-item/fee-line-items-theme';
+@import '../+commerce/components/line-item/line-items-theme';
+@import '../+commerce/components/project/projects-theme';
+@import '../+commerce/components/tabs/commerce-billing-tab-theme';
+@import '../+commerce/components/tabs/commerce-confirm-tab-theme';
+@import '../+commerce/components/license-agreement/license-agreement-theme';
+
+@import '../+error/error-theme';
+
+@import '../+gallery-view/gallery-view-theme';
+@import '../+gallery-view/components/one-level-view-theme';
+
+@import '../+home/components/home-call-to-action-theme';
+@import '../+home/components/home-hero-theme';
+@import '../+home/components/home-highlights-theme';
+@import '../+home/components/home-vendor-marquee-theme';
+
+@import '../+search/search-theme';
+@import '../+search/filter-theme';
+
+@import '../+user-management/+login/login-theme';
+@import '../+user-management/+profile/profile-theme';
+@import '../+user-management/+register/register-theme';
+
+@import '../application/app-nav/app-nav-theme';
+@import '../application/collection-tray/collection-tray-theme';
+@import '../application/collection-tray/components/collections-list-dd-theme';
+@import '../application/footer/footer-theme';
+
+@import '../shared/components/wz-breadcrumb/wz-breadcrumb-theme';
+@import '../shared/components/wz-gallery-two-level/wz.gallery-two-level-theme';
+@import '../shared/components/wz-pagination/wz.pagination-theme';
+@import '../shared/components/wz-sort/wz.sort-theme';
+@import '../shared/components/wz-comment/wz.comment-theme';
+@import '../shared/components/wz-delivery-options/wz.delivery-options-theme';
+@import '../shared/components/wz-share-link/wz.share-link-theme';
+
+@import '../shared/modules/wz-asset/wz-asset-grid/wz.asset-grid-theme';
+@import '../shared/modules/wz-asset/wz-asset-list/wz-asset-list-theme';
+@import '../shared/modules/wz-asset/wz-speedview/wz.speedview-theme';
+
+@import '../shared/modules/wz-form/wz.form-theme';
+@import '../shared/modules/wz-form/components/wz-autocomplete-search/wz-autocomplete-search-theme';
+@import '../shared/modules/wz-form/components/wz-input-suggestions/wz-input-suggestions-theme';
+@import '../shared/modules/wz-form/components/wz-input-tags/wz-input-tags-theme';
+
+@import '../shared/modules/wz-player/components/wz-advanced-player/controls/scrubber-theme';
+@import '../shared/modules/wz-player/components/wz-advanced-player/controls/step-button-theme';
+@import '../shared/modules/wz-player/components/wz-advanced-player/controls/volume-control-theme';
+@import '../shared/modules/wz-player/components/wz-advanced-player/wz.advanced-player-theme';
+
+
+@import 'theme/material-com-extended-theme';
+@import 'theme/modifiers-theme';
+@import 'theme/sticky-footer-theme';
+
+@mixin wz-theme($theme) {
+  @include wz-asset-data-theme($theme);
+  @include wz-asset-detail-theme($theme);
+  @include wz-asset-save-subclip-theme($theme);
+  @include wz-asset-share-theme($theme);
+
+  @include wz-collections-theme($theme);
+  @include wz-collection-show-theme($theme);
+  @include wz-collection-share-members-theme($theme);
+  @include wz-comment-theme($theme);
+
+  @include wz-error-theme($theme);
+
+  @include wz-cart-theme($theme);
+  @include wz-invoice-theme($theme);
+  @include wz-order-show-theme($theme);
+  @include wz-quote-show-theme($theme);
+  @include wz-quote-edit-theme($theme);
+  @include wz-quote-info-theme($theme);
+  @include wz-commerce-header-theme($theme);
+  @include wz-commerce-list-theme($theme);
+  @include wz-fee-line-items-theme($theme);
+  @include wz-line-items-theme($theme);
+  @include wz-projects-theme($theme);
+  @include wz-commerce-billing-tab-theme($theme);
+  @include wz-commerce-confirm-tab-theme($theme);
+  @include wz-commerce-license-agreement-theme($theme);
+
+  @include wz-gallery-view-theme($theme);
+  @include wz-gallery-one-level-theme($theme);
+  @include wz-gallery-two-level-theme($theme);
+  
+  @include wz-home-call-to-action-theme($theme);
+  @include wz-home-hero-theme($theme);
+  @include wz-home-highlights-theme($theme);
+  @include wz-home-vendor-theme($theme);
+
+  @include wz-filter-theme($theme);
+  @include wz-search-theme($theme);
+
+  @include wz-login-theme($theme);
+  @include wz-profile-theme($theme);
+  @include wz-register-theme($theme);
+
+  @include wz-app-nav-theme($theme);
+  @include wz-collections-list-dd-theme($theme);
+  @include wz-collection-tray-theme($theme);
+  @include wz-footer-theme($theme);
+
+  @include wz-breadcrumb-theme($theme);
+  @include wz-pagination-theme($theme);
+  @include wz-sort-theme($theme);
+  @include wz-asset-grid-theme($theme);
+  @include wz-asset-list-theme($theme);
+  @include wz-speedview-theme($theme);
+  @include wz-delivery-options-theme($theme);
+  @include wz-share-link-theme($theme);
+
+  @include wz-form-theme($theme);
+  @include wz-autocomplete-search-theme($theme);
+  @include wz-input-suggestions-theme($theme);
+  @include wz-input-tags-theme($theme);
+
+  @include wz-scrubber-theme($theme);
+  @include wz-step-button-theme($theme);
+  @include wz-volume-control-theme($theme);
+  @include wz-advanced-player-theme($theme);
+  
+  @include wz-material-com-extended-theme($theme);
+  @include wz-modifiers-theme($theme);
+  @include wz-sticky-footer-theme($theme);
+}

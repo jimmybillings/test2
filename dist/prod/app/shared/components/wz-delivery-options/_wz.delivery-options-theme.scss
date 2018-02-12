@@ -1,0 +1,20 @@
+@mixin wz-delivery-options-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  wz-delivery-options {
+    .loading-msg, .error-msg {
+      color: mat-color($foreground, base, .7);      
+    }
+    .mat-list.aspera-download-options .mat-list-item {
+      [mat-menu-item][disabled] {
+        color: mat-color($foreground, disabled);
+      }
+      .actions button[mat-icon-button] {
+        color: mat-color($foreground, base, .7);
+      }
+      .actions button[mat-icon-button][disabled] {
+        color: mat-color($foreground, disabled);
+      }
+    }
+  }
+}

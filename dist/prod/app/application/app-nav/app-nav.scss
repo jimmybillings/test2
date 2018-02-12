@@ -1,0 +1,223 @@
+.app .mat-progress-bar {
+  top: 0;
+  z-index: 4;
+  position: fixed;
+}
+header.app-header {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  @include mat-elevation(1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: $swift-ease-out;
+  a.home-link > .logo-wrapper {
+    transition: all .4s ease-in-out;
+    opacity: .7;
+    top: 0;
+    margin: 0;
+    overflow: hidden;
+    width: 95px;
+    height: 64px;
+    position: absolute;
+    line-height: 0;
+    &:hover {
+      opacity: 1;
+    }
+    .logo img {
+      background-position: 0 9px;
+      background-repeat: no-repeat;
+      background-size: 272px;
+      width: 95px;
+      height: 57px;
+    }
+
+    @media (max-width: $layout-breakpoint-xs) and (orientation: portrait) {
+      .logo img {
+        background-position: -3px 10px;
+        background-repeat: no-repeat;
+        background-size: 210px;
+        height: 45px;
+        width: 66px;
+      }
+    }
+  }
+  &.fixed {
+    @media (min-height: 875px) {
+      position: fixed;
+      top: 0;
+      animation: slideDownHeader .75s ease-in-out;
+      border-bottom: none;
+      @include mat-elevation(3);
+      a.home-link > .logo-wrapper {
+        opacity: .95;
+      }
+    }
+  }
+}
+header.app-header mat-toolbar {
+  background-color: transparent;
+}
+header.app-header [mat-button],
+header.app-header [mat-icon-button] {
+  margin-left: 6px;
+  transition: $swift-ease-out;
+  &:first-child{
+    margin-left: 0;
+  }
+}
+
+a[mat-icon-button].cart,
+button[mat-icon-button].cart {
+  .asset-count {
+    position: absolute;
+    top:0;
+    right: -2px;
+    border-radius: 2px;
+    min-width: 14px;
+    font-size: .8em;
+    line-height: 1;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 2px 3px;
+  }
+}
+
+header.app-header.fixed [mat-button],
+header.app-header.fixed [mat-icon-button] {
+  transition: $swift-ease-out;
+  &:hover::after {
+    background-color: transparent;
+  }
+  &:first-child{
+    margin-left: 0;
+  }
+}
+
+header.app-header app-nav button.open-collection-tray,
+header.app-header app-nav button.open-search {
+  display: none;
+}
+header.app-header.collection-tray-closed app-nav button.open-collection-tray,
+header.app-header.search-closed app-nav button.open-search {
+  display: initial;
+}
+
+@keyframes slideDownHeader {
+  0% {
+    opacity: .8;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// These are used for spacing the top of the page to allow for a absolute and fixed header.
+// The spacing may change when search or the bin tray is open in the header.
+// there are a few different styles of pages.
+// Also the current mdToolbar does not change height for mobile. This could change, that is what the media queries are for.
+header.app-header + div.main-content gallery-view-component,
+header.app-header + div.main-content profile-component,
+header.app-header + div.main-content collection-show,
+header.app-header + div.main-content collections-component,
+header.app-header + div.main-content cms-component,
+header.app-header + div.main-content search-component,
+header.app-header + div.main-content asset-component,
+header.app-header + div.main-content cart-component,
+header.app-header + div.main-content orders-component,
+header.app-header + div.main-content order-show-component,
+header.app-header + div.main-content quote-edit-component,
+header.app-header + div.main-content quotes-component,
+header.app-header + div.main-content invoice-component,
+header.app-header + div.main-content privacy-policy-component,
+header.app-header + div.main-content quote-show-component {
+  display: block;
+  transition: border-top-width 200ms $swift-ease-in-out-timing-function 200ms;
+  border-top: 158px solid mat-color($mat-grey, 900, .7);
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    border-top-width: 148px;
+  }
+}
+
+header.app-header.collection-tray-closed + div.main-content gallery-view-component,
+header.app-header.collection-tray-closed + div.main-content profile-component,
+header.app-header.collection-tray-closed + div.main-content collection-show,
+header.app-header.collection-tray-closed + div.main-content collections-component,
+header.app-header.collection-tray-closed + div.main-content cms-component,
+header.app-header.collection-tray-closed + div.main-content search-component,
+header.app-header.collection-tray-closed + div.main-content asset-component,
+header.app-header.collection-tray-closed + div.main-content cart-component,
+header.app-header.collection-tray-closed + div.main-content orders-component,
+header.app-header.collection-tray-closed + div.main-content order-show-component,
+header.app-header.collection-tray-closed + div.main-content quote-edit-component,
+header.app-header.collection-tray-closed + div.main-content quotes-component,
+header.app-header.collection-tray-closed + div.main-content invoice-component,
+header.app-header.collection-tray-closed + div.main-content privacy-policy-component,
+header.app-header.collection-tray-closed + div.main-content quote-show-component {
+  transition: border-top-width 150ms linear 50ms;
+  border-top-width: 106px;
+  @media (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    border-top-width: 96px;
+  }
+}
+
+header.app-header.collection-tray-closed.search-closed + div.main-content gallery-view-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content profile-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content collection-show,
+header.app-header.collection-tray-closed.search-closed + div.main-content collections-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content cms-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content search-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content asset-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content cart-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content orders-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content order-show-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content quote-edit-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content quotes-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content invoice-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content privacy-policy-component,
+header.app-header.collection-tray-closed.search-closed + div.main-content quote-show-component {
+  transition: border-top-width 150ms linear 50ms;
+  border-top-width: 64px;
+  @media (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    border-top-width: 56px;
+  }
+}
+
+header.app-header.search-closed + div.main-content gallery-view-component,
+header.app-header.search-closed + div.main-content profile-component,
+header.app-header.search-closed + div.main-content collection-show,
+header.app-header.search-closed + div.main-content collections-component,
+header.app-header.search-closed + div.main-content cms-component,
+header.app-header.search-closed + div.main-content search-component,
+header.app-header.search-closed + div.main-content asset-component,
+header.app-header.search-closed + div.main-content cart-component,
+header.app-header.search-closed + div.main-content orders-component,
+header.app-header.search-closed + div.main-content order-show-component,
+header.app-header.search-closed + div.main-content quote-edit-component,
+header.app-header.search-closed + div.main-content quotes-component,
+header.app-header.search-closed + div.main-content invoice-component,
+header.app-header.search-closed + div.main-content privacy-policy-component,
+header.app-header.search-closed + div.main-content quote-show-component {
+  transition: border-top-width 150ms linear 50ms;
+  border-top-width: 116px;
+  @media (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    border-top-width: 108px;
+  }
+}
+
+// pages that do not have options to open and close search and bins with a bk hero image or video (user, home)
+// currently the latest material header toolbar does not change sizes for mobile. If it does, then used the media query
+header.app-header + div.main-content user-component .hero,
+header.app-header + div.main-content error-component .hero {
+  padding-top: 64px;
+  @media (max-width: $layout-breakpoint-sm) and (orientation: landscape) {
+    border-top-width: 48px;
+  }
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    padding-top: 56px;
+  }
+}

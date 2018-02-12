@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/application/collection-tray/collection-tray.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/application/collection-tray/</a> collection-tray.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.81% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>53/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.83% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>44/55</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs/Subscription';
+import { CollectionLinkComponent } from '../../+collection/components/collection-link.component';
+import { CollectionFormComponent } from './components/collection-form.component';
+import { WzDialogService } from '../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { Asset, WzEvent, UiConfigComponents } from '../../shared/interfaces/common.interface';
+import { Collection, CollectionFormEvent } from '../../shared/interfaces/collection.interface';
+import { EnhancedAsset, enhanceAsset } from '../../shared/interfaces/enhanced-asset';
+import { AppStore } from '../../app.store';
+import { Common } from '../../shared/utilities/common.functions';
+import { CollectionListDdComponent } from './components/collections-list-dd.component';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'collection-tray',
+  templateUrl: 'collection-tray.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+&nbsp;
+export class CollectionTrayComponent implements OnInit, OnDestroy {
+  @Input() userPreference: any;
+  @Input() urlPath: string;
+  public collection: Collection;
+  public collectionFormConfig: any;
+  private enhancedAssets: { [uuid: string]: EnhancedAsset } = {};
+  private collectionSubscription: Subscription;
+  constructor(
+    private dialogService: WzDialogService,
+    private store: AppStore,
+    private detector: ChangeDetectorRef) { }
+&nbsp;
+  ngOnInit() {
+    this.store.dispatch(factory =&gt; factory.activeCollection.loadIfNeeded());
+    this.collectionSubscription = this.setCollection();
+    const config: UiConfigComponents = this.store.snapshotCloned(state =&gt; state.uiConfig.components);
+    this.collectionFormConfig = config.collection.config;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.collectionSubscription.unsubscribe();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public toggleCollectionTray(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.userPreference.toggleCollectionTray();</span>
+  }
+&nbsp;
+  public hasId(asset: EnhancedAsset): boolean {
+    return !!asset &amp;&amp; !!(asset.assetId);
+  }
+&nbsp;
+  public routerLinkFor(asset: EnhancedAsset): any[] {
+    return asset.routerLink;
+  }
+&nbsp;
+  public hasThumbnail(asset: EnhancedAsset): boolean {
+    return !!asset.thumbnailUrl;
+  }
+&nbsp;
+  public thumbnailUrlFor(asset: EnhancedAsset): string {
+    return asset.thumbnailUrl;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public getAssetsForLink(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.dialogService.openComponentInDialog({</span>
+      componentType: CollectionLinkComponent,
+      inputOptions: { assets: this.collection.assets.items }
+    });
+  }
+&nbsp;
+  public createCollectionlistDialog() {
+    let focusedCollection: Collection;
+    this.dialogService.openComponentInDialog({
+      componentType: CollectionListDdComponent,
+      dialogConfig: { position: { top: '3%' }, panelClass: 'collection-list-dd-component' },
+      inputOptions: {
+        focusedCollection: this.collection
+      },
+      outputOptions: [{
+        event: 'close',
+        callback: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>true,</span>
+        closeOnEvent: true
+      }]
+    });
+  }
+&nbsp;
+  public createCollection() {
+    this.dialogService.openComponentInDialog({
+      componentType: CollectionFormComponent,
+      dialogConfig: { position: { top: '10%' } },
+      inputOptions: {
+        fields: this.collectionFormConfig,
+        collectionActionType: 'create'
+      },
+      outputOptions: [{
+        event: 'collectionSaved',
+        callback: (event: CollectionFormEvent) =&gt; {
+          // Only redirects if on the collection show page.
+          if (this.urlPath.includes('/collections/')) {
+            this.store.dispatch(factory =&gt; factory.router.goToCollection(event.collectionId));
+          } else {
+            this.store.dispatch(factory =&gt; factory.snackbar.display('COLLECTION.COLLECTION_CREATED'));
+          }
+        },
+        closeOnEvent: true
+      }]
+    });
+  }
+&nbsp;
+  private setCollection(): Subscription {
+    return this.store.select(state =&gt; state.activeCollection)
+      .filter(state =&gt; state.collection !== undefined)
+      .map(<span class="fstat-no" title="function not covered" >state </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >        let collection: Collection = Common.clone(state.collection);</span>
+<span class="cstat-no" title="statement not covered" >        if (collection.assets &amp;&amp; collection.assets.items) {</span>
+<span class="cstat-no" title="statement not covered" >          collection.assets.items = collection.assets.items</span>
+            .map(<span class="fstat-no" title="function not covered" >item </span>=&gt; <span class="cstat-no" title="statement not covered" >enhanceAsset(item, 'collection', collection.id))</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        return collection;</span>
+      }).subscribe(<span class="fstat-no" title="function not covered" >(collection)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.collection = collection;</span>
+<span class="cstat-no" title="statement not covered" >        this.detector.markForCheck();</span>
+      });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

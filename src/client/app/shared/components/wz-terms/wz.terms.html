@@ -1,0 +1,9 @@
+<div class="wz-dialog terms-dialog">
+  <h1 mat-dialog-title>{{ header | translate }}</h1>
+  <div class="content" [innerHtml]="terms"></div>
+  <div class="terms-actions" layout="row" layout-align="center center">
+    <button mat-dialog-close mat-raised-button type="button" color="primary" class="conversion">
+      {{ btnLabel | translate }}
+    </button>
+  </div>
+</div>

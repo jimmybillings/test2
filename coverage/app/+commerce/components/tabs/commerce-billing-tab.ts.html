@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/tabs/commerce-billing-tab.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/tabs/</a> commerce-billing-tab.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>120/132</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.59% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>36/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>47/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.79% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>103/111</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Output, Input, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+&nbsp;
+import { Tab } from './tab';
+import { CartService } from '../../../shared/services/cart.service';
+import { QuoteService } from '../../../shared/services/quote.service';
+import { UserService } from '../../../shared/services/user.service';
+import { CurrentUserService } from '../../../shared/services/current-user.service';
+import { Address, User, ViewAddress, AddressKeys } from '../../../shared/interfaces/user.interface';
+import { RowFormFields } from '../../../shared/interfaces/forms.interface';
+import { CommerceCapabilities } from '../../services/commerce.capabilities';
+import { WzAddressFormComponent } from '../../../shared/modules/wz-form/components/wz-address-form/wz.address-form.component';
+import { WzDialogService } from '../../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { SendDetailsInvoiceContact } from '../../../shared/interfaces/commerce.interface';
+import { AppStore, CheckoutState } from '../../../app.store';
+import { Pojo } from '../../../shared/interfaces/common.interface';
+&nbsp;
+export class CommerceBillingTab extends Tab {
+  public orderInProgress: Observable&lt;CheckoutState&gt;;
+  public addressErrors: Pojo = {};
+  public showAddAddressForm: boolean;
+  public showEditAddressForm: boolean;
+  public quoteBillingAccountInfo: Observable&lt;SendDetailsInvoiceContact&gt;;
+  public quoteInvoiceContactInfo: Observable&lt;ViewAddress&gt;;
+  @Input() loaded: boolean;
+  @Output() tabNotify: EventEmitter&lt;Object&gt; = this.notify;
+&nbsp;
+  constructor(
+    public userCan: CommerceCapabilities,
+    protected commerceService: CartService | QuoteService,
+    protected user: UserService,
+    protected currentUser: CurrentUserService,
+    protected dialog: WzDialogService,
+    protected store: AppStore
+  ) {
+    super();
+  }
+&nbsp;
+  public typeFor(address: ViewAddress): string {
+    return address.type ? address.type : '';
+  }
+&nbsp;
+  public nameFor(address: ViewAddress): string {
+    return address.name ? address.name : '';
+  }
+&nbsp;
+  public lineOneFor(address: ViewAddress): string {
+    return this.addressJoinSegment(address, 'address', 'address2');
+  }
+&nbsp;
+  public cityFor(address: ViewAddress): string {
+    return this.addressSegmentWithComma(address, 'city');
+  }
+&nbsp;
+  public stateFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'state');
+  }
+&nbsp;
+  public zipcodeFor(address: ViewAddress): string {
+    return this.addressSegmentWithComma(address, 'zipcode');
+  }
+&nbsp;
+  public countryFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'country');
+  }
+&nbsp;
+  public phoneFor(address: ViewAddress): string {
+    return this.addressSegment(address, 'phone');
+  }
+&nbsp;
+  public addUserAddress(form: Address): void {
+    this.user.addBillingAddress(form).subscribe((user: User) =&gt; {
+      this.fetchAddresses().subscribe(this.determineNewSelectedAddress);
+    });
+  }
+&nbsp;
+  public addAccountAddress(form: Address, wholeAddress: ViewAddress): void {
+    let newAddress: ViewAddress = Object.assign({}, wholeAddress, { address: form });
+    this.user.addAccountBillingAddress(newAddress).subscribe((account: any) =&gt; {
+      this.fetchAddresses().subscribe(this.determineNewSelectedAddress);
+    });
+  }
+  // Hopefully this can be removed at some point. (JH)
+  // Currently in a quote the invoiceContact data is not returned like most user Addresses (ViewAddress)
+  // We reformat it here so we still something to display in the confirmation, when a mail address is absent.
+  public formatAndSelectAddress(invoiceContact: Pojo): void {
+    let invoiceAddress: ViewAddress = Object.assign({
+      addressEntityId: invoiceContact.addressId,
+      type: invoiceContact.type,
+      name: `${invoiceContact.firstName} ${invoiceContact.lastName}`,
+      address: invoiceContact.billingInfo.address
+    });
+    this.selectAddress(invoiceAddress);
+  }
+&nbsp;
+  public selectAddress(address: ViewAddress, <span class="missing-if-branch" title="if path not taken" >I</span>nextTab: boolean = true): void {
+    this.store.dispatch(factory =&gt; factory.checkout.setSelectedAddress(address));
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (nextTab) <span class="cstat-no" title="statement not covered" >this.goToNextTab();</span>
+  }
+&nbsp;
+  public get userCanProceed(): Observable&lt;boolean&gt; {
+    return this.store.select(state =&gt; state.checkout).map((data: CheckoutState) =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!data.selectedAddress.address) {
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+      } else {
+        return Object.keys(data.selectedAddress.address).filter((k: string) =&gt; {
+          return data.selectedAddress.address[k] === '';
+        }).length === 0;
+      }
+    });
+  }
+&nbsp;
+  public openFormFor(resourceType: 'account' | 'user', mode: 'edit' | 'create', address?: ViewAddress): void {
+    let title: string = mode === 'edit' ? this.editFormTitle(resourceType) : this.createFormTitle(resourceType);
+    this.dialog.openComponentInDialog(
+      {
+        componentType: WzAddressFormComponent,
+        dialogConfig: { position: { top: '6%' } },
+        inputOptions: {
+          loaded: this.loaded,
+          title: title,
+          address: mode === 'edit' ? address.address : null
+        },
+        outputOptions: [{
+          event: 'onSaveAddress',
+          callback: <span class="fstat-no" title="function not covered" >(form: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            if (typeof form === 'undefined') <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (resourceType === 'user') {</span>
+<span class="cstat-no" title="statement not covered" >              this.addUserAddress(form);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >              this.addAccountAddress(form, address);</span>
+            }
+          },
+          closeOnEvent: true
+        }]
+      }
+    );
+  }
+&nbsp;
+  public displayAddressErrors(addressId: number): boolean {
+    return this.addressErrors[addressId] &amp;&amp; this.addressErrors[addressId].length &gt; 0;
+  }
+&nbsp;
+  public formatAddressErrors(address: ViewAddress): string {
+    let errors: Array&lt;string&gt; = this.addressErrors[address.addressEntityId];
+    return errors.reduce((prev: string, curr: string, i: number) =&gt; {
+      prev += `${curr}`;
+      if (i &lt; errors.length - 1) prev += ', ';
+      if (i === errors.length - 2) prev += 'and ';
+      return prev;
+    }, '');
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public disableSelectBtnFor(address: ViewAddress)</span>: boolean {
+<span class="cstat-no" title="statement not covered" >    return !address.address ||</span>
+      (this.addressErrors[address.addressEntityId] &amp;&amp; this.addressErrors[address.addressEntityId].length &gt; 0);
+  }
+&nbsp;
+  public fetchAddresses(): Observable&lt;Array&lt;ViewAddress&gt;&gt; {
+    return this.user.getAddresses().do((addresses: Array&lt;ViewAddress&gt;) =&gt; {
+      this.validate(addresses);
+      this.showAddAddressForm = this.showAddForm(addresses);
+      this.showEditAddressForm = this.showEditForm(addresses);
+      this.store.dispatch(factory =&gt; factory.checkout.setAvailableAddresses(addresses));
+    });
+  }
+&nbsp;
+  private addressSegment(address: ViewAddress, segment: string): string | null {
+    return address.address &amp;&amp; address.address[segment] ? address.address[segment] : null;
+  }
+&nbsp;
+  private addressSegmentWithComma(address: ViewAddress, segment: string): string {
+    return this.addressSegment(address, segment) ? this.addressSegment(address, segment) + ',' : '';
+  }
+&nbsp;
+  private addressJoinSegment(address: ViewAddress, segmentOne: string, segmentTwo: string): string {
+    return (address.address[segmentOne] ? address.address[segmentOne] : <span class="branch-1 cbranch-no" title="branch not covered" >'')</span> +
+      (address.address[segmentTwo] ? ', ' + address.address[segmentTwo] : '');
+  }
+&nbsp;
+  private editFormTitle(resourceType: 'user' | 'account'): string {
+    return `CART.BILLING.EDIT_${resourceType.toUpperCase()}_ADDRESS_TITLE`;
+  }
+&nbsp;
+  private createFormTitle(resourceType: 'user' | 'account'): string {
+    return `CART.BILLING.ADD_${resourceType.toUpperCase()}_ADDRESS_TITLE`;
+  }
+&nbsp;
+  // If GET /currentUsersAssociatedAddresses does not return ANY addresses,
+  // we automatically show the add form for a new user address
+  private showAddForm(addresses: Array&lt;ViewAddress&gt;): boolean {
+    return addresses.filter((a: ViewAddress) =&gt; !!a.address).length === 0;
+  }
+&nbsp;
+  // if GET /currentUsersAssociatedAddresses returns only 1 address, but it is not complete,
+  // we automatically show the edit form for that address
+  private showEditForm(addresses: Array&lt;ViewAddress&gt;): boolean {
+    return addresses.filter((a: ViewAddress) =&gt; !!a.address).length === 1 &amp;&amp;
+<span class="branch-1 cbranch-no" title="branch not covered" >      this.addressErrors[addresses[0].addressEntityId].length &gt; 0;</span>
+  }
+&nbsp;
+  private determineNewSelectedAddress = (addresses: Array&lt;ViewAddress&gt;) =&gt; {
+    let newSelected: ViewAddress;
+    this.store.select(state =&gt; state.checkout).take(1).subscribe((data: CheckoutState) =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (data.selectedAddress &amp;&amp; typeof data.selectedAddress.addressEntityId !== 'undefined') {
+        newSelected = this.previouslySelectedAddress;
+      } else {
+<span class="cstat-no" title="statement not covered" >        newSelected = data.addresses.filter(<span class="fstat-no" title="function not covered" >(a: ViewAddress)</span> =&gt; <span class="cstat-no" title="statement not covered" >!!a.address)</span>[0];</span>
+      }
+    });
+    this.selectAddress(newSelected, false);
+  }
+&nbsp;
+  private get previouslySelectedAddress(): ViewAddress {
+    let previouslySelected: ViewAddress;
+    this.store.select(state =&gt; state.checkout).take(1).subscribe((data: CheckoutState) =&gt; {
+      previouslySelected = data.addresses.filter((a: ViewAddress) =&gt; {
+        return a.addressEntityId === data.selectedAddress.addressEntityId;
+      })[0];
+    });
+    return previouslySelected;
+  }
+&nbsp;
+  private validate(addresses: Array&lt;ViewAddress&gt;): void {
+    this.addressErrors = {};
+    addresses.forEach((address: ViewAddress) =&gt; {
+      this.addressErrors[address.addressEntityId] = [];
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!address.address) <span class="cstat-no" title="statement not covered" >return;</span>
+      let actualAddressKeys: Array&lt;String&gt; = Object.keys(address.address);
+      AddressKeys.forEach((key: string) =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (actualAddressKeys.indexOf(key) &lt; 0 || address.address[key] === '') {
+<span class="cstat-no" title="statement not covered" >          this.addressErrors[address.addressEntityId].push(key);</span>
+        }
+      });
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/line-item/line-item-actions.component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/line-item/</a> line-item-actions.component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.59% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>65/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.22% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>37/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>62/64</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var commerce_interface_1 = require("../../../shared/interfaces/commerce.interface");
+var LineItemActionsComponent = (function () {
+    function LineItemActionsComponent() {
+        this.showPricingDialog = new core_1.EventEmitter();
+        this.remove = new core_1.EventEmitter();
+        this.clone = new core_1.EventEmitter();
+        this.moveTo = new core_1.EventEmitter();
+        this.editMarkers = new core_1.EventEmitter();
+        this.openCostMultiplierForm = new core_1.EventEmitter();
+        this.removeCostMultiplier = new core_1.EventEmitter();
+        this.addCustomPrice = new core_1.EventEmitter();
+        this.addNote = new core_1.EventEmitter();
+    }
+    Object.defineProperty(LineItemActionsComponent.prototype, "displayPriceButton", {
+        get: function () {
+            return this.rightsReproduction === 'Rights Managed' &amp;&amp; !commerce_interface_1.quotesWithoutPricing.includes(this.quoteType);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "needsAttributes", {
+        get: function () {
+            return this.rightsReproduction === 'Rights Managed' &amp;&amp; !this.hasAttributes;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "shouldShowSubclipButton", {
+        get: function () {
+            return this.userCanCreateSubclips &amp;&amp; this.otherProjectsExist;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "otherProjectsExist", {
+        get: function () {
+            return this.otherProjects.length &gt; 0;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "trStringForSubclipping", {
+        get: function () {
+            return this.assetIsSubclipped
+                ? 'COLLECTION.SHOW.ASSET_MORE_MENU.EDIT_SUBCLIPPING'
+                : 'COLLECTION.SHOW.ASSET_MORE_MENU.ADD_SUBCLIPPING';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "trStringForCostMultiplier", {
+        get: function () {
+            return this.hasMultiplier
+                ? 'QUOTE.EDIT_MULTIPLIER_TITLE'
+                : 'QUOTE.ADD_MULTIPLIER_TITLE';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "trStringForRightsPackage", {
+        get: function () {
+            return this.hasAttributes
+                ? 'QUOTE.EDIT_RIGHTS_PACKAGE_TITLE'
+                : 'QUOTE.ADD_RIGHTS_PACKAGE_TITLE';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LineItemActionsComponent.prototype, "showDeleteCostMultiplierBtn", {
+        get: function () {
+            return this.userCanAdministerQuotes &amp;&amp; this.hasMultiplier;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    LineItemActionsComponent.prototype.onClickAddCustomPrice = function () {
+        this.addCustomPrice.emit();
+    };
+    Object.defineProperty(LineItemActionsComponent.prototype, "trStringForNoteButton", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.hasNote ? 'QUOTE.EDIT_NOTE' : 'QUOTE.ADD_NOTE';</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    LineItemActionsComponent.prototype.openNotesForm = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        this.addNote.emit();</span>
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], LineItemActionsComponent.prototype, "rightsReproduction", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "hasAttributes", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], LineItemActionsComponent.prototype, "otherProjects", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "userCanCreateSubclips", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "userCanAdministerQuotes", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "assetIsSubclipped", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], LineItemActionsComponent.prototype, "quoteType", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "hasMultiplier", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Boolean)
+    ], LineItemActionsComponent.prototype, "hasNote", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "showPricingDialog", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "remove", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "clone", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "moveTo", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "editMarkers", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "openCostMultiplierForm", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "removeCostMultiplier", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "addCustomPrice", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], LineItemActionsComponent.prototype, "addNote", void 0);
+    LineItemActionsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'line-item-actions-component',
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+            template: "\n    &lt;div class=\"tools\" flex=\"100\"&gt;\n      &lt;button \n        mat-icon-button\n        (click)=\"remove.emit()\"\n        title=\"{{ 'CART.PROJECTS.REMOVE_ASSET_BTN_HOVER' | translate }}\"&gt;\n          &lt;mat-icon&gt;remove_circle&lt;/mat-icon&gt;\n        &lt;/button&gt;\n      &lt;button\n        data-pendo=\"cart-lineitem_options-menu-trigger\"\n        mat-icon-button\n        [mat-menu-trigger-for]=\"lineItemOptionsMenu\"\n        title=\"{{ 'CART.PROJECTS.MORE_OPTIONS_BTN_HOVER' | translate }}\"&gt;\n          &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;\n      &lt;/button&gt;\n    &lt;/div&gt;\n\n    &lt;mat-menu x-position=\"before\" #lineItemOptionsMenu=\"matMenu\"&gt;\n      &lt;button mat-menu-item (click)=\"clone.emit()\"&gt;\n        &lt;mat-icon&gt;layers&lt;/mat-icon&gt;{{ 'CART.PROJECTS.DUPLICATE_ASSET_BTN_LABEL' | translate }}\n      &lt;/button&gt;\n      &lt;div class=\"divider\" *ngIf=\"otherProjectsExist\"&gt;&lt;/div&gt;\n      &lt;button mat-menu-item *ngFor=\"let otherProject of otherProjects\" (click)=\"moveTo.emit(otherProject)\"&gt;\n        &lt;mat-icon&gt;swap_vert_circle&lt;/mat-icon&gt;\n        {{ 'CART.PROJECTS.MOVE_TO' | translate:{projectName: otherProject.name} | slice:0:28 }}\n      &lt;/button&gt;\n      &lt;div class=\"divider\" *ngIf=\"shouldShowSubclipButton\"&gt;&lt;/div&gt;\n      &lt;button mat-menu-item (click)=\"editMarkers.emit()\" *ngIf=\"userCanCreateSubclips\"&gt;\n        &lt;mat-icon&gt;access_time&lt;/mat-icon&gt;\n        &lt;span&gt;{{ trStringForSubclipping | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n      &lt;button mat-menu-item \n        *ngIf=\"displayPriceButton\"\n        (click)=\"showPricingDialog.emit()\"\n        [ngClass]=\"{'select-usage': needsAttributes }\"&gt;\n        &lt;mat-icon&gt;assignment&lt;/mat-icon&gt;\n        &lt;span&gt;{{ trStringForRightsPackage | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n      &lt;button\n        mat-menu-item\n        (click)=\"openNotesForm()\"&gt;\n        &lt;mat-icon&gt;note_add&lt;/mat-icon&gt;\n        &lt;span&gt;{{ trStringForNoteButton | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n      &lt;div *ngIf=\"userCanAdministerQuotes\" class=\"divider\"&gt;&lt;/div&gt;\n      &lt;button mat-menu-item (click)=\"openCostMultiplierForm.emit()\" *ngIf=\"userCanAdministerQuotes\"&gt;\n        &lt;mat-icon&gt;attach_money&lt;/mat-icon&gt;\n        &lt;span&gt;{{ trStringForCostMultiplier | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n      &lt;button mat-menu-item (click)=\"removeCostMultiplier.emit()\" *ngIf=\"showDeleteCostMultiplierBtn\"&gt;\n        &lt;mat-icon&gt;remove_circle&lt;/mat-icon&gt;\n        &lt;span&gt;{{ 'QUOTE.REMOVE_MULTIPLIER' | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n      &lt;button mat-menu-item (click)=\"onClickAddCustomPrice()\" *ngIf=\"userCanAdministerQuotes\"&gt;\n        &lt;mat-icon&gt;monetization_on&lt;/mat-icon&gt;\n        &lt;span&gt;{{ 'QUOTE.ADD_CUSTOM_PRICE_TITLE' | translate }}&lt;/span&gt;\n      &lt;/button&gt;\n    &lt;/mat-menu&gt;\n  "
+        })
+    ], LineItemActionsComponent);
+    return LineItemActionsComponent;
+}());
+exports.LineItemActionsComponent = LineItemActionsComponent;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC8rY29tbWVyY2UvY29tcG9uZW50cy9saW5lLWl0ZW0vbGluZS1pdGVtLWFjdGlvbnMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUEsc0NBQWdHO0FBQ2hHLG9GQUFtRztBQWtFbkc7SUFoRUE7UUEwRVksc0JBQWlCLEdBQXNCLElBQUksbUJBQVksRUFBRSxDQUFDO1FBQzFELFdBQU0sR0FBc0IsSUFBSSxtQkFBWSxFQUFFLENBQUM7UUFDL0MsVUFBSyxHQUFzQixJQUFJLG1CQUFZLEVBQUUsQ0FBQztRQUM5QyxXQUFNLEdBQXNCLElBQUksbUJBQVksRUFBRSxDQUFDO1FBQy9DLGdCQUFXLEdBQXNCLElBQUksbUJBQVksRUFBRSxDQUFDO1FBQ3BELDJCQUFzQixHQUF1QixJQUFJLG1CQUFZLEVBQUUsQ0FBQztRQUNoRSx5QkFBb0IsR0FBdUIsSUFBSSxtQkFBWSxFQUFFLENBQUM7UUFDOUQsbUJBQWMsR0FBdUIsSUFBSSxtQkFBWSxFQUFFLENBQUM7UUFDeEQsWUFBTyxHQUF1QixJQUFJLG1CQUFZLEVBQUUsQ0FBQztJQW1EN0QsQ0FBQztJQWpEQyxzQkFBVyx3REFBa0I7YUFBN0I7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLGtCQUFrQixLQUFLLGdCQUFnQixJQUFJLENBQUMseUNBQW9CLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztRQUN4RyxDQUFDOzs7T0FBQTtJQUVELHNCQUFXLHFEQUFlO2FBQTFCO1lBQ0UsTUFBTSxDQUFDLElBQUksQ0FBQyxrQkFBa0IsS0FBSyxnQkFBZ0IsSUFBSSxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUM7UUFDN0UsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVyw2REFBdUI7YUFBbEM7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLHFCQUFxQixJQUFJLElBQUksQ0FBQyxrQkFBa0IsQ0FBQztRQUMvRCxDQUFDOzs7T0FBQTtJQUVELHNCQUFXLHdEQUFrQjthQUE3QjtZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsYUFBYSxDQUFDLE1BQU0sR0FBRyxDQUFDLENBQUM7UUFDdkMsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVyw0REFBc0I7YUFBakM7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLGlCQUFpQjtnQkFDM0IsQ0FBQyxDQUFDLGtEQUFrRDtnQkFDcEQsQ0FBQyxDQUFDLGlEQUFpRCxDQUFDO1FBQ3hELENBQUM7OztPQUFBO0lBRUQsc0JBQVcsK0RBQXlCO2FBQXBDO1lBQ0UsTUFBTSxDQUFDLElBQUksQ0FBQyxhQUFhO2dCQUN2QixDQUFDLENBQUMsNkJBQTZCO2dCQUMvQixDQUFDLENBQUMsNEJBQTRCLENBQUM7UUFDbkMsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVyw4REFBd0I7YUFBbkM7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLGFBQWE7Z0JBQ3ZCLENBQUMsQ0FBQyxpQ0FBaUM7Z0JBQ25DLENBQUMsQ0FBQyxnQ0FBZ0MsQ0FBQztRQUN2QyxDQUFDOzs7T0FBQTtJQUVELHNCQUFXLGlFQUEyQjthQUF0QztZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsdUJBQXVCLElBQUksSUFBSSxDQUFDLGFBQWEsQ0FBQztRQUM1RCxDQUFDOzs7T0FBQTtJQUVNLHdEQUFxQixHQUE1QjtRQUNFLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDN0IsQ0FBQztJQUVELHNCQUFXLDJEQUFxQjthQUFoQztZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsT0FBTyxDQUFDLENBQUMsQ0FBQyxpQkFBaUIsQ0FBQyxDQUFDLENBQUMsZ0JBQWdCLENBQUM7UUFDN0QsQ0FBQzs7O09BQUE7SUFFTSxnREFBYSxHQUFwQjtRQUNFLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxFQUFFLENBQUM7SUFDdEIsQ0FBQztJQW5FUTtRQUFSLFlBQUssRUFBRTs7d0VBQTRCO0lBQzNCO1FBQVIsWUFBSyxFQUFFOzttRUFBd0I7SUFDdkI7UUFBUixZQUFLLEVBQUU7O21FQUFzQjtJQUNyQjtRQUFSLFlBQUssRUFBRTs7MkVBQWdDO0lBQy9CO1FBQVIsWUFBSyxFQUFFOzs2RUFBa0M7SUFDakM7UUFBUixZQUFLLEVBQUU7O3VFQUE0QjtJQUMzQjtRQUFSLFlBQUssRUFBRTs7K0RBQXlCO0lBQ3hCO1FBQVIsWUFBSyxFQUFFOzttRUFBd0I7SUFDdkI7UUFBUixZQUFLLEVBQUU7OzZEQUFrQjtJQUNoQjtRQUFULGFBQU0sRUFBRTtrQ0FBb0IsbUJBQVk7dUVBQTJCO0lBQzFEO1FBQVQsYUFBTSxFQUFFO2tDQUFTLG1CQUFZOzREQUEyQjtJQUMvQztRQUFULGFBQU0sRUFBRTtrQ0FBUSxtQkFBWTsyREFBMkI7SUFDOUM7UUFBVCxhQUFNLEVBQUU7a0NBQVMsbUJBQVk7NERBQTJCO0lBQy9DO1FBQVQsYUFBTSxFQUFFO2tDQUFjLG1CQUFZO2lFQUEyQjtJQUNwRDtRQUFULGFBQU0sRUFBRTtrQ0FBeUIsbUJBQVk7NEVBQTRCO0lBQ2hFO1FBQVQsYUFBTSxFQUFFO2tDQUF1QixtQkFBWTswRUFBNEI7SUFDOUQ7UUFBVCxhQUFNLEVBQUU7a0NBQWlCLG1CQUFZO29FQUE0QjtJQUN4RDtRQUFULGFBQU0sRUFBRTtrQ0FBVSxtQkFBWTs2REFBNEI7SUFsQmhELHdCQUF3QjtRQWhFcEMsZ0JBQVMsQ0FBQztZQUNULFFBQVEsRUFBRSxNQUFNLENBQUMsRUFBRTtZQUNuQixRQUFRLEVBQUUsNkJBQTZCO1lBQ3ZDLGVBQWUsRUFBRSw4QkFBdUIsQ0FBQyxNQUFNO1lBQy9DLFFBQVEsRUFBRSx5cEZBMERUO1NBQ0YsQ0FBQztPQUNXLHdCQUF3QixDQXFFcEM7SUFBRCwrQkFBQztDQXJFRCxBQXFFQyxJQUFBO0FBckVZLDREQUF3QiIsImZpbGUiOiJhcHAvK2NvbW1lcmNlL2NvbXBvbmVudHMvbGluZS1pdGVtL2xpbmUtaXRlbS1hY3Rpb25zLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQsIENoYW5nZURldGVjdGlvblN0cmF0ZWd5LCBPdXRwdXQsIEV2ZW50RW1pdHRlciB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgUHVyY2hhc2VUeXBlLCBxdW90ZXNXaXRob3V0UHJpY2luZyB9IGZyb20gJy4uLy4uLy4uL3NoYXJlZC9pbnRlcmZhY2VzL2NvbW1lcmNlLmludGVyZmFjZSc7XG5cbkBDb21wb25lbnQoe1xuICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICBzZWxlY3RvcjogJ2xpbmUtaXRlbS1hY3Rpb25zLWNvbXBvbmVudCcsXG4gIGNoYW5nZURldGVjdGlvbjogQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3kuT25QdXNoLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxkaXYgY2xhc3M9XCJ0b29sc1wiIGZsZXg9XCIxMDBcIj5cbiAgICAgIDxidXR0b24gXG4gICAgICAgIG1hdC1pY29uLWJ1dHRvblxuICAgICAgICAoY2xpY2spPVwicmVtb3ZlLmVtaXQoKVwiXG4gICAgICAgIHRpdGxlPVwie3sgJ0NBUlQuUFJPSkVDVFMuUkVNT1ZFX0FTU0VUX0JUTl9IT1ZFUicgfCB0cmFuc2xhdGUgfX1cIj5cbiAgICAgICAgICA8bWF0LWljb24+cmVtb3ZlX2NpcmNsZTwvbWF0LWljb24+XG4gICAgICAgIDwvYnV0dG9uPlxuICAgICAgPGJ1dHRvblxuICAgICAgICBkYXRhLXBlbmRvPVwiY2FydC1saW5laXRlbV9vcHRpb25zLW1lbnUtdHJpZ2dlclwiXG4gICAgICAgIG1hdC1pY29uLWJ1dHRvblxuICAgICAgICBbbWF0LW1lbnUtdHJpZ2dlci1mb3JdPVwibGluZUl0ZW1PcHRpb25zTWVudVwiXG4gICAgICAgIHRpdGxlPVwie3sgJ0NBUlQuUFJPSkVDVFMuTU9SRV9PUFRJT05TX0JUTl9IT1ZFUicgfCB0cmFuc2xhdGUgfX1cIj5cbiAgICAgICAgICA8bWF0LWljb24+bW9yZV92ZXJ0PC9tYXQtaWNvbj5cbiAgICAgIDwvYnV0dG9uPlxuICAgIDwvZGl2PlxuXG4gICAgPG1hdC1tZW51IHgtcG9zaXRpb249XCJiZWZvcmVcIiAjbGluZUl0ZW1PcHRpb25zTWVudT1cIm1hdE1lbnVcIj5cbiAgICAgIDxidXR0b24gbWF0LW1lbnUtaXRlbSAoY2xpY2spPVwiY2xvbmUuZW1pdCgpXCI+XG4gICAgICAgIDxtYXQtaWNvbj5sYXllcnM8L21hdC1pY29uPnt7ICdDQVJULlBST0pFQ1RTLkRVUExJQ0FURV9BU1NFVF9CVE5fTEFCRUwnIHwgdHJhbnNsYXRlIH19XG4gICAgICA8L2J1dHRvbj5cbiAgICAgIDxkaXYgY2xhc3M9XCJkaXZpZGVyXCIgKm5nSWY9XCJvdGhlclByb2plY3RzRXhpc3RcIj48L2Rpdj5cbiAgICAgIDxidXR0b24gbWF0LW1lbnUtaXRlbSAqbmdGb3I9XCJsZXQgb3RoZXJQcm9qZWN0IG9mIG90aGVyUHJvamVjdHNcIiAoY2xpY2spPVwibW92ZVRvLmVtaXQob3RoZXJQcm9qZWN0KVwiPlxuICAgICAgICA8bWF0LWljb24+c3dhcF92ZXJ0X2NpcmNsZTwvbWF0LWljb24+XG4gICAgICAgIHt7ICdDQVJULlBST0pFQ1RTLk1PVkVfVE8nIHwgdHJhbnNsYXRlOntwcm9qZWN0TmFtZTogb3RoZXJQcm9qZWN0Lm5hbWV9IHwgc2xpY2U6MDoyOCB9fVxuICAgICAgPC9idXR0b24+XG4gICAgICA8ZGl2IGNsYXNzPVwiZGl2aWRlclwiICpuZ0lmPVwic2hvdWxkU2hvd1N1YmNsaXBCdXR0b25cIj48L2Rpdj5cbiAgICAgIDxidXR0b24gbWF0LW1lbnUtaXRlbSAoY2xpY2spPVwiZWRpdE1hcmtlcnMuZW1pdCgpXCIgKm5nSWY9XCJ1c2VyQ2FuQ3JlYXRlU3ViY2xpcHNcIj5cbiAgICAgICAgPG1hdC1pY29uPmFjY2Vzc190aW1lPC9tYXQtaWNvbj5cbiAgICAgICAgPHNwYW4+e3sgdHJTdHJpbmdGb3JTdWJjbGlwcGluZyB8IHRyYW5zbGF0ZSB9fTwvc3Bhbj5cbiAgICAgIDwvYnV0dG9uPlxuICAgICAgPGJ1dHRvbiBtYXQtbWVudS1pdGVtIFxuICAgICAgICAqbmdJZj1cImRpc3BsYXlQcmljZUJ1dHRvblwiXG4gICAgICAgIChjbGljayk9XCJzaG93UHJpY2luZ0RpYWxvZy5lbWl0KClcIlxuICAgICAgICBbbmdDbGFzc109XCJ7J3NlbGVjdC11c2FnZSc6IG5lZWRzQXR0cmlidXRlcyB9XCI+XG4gICAgICAgIDxtYXQtaWNvbj5hc3NpZ25tZW50PC9tYXQtaWNvbj5cbiAgICAgICAgPHNwYW4+e3sgdHJTdHJpbmdGb3JSaWdodHNQYWNrYWdlIHwgdHJhbnNsYXRlIH19PC9zcGFuPlxuICAgICAgPC9idXR0b24+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIG1hdC1tZW51LWl0ZW1cbiAgICAgICAgKGNsaWNrKT1cIm9wZW5Ob3Rlc0Zvcm0oKVwiPlxuICAgICAgICA8bWF0LWljb24+bm90ZV9hZGQ8L21hdC1pY29uPlxuICAgICAgICA8c3Bhbj57eyB0clN0cmluZ0Zvck5vdGVCdXR0b24gfCB0cmFuc2xhdGUgfX08L3NwYW4+XG4gICAgICA8L2J1dHRvbj5cbiAgICAgIDxkaXYgKm5nSWY9XCJ1c2VyQ2FuQWRtaW5pc3RlclF1b3Rlc1wiIGNsYXNzPVwiZGl2aWRlclwiPjwvZGl2PlxuICAgICAgPGJ1dHRvbiBtYXQtbWVudS1pdGVtIChjbGljayk9XCJvcGVuQ29zdE11bHRpcGxpZXJGb3JtLmVtaXQoKVwiICpuZ0lmPVwidXNlckNhbkFkbWluaXN0ZXJRdW90ZXNcIj5cbiAgICAgICAgPG1hdC1pY29uPmF0dGFjaF9tb25leTwvbWF0LWljb24+XG4gICAgICAgIDxzcGFuPnt7IHRyU3RyaW5nRm9yQ29zdE11bHRpcGxpZXIgfCB0cmFuc2xhdGUgfX08L3NwYW4+XG4gICAgICA8L2J1dHRvbj5cbiAgICAgIDxidXR0b24gbWF0LW1lbnUtaXRlbSAoY2xpY2spPVwicmVtb3ZlQ29zdE11bHRpcGxpZXIuZW1pdCgpXCIgKm5nSWY9XCJzaG93RGVsZXRlQ29zdE11bHRpcGxpZXJCdG5cIj5cbiAgICAgICAgPG1hdC1pY29uPnJlbW92ZV9jaXJjbGU8L21hdC1pY29uPlxuICAgICAgICA8c3Bhbj57eyAnUVVPVEUuUkVNT1ZFX01VTFRJUExJRVInIHwgdHJhbnNsYXRlIH19PC9zcGFuPlxuICAgICAgPC9idXR0b24+XG4gICAgICA8YnV0dG9uIG1hdC1tZW51LWl0ZW0gKGNsaWNrKT1cIm9uQ2xpY2tBZGRDdXN0b21QcmljZSgpXCIgKm5nSWY9XCJ1c2VyQ2FuQWRtaW5pc3RlclF1b3Rlc1wiPlxuICAgICAgICA8bWF0LWljb24+bW9uZXRpemF0aW9uX29uPC9tYXQtaWNvbj5cbiAgICAgICAgPHNwYW4+e3sgJ1FVT1RFLkFERF9DVVNUT01fUFJJQ0VfVElUTEUnIHwgdHJhbnNsYXRlIH19PC9zcGFuPlxuICAgICAgPC9idXR0b24+XG4gICAgPC9tYXQtbWVudT5cbiAgYFxufSlcbmV4cG9ydCBjbGFzcyBMaW5lSXRlbUFjdGlvbnNDb21wb25lbnQge1xuICBASW5wdXQoKSByaWdodHNSZXByb2R1Y3Rpb246IHN0cmluZztcbiAgQElucHV0KCkgaGFzQXR0cmlidXRlczogYm9vbGVhbjtcbiAgQElucHV0KCkgb3RoZXJQcm9qZWN0czogYW55W107XG4gIEBJbnB1dCgpIHVzZXJDYW5DcmVhdGVTdWJjbGlwczogYm9vbGVhbjtcbiAgQElucHV0KCkgdXNlckNhbkFkbWluaXN0ZXJRdW90ZXM6IGJvb2xlYW47XG4gIEBJbnB1dCgpIGFzc2V0SXNTdWJjbGlwcGVkOiBib29sZWFuO1xuICBASW5wdXQoKSBxdW90ZVR5cGU6IFB1cmNoYXNlVHlwZTtcbiAgQElucHV0KCkgaGFzTXVsdGlwbGllcjogYm9vbGVhbjtcbiAgQElucHV0KCkgaGFzTm90ZTogYm9vbGVhbjtcbiAgQE91dHB1dCgpIHNob3dQcmljaW5nRGlhbG9nOiBFdmVudEVtaXR0ZXI8YW55PiA9IG5ldyBFdmVudEVtaXR0ZXIoKTtcbiAgQE91dHB1dCgpIHJlbW92ZTogRXZlbnRFbWl0dGVyPGFueT4gPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG4gIEBPdXRwdXQoKSBjbG9uZTogRXZlbnRFbWl0dGVyPGFueT4gPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG4gIEBPdXRwdXQoKSBtb3ZlVG86IEV2ZW50RW1pdHRlcjxhbnk+ID0gbmV3IEV2ZW50RW1pdHRlcigpO1xuICBAT3V0cHV0KCkgZWRpdE1hcmtlcnM6IEV2ZW50RW1pdHRlcjxhbnk+ID0gbmV3IEV2ZW50RW1pdHRlcigpO1xuICBAT3V0cHV0KCkgb3BlbkNvc3RNdWx0aXBsaWVyRm9ybTogRXZlbnRFbWl0dGVyPG51bGw+ID0gbmV3IEV2ZW50RW1pdHRlcigpO1xuICBAT3V0cHV0KCkgcmVtb3ZlQ29zdE11bHRpcGxpZXI6IEV2ZW50RW1pdHRlcjxudWxsPiA9IG5ldyBFdmVudEVtaXR0ZXIoKTtcbiAgQE91dHB1dCgpIGFkZEN1c3RvbVByaWNlOiBFdmVudEVtaXR0ZXI8bnVsbD4gPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG4gIEBPdXRwdXQoKSBhZGROb3RlOiBFdmVudEVtaXR0ZXI8bnVsbD4gPSBuZXcgRXZlbnRFbWl0dGVyKCk7XG5cbiAgcHVibGljIGdldCBkaXNwbGF5UHJpY2VCdXR0b24oKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMucmlnaHRzUmVwcm9kdWN0aW9uID09PSAnUmlnaHRzIE1hbmFnZWQnICYmICFxdW90ZXNXaXRob3V0UHJpY2luZy5pbmNsdWRlcyh0aGlzLnF1b3RlVHlwZSk7XG4gIH1cblxuICBwdWJsaWMgZ2V0IG5lZWRzQXR0cmlidXRlcygpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy5yaWdodHNSZXByb2R1Y3Rpb24gPT09ICdSaWdodHMgTWFuYWdlZCcgJiYgIXRoaXMuaGFzQXR0cmlidXRlcztcbiAgfVxuXG4gIHB1YmxpYyBnZXQgc2hvdWxkU2hvd1N1YmNsaXBCdXR0b24oKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMudXNlckNhbkNyZWF0ZVN1YmNsaXBzICYmIHRoaXMub3RoZXJQcm9qZWN0c0V4aXN0O1xuICB9XG5cbiAgcHVibGljIGdldCBvdGhlclByb2plY3RzRXhpc3QoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMub3RoZXJQcm9qZWN0cy5sZW5ndGggPiAwO1xuICB9XG5cbiAgcHVibGljIGdldCB0clN0cmluZ0ZvclN1YmNsaXBwaW5nKCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIHRoaXMuYXNzZXRJc1N1YmNsaXBwZWRcbiAgICAgID8gJ0NPTExFQ1RJT04uU0hPVy5BU1NFVF9NT1JFX01FTlUuRURJVF9TVUJDTElQUElORydcbiAgICAgIDogJ0NPTExFQ1RJT04uU0hPVy5BU1NFVF9NT1JFX01FTlUuQUREX1NVQkNMSVBQSU5HJztcbiAgfVxuXG4gIHB1YmxpYyBnZXQgdHJTdHJpbmdGb3JDb3N0TXVsdGlwbGllcigpOiBzdHJpbmcge1xuICAgIHJldHVybiB0aGlzLmhhc011bHRpcGxpZXJcbiAgICAgID8gJ1FVT1RFLkVESVRfTVVMVElQTElFUl9USVRMRSdcbiAgICAgIDogJ1FVT1RFLkFERF9NVUxUSVBMSUVSX1RJVExFJztcbiAgfVxuXG4gIHB1YmxpYyBnZXQgdHJTdHJpbmdGb3JSaWdodHNQYWNrYWdlKCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIHRoaXMuaGFzQXR0cmlidXRlc1xuICAgICAgPyAnUVVPVEUuRURJVF9SSUdIVFNfUEFDS0FHRV9USVRMRSdcbiAgICAgIDogJ1FVT1RFLkFERF9SSUdIVFNfUEFDS0FHRV9USVRMRSc7XG4gIH1cblxuICBwdWJsaWMgZ2V0IHNob3dEZWxldGVDb3N0TXVsdGlwbGllckJ0bigpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy51c2VyQ2FuQWRtaW5pc3RlclF1b3RlcyAmJiB0aGlzLmhhc011bHRpcGxpZXI7XG4gIH1cblxuICBwdWJsaWMgb25DbGlja0FkZEN1c3RvbVByaWNlKCk6IHZvaWQge1xuICAgIHRoaXMuYWRkQ3VzdG9tUHJpY2UuZW1pdCgpO1xuICB9XG5cbiAgcHVibGljIGdldCB0clN0cmluZ0Zvck5vdGVCdXR0b24oKTogc3RyaW5nIHtcbiAgICByZXR1cm4gdGhpcy5oYXNOb3RlID8gJ1FVT1RFLkVESVRfTk9URScgOiAnUVVPVEUuQUREX05PVEUnO1xuICB9XG5cbiAgcHVibGljIG9wZW5Ob3Rlc0Zvcm0oKTogdm9pZCB7XG4gICAgdGhpcy5hZGROb3RlLmVtaXQoKTtcbiAgfVxufVxuIl19
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

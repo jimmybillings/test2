@@ -1,0 +1,41 @@
+[mat-raised-button] {
+  text-transform: uppercase;
+}
+.mat-button,.mat-raised-button,.mat-icon-button,.mat-fab,.mat-mini-fab {
+  font-weight: 400;
+}
+[mat-button] {
+// drop down indicator on a button
+  &.is-dd {
+    position: relative;
+    padding-right: 24px;
+    padding-left: 10px;
+    &:not[hide] {
+      display: block;
+    }
+    .mat-button-wrapper::after {
+      transition: opacity 0.4s;
+      font-family: 'Material Icons';
+      content: "\e5c5";
+      font-size: 1.5em;
+      position: absolute;
+      right: 2px;
+      top: 0;
+    }
+    &.icon-dd-button {
+      min-width: 40px;
+      max-height: 40px;
+      min-height: 40px;
+      border-radius: 2px;
+      padding-left: 4px;
+      padding-right: 12px;
+      .mat-button-wrapper::after {
+        right: -3px;
+        top: -3px;
+      }
+    }
+  }
+}
+
+/* TODO - Should look at removing this in the future. The overlay index clashes with our header.*/
+.mat-menu-click-catcher { z-index: 5; }

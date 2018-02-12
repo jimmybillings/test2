@@ -1,0 +1,88 @@
+<section class="wz-comments">
+  <header class="comments-header" layout-gt-xs="row" layout="column" layout-align="space-between">
+    <h2 flex="grow" class="mat-display-1">{{ 'COMMENTS.SECTION_TITLE' | translate }}</h2>
+    <div class="actions close" flex="auto">
+      <button mat-button title="close comments" type="button" class="close" (click)="closeComments()">
+        <span class="close-btn-label">close</span>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </header>
+  <div layout-gt-xs="row" layout="column" layout-align="space-between">
+    <div flex="33" flex-sm="40"> 
+      <div *ngIf="!userCanAddComments" layout="column" class="empty-comment-container">
+        <div layout="row" layout-align="center">
+          <div flex="90">
+            <h2 class="mat-display-1">You cannot add comments to this collection</h2>  
+            <p>Please contact the collection owner</p>
+          </div>
+        </div> 
+      </div>
+      <div *ngIf="userCanAddComments" layout="column" layout-align="start" class="new-comment">
+        <mat-card class="wz-form-card">
+          <mat-card-content>
+            <wz-form
+              [items]="formFields"
+              [submitLabel]="formSubmitLabel | async"
+              [includeCancel]="true"
+              (formCancel)="onFormCancel($event)"
+              (formSubmit)="onFormSubmit($event)">
+            </wz-form>
+          </mat-card-content>
+        </mat-card>
+      </div> 
+    </div>
+    <div flex="nogrow" class="space-between"></div>
+    <div flex="66" flex-sm="60">
+      <div *ngIf="!(commentsExist | async)" layout="column" class="comments empty-comment-container">
+        <div layout="row" layout-align="center">
+          <div flex-gt-lg="35" flex-gt-md="40" flex-gt-sm=55 flex="80">
+            <h2 class="mat-display-1">{{ 'COMMENTS.EMPTY_COMMENTS_HEADING' | translate }}</h2>  
+            <p>{{ 'COMMENTS.EMPTY_COMMENTS_MSG' | translate }}</p>
+          </div>
+        </div> 
+      </div>
+      <div *ngIf="commentsExist | async" layout="column" class="comments">
+        <div
+          class="mat-display comment"
+          *ngFor="let comment of (comments | async).items; let even = even; let odd = odd"
+          [ngClass]="{ odd: odd, even: even }">
+          <header class="comment-head" layout="row" layout-align="space-between end">
+            <div flex="grow" layout="row" layout-align="center center">
+              <div class="avatar" flex="none"><strong>{{initials(comment.userName)}}</strong></div>  
+              <div flex="initial">
+                <span>
+                  <strong>{{comment.userName}}</strong>
+                  <span> posted on </span>
+                  <strong>{{comment.createdOn | date:'yMd'}}</strong>
+                  <span> at </span>
+                  <strong>{{comment.createdOn | date:'jm'}}</strong>
+                </span>
+                <span *ngIf="isCommentOwner(comment.userId)">
+                  for <strong>{{ pluralize(comment.access) }}</strong>
+                </span>
+              </div>
+            </div> 
+            <div flex="auto" class="actions" layout="row" layout-align="end center">
+              <button
+                title="{{ 'COMMENTS.EDIT_HOVER_TITLE' | translate }}"
+                *ngIf="isCommentOwner(comment.userId)"
+                (click)="onEditCommentButtonClick(comment)"
+                mat-icon-button>
+                  <mat-icon>mode_edit</mat-icon>
+              </button>
+              <button
+                title="{{ 'COMMENTS.DELETE_HOVER_TITLE' | translate }}"
+                *ngIf="isCommentOwner(comment.userId)"
+                (click)="onDeleteCommentButtonClick(comment)"
+                mat-icon-button>
+                  <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </header>
+          <div class="comment-body">{{comment.comment}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

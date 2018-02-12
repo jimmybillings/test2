@@ -1,0 +1,32 @@
+// this is can go away once the temporary legacy find assets in this collection goes away(post beta)
+.wz-dialog collection-link-component mat-card {
+  width: 32vw;
+  padding: 32px;
+  padding-bottom: 38px;
+  padding-top: 38px;
+  button[mat-icon-button].close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 36px;
+    opacity: .5;
+    mat-icon {
+      font-size: 1em;
+      height: 1em;
+      width: 1em;
+    }
+  }
+  @media screen and (max-width: $layout-breakpoint-lg) and (min-width: 0)  {
+    width: 32vw;
+  }
+  @media screen and (max-width: $layout-breakpoint-md) and (min-width: 0)  {
+    width: 50vw;
+  }
+  @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0)  {
+    width: 72vw;
+  }
+  @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+    width: calc(100% - 80px);
+    margin: 8px;
+  }
+} 

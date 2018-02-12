@@ -1,0 +1,101 @@
+<div class="cart-payment" layout="row" layout-align="center center">
+  <div flex="100" flex-gt-lg="85" class="payment-select">
+     <!--Hold-->
+    <section *ngIf="showHoldMessage | async"
+      layout="column"
+      layout-align="center center"
+      mat-scroll-y=""
+      flex="100">
+      <header flex="100" layout="column" layout-align="start center" class="account-on-hold">
+        <h2 class="commerce-heading">{{ (paymentOptions | async).explanation | translate }}</h2>
+        <p class="instructions">{{ 'CHECKOUT.PAYMENT.HOLD_MSG' | translate:{email_link:'sales-support@wazeedigital.com'} }}</p>
+        <a mat-button color="primary" href="{{'mailto:'+('CHECKOUT.PAYMENT.SALES_SUPPORT_EMAIL' | translate)}}">{{ 'CHECKOUT.PAYMENT.SALES_SUPPORT_EMAIL' | translate }}</a>
+      </header>
+    </section>
+    <div class="purchase-order-input" layout="column" flex="25" flex-xs="100">
+      <purchase-order-input-component></purchase-order-input-component>
+    </div>
+    <!--Credit Card only-->
+    <section *ngIf="showCreditCardForm | async"
+      layout="column"
+      layout-align="center start"
+      mat-scroll-y=""
+      flex-gt-lg="30"
+      flex="100">
+
+      <header flex="100" layout="column" layout-align="start">
+        <h2 class="commerce-heading">{{ (paymentOptions | async).explanation | translate }}</h2>
+        <p class="instructions">{{ 'CHECKOUT.PAYMENT.CREDIT_CARD_MSG' | translate}}</p>
+      </header>
+
+      <mat-card class="wz-form-card cc-form">
+        <mat-card-content *ngIf="fields | async as items">
+          <wz-cc-form
+            [items]="items" 
+            [serverErrors]="serverErrors"
+            [successfullyVerified]="successfullyVerified | async"
+            submitLabel="{{'CART.PAYMENT.VERIFY' | translate}}"
+            (onEdit)="editCreditCard()"
+            (formSubmit)="preAuthorize($event)"></wz-cc-form>
+        </mat-card-content>
+      </mat-card>
+      <div flex="100" layout="column" layout-align="start center">
+        <span class="mat-caption">{{ ((paymentOptions | async).explanation)+'_MSG' | translate }}</span>
+      </div>
+    </section>
+
+    <!--Credit Card AND Purchase on Credit-->
+    <div *ngIf="showCreditCardAndPurchaseOnCredit | async"
+      layout="column" layout-gt-xs="row" class="credit-card-and-account-credit">
+      <section flex-gt-lg="35" flex-gt-md="35" flex-md="40" flex="100">
+        <header layout="column" layout-align="start">
+          <h2 class="commerce-heading">{{ (paymentOptions | async).explanation | translate }}</h2>
+          <p class="instructions">{{ ((paymentOptions | async).explanation)+'_MSG' | translate }}</p>
+        </header>
+        <mat-radio-group layout="column" class="example-radio-group" (click)="disableTab(3)" [(ngModel)]="selectedPaymentOption">
+          <mat-radio-button *ngFor="let option of (paymentOptions | async).paymentOptions"
+            class="example-radio-button"
+            [value]="option">
+            {{ ('CHECKOUT.PAYMENT.OPTION'+'_'+option) | uppercase | translate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </section>
+      <section *ngIf="selectedPaymentOption === 'CreditCard'"
+        mat-scroll-y=""
+        flex-gt-lg="35"
+        flex-gt-md="35"
+        flex-md="40"
+        flex="100">
+        <mat-card class="wz-form-card cc-form">
+          <mat-card-content *ngIf="fields | async as items">
+            <wz-cc-form
+              [items]="items" 
+              [serverErrors]="serverErrors"
+              [successfullyVerified]="successfullyVerified | async"
+              submitLabel="{{'CART.PAYMENT.VERIFY' | translate}}"
+              (onEdit)="editCreditCard()"
+              (formSubmit)="preAuthorize($event)"></wz-cc-form>
+          </mat-card-content>
+        </mat-card>
+      </section>
+      <section *ngIf="selectedPaymentOption === 'PurchaseOnCredit'" flex-gt-lg="30" flex-gt-md="35" flex-md="40" flex="100">
+        <mat-card class="poc-details">
+          <mat-card-title>{{ 'CART.PAYMENT.PURCHASE_ON_CREDIT' | translate }}</mat-card-title>
+          <mat-card-content>
+            <mat-card-subtitle class="poc instructions">
+              {{ 'CART.PAYMENT.PURCHASE_ON_CREDIT_INSTRUCTIONS' | translate:{total:(data | async).total | currency:'USD':true:'1.2-2'} }}
+            </mat-card-subtitle>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button color="primary" (click)="selectPurchaseOnCredit()">
+              {{ 'CART.PAYMENT.PURCHASE_ON_CREDIT_BTN' | translate }}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </section>
+      <section flex-lg="35" flex="30" hide-sm hide-xs></section>
+    </div>
+
+  </div>
+</div>
+

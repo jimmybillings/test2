@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/+quote/components/tabs/quote-tab.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/+commerce/+quote/components/tabs/</a> quote-tab.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.02% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>73/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>27/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>63/71</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { QuoteService } from '../../../../shared/services/quote.service';
+import {
+  Quote, QuoteState, Project, AssetLineItem, FeeLineItem, PurchaseType, quotesWithoutPricing
+} from '../../../../shared/interfaces/commerce.interface';
+import { Tab } from '../../../components/tabs/tab';
+import { CommerceCapabilities } from '../../../services/commerce.capabilities';
+import { Observable } from 'rxjs/Observable';
+import { Feature } from '../../../../shared/interfaces/feature.interface';
+import { WzDialogService } from '../../../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { LicenseAgreements } from '../../../../shared/interfaces/commerce.interface';
+import { LicenseAgreementComponent } from '../../../components/license-agreement/license-agreement.component';
+import { FormFields } from '../../../../shared/interfaces/forms.interface';
+import { Pojo } from '../../../../shared/interfaces/common.interface';
+import { Subscription } from 'rxjs/Subscription';
+import { Common } from '../../../../shared/utilities/common.functions';
+import { AppStore } from '../../../../app.store';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'quote-tab',
+  templateUrl: 'quote-tab.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class QuoteTabComponent extends Tab implements OnDestroy {
+  public quote: Observable&lt;Quote&gt;;
+  public projects: Project[];
+  private config: any;
+  private projectSubscription: Subscription;
+&nbsp;
+  constructor(
+    public quoteService: QuoteService,
+    public userCan: CommerceCapabilities,
+    private dialogService: WzDialogService,
+    private router: Router,
+    private store: AppStore
+  ) {
+    super();
+    this.quote = this.quoteService.data.map(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.data)</span>;
+    this.projectSubscription = this.quoteService.projects.subscribe(projects =&gt; this.projects = projects);
+    this.config = this.store.snapshotCloned(state =&gt; state.uiConfig.components.cart.config);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.projectSubscription.unsubscribe();</span>
+  }
+&nbsp;
+  public get hasDiscount(): boolean {
+    return !!this.quoteService.state.data.discount;
+  }
+&nbsp;
+  public checkout(): void {
+    this.quoteService.getPaymentOptions();
+    this.goToNextTab();
+  }
+&nbsp;
+  public onCloneQuote() {
+    this.store.dispatch(factory =&gt;
+      factory.quoteEdit.cloneQuote(this.store.snapshotCloned(state =&gt; state.quoteShow.data))
+    );
+  }
+&nbsp;
+  public get shouldShowCloneButton(): Observable&lt;boolean&gt; {
+    return this.userCan.cloneQuote(this.quoteService.data);
+  }
+&nbsp;
+  public get shouldShowLicenseDetailsBtn(): boolean {
+    return this.userCan.viewLicenseAgreementsButton(this.quoteService.hasAssetLineItems) &amp;&amp;
+      this.store.snapshot(state =&gt; state.quoteShow.data.purchaseType !== 'RevenueOnly');
+  }
+&nbsp;
+  public get shouldShowExpireQuoteButton(): boolean {
+    return this.userCan.administerQuotes() &amp;&amp; this.isActiveQuote;
+  }
+&nbsp;
+  public get shouldShowCheckoutOptions(): boolean {
+    return !this.userCan.administerQuotes() &amp;&amp; this.isActiveQuote;
+  }
+&nbsp;
+  public get shouldShowRejectQuoteButton(): boolean {
+    return !this.userCan.administerQuotes();
+  }
+&nbsp;
+  public get shouldShowResendButton(): boolean {
+    return this.userCan.administerQuotes() &amp;&amp; (this.isExpiredQuote || this.isActiveQuote);
+  }
+&nbsp;
+  public showLicenseAgreements(): void {
+    this.quoteService.retrieveLicenseAgreements().take(1).subscribe((agreements: LicenseAgreements) =&gt; {
+      this.dialogService.openComponentInDialog(
+        {
+          componentType: LicenseAgreementComponent,
+          dialogConfig: { panelClass: 'license-pane', position: { top: '10%' } },
+          inputOptions: {
+            assetType: 'quoteShow',
+            parentId: this.quoteService.state.data.id,
+            licenses: Common.clone(agreements)
+          },
+          outputOptions: [
+            {
+              event: 'close',
+              callback: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>true,</span>
+              closeOnEvent: true
+            }
+          ]
+        }
+      );
+    });
+  }
+&nbsp;
+  public showExpireConfirmationDialog(): void {
+    this.dialogService.openConfirmationDialog({
+      title: 'QUOTE.EXPIRE.TITLE',
+      message: 'QUOTE.EXPIRE.MESSAGE',
+      accept: 'QUOTE.EXPIRE.ACCEPT',
+      decline: 'QUOTE.EXPIRE.DECLINE'
+    }, this.expireQuote);
+  }
+&nbsp;
+  public openRejectQuoteDialog(): void {
+    this.dialogService.openConfirmationDialog({
+      title: 'QUOTE.REJECT.TITLE',
+      message: 'QUOTE.REJECT.MESSAGE',
+      accept: 'QUOTE.REJECT.ACCEPT',
+      decline: 'QUOTE.REJECT.DECLINE'
+    }, this.rejectQuote);
+  }
+&nbsp;
+  public openResendDialog(): void {
+    this.dialogService.openFormDialog(
+      this.config.extendQuote.items,
+      { title: 'QUOTE.EXTEND_EXPIRATION' },
+      this.extendQuoteExpiration
+    );
+  }
+&nbsp;
+  public get quoteIsTrial(): Observable&lt;boolean&gt; {
+    return this.store.select(state =&gt; state.quoteShow.data.purchaseType === 'Trial');
+  }
+&nbsp;
+  public get showPricing(): Observable&lt;boolean&gt; {
+    return this.store.select(state =&gt; !quotesWithoutPricing.includes(state.quoteShow.data.purchaseType));
+  }
+&nbsp;
+  private get isActiveQuote(): boolean {
+    return this.quoteService.state.data.quoteStatus === 'ACTIVE';
+  }
+&nbsp;
+  private get isExpiredQuote(): boolean {
+    return this.quoteService.state.data.quoteStatus === 'EXPIRED';
+  }
+&nbsp;
+  private extendQuoteExpiration = <span class="fstat-no" title="function not covered" >(newDate: { expirationDate: string })</span>: void =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.quoteService</span>
+      .extendExpirationDate(newDate.expirationDate)
+      .subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        this.router.navigate(['/quotes']);</span>
+      });
+  }
+&nbsp;
+  private expireQuote = <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.quoteService.expireQuote().subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      this.router.navigate(['/quotes']);</span>
+    });
+  }
+&nbsp;
+  private rejectQuote = <span class="fstat-no" title="function not covered" >(): void =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.quoteService.rejectQuote().take(1).subscribe(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      this.router.navigate(['/quotes']);</span>
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

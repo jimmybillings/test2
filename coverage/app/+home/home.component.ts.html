@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+home/home.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/+home/</a> home.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70.37% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>38/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>35/49</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
+&nbsp;
+import { CurrentUserService } from '../shared/services/current-user.service';
+import { SearchContext } from '../shared/services/search-context.service';
+import { FilterService } from '../shared/services/filter.service';
+import { UserPreferenceService } from '../shared/services/user-preference.service';
+import { GalleryViewService } from '../shared/services/gallery-view.service';
+import { Gallery, GalleryPath, GalleryPathSegment, GalleryNavigationEvent } from '../shared/interfaces/gallery-view.interface';
+import { HomeVideoService } from './services/home.video.service';
+import { Common } from '../shared/utilities/common.functions';
+import { AppStore } from '../app.store';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'home-component',
+  templateUrl: 'home.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class HomeComponent implements OnInit {
+  public config: any;
+  public data: Observable&lt;Gallery&gt;;
+  public isVideo: boolean = false;
+  public playlist: Subject&lt;any&gt; = new Subject();
+&nbsp;
+  constructor(
+    public currentUser: CurrentUserService,
+    private searchContext: SearchContext,
+    private userPreference: UserPreferenceService,
+    private galleryViewService: GalleryViewService,
+    private homeVideoService: HomeVideoService,
+    private router: Router,
+    private filter: FilterService,
+    private store: AppStore
+  ) { }
+&nbsp;
+  ngOnInit() {
+    this.config = this.store.snapshotCloned(state =&gt; state.uiConfig.components.home.config);
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.currentUser.loggedIn() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.config.galleryView)</span> {
+<span class="cstat-no" title="statement not covered" >      this.data = this.galleryViewService.data;</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.config &amp;&amp; this.config.heroContentType &amp;&amp; this.config.heroContentType.value === 'video') {
+<span class="cstat-no" title="statement not covered" >      this.isVideo = true;</span>
+<span class="cstat-no" title="statement not covered" >      this.getVideoPlaylist();</span>
+    }
+  }
+&nbsp;
+  public newSearchContext(query: any): void {
+    let searchContext: any = { q: query, i: 1, n: this.config.pageSize.value, sortId: this.userPreference.state.sortId };
+    this.filter.clear();
+    this.searchContext.new(searchContext);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onNavigate(event: GalleryNavigationEvent)</span>: void {
+<span class="cstat-no" title="statement not covered" >    const path = Common.clone(this.galleryViewService.state.path);</span>
+<span class="cstat-no" title="statement not covered" >    path.push(event.pathSegment);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (event.method === 'nextLevel') {</span>
+<span class="cstat-no" title="statement not covered" >      this.changeRouteFor(path);</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.searchContext.new({ gq: JSON.stringify(path), n: 100, i: 1, sortId: this.userPreference.state.sortId });</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public getVideoPlaylist(): void {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.homeVideoService.getVideo(this.config.heroContentId.value)</span>
+      .map(<span class="fstat-no" title="function not covered" >video </span>=&gt; <span class="cstat-no" title="statement not covered" >video.playlist)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >playlist </span>=&gt; <span class="cstat-no" title="statement not covered" >this.playlist.next(playlist))</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private changeRouteFor(path: GalleryPath)</span>: void {
+<span class="cstat-no" title="statement not covered" >    const route: any[] = ['/gallery-view'];</span>
+<span class="cstat-no" title="statement not covered" >    if (path &amp;&amp; path.length &gt; 0) <span class="cstat-no" title="statement not covered" >route.push({ path: JSON.stringify(path) });</span></span>
+<span class="cstat-no" title="statement not covered" >    this.router.navigate(route);</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

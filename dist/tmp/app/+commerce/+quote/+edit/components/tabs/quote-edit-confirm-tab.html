@@ -1,0 +1,69 @@
+<header flex="100" layout="column" layout-align="start">
+  <h2 class="commerce-heading">{{'QUOTE.EDIT.CONFIRM_TAB_PG_TITLE' | translate}}</h2>
+</header>
+<div *ngIf="sendDetails | async as sendDetails">
+  <quote-info-component
+    [salesManager]="sendDetails.salesManager"
+    [user]="sendDetails.user"
+    [invoiceContact]="sendDetails.invoiceContact"
+    [billingAccount]="sendDetails.billingAccount">
+  </quote-info-component>
+</div>
+<section class="contact-data summary-heading" flex="100" layout="row">
+  <div flex="33"  flex-xs="100" layout="row" layout-align="space-between start">
+    <ul class="mat-caption">
+      <h5 class="mat-title">{{ 'QUOTE.EDIT.QUOTE_SUMMARY_TITLE' | translate }}</h5>
+      <li>
+        <strong>{{'QUOTE.PURCHASE_TYPE_LABEL' | translate}}</strong>{{ ( quoteTypeTranslationKey | async) | translate }}
+      </li>
+    </ul>
+    <button mat-button class="mini is-outlined" color="primary" (click)="goToTab(0)">
+      {{ 'CART.CONFIRM.EDIT' | translate }}
+    </button>
+  </div>
+</section>
+<projects-component
+  flex="100"
+  [readOnly]="true"
+  [projects]="projects"
+  [quoteType]="quoteType | async"
+  [userCan]="userCan">
+</projects-component>
+
+<section class="cart-total" layout="row" layout-align="center center">
+  <div flex="100">
+    <div *ngIf="showDiscount" flex="100" layout="row" layout-align="end center" class="subtotal mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_SUBTOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ subTotal | async | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+    <div *ngIf="showDiscount" flex="100" layout="row" layout-align="end center" class="discount mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_DISCOUNT' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">{{ discount | async }}</span>
+    </div>
+    <div *ngIf="showTotal" flex="100" layout="row" layout-align="end center" class="total mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_TOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ total | async | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+  </div>
+</section>
+
+<div layout="column" layout-align="end end">
+  <section class="action-items">
+    <button
+      color="primary"
+      mat-raised-button
+      (click)="sendQuote()">
+      {{ 'QUOTE.EDIT.SEND' | translate }}
+    </button>
+  </section>
+</div>

@@ -1,0 +1,1 @@
+{"version":3,"sources":["privacy-policy.routes.ts"],"names":[],"mappings":";;AAEA,wEAAqE;AACrE,8EAA2E;AAC3E,uEAAoE;AAEvD,QAAA,qBAAqB,GAAW;IAC3C;QACE,IAAI,EAAE,gBAAgB;QACtB,SAAS,EAAE,iDAAsB;QACjC,OAAO,EAAE,EAAE,QAAQ,EAAE,+CAAqB,EAAE;QAC5C,WAAW,EAAE,CAAC,yCAAkB,CAAC;QACjC,IAAI,EAAE,EAAE,KAAK,EAAE,2BAA2B,EAAE;KAC7C;CACF,CAAC","file":"privacy-policy.routes.js","sourceRoot":""}

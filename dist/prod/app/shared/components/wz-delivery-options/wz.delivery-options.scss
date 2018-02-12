@@ -1,0 +1,27 @@
+wz-delivery-options {
+  .loading-msg {
+    transition: opacity .33s ease-in-out;
+    opacity: 0;
+    &.visible {
+      opacity: 1;
+    }
+  }
+  .mat-list.aspera-download-options {
+    min-width: 255px;
+    max-width: 255px;
+    .mat-list-item {
+      align-items: center;
+      align-content: center;
+      justify-content: space-between;
+      [mat-menu-item][disabled] {
+        padding: 0 5px 0 0;
+      }
+      .actions {
+        max-width: 85px;
+        min-width: 85px;
+        margin-right: -10px;
+        text-align: right;
+      }
+    }
+  }
+}

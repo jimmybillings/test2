@@ -1,0 +1,145 @@
+<ul>
+  <li
+    *ngFor="let item of items"
+    class="item"
+    flex="100" layout="row"
+    layout-xs="column"
+    [ngClass]="{'focused': type === 'QUOTE' && item.focused}">
+    <div flex="100" flex-gt-sm="55">
+      <div flex="100" layout="row" layout-xs="column">
+        <div flex-gt-xs="40" flex-gt-md="40" flex-gt-lg="25" flex="100" layout-padding class="details">
+          <div>
+            <div class="item-number">
+              <span class="mat-caption item-info heading">{{ type + '.NUMBER_LABEL' | translate }}</span>
+              <span class="number">{{ item.id }}</span>
+            </div>
+            <div class="mat-caption item-info">
+              <span><strong>{{ type + '.CREATED_ON_LABEL' | translate }} </strong>{{ item.createdOn | date:'short' }}</span>
+              <span *ngIf="item.bulkOrderId">
+                <strong>{{ type + '.BULK_ORDER_NAME' | translate }} </strong>{{ item.bulkOrderId }}
+              </span>
+              <span>
+                <strong>{{ type + '.PURCHASE_TYPE_LABEL' | translate }} </strong>
+                {{ type === 'ORDER' ? item.orderType : item.purchaseType ? item.purchaseType : 'Standard' }}
+              </span>
+              <span *ngIf="type === 'QUOTE'">
+                <strong>{{ 'QUOTE.EXPIRATION_LABEL' | translate }} </strong>{{ item.expirationDate | date:'short' }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div flex-gt-xs="60" flex-gt-sm="70" flex-gt-md="80" flex="100" layout-padding>
+          <section class="projects" *ngFor="let project of item.projects">
+            <h3 class="mat-headline">
+              <span class="project-label">
+                {{ project.name }}
+              </span>
+              <span class="asset-count" *ngIf="project.lineItems">
+                <span class="count">{{ project.lineItems.length }}</span>
+              </span>
+              <span class="asset-count" *ngIf="!project.lineItems">
+                <span class="count">0</span>
+              </span>
+            </h3>
+            <div class="mat-caption item-info">
+              <span><strong>{{ type + '.INDEX.PROJECTS.CLIENT_NAME' | translate }} </strong>{{ project.clientName }}</span>
+              <span>
+                <strong>{{ type + '.INDEX.PROJECTS.SUBTOTAL_LABEL' | translate }} </strong>
+                {{ project.subTotal | currency:'USD':true:'1.2-2' }}
+              </span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div flex="100" layout="row" layout-xs="column" class="divider"></div>
+    <div flex-gt-sm="45" layout-sm="100" flex="auto" class="mat-headline">
+      <div class="total" layout="column" layout-align="right center" layout-align-gt-sm="space-between end">
+        <div flex>
+          <h5 flex *ngIf="type === 'QUOTE'" class="status {{ item.quoteStatus.toLowerCase() }}">
+            {{ item.quoteStatus }}
+          </h5>
+          <div flex *ngIf="shouldShowRefundIndicatorFor(item)" class="indicate-refund">
+            <span class="total-label">
+              {{ 'ORDER.INDEX.INDICATE_REFUND' | translate }}
+            </span>
+            <span class="total-amount">
+              {{ item.total | currency:'USD':true:'1.2-2' | slice:1 }}
+            </span>
+          </div>
+          <div flex *ngIf="!item.creditMemoForOrderId">
+            <span class="total-label">
+              {{ type + '.INDEX.TOTAL_LABEL' | translate }}
+            </span>
+            <span class="total-amount">
+              {{ item.total | currency:'USD':true:'1.2-2' }}
+            </span>
+          </div>
+          <div flex="auto" class="mat-caption balance" *ngIf="shouldShowPaymentBalanceFor(item)">
+            <div>
+              <strong>{{ 'ORDER.BALANCE_LABEL' | translate }}</strong>
+              <span class="remaining-balance">{{item.paymentBalance | currency:'USD':true:'1.2-2'}}</span>
+            </div>
+            <div>
+              <strong>{{ 'ORDER.BALANCE_DUE_DATE_LABEL' | translate }}</strong>
+              <span>{{item.paymentDueDate | date: 'MM/dd/yyyy'}}</span>
+            </div>
+          </div>
+
+
+          <!-- <span class="payment-balance" *ngIf="shouldShowPaymentBalanceFor(item)">
+            <span class="payment-balance-amount">
+              Balance: <span>{{item.paymentBalance | currency:'USD':true:'1.2-2'}}</span>
+            </span>
+            <span class="payment-balance-due-date">
+              Due Date: <span>{{item.paymentDueDate | date: 'MM/dd/yyyy'}}</span>
+            </span>
+          </span> -->
+        </div>
+        <div flex layout="row" layout-align="end end" layout-sm="column">
+          <button
+            *ngIf="shouldShowSetFocusedButton(item)"
+            [disabled]="item.focused"
+            (click)="setAsFocusedQuote.emit(item.id)"
+            mat-button
+            class="is-outlined"
+            color="primary">
+            {{ 'QUOTE.INDEX.SET_AS_FOCUSED_BTN' | translate }}  
+          </button>
+          <button
+            *ngIf="shouldShowEditQuoteButton(item)"
+            (click)="editQuote.emit(item.id)"
+            mat-button
+            class="is-outlined"
+            color="primary">
+            {{ 'QUOTE.INDEX.EDIT_BTN_TITLE' | translate }}  
+          </button>
+          <!-- <button 
+            *ngIf="shouldShowRejectQuoteButton(item)"
+            mat-button 
+            color="primary"
+            class="reject-quote" 
+            (click)="rejectQuote.emit(item)">
+            <mat-icon>not_interested</mat-icon>{{ 'QUOTE.REJECT_BTN' | translate }}
+          </button> -->
+          <a
+            *ngIf="shouldShowViewQuoteButton(item)"
+            mat-button
+            class="is-outlined"
+            color="primary"
+            [routerLink]="['/quotes', item.id]">
+            {{ 'QUOTE.INDEX.DETAIL_BTN_TITLE' | translate }}
+          </a>
+          <button
+            *ngIf="shouldShowViewOrderButton"
+            mat-button
+            class="is-outlined"
+            color="primary"
+            [routerLink]="['/orders', item.id]">
+            {{ 'ORDER.INDEX.DETAIL_BTN_TITLE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

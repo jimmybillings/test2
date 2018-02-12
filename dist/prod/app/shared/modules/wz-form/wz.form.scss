@@ -1,0 +1,80 @@
+form button {
+  &.conversion {
+    min-width: 92%;
+  }
+}
+form {
+  padding-top: 5px;
+}
+wz-cc-form,
+wz-form {
+  form {
+    .mat-form-field {
+      width: 100%;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+    a.view-tos {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    mat-card-actions.mat-card-actions {
+      display: flex;
+      margin: 16px 0 0 0;
+      padding: 4px 0;
+    }
+    .indicate-required {
+      font-size: 84%;
+      margin-top: 32px;
+      margin-bottom: 8px;
+      opacity: .8;
+      > span {
+        display: block;
+        position: relative;
+        padding-left: 11px;
+        &::before {
+          content: "*";
+          font-size: 130%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+// cc form has no title
+wz-cc-form form {
+  padding-top: 0;
+}
+  //show hide edit button 
+wz-cc-form button.mini.is-outlined {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin-right: 0;
+}
+
+*[mat-button] {
+  text-transform: uppercase;
+}
+
+mat-checkbox.ng-dirty.ng-invalid {  
+ .mat-error {
+   position: absolute;
+   font-size: 75%;
+   line-height: 1.125;
+  }  
+}
+
+// two shorter inputs on 1 line
+form .two-col div[flex="50"]:first-child {
+  padding: 0 5px 0 0;
+}
+form .two-col div[flex="50"]:last-child {
+  padding: 0 0 0 5px;
+}
+
+.mat-radio-group .mat-radio-button {
+  padding: 3px 0;
+}

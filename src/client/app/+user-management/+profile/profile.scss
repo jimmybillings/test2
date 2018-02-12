@@ -1,0 +1,34 @@
+profile-component .profile-head {
+  padding-left: 4px;
+  padding-right: 4px;
+  header {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    .mat-display-1 {
+      margin: 0;
+      width: calc(100% - 120px);
+      font-size: 26px;
+    }
+  } 
+  .tools {
+    text-align: right;
+    white-space: nowrap;
+  }
+  header div[flex="100"] > button[mat-icon-button] {
+    margin-right: 16px;
+  }
+}
+
+profile-component .mat-primary.edit-basic {
+  margin-top: 6px;
+  margin-bottom: -30px;
+  padding-left: 40px;
+  .material-icons {
+    position: absolute;
+    left:10px;
+    top:3px;
+  }
+}
+profile-component mat-tab-body {
+  min-height: 604px;
+}

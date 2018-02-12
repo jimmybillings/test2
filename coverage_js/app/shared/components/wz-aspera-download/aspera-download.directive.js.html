@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/components/wz-aspera-download/aspera-download.directive.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/components/wz-aspera-download/</a> aspera-download.directive.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">76.92% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>30/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80.65% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>25/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>27/34</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var aspera_service_1 = require("../../../shared/services/aspera.service");
+var app_store_1 = require("../../../app.store");
+var WzAsperaDownloadDirective = (function () {
+    function WzAsperaDownloadDirective(asperaService, store) {
+        this.asperaService = asperaService;
+        this.store = store;
+        this.asperaPreloaded = 'true';
+        this.renditionType = null;
+        this.assetId = null;
+    }
+    WzAsperaDownloadDirective.prototype.onClick = <span class="fstat-no" title="function not covered" >function ($event) {</span>
+<span class="cstat-no" title="statement not covered" >        var _this = this;</span>
+<span class="cstat-no" title="statement not covered" >        if (JSON.parse(this.asperaPreloaded)) {</span>
+<span class="cstat-no" title="statement not covered" >            this.asperaService.initConnect(this.asperaSpec);</span>
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            this.asperaService.getAsperaSpec(this.assetId, this.renditionType)</span>
+                .filter(<span class="fstat-no" title="function not covered" >function (res) {</span> <span class="cstat-no" title="statement not covered" >return res.asperaSpec; </span>})
+                .subscribe(<span class="fstat-no" title="function not covered" >function (res) {</span>
+<span class="cstat-no" title="statement not covered" >                _this.asperaService.initConnect(res.asperaSpec);</span>
+            }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                _this.store.dispatch(<span class="fstat-no" title="function not covered" >function (factory) {</span> <span class="cstat-no" title="statement not covered" >return factory.error.handleCustomError('COMPS.NO_COMP'); </span>});</span>
+            });
+        }
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], WzAsperaDownloadDirective.prototype, "asperaSpec", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], WzAsperaDownloadDirective.prototype, "asperaPreloaded", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], WzAsperaDownloadDirective.prototype, "renditionType", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Number)
+    ], WzAsperaDownloadDirective.prototype, "assetId", void 0);
+    __decorate([
+        core_1.HostListener('click', ['$event']),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", [Object]),
+        __metadata("design:returntype", void 0)
+    ], WzAsperaDownloadDirective.prototype, "onClick", null);
+    WzAsperaDownloadDirective = __decorate([
+        core_1.Directive({
+            selector: '[wzAsperaDownload]'
+        }),
+        __metadata("design:paramtypes", [aspera_service_1.AsperaService, app_store_1.AppStore])
+    ], WzAsperaDownloadDirective);
+    return WzAsperaDownloadDirective;
+}());
+exports.WzAsperaDownloadDirective = WzAsperaDownloadDirective;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvY29tcG9uZW50cy93ei1hc3BlcmEtZG93bmxvYWQvYXNwZXJhLWRvd25sb2FkLmRpcmVjdGl2ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUFBLHNDQUErRDtBQUUvRCwwRUFBd0U7QUFDeEUsZ0RBQThDO0FBTTlDO0lBcUJFLG1DQUFvQixhQUE0QixFQUFVLEtBQWU7UUFBckQsa0JBQWEsR0FBYixhQUFhLENBQWU7UUFBVSxVQUFLLEdBQUwsS0FBSyxDQUFVO1FBbkJoRSxvQkFBZSxHQUFXLE1BQU0sQ0FBQztRQUNqQyxrQkFBYSxHQUFXLElBQUksQ0FBQztRQUM3QixZQUFPLEdBQVcsSUFBSSxDQUFDO0lBaUI2QyxDQUFDO0lBZDlFLDJDQUFPLEdBQVAsVUFBUSxNQUFXO1FBRG5CLGlCQWFDO1FBWEMsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUMsZUFBZSxDQUFDLENBQUMsQ0FBQyxDQUFDO1lBQ3JDLElBQUksQ0FBQyxhQUFhLENBQUMsV0FBVyxDQUFDLElBQUksQ0FBQyxVQUFVLENBQUMsQ0FBQztRQUNsRCxDQUFDO1FBQUMsSUFBSSxDQUFDLENBQUM7WUFDTixJQUFJLENBQUMsYUFBYSxDQUFDLGFBQWEsQ0FBQyxJQUFJLENBQUMsT0FBTyxFQUFFLElBQUksQ0FBQyxhQUFhLENBQUM7aUJBQy9ELE1BQU0sQ0FBQyxVQUFBLEdBQUcsSUFBSSxPQUFBLEdBQUcsQ0FBQyxVQUFVLEVBQWQsQ0FBYyxDQUFDO2lCQUM3QixTQUFTLENBQUMsVUFBQyxHQUFRO2dCQUNsQixLQUFJLENBQUMsYUFBYSxDQUFDLFdBQVcsQ0FBQyxHQUFHLENBQUMsVUFBVSxDQUFDLENBQUM7WUFDakQsQ0FBQyxFQUFFO2dCQUNELEtBQUksQ0FBQyxLQUFLLENBQUMsUUFBUSxDQUFDLFVBQUEsT0FBTyxJQUFJLE9BQUEsT0FBTyxDQUFDLEtBQUssQ0FBQyxpQkFBaUIsQ0FBQyxlQUFlLENBQUMsRUFBaEQsQ0FBZ0QsQ0FBQyxDQUFDO1lBQ25GLENBQUMsQ0FBQyxDQUFDO1FBQ1AsQ0FBQztJQUNILENBQUM7SUFsQlE7UUFBUixZQUFLLEVBQUU7O2lFQUFvQjtJQUNuQjtRQUFSLFlBQUssRUFBRTs7c0VBQWtDO0lBQ2pDO1FBQVIsWUFBSyxFQUFFOztvRUFBOEI7SUFDN0I7UUFBUixZQUFLLEVBQUU7OzhEQUF3QjtJQUdoQztRQURDLG1CQUFZLENBQUMsT0FBTyxFQUFFLENBQUMsUUFBUSxDQUFDLENBQUM7Ozs7NERBYWpDO0lBbkJVLHlCQUF5QjtRQUpyQyxnQkFBUyxDQUFDO1lBQ1QsUUFBUSxFQUFFLG9CQUFvQjtTQUMvQixDQUFDO3lDQXVCbUMsOEJBQWEsRUFBaUIsb0JBQVE7T0FyQjlELHlCQUF5QixDQXNCckM7SUFBRCxnQ0FBQztDQXRCRCxBQXNCQyxJQUFBO0FBdEJZLDhEQUF5QiIsImZpbGUiOiJhcHAvc2hhcmVkL2NvbXBvbmVudHMvd3otYXNwZXJhLWRvd25sb2FkL2FzcGVyYS1kb3dubG9hZC5kaXJlY3RpdmUuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBEaXJlY3RpdmUsIEhvc3RMaXN0ZW5lciwgSW5wdXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuaW1wb3J0IHsgQXNwZXJhU2VydmljZSB9IGZyb20gJy4uLy4uLy4uL3NoYXJlZC9zZXJ2aWNlcy9hc3BlcmEuc2VydmljZSc7XG5pbXBvcnQgeyBBcHBTdG9yZSB9IGZyb20gJy4uLy4uLy4uL2FwcC5zdG9yZSc7XG5cbkBEaXJlY3RpdmUoe1xuICBzZWxlY3RvcjogJ1t3ekFzcGVyYURvd25sb2FkXSdcbn0pXG5cbmV4cG9ydCBjbGFzcyBXekFzcGVyYURvd25sb2FkRGlyZWN0aXZlIHtcbiAgQElucHV0KCkgYXNwZXJhU3BlYzogc3RyaW5nO1xuICBASW5wdXQoKSBhc3BlcmFQcmVsb2FkZWQ6IHN0cmluZyA9ICd0cnVlJztcbiAgQElucHV0KCkgcmVuZGl0aW9uVHlwZTogc3RyaW5nID0gbnVsbDtcbiAgQElucHV0KCkgYXNzZXRJZDogbnVtYmVyID0gbnVsbDtcblxuICBASG9zdExpc3RlbmVyKCdjbGljaycsIFsnJGV2ZW50J10pXG4gIG9uQ2xpY2soJGV2ZW50OiBhbnkpIHtcbiAgICBpZiAoSlNPTi5wYXJzZSh0aGlzLmFzcGVyYVByZWxvYWRlZCkpIHtcbiAgICAgIHRoaXMuYXNwZXJhU2VydmljZS5pbml0Q29ubmVjdCh0aGlzLmFzcGVyYVNwZWMpO1xuICAgIH0gZWxzZSB7XG4gICAgICB0aGlzLmFzcGVyYVNlcnZpY2UuZ2V0QXNwZXJhU3BlYyh0aGlzLmFzc2V0SWQsIHRoaXMucmVuZGl0aW9uVHlwZSlcbiAgICAgICAgLmZpbHRlcihyZXMgPT4gcmVzLmFzcGVyYVNwZWMpXG4gICAgICAgIC5zdWJzY3JpYmUoKHJlczogYW55KSA9PiB7XG4gICAgICAgICAgdGhpcy5hc3BlcmFTZXJ2aWNlLmluaXRDb25uZWN0KHJlcy5hc3BlcmFTcGVjKTtcbiAgICAgICAgfSwgKCkgPT4ge1xuICAgICAgICAgIHRoaXMuc3RvcmUuZGlzcGF0Y2goZmFjdG9yeSA9PiBmYWN0b3J5LmVycm9yLmhhbmRsZUN1c3RvbUVycm9yKCdDT01QUy5OT19DT01QJykpO1xuICAgICAgICB9KTtcbiAgICB9XG4gIH1cblxuICBjb25zdHJ1Y3Rvcihwcml2YXRlIGFzcGVyYVNlcnZpY2U6IEFzcGVyYVNlcnZpY2UsIHByaXZhdGUgc3RvcmU6IEFwcFN0b3JlKSB7IH1cbn1cbiJdfQ==
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

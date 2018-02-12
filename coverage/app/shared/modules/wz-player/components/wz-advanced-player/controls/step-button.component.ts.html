@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-advanced-player/controls/step-button.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-advanced-player/controls/</a> step-button.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>64/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>43/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>54/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">117×</span>
+<span class="cline-any cline-yes">117×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">78×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">253×</span>
+<span class="cline-any cline-yes">253×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">165×</span>
+<span class="cline-any cline-yes">165×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">209×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">209×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">56×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">55×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">243×</span>
+<span class="cline-any cline-yes">243×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">243×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">213×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">243×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+&nbsp;
+import { Frame } from '../../../../wazee-frame-formatter/index';
+import { PlayerState, SeekToFrameRequest } from '../../../interfaces/player.interface';
+&nbsp;
+export type StepSize = '-5s' | '-1s' | '-1f' | '+1f' | '+1s' | '+5s';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-step-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    &lt;button 
+      mat-icon-button 
+      [disabled]="!canStep" 
+      class="mat-icon-button {{ direction }}" 
+      title="{{ title | translate }}" 
+      (click)="onClick()"&gt;
+      &lt;mat-icon class="{{ iconClass }} material-icons"&gt;play_arrow&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  `
+})
+&nbsp;
+export class StepButtonComponent {
+  @Input()
+  public set size(size: StepSize) {
+    this.direction = undefined;
+    this.title = undefined;
+    this.iconClass = undefined;
+&nbsp;
+    if (size.length !== 3) return;
+&nbsp;
+    const [sign, magnitude, unit] = size.split('');
+    if (!sign.match(/^[-+]$/) || !magnitude.match(/^[15]$/) || !unit.match(/^[fs]$/)) return;
+&nbsp;
+    this.direction = sign === '-' ? 'reverse' : 'forward';
+    this.vector = parseInt(magnitude);
+    if (sign === '-') this.vector *= -1;
+    this.unit = unit === 'f' ? 'frame' : 'second';
+    this.title = `ASSET.ADV_PLAYER.SKIP_${magnitude}${unit.toUpperCase()}_${sign === '-' ? 'BACK' : 'FORWARD'}_BTN_TITLE`;
+    this.iconClass = `${magnitude === '5' ? 'five' : 'one'}-${this.unit}`;
+&nbsp;
+    this.calculateBoundary();
+  }
+&nbsp;
+  @Input()
+  public set playerState(newState: PlayerState) {
+    this._playerState = newState;
+    if (!newState) return;
+&nbsp;
+    let needToRecalculate: boolean = false;
+&nbsp;
+    if (newState.framesPerSecond !== this.framesPerSecond) {
+      this.framesPerSecond = newState.framesPerSecond;
+      needToRecalculate = true;
+    }
+&nbsp;
+    if (newState.durationFrame) {
+      const newDurationFrameNumber: number = newState.durationFrame.frameNumber;
+&nbsp;
+      if (newDurationFrameNumber !== this.durationFrameNumber) {
+        this.durationFrameNumber = newDurationFrameNumber;
+        needToRecalculate = true;
+      }
+    }
+&nbsp;
+    if (needToRecalculate) this.calculateBoundary();
+  }
+&nbsp;
+  @Output() request: EventEmitter&lt;SeekToFrameRequest&gt; = new EventEmitter&lt;SeekToFrameRequest&gt;();
+&nbsp;
+  public direction: 'reverse' | 'forward';
+  public title: string;
+  public iconClass: string;
+&nbsp;
+  private _playerState: PlayerState;
+  private vector: number;
+  private unit: 'frame' | 'second';
+  private framesPerSecond: number;
+  private durationFrameNumber: number;
+  private boundaryFrameNumber: number;
+&nbsp;
+  public get canStep(): boolean {
+    if (!this._playerState) return false;
+&nbsp;
+    const currentFrame: Frame = this._playerState.currentFrame;
+    if (!currentFrame) return false;
+&nbsp;
+    const currentFrameNumber: number = currentFrame.frameNumber;
+&nbsp;
+    return this.direction === 'reverse'
+      ? currentFrameNumber &gt;= this.boundaryFrameNumber
+      : currentFrameNumber &lt;= this.boundaryFrameNumber;
+  }
+&nbsp;
+  public onClick(): void {
+    if (this.canStep) this.request.emit({ type: 'SEEK_TO_FRAME', frame: this.seekTarget });
+  }
+&nbsp;
+  private calculateBoundary(): void {
+    const magnitude: number = this.direction === 'reverse' ? -this.vector : this.vector;
+    const frame: Frame = new Frame(this.framesPerSecond);
+&nbsp;
+    if (this.unit === 'frame') {
+      frame.setFromFrameNumber(magnitude);
+    } else {
+      frame.setFromSeconds(magnitude);
+    }
+&nbsp;
+    this.boundaryFrameNumber = this.direction === 'reverse'
+      ? frame.frameNumber
+      : this.durationFrameNumber - frame.frameNumber;
+  }
+&nbsp;
+  private get seekTarget(): Frame {
+    const seekTarget: Frame = new Frame(this.framesPerSecond).setFromFrameNumber(this._playerState.currentFrame.frameNumber);
+&nbsp;
+    if (this.unit === 'frame') {
+      seekTarget.addFrames(this.vector);
+    } else {
+      seekTarget.setFromSeconds(seekTarget.asSeconds() + this.vector);
+    }
+&nbsp;
+    return seekTarget;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

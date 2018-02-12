@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wazee-frame-formatter/timecodeParser.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wazee-frame-formatter/</a> timecodeParser.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>46/46</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1627×</span>
+<span class="cline-any cline-yes">1627×</span>
+<span class="cline-any cline-yes">1627×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1627×</span>
+<span class="cline-any cline-yes">1627×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">544×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-yes">105×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Time } from './time';
+import { TimecodeFormat } from './timecodeFormat';
+import { TimecodeGenerator } from './timecodeGenerator';
+&nbsp;
+export class TimecodeParser {
+  public timecodeGenerator: TimecodeGenerator;
+  public framesPerSecond: number;
+  public accurateFramesPerSecond: number;
+&nbsp;
+  private timePieces: string[];
+  private time: Time;
+&nbsp;
+  constructor(framesPerSecond: number) {
+    this.framesPerSecond = framesPerSecond;
+    this.timecodeGenerator = new TimecodeGenerator(framesPerSecond);
+    this.time = new Time(framesPerSecond);
+&nbsp;
+    const integralFramesPerSecond = Math.round(framesPerSecond);
+    this.accurateFramesPerSecond =
+      framesPerSecond === integralFramesPerSecond ? framesPerSecond : integralFramesPerSecond * 1000 / 1001;
+  }
+&nbsp;
+  public asFrameNumber(string: string, format: TimecodeFormat): number {
+    this.parseTimeFrom(string, format);
+    this.adjustFramesFor(format);
+&nbsp;
+    return this.time.asFrameNumber();
+  }
+&nbsp;
+  private parseTimeFrom(string: string, format: TimecodeFormat): TimecodeParser {
+    if (format === TimecodeFormat.SECONDS) {
+      this.time.clear();
+      this.time.frames = Math.round(parseFloat(string) * this.accurateFramesPerSecond);
+      return this;
+    }
+&nbsp;
+    if (format === TimecodeFormat.MINIMAL_TIME_CONVERSION) {
+      string = this.convertToFullTimecode(string);
+    }
+&nbsp;
+    this.timePieces = string.replace(';', ':').split(':').reverse();
+&nbsp;
+    while (this.timePieces.length &lt; 4) {
+      this.timePieces.push('0');
+    }
+&nbsp;
+    this.time.clear();
+    this.time.hours = this.getTimePieceAtIndex(3);
+    this.time.minutes = this.getTimePieceAtIndex(2);
+    this.time.seconds = this.getTimePieceAtIndex(1);
+    this.time.frames = this.getTimePieceAtIndex(0);
+&nbsp;
+    return this;
+  }
+&nbsp;
+  private convertToFullTimecode(timecode: string): string {
+    if (timecode.indexOf(';') &gt;= 0) return timecode;
+&nbsp;
+    const colons = timecode.match(/:/g);
+    if (colons &amp;&amp; colons.length === 3) return timecode;
+&nbsp;
+    return timecode + ';00';
+  }
+&nbsp;
+  private getTimePieceAtIndex(index: number): number {
+    return parseInt(this.timePieces[index], 10) || 0;
+  }
+&nbsp;
+  private adjustFramesFor(format: TimecodeFormat): TimecodeParser {
+    switch (format) {
+      case TimecodeFormat.DROPFRAME:
+        this.time.addFrames(-TimecodeGenerator.extraFramesNeededForDropFrame(this.framesPerSecond, this.time));
+        break;
+&nbsp;
+      case TimecodeFormat.SIMPLE_TIME_CONVERSION:
+      case TimecodeFormat.MINIMAL_TIME_CONVERSION:
+        const adjustedFrames = Math.round(this.time.totalWholeSeconds() * this.accurateFramesPerSecond) + this.time.frames;
+&nbsp;
+        this.time.clear();
+        this.time.frames = adjustedFrames;
+    }
+&nbsp;
+    return this;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

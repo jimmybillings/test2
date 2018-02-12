@@ -1,0 +1,170 @@
+<ul class="asset-grid-view" *ngIf="assets">
+  <li *ngFor="let asset of assets">
+    <div class="asset" (mouseenter)=loadPricing(asset)>
+      <div class="asset-name" *ngIf="showAssetName">{{ nameOf(asset) }}</div>
+      <a
+        flex=""
+        [routerLink]="routerLinkFor(asset)"
+        class="asset-thb"
+        [wzSpeedview]="asset">
+        <img *ngIf="hasThumbnail(asset)" src="{{ thumbnailUrlFor(asset) }}"/>
+        <span *ngIf="hasTitle(asset)" class="mdata-0">
+          <span>{{ titleOf(asset) }}</span>
+        </span>
+        <ng-container *ngIf="commentCountFor(asset) | async">
+          <span class="asset-attribute-overlays">
+            <span *ngIf="commentCountFor(asset) | async" class="comment-count">
+              <span class="count">{{ commentCountFor(asset) | async }}</span>
+            </span>
+          </span>
+        </ng-container>
+        <!-- CRUX-3173 JH -->
+        <!-- Once we have banners coming back with the asset response use the following -->
+        <!-- css is all in place asset.banners maybe be a boolean getter (assetHasBanners)-->
+        <!-- This mark-up block will replace the ng-container above -->
+        <!-- same code will need to be put in wz.asset-list.html-->
+        <!-- <ng-container *ngIf="(commentCountFor(asset) | async) || asset.banners">
+          <span class="asset-attribute-overlays">
+            <span *ngIf="commentCountFor(asset) | async" class="comment-count">
+              <span class="count">{{ commentCountFor(asset) | async }}</span>
+            </span>
+            <ng-container *ngIf="asset.banners">
+              <span *ngFor="let banner of asset.banners" class="asset-restricted-banner">
+                <span class="label" [ngStyle]="{'border-color':'#'+ banner.backgroundColor,'background-color':'#'+ banner.backgroundColor, 'color':'#'+ banner.txtColor}">{{ 'COLLECTION.BANNER'+'_'+banner.value | uppercase | translate }}</span>
+              </span>
+            </ng-container>
+          </span>
+        </ng-container> -->
+        <span *ngIf="hasFormatType(asset)" class="mdata-2">
+          <span [ngClass]="formatClassNameFor(asset)" class="sd-hd">{{ formatTypeOf(asset) }}</span>
+        </span>
+        <span *ngIf="hasDuration(asset)" class="mdata-3">
+          <span>{{ subclipDurationFrameFor(asset) | timecode }}</span>
+        </span>
+        <span *ngIf="isImage(asset)" class="mdata-4">
+          <span class="image"></span>
+        </span>
+        <span *ngIf="isSubclipped(asset)" class="subclip-timeline">
+          <span class="subclip-segment" [ngStyle]="subclipSegmentStylesFor(asset)"></span>
+        </span>
+      </a>
+      <section class="actions">
+        <nav class="asset-options" flex layout-align="end center">
+          <!-- OPEN METADATA IN CORE -->
+          <a mat-icon-button
+            class="core-link"
+            *ngIf="userCan.editClips()" 
+            href="https://core.wazeedigital.com/video/edit/{{ nameOf(asset) }}.do" 
+            target="_blank"
+            title="{{ 'COLLECTION.SHOW.ASSET_MORE_MENU.OPEN_IN_CORE' | translate }}">
+            <mat-icon>tune</mat-icon>
+          </a>
+
+          <!-- ADD TO CART -->
+          <button
+            data-pendo="asset-result_add-to-cart-btn"
+            *ngIf="userCan.addToCart()"
+            [disabled]="!canBePurchased(asset)"
+            mat-icon-button
+            title="{{ (userCan.administerQuotes() ? 'COLLECTION.SHOW.ADD_TO_QUOTE_BTN_TITLE' : 'COLLECTION.SHOW.ADD_TO_CART_BTN_TITLE') | translate}}"
+            (click)="addAssetToCart(asset);">
+              <mat-icon>{{userCan.administerQuotes() ? 'work': 'shopping_cart'}}</mat-icon>
+          </button>
+          <!-- DOWNLOAD COMPS-->
+          <button
+            data-pendo="asset-result_download-btn"
+            mat-icon-button
+            title="{{ 'COLLECTION.SHOW.DOWNLOAD_BTN_TITLE_ENABLED' | translate }}"
+            (click)="loadDeliveryOptionsFor(asset)"
+            [mat-menu-trigger-for]="downloadCompMenu">
+              <mat-icon>file_download</mat-icon>
+          </button>
+
+          <!-- ADD / ADD_AGAIN / REMOVE FROM COLLECTION -->
+          <ng-container *ngIf="userCan.haveCollections()">
+            <button
+              [disabled]="!(userCanEditActiveCollection | async)"
+              mat-icon-button
+              *ngIf="canBeRemoved(asset)"
+              title="{{ 'COLLECTION.REMOVE_FROM_COLLECTION_HOVER_TITLE' | translate:{collectionName:activeCollection.name} }}"
+              (click)="removeFromActiveCollection(asset)">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+            <button
+              class="add-to-collection-btn"
+              [disabled]="!userCan.editCollections()"
+              mat-icon-button 
+              *ngIf="!inCollection(asset)"
+              title="{{ 'COLLECTION.ADD_TO_COLLECTION_HOVER_TITLE' | translate:{collectionName:activeCollection.name} }}"
+              (click)="addToActiveCollection(asset)">
+              <mat-icon>add_box</mat-icon>
+            </button>
+            <button
+              [disabled]="!userCan.editCollections()"
+              mat-icon-button
+              *ngIf="canBeAddedAgain(asset)"
+              title="{{ 'COLLECTION.ADD_AGAIN_TO_COLLECTION_HOVER_TITLE' | translate:{collectionName:activeCollection.name} }}"
+              (click)="addToActiveCollection(asset)">
+              <mat-icon>library_add</mat-icon>
+            </button>
+          </ng-container>
+
+          <button mat-icon-button 
+            *ngIf="assetType === 'collection' && userCan.createSubclips(asset)"
+            title="{{'COLLECTION.SHOW.ASSET_MORE_BTN_TITLE' | translate}}"
+            [mat-menu-trigger-for]="moreCollectionAssetMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu x-position="before" y-position="below" #moreCollectionAssetMenu="matMenu">
+            <button
+              [disabled]="!(userCanEditActiveCollection | async)"
+              mat-menu-item
+              (click)="editAsset(asset)">
+              <mat-icon>theaters</mat-icon>
+              <span>
+                {{ (isSubclipped(asset)
+                    ? 'COLLECTION.SHOW.ASSET_MORE_MENU.EDIT_SUBCLIPPING'
+                    : 'COLLECTION.SHOW.ASSET_MORE_MENU.ADD_SUBCLIPPING') | translate }}
+              </span>
+            </button>
+            <!-- <button [disabled]="true" mat-menu-item>
+              <mat-icon>mode_comment</mat-icon>
+              <span>
+                {{ 'COLLECTION.SHOW.ASSET_MORE_MENU.OPEN_COMMENTS' | translate }}
+              </span>
+            </button>
+            <button [disabled]="true" mat-menu-item>
+              <mat-icon>share</mat-icon>
+              <span>
+              {{ 'COLLECTION.SHOW.ASSET_MORE_MENU.ASSET_SHARING' | translate }}
+              </span>
+            </button> -->
+            <!-- ADD TO ANOTHER COLLECTION -->
+            <button
+              *ngIf="canAddToDifferentCollection"
+              mat-menu-item
+              (click)="addToDifferentCollection(asset)">
+                <mat-icon>content_copy</mat-icon>
+              <span>{{ 'COLLECTION.SHOW.ADD_TO_DIFFERENT_COLLECTION' | translate}}</span>
+            </button>
+            <a mat-menu-item [routerLink]="routerLinkFor(asset)">
+              <mat-icon>details</mat-icon>
+              <span>
+                {{ 'COLLECTION.SHOW.ASSET_MORE_MENU.OPEN_DETAILS' | translate }}
+              </span>
+            </a>
+          </mat-menu>
+        </nav>
+      </section>
+      <a [routerLink]="[]" class="asset-desc">
+        <span *ngIf="hasDescription(asset)" class="mdata-1">
+          {{ descriptionOf(asset) }}
+        </span>
+      </a>
+    </div>
+  </li>
+</ul>
+
+<mat-menu x-position="after" #downloadCompMenu="matMenu">
+  <wz-delivery-options [assetId]="assetId"></wz-delivery-options>
+</mat-menu>

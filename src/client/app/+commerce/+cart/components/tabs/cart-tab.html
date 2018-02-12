@@ -1,0 +1,42 @@
+<projects-component
+  [projects]="projects" 
+  [config]="config" 
+  [userCan]="userCan" 
+  [allRMAssetsHaveAttributes]="rmAssetsHaveAttributes"
+  (projectsNotify)="onNotification($event)">
+</projects-component>
+
+<section class="cart-total" layout="row" layout-align="center center">
+	<div flex="100">
+    <div *ngIf="showTotal" flex="100" layout="row" layout-align="end center" class="total mat-headline">
+      <span class="total-label">
+          {{ 'CART.CART_TOTAL' | translate }}
+      </span>
+      <span class="total-amount">
+        {{ total | async | currency:'USD':true:'1.2-2' }}
+      </span>
+		</div>
+    <div flex="100" layout="row" layout-align="end center">
+      <section class="action-items" flex="100" flex-gt-xs="50">
+        <button
+          *ngIf="shouldShowLicenseDetailsBtn()"
+          mat-button
+          class="is-outlined"
+          color="primary"
+          (click)="showLicenseAgreements()">
+            {{ 'CART.SHOW_LICENSES_BTN_LABEL' | translate }}
+        </button>
+        <button
+          [disabled]="!userCanProceed"
+          color="primary"
+          mat-raised-button
+          (click)="checkout()">
+            {{ 'CART.PROCEED_BTN_LABEL' | translate }}
+        </button>
+      </section>
+    </div>
+    <div flex="100" layout="row" layout-align="end center" class='select-usage-warn' *ngIf='showUsageWarning'>
+      {{ 'CART.SELECT_USAGE_WARN' | translate }}
+    </div>
+	</div>
+</section>

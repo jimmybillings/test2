@@ -1,0 +1,40 @@
+@mixin wz-filter-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  .filter {
+    .exclusive-list .mat-list-item {     
+      .mat-button {
+        &.mat-primary.active {
+          background-color: rgba(mat-color($primary, default), 1);
+          color: mat-color($primary, default-contrast);
+        }
+      }
+    } 
+    li {
+      .filter-subhead {
+        color: rgba(mat-color($foreground, base), .54);
+        &:hover {
+          background-color: rgba(mat-color($foreground, base), .02);
+        }
+      }
+    }
+  }
+
+  .date-range {
+    .connector {
+      color: rgba(mat-color($foreground, base), .54);
+    }
+    
+    input {
+      border-color: mat-color($foreground, divider);
+      &:focus, &:active {
+        border-color: mat-color($primary, default);
+      }
+    }
+  }
+
+  .filter .mat-checkbox-disabled:not(.mat-checkbox-checked) .mat-checkbox-label {
+    color: mat-color($foreground, disabled-text);
+  }
+}

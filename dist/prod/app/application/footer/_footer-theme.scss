@@ -1,0 +1,55 @@
+@mixin wz-footer-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+
+  app-footer {
+    background-color: mat-color($primary, 900, .9);
+    .glb {
+      @include text-contrast(mat-color($primary, 900), mat-color($mat-grey, 700), mat-color($mat-grey, 400, .8));
+      .logo-wrapper {
+        .logo {
+          background-image: url($logo-footer);
+        }
+      }
+      ul.social {
+        li {
+          a {
+            color: mat-color($foreground, text);
+            &:hover {
+              color: mat-color($primary, default, .9);
+            } 
+          }
+        }
+      }
+      .contact {
+        a.email {
+          color: mat-color($mat-grey, 500);
+        }
+      }
+      .footer-link {
+        color: mat-color($mat-grey, 500);
+        &:hover {
+          color: mat-color($mat-grey, 200);
+        }
+      }
+      .sales {
+        *[mat-button] {
+          
+          @include text-contrast(mat-color($primary, 900), mat-color($foreground, secondary-text), mat-color($mat-grey, 400, .8));
+          &:hover {
+            background: mat-color($background, hover);
+            color: mat-color($primary, 300);
+          }
+          &.phone:hover {
+            @include text-contrast(mat-color($primary, 900), mat-color($foreground, secondary-text), mat-color($mat-grey, 400, .8));
+          }
+        }
+      }
+    }
+    .glb.powered-by {
+      background-color: mat-color($foreground, base, .12);
+    }
+  }
+}

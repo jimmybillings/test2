@@ -1,0 +1,48 @@
+<div>
+  <form
+    [formGroup]="searchForm"
+    (ngSubmit)="onSubmit(searchForm.value.query)"
+    class="mat-inline-form"
+    autocomplete="off">
+    <wz-input-suggestions
+      #suggestions 
+      layout="row"
+      flex="100"
+      layout-align="start"
+      [fControl]="searchForm.controls['query']" 
+      [rawField]="formOptions"
+      (newSuggestion)="onSubmit($event)"> 
+
+      <button
+        data-pendo="search-bar_toggle-filters-btn"
+        mat-button
+        title="show filters"
+        type="button"
+        *ngIf="filtersAreAvailable | async"
+        (click)="toggleFilters()"
+        class="filter-toggle"
+        tabindex="-1">
+          {{ 'SEARCH.FILTERS.FILTERS_BTN_LABEL' | translate }}<mat-icon>arrow_drop_down</mat-icon>
+      </button>
+
+      <input
+        (keydown)="suggestions.inputKeyDown($event)"
+        type="text"
+        placeholder="{{ 'HOME.SEARCH_BOX_LABEL' | translate }}"
+        formControlName="query"/>
+        
+      <button data-pendo="search-bar_search-btn" type="submit" tabindex="-1"><mat-icon>search</mat-icon></button>
+    </wz-input-suggestions>
+  </form>
+
+  <div class="close-search" flex="none"> 
+    <button
+      flex="none"
+      mat-icon-button
+      class="close-btn"
+      (click)="toggleSearch()"
+      title="close search">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

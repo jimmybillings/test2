@@ -1,0 +1,15 @@
+@mixin wz-form-theme($theme) {
+  $warn: map-get($theme, warn);
+
+  mat-checkbox.ng-dirty.ng-invalid {
+    .mat-checkbox-inner-container .mat-checkbox-frame {
+      border-color: mat-color($warn); 
+    }
+    .mat-checkbox-label {
+      color: mat-color($warn);
+    }
+  }
+  .mat-form-field {
+    width: 100%;
+  }
+}

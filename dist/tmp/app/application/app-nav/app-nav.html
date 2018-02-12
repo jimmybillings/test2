@@ -1,0 +1,157 @@
+<mat-toolbar *ngIf="config">
+  <a flex="" [routerLink]="['/']" title="Home" class="home-link">
+    <div class="logo-wrapper">
+      <div class="logo">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8xMi8wNy0xMDo1NzowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNS4xIE1hY2ludG9zaCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGRkFGNEJDN0UyNDQxMUU1QjI4NTkxRkY3MTlEMUZBOCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGRkFGNEJDOEUyNDQxMUU1QjI4NTkxRkY3MTlEMUZBOCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZGQUY0QkM1RTI0NDExRTVCMjg1OTFGRjcxOUQxRkE4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkZGQUY0QkM2RTI0NDExRTVCMjg1OTFGRjcxOUQxRkE4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+RndJVgAAABBJREFUeNpi+P//PwNAgAEACPwC/tuiTRYAAAAASUVORK5CYII="
+        [alt]="config.title.value"/>
+      </div>
+    </div>
+  </a>
+  <!-- ONLY SHOWS UP FOR POC19 -->
+  <wz-site-changer-component></wz-site-changer-component>
+
+  <!--THESE LINKS SHOW ONLY FOR LOGGED IN USERS-->
+  <button
+    hide
+    mat-button
+    show-gt-xs
+    data-pendo="user-menu-trigger"
+    *ngIf="currentUser.loggedInState() | async"
+    [mat-menu-trigger-for]="navigation"
+    [ngClass]="{'mat-primary': !(headerIsFixed | async) }"
+    class="is-dd nav-dropdown-btn">
+    {{ currentUser.fullName() | async }}
+  </button>
+  
+  <button
+    mat-button
+    data-pendo="user-menu-trigger-mobile"
+    *ngIf="currentUser.loggedInState() | async"
+    [mat-menu-trigger-for]="navigation"
+    [ngClass]="{'mat-primary': !(headerIsFixed | async) }"
+    hide-gt-xs
+    show-xs
+    class="is-dd icon-dd-button">
+    <mat-icon>person</mat-icon>
+  </button>
+  
+  <!--THESE LINKS SHOW ONLY FOR LOGGED OUT USERS-->
+  <a
+    mat-button
+    *ngIf="!(currentUser.loggedInState() | async)"
+    [routerLink]="['/user/login']">
+    {{ 'HEADER.LOGIN_LABEL' | translate}}
+  </a>
+  
+  <a
+    mat-button
+    [ngClass]="{'mat-accent': !(headerIsFixed | async) }"
+    *ngIf="!(currentUser.loggedInState() | async)"
+    [routerLink]="['/user/register']"
+    class="is-outlined">
+    {{ 'HEADER.SIGN_UP_LABEL' | translate}}
+  </a>
+
+  <!--THESE LINKS ONLY SHOW IF THE SEARCH BAR IS ACTIVE-->
+
+  <button
+    *ngIf="headerCanBeFixed | async"
+    mat-icon-button title="Search"
+    (click)="toggleSearch()"
+    class="open-search">
+    <mat-icon>search</mat-icon>
+  </button>
+  
+  <button
+    *ngIf="userCan.viewCollectionTray()"
+    mat-icon-button
+    title="{{'HEADER.OPEN_COLLECTIONS_LABEL' | translate}}"
+    (click)="toggleCollectionTray()"
+    class="open-collection-tray">
+    <mat-icon>folder_open</mat-icon>
+  </button>
+  
+  <a 
+    *ngIf="userCan.viewCartIcon() && !userCan.administerQuotes()" 
+    mat-icon-button
+    class="cart"
+    title="{{ 'HEADER.USER_DD_MENU.CART_LINK' | translate}}"
+    [routerLink]="['/cart']">
+    <mat-icon>shopping_cart</mat-icon>
+    <span class="asset-count" *ngIf="cartSize && cartSize > 0">
+      <span class="count">{{ formatBadgeNumber(cartSize) }}</span>
+    </span>
+  </a>
+
+  <a 
+    *ngIf="userCan.viewCartIcon() && userCan.administerQuotes()" 
+    mat-icon-button
+    class="cart"
+    title="{{ 'HEADER.USER_DD_MENU.QUOTE_LINK'| translate}}"
+    [routerLink]="['/active-quote']">
+    <mat-icon>work</mat-icon>
+    <span class="asset-count" *ngIf="cartSize && cartSize > 0">
+      <span class="count">{{ formatBadgeNumber(cartSize) }}</span>
+    </span>
+  </a>
+</mat-toolbar>
+
+<mat-menu x-position="before" #navigation="matMenu">
+  <a
+    data-pendo="user-menu_profile-link"
+    mat-menu-item
+    *ngIf="currentUser.loggedInState() | async"
+    (click)="navigateTo('/user')">
+    <mat-icon>person</mat-icon>{{ 'HEADER.USER_DD_MENU.PROFILE_LINK' | translate }}
+  </a>
+
+  <a
+    data-pendo="user-menu_collections-link"
+    mat-menu-item
+    *ngIf="userCan.viewCollections()"
+    (click)="navigateTo('/collections')">
+    <mat-icon>folder_open</mat-icon>{{ 'HEADER.USER_DD_MENU.COLLECTIONS_LINK' | translate }}
+  </a>
+
+  <a
+    data-pendo="user-menu_cart-link"
+    mat-menu-item
+    *ngIf="userCan.addToCart() && !userCan.administerQuotes()"
+    (click)="navigateTo('/cart')">
+    <mat-icon>shopping_cart</mat-icon>{{ 'HEADER.USER_DD_MENU.CART_LINK' | translate}}
+  </a>
+  
+  <a
+    data-pendo="user-menu_active-quote-link"
+    mat-menu-item
+    *ngIf="userCan.addToCart() && userCan.administerQuotes()"
+    (click)="navigateTo('/active-quote')">
+    <mat-icon>work</mat-icon>{{ 'HEADER.USER_DD_MENU.QUOTE_LINK' | translate}}
+  </a>
+
+  <a
+    data-pendo="user-menu_quotes-link"
+    mat-menu-item
+    *ngIf="userCan.addToCart()"
+    (click)="navigateTo('/quotes')">
+    <mat-icon>inbox</mat-icon>{{ 'HEADER.USER_DD_MENU.QUOTES_SAVED_LINK' | translate }}
+  </a>
+
+  <a
+    data-pendo="user-menu_orders-link"
+    mat-menu-item
+    *ngIf="userCan.addToCart()"
+    (click)="navigateTo('/orders')">
+    <mat-icon>description</mat-icon>{{ 'HEADER.USER_DD_MENU.ORDERS_LINK' | translate }}
+  </a>
+
+  <div class="divider"></div>
+
+  <a
+    data-pendo="user-menu_logout-link"
+    mat-menu-item
+    *ngIf="currentUser.loggedInState() | async"
+    (click)="logOut()">
+    <mat-icon>power_settings_new</mat-icon>{{ 'HEADER.LOGOUT_LABEL' | translate}}
+  </a>
+</mat-menu>

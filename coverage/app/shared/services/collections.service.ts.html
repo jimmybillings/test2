@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/collections.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> collections.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.84% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>66/76</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">80% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.31% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>23/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.21% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>50/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Collection, CollectionSummary } from '../../shared/interfaces/collection.interface';
+import { Pojo, Asset } from '../../shared/interfaces/common.interface';
+import { Observable } from 'rxjs/Observable';
+import { CollectionsStore } from '../stores/collections.store';
+import { ApiService } from '../../shared/services/api.service';
+import { Api, LoadingIndicatorOption } from '../../shared/interfaces/api.interface';
+import { AppStore, ActiveCollectionState } from '../../app.store';
+&nbsp;
+@Injectable()
+export class CollectionsService {
+  private params: any;
+&nbsp;
+  constructor(
+    private collectionsStore: CollectionsStore,
+    private api: ApiService,
+    private store: AppStore
+  ) {
+    this.setSearchParams();
+    this.staySyncedWithActiveCollection();
+  }
+&nbsp;
+  public get data(): Observable&lt;CollectionSummary&gt; {
+    return this.collectionsStore.data;
+  }
+&nbsp;
+  public get state(): any {
+    return this.collectionsStore.state;
+  }
+&nbsp;
+  public load(params?: any, loadingIndicator: LoadingIndicatorOption = false): Observable&lt;any&gt; {
+    if (params) this.params = Object.assign({}, this.params, params);
+&nbsp;
+    return this.api.get(Api.Assets, `collectionSummary/search`, { parameters: this.params, loadingIndicator: loadingIndicator })
+      .do(response =&gt; this.collectionsStore.replaceAllCollectionsWith(response));
+  }
+&nbsp;
+  public create(collection: Collection): Observable&lt;Collection&gt; {
+    return this.api.post(Api.Assets, 'collectionSummary', { body: collection, loadingIndicator: true })
+      .do(response =&gt; this.collectionsStore.add(response as Collection));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public duplicate(collection: Collection)</span>: Observable&lt;Collection&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.api.post(Api.Identities, 'collection', { body: collection, loadingIndicator: true });</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public getByIdAndDuplicate(id: number)</span>: Observable&lt;Pojo&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.api.get(Api.Identities, `collection/${id}`, { loadingIndicator: true })</span>
+      .map(<span class="fstat-no" title="function not covered" >response </span>=&gt; <span class="cstat-no" title="statement not covered" >this.prepareForDuplication(response))</span>;
+  }
+&nbsp;
+  public update(id: number, collectionUpdates: Collection): Observable&lt;any&gt; {
+    // ANNOYANCES:
+    // - If the API supported a PATCH request for this endpoint, we could just call it with the id and collectionUpdates.
+    //   But it doesn't so we must GET, modify the response, and PUT it back.
+    // - The GET returns an "assets" property, which is undocumented in Swagger.
+    // - The PUT accepts the "assets" property, but somehow ignores it (also undocumented in Swagger).  Therefore, we don't
+    //   need to remove it from the body sent with the PUT request here.
+&nbsp;
+    const endpoint: string = `collection/${id}`;
+&nbsp;
+    return this.api.get(Api.Identities, endpoint, { loadingIndicator: 'onBeforeRequest' })
+      .switchMap(response =&gt;
+        this.api.put(
+          Api.Identities,
+          endpoint,
+          { body: { ...response, ...collectionUpdates }, loadingIndicator: 'offAfterResponse' }
+        )
+      );
+  }
+&nbsp;
+  public delete(collectionId: number, <span class="missing-if-branch" title="else path not taken" >E</span>loadingIndicator: LoadingIndicatorOption = 'onBeforeRequest'): Observable&lt;any&gt; {
+    this.collectionsStore.deleteCollectionWith(collectionId);
+    return this.api.delete(Api.Identities, `collection/${collectionId}`, { loadingIndicator: loadingIndicator })
+      .switchMap(_ =&gt; {
+        if (this.store.match(collectionId, state =&gt; state.activeCollection.collection.id)) {
+          this.store.dispatch(factory =&gt; factory.activeCollection.load());
+&nbsp;
+          return this.store.blockUntil(state =&gt; !state.activeCollection.loading).switchMap(() =&gt; this.load());
+        } else {
+          return this.load();
+        }
+      });
+  }
+&nbsp;
+  public reset(): void {
+    this.collectionsStore.deleteAllCollections();
+  }
+&nbsp;
+  public destroyAll(): void {
+    this.collectionsStore.deleteAllCollections();
+    this.store.dispatch(factory =&gt; factory.activeCollection.reset());
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public getItems(collectionId: number)</span>: Observable&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.api.get(</span>
+      Api.Assets,
+      `collectionSummary/assets/${collectionId}`,
+      { parameters: { i: '0', n: '100' }, loadingIndicator: true }
+    );
+  }
+&nbsp;
+  private staySyncedWithActiveCollection(): void {
+    this.store.select(state =&gt; state.activeCollection).subscribe((activeCollectionState: ActiveCollectionState) =&gt; {
+      if (this.state.items &amp;&amp; this.state.items.length &gt; 0 &amp;&amp; !activeCollectionState.loading) {
+        this.collectionsStore.update(activeCollectionState.collection);
+      }
+    });
+  }
+&nbsp;
+  private setSearchParams() {
+    this.params = { q: '', accessLevel: 'all', s: '', d: '', i: 0, n: 200 };
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private prepareForDuplication(collection: Pojo)</span>: Pojo {
+<span class="cstat-no" title="statement not covered" >    let collectionCopy: Pojo = {</span>
+      name: collection.name,
+      tags: collection.tags,
+      siteName: collection.siteName,
+    };
+<span class="cstat-no" title="statement not covered" >    if (collection.assets) {</span>
+<span class="cstat-no" title="statement not covered" >      collectionCopy.assets = collection.assets.map(<span class="fstat-no" title="function not covered" >(asset: Asset)</span> =&gt; <span class="cstat-no" title="statement not covered" >(</span></span>
+        {
+          assetId: asset.assetId,
+          timeEnd: asset.timeEnd,
+          timeStart: asset.timeStart
+        }
+      ));
+    }
+<span class="cstat-no" title="statement not covered" >    return collectionCopy;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

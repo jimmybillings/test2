@@ -1,0 +1,58 @@
+<section class="header" layout="row" layout-align="center center">
+	<header flex-gt-lg="85" flex-lg="85" flex-gt-sm="95" flex="100">
+		<wz-item-search-form
+			[ngClass]="{ 'revealed' : itemSearchIsShowing }" 
+			[hidden]="!itemSearchIsShowing" 
+			[currentSearchQuery]="{'q': ''}"
+			placeholderTxt="{{ type + '.INDEX.SEARCH_BOX_LABEL' | translate }}"
+			(query)="search.emit($event)"
+			(closeSearch)="toggleSearch()">
+		</wz-item-search-form>
+		<div flex="100" layout="row" layout-align="space-between end">
+			<h2 flex="grow" class="mat-display-1">{{ type + '.INDEX.PAGE_TITLE' | translate }}</h2>
+			<div class="tools" flex="auto">
+				<button
+					color="primary"
+					mat-icon-button
+					*ngIf="!itemSearchIsShowing"
+					title="{{ type + '.INDEX.SEARCH_BTN_TITLE' | translate }}"
+					type="button"
+					(click)="toggleSearch()">
+					<mat-icon *ngIf="!itemSearchIsShowing">search</mat-icon>
+        </button>
+				<button
+					color="primary"
+					mat-icon-button
+					*ngIf="itemSearchIsShowing"
+					class="collapse-search"
+					title="{{ type + '.INDEX.COLLAPSE_SEARCH_BTN_TITLE' | translate }}"
+					type="button"
+					(click)="toggleSearch()">
+					<mat-icon>arrow_drop_up</mat-icon>
+        </button>
+				<button
+					color="primary"
+					*ngIf="filterOptions"
+					mat-icon-button
+					title="{{ type + '.INDEX.FILTER_BTN_TITLE' | translate }}"
+					[mat-menu-trigger-for]="commerceFilterMenu"><mat-icon>filter_list</mat-icon>
+				</button>
+				<button
+				*ngIf="sortOptions"
+					color="primary"
+					mat-icon-button
+					title="{{ type + '.INDEX.SORT_BTN_TITLE' | translate }}"
+					[mat-menu-trigger-for]="commerceSortMenu"><mat-icon>sort</mat-icon>
+				</button>
+			</div>
+		</div>
+	</header>
+</section>
+
+<mat-menu x-position="after" #commerceFilterMenu="matMenu">
+	<wz-sort-component [current]="currentFilter" [items]="filterOptions" (sort)="onFilterResults.emit($event)"></wz-sort-component>
+</mat-menu>
+
+<mat-menu x-position="after" #commerceSortMenu="matMenu">
+	<wz-sort-component [current]="currentSort" [items]="sortOptions" (sort)="onSortResults.emit($event)"></wz-sort-component>
+</mat-menu>

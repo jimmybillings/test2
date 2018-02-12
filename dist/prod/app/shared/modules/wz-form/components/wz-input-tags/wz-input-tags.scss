@@ -1,0 +1,26 @@
+.wz-tags {
+  ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        margin-bottom: 7px;
+        padding: 5px;
+        padding-right: 9px;
+        padding-left: 9px;
+        margin-right: 7px;
+        [mat-icon-button] {
+          min-width: 0;
+          padding: 0;
+          width: 20px;
+          height: 23px;
+          line-height: 22px;
+        }
+        &.ready-delete{
+          background-color: rgba(0,0,0,.25);
+        }
+      }
+  }
+}

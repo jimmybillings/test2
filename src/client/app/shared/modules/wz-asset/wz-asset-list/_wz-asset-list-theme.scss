@@ -1,0 +1,53 @@
+@mixin wz-asset-list-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  wz-asset-list ul.asset-list-view {
+    & > li {
+      background-color: rgba(mat-color($background, card), .65);
+      color: rgba(mat-color($foreground, text), .7);
+      &:hover {
+        background-color: rgba(mat-color($background, card), .9);
+      }
+      .tools {
+        color: mat-color($foreground, secondary-text);
+      }
+      span {
+        &.mdata-3 {
+          @include text-contrast(mat-color($foreground, base));
+        }
+        &.comment-count {
+          &::before {
+            color: mat-color($mat-grey, 800);
+          }
+          span.count {
+            @include text-contrast(mat-color($background, card));
+          }
+          &::after {
+            color: mat-color($background, card);
+          }
+        }
+        &.subclip-timeline.sub-clip-indicator-2 {
+          background-color: darken(mat-color($background, status-bar), 1%);
+          .subclip-segment {
+            background-color: darken(mat-color($primary), 35%);
+          }
+        }  
+      }
+      .asset-sub-clip {
+        .subclip-timeline {
+          background-color: darken(mat-color($background, status-bar), 10%);
+          .subclip-segment {
+            background-color: rgba(mat-color($accent, darker), .6);
+          }
+        }
+        ul {
+          color: mat-color($foreground, secondary-text);
+          background-color: rgba(mat-color($primary), .1);
+        }
+      }
+    }
+  }
+}

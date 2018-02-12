@@ -1,0 +1,97 @@
+home-vendor-marquee {
+  // scrolling vendor marquee
+  @mixin center-vertically($pseudo-el: 'before') {
+      position: relative;
+
+      &:#{$pseudo-el} {
+          content: '';
+          position: relative;
+          height: 100%;
+          width: 0;
+      }
+
+      &:#{$pseudo-el},
+      > * {
+          vertical-align: middle;
+          display: inline-block;
+      }
+  }
+
+  @mixin justify($vertical-align: top, $childs: '*') {
+      text-align: justify;
+      text-justify: distribute-all-lines;
+      line-height: 0;
+      // clear inline-block spacing
+      letter-spacing: -0.31em;
+
+      &:after {
+          content: '.';
+          display: inline-block;
+          height: 0!important;
+          width: 100%;
+          overflow: hidden!important;
+          visibility: hidden;
+
+          font-size: 0;
+          word-spacing: 100%;
+      }
+
+      > #{unquote($childs)} {
+          display: inline-block;
+          vertical-align: $vertical-align;
+          text-align: left;
+          line-height: 1;
+
+          // reset `inline-block spacing` trick
+          letter-spacing: 0;
+      }
+  }
+
+
+  // MARQUEE
+
+  @keyframes loop {
+    0%   {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-(33.3333% * 2));
+    }
+  }
+
+
+  $height: 183px;
+
+  .vendor-marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    > ul {
+      list-style: none;
+      position: relative;
+      margin: 0;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 300%!important;
+      height: $height;
+      transform: translate3d(0, 0, 0);
+      animation: loop 7s linear infinite;
+    }
+
+    > ul > li {
+      @include center-vertically();
+      @include justify(middle);
+      float: left;
+      width: 33.333333%;
+      height: $height;
+      overflow: hidden;
+      margin: -12px 0 0;
+      img {
+        opacity: .3;
+        margin: 0 1.666666%;
+      }
+    }
+  }
+}

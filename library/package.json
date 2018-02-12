@@ -1,0 +1,10 @@
+{
+  "name": "wazee-ui-library",
+  "version": "0.0.0",
+  "description": "Wazee Library for use in Wazee Products",
+  "repository": {
+    "url": "https://github.com/t3mediacorp/wazee-ui-library.git"
+  },
+  "author": "James Billings <jimmybillings>, Jeff Hyde <jhyde>, Ross Edfort <rossedfort>",
+  "license": "MIT"
+}

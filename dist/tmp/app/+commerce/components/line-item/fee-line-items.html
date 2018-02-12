@@ -1,0 +1,36 @@
+<ul class="fee-list">
+	<li *ngFor="let feeLineItem of feeLineItems" class="fee-item" flex="100" layout="row" layout-xs="column">
+    <div flex="100" flex-gt-xs="70" flex-order-xs="2">
+      <div layout-align="start stretch" layout-gt-xs="row">
+        <div flex-gt-sm="30" flex-sm="40" flex="100" layout-padding>
+          <div class="fee-indicator" layout="column">
+            <span flex class="fee-title">{{ 'QUOTE.INDEX.PROJECTS.FEE_ITEM.HEADING' | translate }}</span>
+            <span flex class="fee-type mat-caption">{{feeLineItem.feeType}}</span>
+          </div>
+        </div>
+        <div flex-gt-sm="80" flex-sm="75" flex="100" layout-padding>
+          <div class="mat-caption fee-type">
+            {{ 'QUOTE.INDEX.PROJECTS.FEE_ITEM.TITLE' | translate:{type:feeLineItem.feeType} }}
+          </div>
+          <p class="fee-notes">{{ feeLineItem.notes }}</p>
+        </div>
+      </div>
+		</div>
+    <div flex="100" flex-gt-xs="25" layout-padding hide-xs></div>
+    <div flex-gt-xs="15" flex-sm="15" flex="auto" class="actions" flex-order-xs="-1">
+      <div class="tools" flex="100">
+        <button 
+          *ngIf="!readOnly"
+          mat-icon-button
+          title="{{ 'QUOTE.INDEX.PROJECTS.FEE_ITEM.REMOVE_BTN_HOVER' | translate }}"
+          (click)="onRemove(feeLineItem)">
+            <mat-icon>remove_circle</mat-icon>
+        </button>
+      </div>
+      <div *ngIf="!readOnly" flex="100" layout="row" layout-xs="column" class="divider"></div>
+      <div class="fee-line-item-amount" layout="row" layout-xs="column" layout-align="end end">
+        <div class="price">{{ feeLineItem.amount | currency:'USD':true:'1.2-2' }}</div>
+      </div>
+		</div>
+	</li>
+</ul>

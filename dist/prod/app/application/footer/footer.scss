@@ -1,0 +1,160 @@
+app-footer {
+  display: block;
+  .glb {
+    .logo-wrapper {
+      height: 170px;
+      width: 100%;
+      .logo {
+        margin: 0 0 0 0;
+        background-position: left center;
+        background-repeat:no-repeat;
+        background-size: 113px;
+        height: 113px;
+        opacity: .25;
+      }
+    }
+    ul.social {
+      margin: 0 0 -10px 0;
+      padding:0;
+      li {
+        list-style: none;
+        display: block;
+        float: left;
+        a {
+          opacity: .25;
+           transition: $swift-ease-in;
+          &:hover {
+            opacity: 1;
+          } 
+        }
+        &.instagram {
+          display: none;
+        }
+      }
+    }
+    h3.mat-title {
+      margin-bottom: .2em;
+      margin-top: .2em;
+    }
+    h3.mat-title + .mat-body-1 {
+      margin: 14px 0 0 0;
+      font-size: .9em;
+    }
+    .footer-link {
+      text-decoration: none;
+      transition: $swift-ease-in;
+    }
+    .contact {
+      margin-bottom: 6px;
+      p, h3, a {
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+    }
+    .sales {
+      mat-list {
+        padding: 0;
+      }
+      mat-list-item, .mat-list-item-content {
+        padding: 0;
+        min-height: 0;
+      }
+      mat-list mat-list-item .mat-list-item {
+        height: 40px;
+        padding: 0;
+      }
+      h5.mat-subheading-1 {
+        margin: 0 0 0 26px;
+        font-weight: 500;
+        opacity: .8;
+      }
+      *[mat-button] {
+        margin: 0;
+        padding: 9px 6px;
+        &.phone:hover {
+          cursor: default;
+          background: transparent;
+        }
+        &.phone:hover .mat-body-1 mat-icon {
+          opacity: .25;
+        }
+        &:hover .mat-body-1 mat-icon {
+          opacity: .8;
+        }
+        .mat-body-1 {
+          text-transform: initial;
+          margin: 0;
+          padding: 0 0 0 30px;
+          position: relative;
+          mat-icon {
+            position: absolute;
+            top: -3px;
+            left: -1px;
+            opacity: .25;
+             transition: $swift-ease-in;
+          }
+        }
+      }
+    }
+  }
+  .powered-by {
+    display: none;
+    & > div {
+      padding: 4px 8px;
+    }
+    .mat-caption {
+      margin: 0;
+      font-size: .8em;
+      line-height: 1.6;
+      &.italic {
+        font-style: italic;
+        font-weight: 300;
+        padding-right: 5px;
+      }
+
+    }
+    ul {
+      padding: 0 0 0 3%;
+      margin: 0 3px; 
+      li {
+        list-style: none;
+        display: inline-block;
+        padding: 0 2px;
+        &.wazee a {
+          &:hover span {
+            opacity: 1;
+          }
+          span {
+            transition: $swift-ease-out;
+            display: block;
+            background-image: url(/assets/img/logo/logo-m-rev.svg);
+            margin: 0 0 0 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 34px;
+            height: 31px;
+            width: 35px;
+            opacity: .8;
+          }
+        }
+        &.base-media a {
+          &:hover span {
+            opacity: 1;
+          }
+          span {
+            transition: $swift-ease-out;
+            display: block;
+            background-image: url(/assets/img/logo/base_media-logo-m-rev.svg);
+            margin: 0 0 0 0;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 50px;
+            height: 26px;
+            width: 56px;
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+}

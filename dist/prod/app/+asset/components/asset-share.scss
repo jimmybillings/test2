@@ -1,0 +1,31 @@
+asset-share {
+  .asset-name {
+    padding: 8px 18px 0 18px;
+    font-size: .7em;
+    opacity: .65;
+    line-height: 1.25;
+  }
+  .subclip-info {
+    padding: 8px 18px 8px 18px;
+    .in-out-markers {
+      margin: 0;
+      font-size: .7em;
+      line-height: 1;
+      strong {
+        padding: 3px 1px 3px 0;
+        &:nth-child(5) {
+          margin-right: 8px;
+        }
+      }
+      span {
+        padding: 1px 5px;
+        &:nth-child(2) {
+          margin-right: 15px;
+        }
+        &:nth-child(4) {
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}

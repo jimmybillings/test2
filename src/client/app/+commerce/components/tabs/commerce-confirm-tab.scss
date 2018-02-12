@@ -1,0 +1,122 @@
+
+cart-confirm-tab-component, quote-confirm-tab {
+  .mat-title {
+    opacity: .6;
+    margin: .3em 0;
+    line-height: 1;
+    &.order-summary {
+      display: inline-block;
+      margin-top: 44px;
+    }
+  }
+  .billing-payment {
+    margin: 12px 0 0 -12px;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      margin: 0 0 12px 0;
+    }
+  }
+  .payment,
+  .billing {
+    padding: 14px;
+    margin-left: 12px;
+    border-radius: 2px;
+    max-width: calc(100% - 12px);
+    min-width: calc(100% - 12px);
+    @media screen and (min-width: $layout-breakpoint-lg)  {
+      max-width: calc(25% - 12px);
+      min-width: calc(25% - 12px);
+    }
+    @media screen and (min-width: $layout-breakpoint-sm) and (max-width: $layout-breakpoint-lg)  {
+      max-width: calc(33.333% - 12px);
+      min-width: calc(33.333% - 12px);
+    }
+
+    @media screen and (max-width: $layout-breakpoint-sm)  {
+      max-width: calc(50% - 12px);
+      min-width: calc(50% - 12px);
+    }
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      min-width: 100%;
+      max-width: 100%;
+      margin: 10px 0 0 0;
+    }
+    button.is-outlined.mini {
+      margin-right: 0;
+    }
+    .mat-title {
+      margin-top: 0;
+    }
+    .name strong {
+      font-size: 14px;
+    }
+    .payment-info,
+    address {
+      font-size: 14px;
+      line-height: 1.55;
+      span {
+        display: flex;
+      }
+      .phone {
+        font-style: normal;
+        line-height: 2.4;
+      }
+      .purchase-order-id,
+      .purchase-on-credit,
+      .offline-agreement,
+      .credit-card {
+        font-size: 13px;
+        .indicate-credit,
+        .indicate-offline,
+        .indicate-cc {
+          display: flex;
+          strong {
+            position: relative;
+            padding: 0 4px 0 27px;
+            text-transform: uppercase;
+            &::before {
+              content: "\e870";
+              font-family: 'Material Icons';
+              font-weight: normal;
+              opacity: .45;
+              position: absolute;
+              top: -10px;
+              left: 0;
+              font-size: 24px;
+            }
+          }
+        }
+        .expires {
+          padding-left: 2px;
+          strong {
+            padding-right: 4px;
+          }
+        }
+      }
+      .purchase-on-credit .indicate-credit strong::before {
+        content: "\e84f";
+      }
+      .offline-agreement .indicate-offline strong::before {
+        content: "\e8e8";
+      }
+      .purchase-order-id {
+        margin-top: 16px;
+        & > span {
+          padding-left: 2px;
+          strong {
+            padding-right: 4px;
+          }
+        }
+      }
+    }
+  }
+  .cart-total, .quote-total span {
+    display: flex;
+    &.mat-button-wrapper mat-icon{
+      padding: 6px 3px 0 0
+    }
+  }
+}
+cart-component .tabs-section mat-tab-group > div cart-confirm-tab-component .project:first-child,
+quote-show-component .tabs-section mat-tab-group > div quote-confirm-tab .project:first-child {
+  margin-top: 2px;
+}

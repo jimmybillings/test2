@@ -1,0 +1,43 @@
+<h5 class="mat-title">{{title | translate}}</h5>
+<form 
+  layout="column" 
+  [formGroup]="form" 
+  novalidate 
+  class="mat-inline-form" 
+  autocomplete="{{autocomplete}}" 
+  (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of items; let i=index">
+    <div *ngIf="field.type == 'select'">
+      <mat-form-field>
+        <mat-select
+          [value]="field.value.id"
+          [ngModel]="field.value.id"
+          class="mat-block"
+          [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+          placeholder="{{field.label | translate}}"
+          formControlName="{{field.name}}"
+          [required]="isRequiredField(field)"
+          id="{{field.name}}"
+          (change)="onSelectChange($event, field)">
+          <mat-option>--</mat-option>
+          <mat-option *ngFor="let option of field.options" [value]="option.id">{{ option.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+    
+<ul class="mat-caption">
+  <li *ngFor="let property of labels | async">
+    <strong>{{property.label | translate}}</strong>{{property.value}}
+  </li>
+</ul>
+
+<div flex>
+  <mat-checkbox
+    color="primary"
+    (change)="onCheckboxChange($event)"
+    [checked]="false">
+      {{ 'QUOTE.EDIT.OVERRIDE_INVOICE_CONTACT_CHECKBOX' | translate }}
+  </mat-checkbox>
+</div>

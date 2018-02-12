@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/tabs/commerce-payment-tab.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/tabs/</a> commerce-payment-tab.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">53.01% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>44/83</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        (<span class="branch-1 cbranch-no" title="branch not covered" >{ __proto__: [] } instanceof Array </span>&amp;&amp; <span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >function (d, b) {</span> <span class="cstat-no" title="statement not covered" >d.__proto__ = b; </span>})</span> ||
+<span class="fstat-no" title="function not covered" ><span class="branch-3 cbranch-no" title="branch not covered" >        function (d, b) {</span> <span class="cstat-no" title="statement not covered" >for (var p in b) <span class="cstat-no" title="statement not covered" >if (b.hasOwnProperty(p)) <span class="cstat-no" title="statement not covered" >d[p] = b[p]; </span></span></span>};</span>
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? <span class="branch-0 cbranch-no" title="branch not covered" >Object.create(b) </span>: (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? <span class="branch-0 cbranch-no" title="branch not covered" >target </span>: desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? <span class="branch-0 cbranch-no" title="branch not covered" >d(r) </span>: c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var tab_1 = require("./tab");
+var Subject_1 = require("rxjs/Subject");
+var CommercePaymentTab = (function (_super) {
+    __extends(CommercePaymentTab, _super);
+    function CommercePaymentTab(_zone, commerceService, store, ref) {
+        var _this = _super.call(this) || this;
+        _this._zone = _zone;
+        _this.commerceService = commerceService;
+        _this.store = store;
+        _this.ref = ref;
+        _this.tabNotify = _this.notify;
+        _this.serverErrors = null;
+        _this.successfullyVerified = new Subject_1.Subject();
+        _this.selectedPaymentOption = null;
+        _this.successfullyVerified.next(false);
+        return _this;
+    }
+    CommercePaymentTab.prototype.ngOnInit = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        this.fields = this.store.selectCloned(<span class="fstat-no" title="function not covered" >function (state) {</span> <span class="cstat-no" title="statement not covered" >return state.uiConfig.components.cart.config.payment.items; </span>}).take(1);</span>
+<span class="cstat-no" title="statement not covered" >        this.loadStripe();</span>
+    };
+    Object.defineProperty(CommercePaymentTab.prototype, "data", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.commerceService.data.map(<span class="fstat-no" title="function not covered" >function (state) {</span> <span class="cstat-no" title="statement not covered" >return state.data; </span>});</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CommercePaymentTab.prototype, "paymentOptions", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.store.select(<span class="fstat-no" title="function not covered" >function (state) {</span> <span class="cstat-no" title="statement not covered" >return state.checkout.paymentOptions; </span>});</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CommercePaymentTab.prototype, "showHoldMessage", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.commerceService.paymentOptionsEqual(['Hold']);</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CommercePaymentTab.prototype, "showCreditCardForm", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.commerceService.paymentOptionsEqual(['CreditCard']);</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CommercePaymentTab.prototype, "showCreditCardAndPurchaseOnCredit", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.commerceService.paymentOptionsEqual(['CreditCard', 'PurchaseOnCredit']);</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CommercePaymentTab.prototype.selectPurchaseOnCredit = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >function (factory) {</span> <span class="cstat-no" title="statement not covered" >return factory.checkout.setSelectedPaymentType('PurchaseOnCredit'); </span>});</span>
+<span class="cstat-no" title="statement not covered" >        this.tabNotify.emit({ type: 'GO_TO_NEXT_TAB' });</span>
+    };
+    CommercePaymentTab.prototype.preAuthorize = <span class="fstat-no" title="function not covered" >function (form) {</span>
+<span class="cstat-no" title="statement not covered" >        var _this = this;</span>
+<span class="cstat-no" title="statement not covered" >        window.Stripe.card.createToken(form, <span class="fstat-no" title="function not covered" >function (status, response) {</span></span>
+<span class="cstat-no" title="statement not covered" >            _this._zone.run(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (status === 200) {</span>
+<span class="cstat-no" title="statement not covered" >                    _this.store.dispatch(<span class="fstat-no" title="function not covered" >function (factory) {</span> <span class="cstat-no" title="statement not covered" >return factory.checkout.setCreditCardAuthorization(response); </span>});</span>
+<span class="cstat-no" title="statement not covered" >                    _this.store.dispatch(<span class="fstat-no" title="function not covered" >function (factory) {</span> <span class="cstat-no" title="statement not covered" >return factory.checkout.setSelectedPaymentType('CreditCard'); </span>});</span>
+<span class="cstat-no" title="statement not covered" >                    _this.tabNotify.emit({ type: 'GO_TO_NEXT_TAB' });</span>
+<span class="cstat-no" title="statement not covered" >                    _this.successfullyVerified.next(true);</span>
+<span class="cstat-no" title="statement not covered" >                    _this.ref.markForCheck();</span>
+                }
+                else {
+<span class="cstat-no" title="statement not covered" >                    _this.serverErrors = { fieldErrors: [] };</span>
+<span class="cstat-no" title="statement not covered" >                    _this.serverErrors.fieldErrors</span>
+                        .push({
+                        code: response.error.code,
+                        field: response.error.param
+                    });
+<span class="cstat-no" title="statement not covered" >                    _this.successfullyVerified.next(false);</span>
+<span class="cstat-no" title="statement not covered" >                    _this.ref.markForCheck();</span>
+                }
+            });
+        });
+    };
+    CommercePaymentTab.prototype.editCreditCard = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        this.successfullyVerified.next(false);</span>
+<span class="cstat-no" title="statement not covered" >        this.disableTab(3);</span>
+    };
+    CommercePaymentTab.prototype.loadStripe = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        var _this = this;</span>
+<span class="cstat-no" title="statement not covered" >        var stripeScript = 'https://js.stripe.com/v2/';</span>
+<span class="cstat-no" title="statement not covered" >        var scripts = document.getElementsByTagName('script');</span>
+<span class="cstat-no" title="statement not covered" >        var i = scripts.length, stripeLoaded = false;</span>
+<span class="cstat-no" title="statement not covered" >        while (i--) {</span>
+<span class="cstat-no" title="statement not covered" >            if (scripts[i].src === stripeScript) {</span>
+<span class="cstat-no" title="statement not covered" >                stripeLoaded = true;</span>
+            }
+        }
+<span class="cstat-no" title="statement not covered" >        if (!stripeLoaded) {</span>
+<span class="cstat-no" title="statement not covered" >            var script = document.createElement('script');</span>
+<span class="cstat-no" title="statement not covered" >            Object.assign(script, { src: stripeScript, type: 'text/javascript' });</span>
+<span class="cstat-no" title="statement not covered" >            document.body.appendChild(script);</span>
+<span class="cstat-no" title="statement not covered" >            script.onload = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                window.Stripe.setPublishableKey(_this.commerceService.state.data.stripePublicKey);</span>
+            };
+        }
+    };
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], CommercePaymentTab.prototype, "tabNotify", void 0);
+    return CommercePaymentTab;
+}(tab_1.Tab));
+exports.CommercePaymentTab = CommercePaymentTab;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC8rY29tbWVyY2UvY29tcG9uZW50cy90YWJzL2NvbW1lcmNlLXBheW1lbnQtdGFiLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLHNDQUF3RjtBQUN4Riw2QkFBNEI7QUFJNUIsd0NBQXVDO0FBUXZDO0lBQXdDLHNDQUFHO0lBT3pDLDRCQUNZLEtBQWEsRUFDYixlQUEyQyxFQUMzQyxLQUFlLEVBQ2YsR0FBc0I7UUFKbEMsWUFNRSxpQkFBTyxTQUVSO1FBUFcsV0FBSyxHQUFMLEtBQUssQ0FBUTtRQUNiLHFCQUFlLEdBQWYsZUFBZSxDQUE0QjtRQUMzQyxXQUFLLEdBQUwsS0FBSyxDQUFVO1FBQ2YsU0FBRyxHQUFILEdBQUcsQ0FBbUI7UUFWeEIsZUFBUyxHQUF5QixLQUFJLENBQUMsTUFBTSxDQUFDO1FBQ2pELGtCQUFZLEdBQVEsSUFBSSxDQUFDO1FBQ3pCLDBCQUFvQixHQUFpQixJQUFJLGlCQUFPLEVBQUUsQ0FBQztRQUNuRCwyQkFBcUIsR0FBa0IsSUFBSSxDQUFDO1FBVWpELEtBQUksQ0FBQyxvQkFBb0IsQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7O0lBQ3hDLENBQUM7SUFFRCxxQ0FBUSxHQUFSO1FBQ0UsSUFBSSxDQUFDLE1BQU0sR0FBRyxJQUFJLENBQUMsS0FBSyxDQUFDLFlBQVksQ0FBQyxVQUFBLEtBQUssSUFBSSxPQUFBLEtBQUssQ0FBQyxRQUFRLENBQUMsVUFBVSxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsT0FBTyxDQUFDLEtBQUssRUFBbkQsQ0FBbUQsQ0FBQyxDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQztRQUM1RyxJQUFJLENBQUMsVUFBVSxFQUFFLENBQUM7SUFDcEIsQ0FBQztJQUVELHNCQUFXLG9DQUFJO2FBQWY7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLGVBQWUsQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLFVBQUMsS0FBNkIsSUFBSyxPQUFBLEtB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QztDQS9GRCxBQStGQyxDQS9GdUMsU0FBRyxHQStGMUM7QUEvRlksZ0RBQWtCIiwiZmlsZSI6ImFwcC8rY29tbWVyY2UvY29tcG9uZW50cy90YWJzL2NvbW1lcmNlLXBheW1lbnQtdGFiLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgT3V0cHV0LCBFdmVudEVtaXR0ZXIsIE5nWm9uZSwgT25Jbml0LCBDaGFuZ2VEZXRlY3RvclJlZiB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgVGFiIH0gZnJvbSAnLi90YWInO1xuaW1wb3J0IHsgQ2FydFNlcnZpY2UgfSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvc2VydmljZXMvY2FydC5zZXJ2aWNlJztcbmltcG9ydCB7IFF1b3RlU2VydmljZSB9IGZyb20gJy4uLy4uLy4uL3NoYXJlZC9zZXJ2aWNlcy9xdW90ZS5zZXJ2aWNlJztcbmltcG9ydCB7IFN1YnNjcmlwdGlvbiB9IGZyb20gJ3J4anMvU3Vic2NyaXB0aW9uJztcbmltcG9ydCB7IFN1YmplY3QgfSBmcm9tICdyeGpzL1N1YmplY3QnO1xuaW1wb3J0IHsgT2JzZXJ2YWJsZSB9IGZyb20gJ3J4anMvT2JzZXJ2YWJsZSc7XG5pbXBvcnQge1xuICBRdW90ZVN0YXRlLCBDYXJ0U3RhdGUsIFBheW1lbnRPcHRpb24sIFBheW1lbnRPcHRpb25zLCBDcmVkaXRDYXJkQXV0aG9yaXphdGlvblxufSBmcm9tICcuLi8uLi8uLi9zaGFyZWQvaW50ZXJmYWNlcy9jb21tZXJjZS5pbnRlcmZhY2UnO1xuaW1wb3J0IHsgRm9ybUZpZWxkcyB9IGZyb20gJy4uLy4uLy4uL3NoYXJlZC9pbnRlcmZhY2VzL2Zvcm1zLmludGVyZmFjZSc7XG5pbXBvcnQgeyBBcHBTdG9yZSB9IGZyb20gJy4uLy4uLy4uL2FwcC5zdG9yZSc7XG5cbmV4cG9ydCBjbGFzcyBDb21tZXJjZVBheW1lbnRUYWIgZXh0ZW5kcyBUYWIgaW1wbGVtZW50cyBPbkluaXQge1xuICBAT3V0cHV0KCkgdGFiTm90aWZ5OiBFdmVudEVtaXR0ZXI8T2JqZWN0PiA9IHRoaXMubm90aWZ5O1xuICBwdWJsaWMgc2VydmVyRXJyb3JzOiBhbnkgPSBudWxsO1xuICBwdWJsaWMgc3VjY2Vzc2Z1bGx5VmVyaWZpZWQ6IFN1YmplY3Q8YW55PiA9IG5ldyBTdWJqZWN0KCk7XG4gIHB1YmxpYyBzZWxlY3RlZFBheW1lbnRPcHRpb246IFBheW1lbnRPcHRpb24gPSBudWxsO1xuICBwdWJsaWMgZmllbGRzOiBPYnNlcnZhYmxlPEZvcm1GaWVsZHM+O1xuXG4gIGNvbnN0cnVjdG9yKFxuICAgIHByb3RlY3RlZCBfem9uZTogTmdab25lLFxuICAgIHByb3RlY3RlZCBjb21tZXJjZVNlcnZpY2U6IENhcnRTZXJ2aWNlIHwgUXVvdGVTZXJ2aWNlLFxuICAgIHByb3RlY3RlZCBzdG9yZTogQXBwU3RvcmUsXG4gICAgcHJvdGVjdGVkIHJlZjogQ2hhbmdlRGV0ZWN0b3JSZWZcbiAgKSB7XG4gICAgc3VwZXIoKTtcbiAgICB0aGlzLnN1Y2Nlc3NmdWxseVZlcmlmaWVkLm5leHQoZmFsc2UpO1xuICB9XG5cbiAgbmdPbkluaXQoKSB7XG4gICAgdGhpcy5maWVsZHMgPSB0aGlzLnN0b3JlLnNlbGVjdENsb25lZChzdGF0ZSA9PiBzdGF0ZS51aUNvbmZpZy5jb21wb25lbnRzLmNhcnQuY29uZmlnLnBheW1lbnQuaXRlbXMpLnRha2UoMSk7XG4gICAgdGhpcy5sb2FkU3RyaXBlKCk7XG4gIH1cblxuICBwdWJsaWMgZ2V0IGRhdGEoKTogT2JzZXJ2YWJsZTxhbnk+IHtcbiAgICByZXR1cm4gdGhpcy5jb21tZXJjZVNlcnZpY2UuZGF0YS5tYXAoKHN0YXRlOiBRdW90ZVN0YXRlIHwgQ2FydFN0YXRlKSA9PiBzdGF0ZS5kYXRhKTtcbiAgfVxuXG4gIHB1YmxpYyBnZXQgcGF5bWVudE9wdGlvbnMoKTogT2JzZXJ2YWJsZTxQYXltZW50T3B0aW9ucz4ge1xuICAgIHJldHVybiB0aGlzLnN0b3JlLnNlbGVjdChzdGF0ZSA9PiBzdGF0ZS5jaGVja291dC5wYXltZW50T3B0aW9ucyk7XG4gIH1cblxuICBwdWJsaWMgZ2V0IHNob3dIb2xkTWVzc2FnZSgpOiBPYnNlcnZhYmxlPGJvb2xlYW4+IHtcbiAgICByZXR1cm4gdGhpcy5jb21tZXJjZVNlcnZpY2UucGF5bWVudE9wdGlvbnNFcXVhbChbJ0hvbGQnXSk7XG4gIH1cblxuICBwdWJsaWMgZ2V0IHNob3dDcmVkaXRDYXJkRm9ybSgpOiBPYnNlcnZhYmxlPGJvb2xlYW4+IHtcbiAgICByZXR1cm4gdGhpcy5jb21tZXJjZVNlcnZpY2UucGF5bWVudE9wdGlvbnNFcXVhbChbJ0NyZWRpdENhcmQnXSk7XG4gIH1cblxuICBwdWJsaWMgZ2V0IHNob3dDcmVkaXRDYXJkQW5kUHVyY2hhc2VPbkNyZWRpdCgpOiBPYnNlcnZhYmxlPGJvb2xlYW4+IHtcbiAgICByZXR1cm4gdGhpcy5jb21tZXJjZVNlcnZpY2UucGF5bWVudE9wdGlvbnNFcXVhbChbJ0NyZWRpdENhcmQnLCAnUHVyY2hhc2VPbkNyZWRpdCddKTtcbiAgfVxuXG4gIHB1YmxpYyBzZWxlY3RQdXJjaGFzZU9uQ3JlZGl0KCkge1xuICAgIHRoaXMuc3RvcmUuZGlzcGF0Y2goZmFjdG9yeSA9PiBmYWN0b3J5LmNoZWNrb3V0LnNldFNlbGVjdGVkUGF5bWVudFR5cGUoJ1B1cmNoYXNlT25DcmVkaXQnKSk7XG4gICAgdGhpcy50YWJOb3RpZnkuZW1pdCh7IHR5cGU6ICdHT19UT19ORVhUX1RBQicgfSk7XG4gIH1cblxuICBwdWJsaWMgcHJlQXV0aG9yaXplKGZvcm06IGFueSkge1xuICAgICg8YW55PndpbmRvdykuU3RyaXBlLmNhcmQuY3JlYXRlVG9rZW4oXG4gICAgICBmb3JtLFxuICAgICAgKHN0YXR1czogbnVtYmVyLCByZXNwb25zZTogQ3JlZGl0Q2FyZEF1dGhvcml6YXRpb24pID0+IHtcbiAgICAgICAgdGhpcy5fem9uZS5ydW4oKCkgPT4ge1xuICAgICAgICAgIGlmIChzdGF0dXMgPT09IDIwMCkge1xuICAgICAgICAgICAgdGhpcy5zdG9yZS5kaXNwYXRjaChmYWN0b3J5ID0+IGZhY3RvcnkuY2hlY2tvdXQuc2V0Q3JlZGl0Q2FyZEF1dGhvcml6YXRpb24ocmVzcG9uc2UpKTtcbiAgICAgICAgICAgIHRoaXMuc3RvcmUuZGlzcGF0Y2goZmFjdG9yeSA9PiBmYWN0b3J5LmNoZWNrb3V0LnNldFNlbGVjdGVkUGF5bWVudFR5cGUoJ0NyZWRpdENhcmQnKSk7XG4gICAgICAgICAgICB0aGlzLnRhYk5vdGlmeS5lbWl0KHsgdHlwZTogJ0dPX1RPX05FWFRfVEFCJyB9KTtcbiAgICAgICAgICAgIHRoaXMuc3VjY2Vzc2Z1bGx5VmVyaWZpZWQubmV4dCh0cnVlKTtcbiAgICAgICAgICAgIHRoaXMucmVmLm1hcmtGb3JDaGVjaygpO1xuICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICB0aGlzLnNlcnZlckVycm9ycyA9IHsgZmllbGRFcnJvcnM6IFtdIH07XG4gICAgICAgICAgICB0aGlzLnNlcnZlckVycm9ycy5maWVsZEVycm9yc1xuICAgICAgICAgICAgICAucHVzaCh7XG4gICAgICAgICAgICAgICAgY29kZTogcmVzcG9uc2UuZXJyb3IuY29kZSxcbiAgICAgICAgICAgICAgICBmaWVsZDogcmVzcG9uc2UuZXJyb3IucGFyYW1cbiAgICAgICAgICAgICAgfSk7XG4gICAgICAgICAgICB0aGlzLnN1Y2Nlc3NmdWxseVZlcmlmaWVkLm5leHQoZmFsc2UpO1xuICAgICAgICAgICAgdGhpcy5yZWYubWFya0ZvckNoZWNrKCk7XG4gICAgICAgICAgfVxuICAgICAgICB9KTtcbiAgICAgIH0pO1xuICB9XG5cbiAgcHVibGljIGVkaXRDcmVkaXRDYXJkKCkge1xuICAgIHRoaXMuc3VjY2Vzc2Z1bGx5VmVyaWZpZWQubmV4dChmYWxzZSk7XG4gICAgdGhpcy5kaXNhYmxlVGFiKDMpO1xuICB9XG5cbiAgcHJpdmF0ZSBsb2FkU3RyaXBlKCkge1xuICAgIGNvbnN0IHN0cmlwZVNjcmlwdCA9ICdodHRwczovL2pzLnN0cmlwZS5jb20vdjIvJztcbiAgICB2YXIgc2NyaXB0cyA9IGRvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdzY3JpcHQnKTtcbiAgICB2YXIgaSA9IHNjcmlwdHMubGVuZ3RoLCBzdHJpcGVMb2FkZWQgPSBmYWxzZTtcbiAgICB3aGlsZSAoaS0tKSB7XG4gICAgICBpZiAoc2NyaXB0c1tpXS5zcmMgPT09IHN0cmlwZVNjcmlwdCkge1xuICAgICAgICBzdHJpcGVMb2FkZWQgPSB0cnVlO1xuICAgICAgfVxuICAgIH1cbiAgICBpZiAoIXN0cmlwZUxvYWRlZCkge1xuICAgICAgdmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO1xuICAgICAgT2JqZWN0LmFzc2lnbihzY3JpcHQsIHsgc3JjOiBzdHJpcGVTY3JpcHQsIHR5cGU6ICd0ZXh0L2phdmFzY3JpcHQnIH0pO1xuICAgICAgZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChzY3JpcHQpO1xuICAgICAgc2NyaXB0Lm9ubG9hZCA9ICgpID0+IHtcbiAgICAgICAgKDxhbnk+d2luZG93KS5TdHJpcGUuc2V0UHVibGlzaGFibGVLZXkodGhpcy5jb21tZXJjZVNlcnZpY2Uuc3RhdGUuZGF0YS5zdHJpcGVQdWJsaWNLZXkpO1xuICAgICAgfTtcbiAgICB9XG4gIH1cbn1cbiJdfQ==
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

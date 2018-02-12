@@ -1,0 +1,49 @@
+$volume-control-width: $mat-icon-button-width;
+$volume-control-height: 150px;
+$volume-control-slider-height: $volume-control-height - $mat-icon-button-height;
+
+.volume-control {
+  position: absolute;
+  width: $volume-control-width;
+  height: $volume-control-height;
+  bottom: 0;
+  right: 0;
+
+  button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .mat-slider-vertical {
+    position: absolute;
+    width: $volume-control-width;
+    height: $volume-control-slider-height;
+    min-height: $volume-control-slider-height;
+    padding: 10px 0 20px 0;
+    left: 0;
+    top: 0;
+    .mat-slider-wrapper {
+      left: 18px;
+    }
+    .mat-slider-ticks-container {
+      display: none;
+    }
+
+    .mat-slider-track {
+      position: relative;
+      height: 100%;
+      left: 0;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    .mat-slider-thumb {
+      height: 10px;
+      width: 10px;
+      right: -5px;
+      bottom: -5px;
+      transform: none;
+    }
+  }
+}

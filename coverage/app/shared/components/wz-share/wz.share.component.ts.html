@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/components/wz-share/wz.share.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/components/wz-share/</a> wz.share.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.25% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.31% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Component, Input, Output, ViewChild, OnDestroy, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef
+} from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { FormFields } from '../../interfaces/forms.interface';
+import { WzFormComponent } from '../../modules/wz-form/wz.form.component';
+import { Pojo } from '../../interfaces/common.interface';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-share',
+  templateUrl: 'wz.share.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class WzShareComponent implements OnDestroy {
+  @Input() titleKey: string;
+  @Input() formFields: FormFields[];
+  @Input() allowShareLink: boolean = true;
+  @Input() shareLink: string;
+&nbsp;
+  @Output() shareLinkRequest: EventEmitter&lt;void&gt; = new EventEmitter();
+  @Output() closeRequest: EventEmitter&lt;void&gt; = new EventEmitter();
+  @Output() formSubmit: EventEmitter&lt;Pojo&gt; = new EventEmitter();
+&nbsp;
+  @ViewChild(WzFormComponent) public wzForm: WzFormComponent;
+  public shareLinkIsOpen: boolean = false;
+&nbsp;
+  constructor(private changeDetector: ChangeDetectorRef) { }
+&nbsp;
+  public ngOnDestroy(): void {
+    this.close();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public openShareLink(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.shareLinkRequest.emit();</span>
+<span class="cstat-no" title="statement not covered" >    this.shareLinkIsOpen = true;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onShareLinkCloseRequest() {</span>
+<span class="cstat-no" title="statement not covered" >    this.shareLinkIsOpen = false;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onFormSubmit(shareParameters: Pojo)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.formSubmit.emit(shareParameters);</span>
+<span class="cstat-no" title="statement not covered" >    this.close();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onFormCancel(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.close();</span>
+  }
+&nbsp;
+  private close(): void {
+    this.wzForm.resetForm();
+    this.closeRequest.emit();
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/pricing/pricing.effects.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/pricing/</a> pricing.effects.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>51/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/36</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Effect, Actions } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+&nbsp;
+import { AppStore, PricingState, InternalActionFactoryMapper } from '../../app.store';
+import { PriceAttribute } from '../../shared/interfaces/commerce.interface';
+import { PricingService } from './pricing.service';
+import { WzDialogService } from '../../shared/modules/wz-dialog/services/wz.dialog.service';
+import * as PricingActions from './pricing.actions';
+&nbsp;
+@Injectable()
+export class PricingEffects {
+  @Effect()
+  public initializePricing: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.InitializePricing.Type)
+    .withLatestFrom(this.store.select(state =&gt; state.pricing))
+    .map(([action, state]: [PricingActions.InitializePricing, PricingState]) =&gt;
+      this.store.create(this.nextActionFor(action, state.attributes))
+    );
+&nbsp;
+  @Effect()
+  public getAttributes: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.GetAttributes.Type)
+    .switchMap((action: PricingActions.GetAttributes) =&gt; this.service.getPriceAttributes(action.rightsReproduction)
+      .map(attributes =&gt; this.store.create(factory =&gt; factory.pricing.getAttributesSuccess(
+        attributes,
+        action.rightsReproduction,
+        action.dialogOptions
+      )))
+      .catch(error =&gt; Observable.of(this.store.create(factory =&gt; factory.pricing.getAttributesFailure(error))))
+    );
+&nbsp;
+  @Effect()
+  public getAttributesSuccess: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.GetAttributesSuccess.Type)
+    .map((action: PricingActions.GetAttributesSuccess) =&gt; this.store.create(factory =&gt;
+      factory.pricing.openDialog(action.dialogOptions))
+    );
+&nbsp;
+  @Effect()
+  public calculatePrice: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.CalculatePrice.Type)
+    .switchMap((action: PricingActions.CalculatePrice) =&gt;
+      this.service.getPrice(action.selectedAttributes, action.assetId, action.subclipMarkers)
+        .map(price =&gt; this.store.create(factory =&gt; factory.pricing.calculatePriceSuccess(price)))
+        .catch(error =&gt; Observable.of(this.store.create(factory =&gt; factory.pricing.calculatePriceFailure(error))))
+    );
+&nbsp;
+  @Effect()
+  public calculatePriceSuccess: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.CalculatePriceSuccess.Type)
+    .map((action: PricingActions.CalculatePriceSuccess) =&gt;
+      this.store.create(factory =&gt; factory.pricing.setPriceForDialog(action.price))
+    );
+&nbsp;
+  @Effect({ dispatch: false })
+  public openDialog: Observable&lt;Action&gt; = this.actions.ofType(PricingActions.OpenDialog.Type)
+    .do((action: PricingActions.OpenDialog) =&gt; this.dialogService.openComponentInDialog(action.dialogOptions));
+&nbsp;
+  constructor(
+    private actions: Actions,
+    private store: AppStore,
+    private service: PricingService,
+    private dialogService: WzDialogService
+  ) { }
+&nbsp;
+  private nextActionFor(action: PricingActions.InitializePricing, attributes: PriceAttribute[]): InternalActionFactoryMapper {
+    if (attributes === null) {
+      return factory =&gt; factory.pricing.getAttributes(
+        action.rightsReproduction,
+        action.dialogOptions
+      );
+    }
+&nbsp;
+    return factory =&gt; factory.pricing.openDialog(action.dialogOptions);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

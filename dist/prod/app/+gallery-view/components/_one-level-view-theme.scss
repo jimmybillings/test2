@@ -1,0 +1,23 @@
+@mixin wz-gallery-one-level-theme($theme) {
+  $background: map-get($theme, background);
+
+  one-level-view ul {
+    & > li {
+      a.item {
+        background-image:
+          linear-gradient(rgba(mat-color($mat-grey, 900),1), rgba(mat-color($mat-grey, 900),.6)),
+          linear-gradient(rgba(mat-color($mat-grey, 900),.5), rgba(mat-color($mat-grey, 900),1))
+        ;
+        &:hover, &:active {
+          section.item-hover-effect {
+            border-color: mat-color($background, card);
+          }
+        }
+        section.item-info {
+          background-color: rgba(mat-color($mat-grey, 900),.6);
+          @include text-contrast(mat-color($mat-grey, 900));
+        }
+      }
+    }
+  }
+}

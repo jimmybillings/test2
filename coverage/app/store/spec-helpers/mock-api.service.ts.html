@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/spec-helpers/mock-api.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/spec-helpers/</a> mock-api.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>64/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>32/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>53/53</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">65×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">171×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">112×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { FutureApiService } from '../api/api.service';
+import { ApiResponse } from '../../shared/interfaces/api.interface';
+&nbsp;
+// Add these to a beforeEach() method with addMatchers(mockApiMatchers).
+export { mockApiMatchers } from './mock-api.matchers';
+&nbsp;
+interface CallCounter { get: number; put: number; post: number; delete: number; };
+&nbsp;
+export class MockApiService {
+  // Errors:
+  // These are normally dormant, but if you set them to something, then the
+  // spy's returned Observable will throw your specified error value (instead of
+  // emitting the normal response) when the spy is called.
+  public getError: any;
+  public postError: any;
+  public putError: any;
+  public deleteError: any;
+&nbsp;
+  private spies: MockApiServiceSpies;
+  private apiService: FutureApiService;
+  private callCounter: CallCounter = { get: 0, put: 0, post: 0, delete: 0 };
+&nbsp;
+  // Responses:
+  // Set these if you care about the contents of a specific response
+  // (so you can verify that some other code uses some part of that response).
+  //
+  // Otherwise, you can just use them as-is to verify that the appropriate
+  // response was passed along to some other code.
+  //
+  // Note also that the initial values for these responses are worthless,
+  // but there is *something* in there so that the likelihood of accidentally
+  // matching these responses in real specs is almost zero.
+  private _getResponse: Array&lt;ApiResponse&gt; = [{ responseFor: 'get' }];
+  private _postResponse: Array&lt;ApiResponse&gt; = [{ responseFor: 'post' }];
+  private _putResponse: Array&lt;ApiResponse&gt; = [{ responseFor: 'put' }];
+  private _deleteResponse: Array&lt;ApiResponse&gt; = [{ responseFor: 'delete' }];
+&nbsp;
+  constructor() {
+    this.initialize();
+  }
+&nbsp;
+  // Inject this into the service you are testing.
+  public get injector(): FutureApiService {
+    return this.apiService;
+  }
+&nbsp;
+  public get getResponse(): ApiResponse | Array&lt;ApiResponse&gt; {
+    return (this._getResponse.length === 1) ? this._getResponse[0] : this._getResponse;
+  }
+&nbsp;
+  public set getResponse(response: ApiResponse | Array&lt;ApiResponse&gt;) {
+    this._getResponse = (Array.isArray(response)) ? response : [response];
+  }
+&nbsp;
+  public get putResponse(): ApiResponse | Array&lt;ApiResponse&gt; {
+    return (this._putResponse.length === 1) ? this._putResponse[0] : this._putResponse;
+  }
+&nbsp;
+  public set putResponse(response: ApiResponse | Array&lt;ApiResponse&gt;) {
+    this._putResponse = (Array.isArray(response)) ? response : [response];
+  }
+&nbsp;
+  public get postResponse(): ApiResponse | Array&lt;ApiResponse&gt; {
+    return (this._postResponse.length === 1) ? this._postResponse[0] : this._postResponse;
+  }
+&nbsp;
+  public set postResponse(response: ApiResponse | Array&lt;ApiResponse&gt;) {
+    this._postResponse = (Array.isArray(response)) ? response : [response];
+  }
+&nbsp;
+  public get deleteResponse(): ApiResponse | Array&lt;ApiResponse&gt; {
+    return (this._deleteResponse.length === 1) ? this._deleteResponse[0] : this._deleteResponse;
+  }
+&nbsp;
+  public set deleteResponse(response: ApiResponse | Array&lt;ApiResponse&gt;) {
+    this._deleteResponse = (Array.isArray(response)) ? response : [response];
+  }
+&nbsp;
+  // Spies:
+  // Use these in your jasmine expectations.
+  public get get(): jasmine.Spy { return this.spies.get; }
+  public get post(): jasmine.Spy { return this.spies.post; }
+  public get put(): jasmine.Spy { return this.spies.put; }
+  public get delete(): jasmine.Spy { return this.spies.delete; }
+&nbsp;
+  private initialize() {
+    this.apiService = new FutureApiService(null, null, null);
+&nbsp;
+    this.spies = {
+      get: spyOn(this.apiService, 'get').and.callFake((): any =&gt; {
+        if (this.getError) {
+          return Observable.throw(this.getError);
+        } else {
+          const counter = this.callCounter.get;
+          if (this.callCounter.get !== this._getResponse.length - 1) this.callCounter.get++;
+          return Observable.of(this._getResponse[counter]);
+        }
+      }),
+&nbsp;
+      post: spyOn(this.apiService, 'post').and.callFake((): any =&gt; {
+        if (this.postError) {
+          return Observable.throw(this.postError);
+        } else {
+          const counter = this.callCounter.post;
+          if (this.callCounter.post !== this._postResponse.length - 1) this.callCounter.post++;
+          return Observable.of(this._postResponse[counter]);
+        }
+      }),
+&nbsp;
+      put: spyOn(this.apiService, 'put').and.callFake((): any =&gt; {
+        if (this.putError) {
+          return Observable.throw(this.putError);
+        } else {
+          const counter = this.callCounter.put;
+          if (this.callCounter.put !== this._putResponse.length - 1) this.callCounter.put++;
+          return Observable.of(this._putResponse[counter]);
+        }
+      }),
+&nbsp;
+      delete: spyOn(this.apiService, 'delete').and.callFake((): any =&gt; {
+        if (this.deleteError) {
+          return Observable.throw(this.deleteError);
+        } else {
+          const counter = this.callCounter.delete;
+          if (this.callCounter.delete !== this._deleteResponse.length - 1) this.callCounter.delete++;
+          return Observable.of(this._deleteResponse[counter]);
+        }
+      })
+    };
+  }
+}
+&nbsp;
+interface MockApiServiceSpies { get: jasmine.Spy; post: jasmine.Spy; put: jasmine.Spy; delete: jasmine.Spy; };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-form/components/wz-input-tags/wz-input-tags.component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-form/components/wz-input-tags/</a> wz-input-tags.component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">49.12% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>28/57</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">51.11% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36.36% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>25/50</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var WzInputTagsComponent = (function () {
+    function WzInputTagsComponent(ref) {
+        this.ref = ref;
+        this.tags = [];
+        this.finalDelete = false;
+    }
+    WzInputTagsComponent.prototype.submit = <span class="fstat-no" title="function not covered" >function (e) {</span>
+<span class="cstat-no" title="statement not covered" >        switch (e.code) {</span>
+            case 'Enter':
+<span class="cstat-no" title="statement not covered" >                var tag = e.target.value;</span>
+<span class="cstat-no" title="statement not covered" >                if (!this.find(tag) &amp;&amp; tag !== '' &amp;&amp; this.tags.length &lt;= 10) {</span>
+<span class="cstat-no" title="statement not covered" >                    this.create(tag);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                e.target.value = '';</span>
+<span class="cstat-no" title="statement not covered" >                e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >                this.ref.markForCheck();</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            case 'Backspace':
+<span class="cstat-no" title="statement not covered" >                if (e.target.value === '') {</span>
+<span class="cstat-no" title="statement not covered" >                    if (this.finalDelete) {</span>
+<span class="cstat-no" title="statement not covered" >                        this.delete(false, this.tags[this.tags.length - 1]);</span>
+                    }
+                    else {
+<span class="cstat-no" title="statement not covered" >                        this.finalDelete = true;</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                this.ref.markForCheck();</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            default:
+<span class="cstat-no" title="statement not covered" >                this.finalDelete = false;</span>
+<span class="cstat-no" title="statement not covered" >                this.ref.markForCheck();</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
+        }
+    };
+    WzInputTagsComponent.prototype.checkBeforeDelete = <span class="fstat-no" title="function not covered" >function (tag) {</span>
+<span class="cstat-no" title="statement not covered" >        return (this.finalDelete &amp;&amp; this.tags[this.tags.length - 1] === tag);</span>
+    };
+    WzInputTagsComponent.prototype.delete = <span class="fstat-no" title="function not covered" >function ($event, tagForDelete) {</span>
+<span class="cstat-no" title="statement not covered" >        if ($event === void 0) { <span class="cstat-no" title="statement not covered" >$event = false; </span>}</span>
+<span class="cstat-no" title="statement not covered" >        this.tags = this.tags.filter(<span class="fstat-no" title="function not covered" >function (tag) {</span> <span class="cstat-no" title="statement not covered" >return tag !== tagForDelete; </span>});</span>
+<span class="cstat-no" title="statement not covered" >        this.fControl.setValue(this.tags.toString());</span>
+<span class="cstat-no" title="statement not covered" >        this.finalDelete = false;</span>
+    };
+    WzInputTagsComponent.prototype.create = <span class="fstat-no" title="function not covered" >function (tag) {</span>
+<span class="cstat-no" title="statement not covered" >        this.tags = this.tags.concat(tag);</span>
+<span class="cstat-no" title="statement not covered" >        this.fControl.setValue(this.tags.toString());</span>
+    };
+    WzInputTagsComponent.prototype.find = <span class="fstat-no" title="function not covered" >function (tagCandidate) {</span>
+<span class="cstat-no" title="statement not covered" >        return this.tags.filter(<span class="fstat-no" title="function not covered" >function (tag) {</span> <span class="cstat-no" title="statement not covered" >return tag === tagCandidate; </span>}).length &gt; 0;</span>
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", forms_1.FormControl)
+    ], WzInputTagsComponent.prototype, "fControl", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Array)
+    ], WzInputTagsComponent.prototype, "tags", void 0);
+    WzInputTagsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'wz-input-tags',
+            template: "&lt;div class=\"mat-input-wrapper wz-tags\"&gt;\n                &lt;ul *ngIf=\"tags.length &gt; 0\"&gt;\n                  &lt;li [ngClass]=\"{'ready-delete': checkBeforeDelete(tag)}\" *ngFor=\"let tag of tags;\"&gt;\n                    {{tag}}\n                    &lt;a class=\"button delete\" mat-icon-button (click)=\"delete($event, tag)\"&gt;\n                      &lt;mat-icon&gt;cancel&lt;/mat-icon&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                &lt;/ul&gt;\n                &lt;ng-content&gt;&lt;/ng-content&gt;\n             &lt;/div&gt;",
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+        }),
+        __metadata("design:paramtypes", [core_1.ChangeDetectorRef])
+    ], WzInputTagsComponent);
+    return WzInputTagsComponent;
+}());
+exports.WzInputTagsComponent = WzInputTagsComponent;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvbW9kdWxlcy93ei1mb3JtL2NvbXBvbmVudHMvd3otaW5wdXQtdGFncy93ei1pbnB1dC10YWdzLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUFBLHNDQUE2RjtBQUM3Rix3Q0FBNkM7QUFtQjdDO0lBSUUsOEJBQW9CLEdBQXNCO1FBQXRCLFFBQUcsR0FBSCxHQUFHLENBQW1CO1FBRmpDLFNBQUksR0FBa0IsRUFBRSxDQUFDO1FBQzFCLGdCQUFXLEdBQVksS0FBSyxDQUFDO0lBQ1MsQ0FBQztJQUV4QyxxQ0FBTSxHQUFiLFVBQWMsQ0FBTTtRQUNsQixNQUFNLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLENBQUMsQ0FBQztZQUVmLEtBQUssT0FBTztnQkFDVixJQUFJLEdBQUcsR0FBVyxDQUFDLENBQUMsTUFBTSxDQUFDLEtBQUssQ0FBQztnQkFDakMsRUFBRSxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxJQUFJLEdBQUcsS0FBSyxFQUFFLElBQUksSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLElBQUksRUFBRSxDQUFDLENBQUMsQ0FBQztvQkFDNUQsSUFBSSxDQUFDLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQztnQkFDbkIsQ0FBQztnQkFDRCxDQUFDLENBQUMsTUFBTSxDQUFDLEtBQUssR0FBRyxFQUFFLENBQUM7Z0JBQ3BCLENBQUMsQ0FBQyxjQUFjLEVBQUUsQ0FBQztnQkFDbkIsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLEVBQUUsQ0FBQztnQkFDeEIsTUFBTSxDQUFDO1lBRVQsS0FBSyxXQUFXO2dCQUNkLEVBQUUsQ0FBQyxDQUFDLENBQUMsQ0FBQyxNQUFNLENBQUMsS0FBSyxLQUFLLEVBQUUsQ0FBQyxDQUFDLENBQUM7b0JBQzFCLEVBQUUsQ0FBQyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsQ0FBQyxDQUFDO3dCQUNyQixJQUFJLENBQUMsTUFBTSxDQUFDLEtBQUssRUFBRSxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsTUFBTSxHQUFHLENBQUMsQ0FBQyxDQUFDLENBQUM7b0JBQ3RELENBQUM7b0JBQUMsSUFBSSxDQUFDLENBQUM7d0JBQ04sSUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLENBQUM7b0JBQzFCLENBQUM7Z0JBQ0gsQ0FBQztnQkFDRCxJQUFJLENBQUMsR0FBRyxDQUFDLFlBQVksRUFBRSxDQUFDO2dCQUN4QixNQUFNLENBQUM7WUFFVDtnQkFDRSxJQUFJLENBQUMsV0FBVyxHQUFHLEtBQUssQ0FBQztnQkFDekIsSUFBSSxDQUFDLEdBQUcsQ0FBQyxZQUFZLEVBQUUsQ0FBQztnQkFDeEIsTUFBTSxDQUFDO1FBQ1gsQ0FBQztJQUNILENBQUM7SUFFTSxnREFBaUIsR0FBeEIsVUFBeUIsR0FBVztRQUNsQyxNQUFNLENBQUMsQ0FBQyxJQUFJLENBQUMsV0FBVyxJQUFJLElBQUksQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFDLEtBQUssR0FBRyxDQUFDLENBQUM7SUFDdkUsQ0FBQztJQUVNLHFDQUFNLEdBQWIsVUFBYyxNQUFjLEVBQUUsWUFBb0I7UUFBcEMsdUJBQUEsRUFBQSxjQUFjO1FBQzFCLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLENBQUMsVUFBQyxHQUFHLElBQUssT0FBQSxHQUFHLEtBQUssWUFBWSxFQUFwQixDQUFvQixDQUFDLENBQUM7UUFDNUQsSUFBSSxDQUFDLFFBQVEsQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxRQUFRLEVBQUUsQ0FBQyxDQUFDO1FBQzdDLElBQUksQ0FBQyxXQUFXLEdBQUcsS0FBSyxDQUFDO0lBQzNCLENBQUM7SUFFTyxxQ0FBTSxHQUFkLFVBQWUsR0FBVztRQUN4QixJQUFJLENBQUMsSUFBSSxHQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDO1FBQ2xDLElBQUksQ0FBQyxRQUFRLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsUUFBUSxFQUFFLENBQUMsQ0FBQztJQUMvQyxDQUFDO0lBRU8sbUNBQUksR0FBWixVQUFhLFlBQW9CO1FBQy9CLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxVQUFDLEdBQUcsSUFBSyxPQUFBLEdBQUcsS0FBSyxZQUFZLEVBQXBCLENBQW9CLENBQUMsQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFDO0lBQ3BFLENBQUM7SUFyRFE7UUFBUixZQUFLLEVBQUU7a0NBQVcsbUJBQVc7MERBQUM7SUFDdEI7UUFBUixZQUFLLEVBQUU7a0NBQU8sS0FBSztzREFBYztJQUZ2QixvQkFBb0I7UUFqQmhDLGdCQUFTLENBQUM7WUFDVCxRQUFRLEVBQUUsTUFBTSxDQUFDLEVBQUU7WUFDbkIsUUFBUSxFQUFFLGVBQWU7WUFDekIsUUFBUSxFQUFFLGlnQkFVUTtZQUNsQixlQUFlLEVBQUUsOEJBQXVCLENBQUMsTUFBTTtTQUNoRCxDQUFDO3lDQU15Qix3QkFBaUI7T0FKL0Isb0JBQW9CLENBdURoQztJQUFELDJCQUFDO0NBdkRELEFBdURDLElBQUE7QUF2RFksb0RBQW9CIiwiZmlsZSI6ImFwcC9zaGFyZWQvbW9kdWxlcy93ei1mb3JtL2NvbXBvbmVudHMvd3otaW5wdXQtdGFncy93ei1pbnB1dC10YWdzLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgSW5wdXQsIENoYW5nZURldGVjdGlvblN0cmF0ZWd5LCBDaGFuZ2VEZXRlY3RvclJlZiB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRm9ybUNvbnRyb2wgfSBmcm9tICdAYW5ndWxhci9mb3Jtcyc7XG5cbkBDb21wb25lbnQoe1xuICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICBzZWxlY3RvcjogJ3d6LWlucHV0LXRhZ3MnLFxuICB0ZW1wbGF0ZTogYDxkaXYgY2xhc3M9XCJtYXQtaW5wdXQtd3JhcHBlciB3ei10YWdzXCI+XG4gICAgICAgICAgICAgICAgPHVsICpuZ0lmPVwidGFncy5sZW5ndGggPiAwXCI+XG4gICAgICAgICAgICAgICAgICA8bGkgW25nQ2xhc3NdPVwieydyZWFkeS1kZWxldGUnOiBjaGVja0JlZm9yZURlbGV0ZSh0YWcpfVwiICpuZ0Zvcj1cImxldCB0YWcgb2YgdGFncztcIj5cbiAgICAgICAgICAgICAgICAgICAge3t0YWd9fVxuICAgICAgICAgICAgICAgICAgICA8YSBjbGFzcz1cImJ1dHRvbiBkZWxldGVcIiBtYXQtaWNvbi1idXR0b24gKGNsaWNrKT1cImRlbGV0ZSgkZXZlbnQsIHRhZylcIj5cbiAgICAgICAgICAgICAgICAgICAgICA8bWF0LWljb24+Y2FuY2VsPC9tYXQtaWNvbj5cbiAgICAgICAgICAgICAgICAgICAgPC9hPlxuICAgICAgICAgICAgICAgICAgPC9saT5cbiAgICAgICAgICAgICAgICA8L3VsPlxuICAgICAgICAgICAgICAgIDxuZy1jb250ZW50PjwvbmctY29udGVudD5cbiAgICAgICAgICAgICA8L2Rpdj5gLFxuICBjaGFuZ2VEZXRlY3Rpb246IENoYW5nZURldGVjdGlvblN0cmF0ZWd5Lk9uUHVzaCxcbn0pXG5cbmV4cG9ydCBjbGFzcyBXeklucHV0VGFnc0NvbXBvbmVudCB7XG4gIEBJbnB1dCgpIGZDb250cm9sOiBGb3JtQ29udHJvbDtcbiAgQElucHV0KCkgdGFnczogQXJyYXk8c3RyaW5nPiA9IFtdO1xuICBwcml2YXRlIGZpbmFsRGVsZXRlOiBib29sZWFuID0gZmFsc2U7XG4gIGNvbnN0cnVjdG9yKHByaXZhdGUgcmVmOiBDaGFuZ2VEZXRlY3RvclJlZikgeyB9XG5cbiAgcHVibGljIHN1Ym1pdChlOiBhbnkpIHtcbiAgICBzd2l0Y2ggKGUuY29kZSkge1xuXG4gICAgICBjYXNlICdFbnRlcic6XG4gICAgICAgIGxldCB0YWc6IHN0cmluZyA9IGUudGFyZ2V0LnZhbHVlO1xuICAgICAgICBpZiAoIXRoaXMuZmluZCh0YWcpICYmIHRhZyAhPT0gJycgJiYgdGhpcy50YWdzLmxlbmd0aCA8PSAxMCkge1xuICAgICAgICAgIHRoaXMuY3JlYXRlKHRhZyk7XG4gICAgICAgIH1cbiAgICAgICAgZS50YXJnZXQudmFsdWUgPSAnJztcbiAgICAgICAgZS5wcmV2ZW50RGVmYXVsdCgpO1xuICAgICAgICB0aGlzLnJlZi5tYXJrRm9yQ2hlY2soKTtcbiAgICAgICAgcmV0dXJuO1xuXG4gICAgICBjYXNlICdCYWNrc3BhY2UnOlxuICAgICAgICBpZiAoZS50YXJnZXQudmFsdWUgPT09ICcnKSB7XG4gICAgICAgICAgaWYgKHRoaXMuZmluYWxEZWxldGUpIHtcbiAgICAgICAgICAgIHRoaXMuZGVsZXRlKGZhbHNlLCB0aGlzLnRhZ3NbdGhpcy50YWdzLmxlbmd0aCAtIDFdKTtcbiAgICAgICAgICB9IGVsc2Uge1xuICAgICAgICAgICAgdGhpcy5maW5hbERlbGV0ZSA9IHRydWU7XG4gICAgICAgICAgfVxuICAgICAgICB9XG4gICAgICAgIHRoaXMucmVmLm1hcmtGb3JDaGVjaygpO1xuICAgICAgICByZXR1cm47XG5cbiAgICAgIGRlZmF1bHQ6XG4gICAgICAgIHRoaXMuZmluYWxEZWxldGUgPSBmYWxzZTtcbiAgICAgICAgdGhpcy5yZWYubWFya0ZvckNoZWNrKCk7XG4gICAgICAgIHJldHVybjtcbiAgICB9XG4gIH1cblxuICBwdWJsaWMgY2hlY2tCZWZvcmVEZWxldGUodGFnOiBzdHJpbmcpOiBib29sZWFuIHtcbiAgICByZXR1cm4gKHRoaXMuZmluYWxEZWxldGUgJiYgdGhpcy50YWdzW3RoaXMudGFncy5sZW5ndGggLSAxXSA9PT0gdGFnKTtcbiAgfVxuXG4gIHB1YmxpYyBkZWxldGUoJGV2ZW50ID0gZmFsc2UsIHRhZ0ZvckRlbGV0ZTogc3RyaW5nKSB7XG4gICAgdGhpcy50YWdzID0gdGhpcy50YWdzLmZpbHRlcigodGFnKSA9PiB0YWcgIT09IHRhZ0ZvckRlbGV0ZSk7XG4gICAgdGhpcy5mQ29udHJvbC5zZXRWYWx1ZSh0aGlzLnRhZ3MudG9TdHJpbmcoKSk7XG4gICAgdGhpcy5maW5hbERlbGV0ZSA9IGZhbHNlO1xuICB9XG5cbiAgcHJpdmF0ZSBjcmVhdGUodGFnOiBzdHJpbmcpIHtcbiAgICB0aGlzLnRhZ3MgPSB0aGlzLnRhZ3MuY29uY2F0KHRhZyk7XG4gICAgdGhpcy5mQ29udHJvbC5zZXRWYWx1ZSh0aGlzLnRhZ3MudG9TdHJpbmcoKSk7XG4gIH1cblxuICBwcml2YXRlIGZpbmQodGFnQ2FuZGlkYXRlOiBzdHJpbmcpOiBib29sZWFuIHtcbiAgICByZXR1cm4gdGhpcy50YWdzLmZpbHRlcigodGFnKSA9PiB0YWcgPT09IHRhZ0NhbmRpZGF0ZSkubGVuZ3RoID4gMDtcbiAgfVxufVxuIl19
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

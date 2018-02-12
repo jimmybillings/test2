@@ -1,0 +1,7 @@
+@mixin wz-sticky-footer-theme($theme) {
+  $background: map-get($theme, background);
+
+  .main-content {
+    background-color: mat-color($background, status-bar);
+  }
+}

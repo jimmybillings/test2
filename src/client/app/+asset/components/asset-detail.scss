@@ -1,0 +1,336 @@
+section.preview-bk {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 60px;
+  .breadcrumb-container {
+    padding: 5px 0;
+    position: relative;
+    .breadcrumb {
+      a[mat-button] {
+        line-height: 40px;
+        min-width: 60px;
+      }
+      .breadcrumb-current {
+        line-height: 1;
+        opacity: .65;
+        &.timecode {
+          font-size: .75em;
+        }
+      }
+      .breadcrumb-separator {
+        display: inline-block;
+        &::before {
+          top: -18px;
+        }
+      }
+      .back-to-search {
+        margin-right: 2px;
+        margin-left: -8px;
+      }
+      .breadcrumb-timecode-separator {
+        position: relative;
+        width: 10px;
+        &::before {
+          content: "\e192";
+          font-family: 'Material Icons';
+          position: absolute;
+          top: -2px;
+          left: -14px;
+          font-size: 22px;
+          opacity: .4;
+        }
+      }
+    }
+  }
+  &.theater {
+    height: 100%;
+    @include mat-elevation(2);
+    position: relative;
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height:100%;
+      opacity: .3;
+      z-index: 0;
+    }
+    & > div > div {
+      position: relative;
+      z-index: 1;
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        margin-right: 6px;    
+        margin-left: 6px;    
+      }
+    }
+  }
+  .preview {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(mat-color($mat-grey, 50), 1);
+      transition: opacity 1.5s cubic-bezier(0.55, 0, 0.55, 0.2);
+    }
+  }
+  .toolbar-actions {
+    text-align: right;
+    max-width: 265px;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      max-width: none;
+
+    }
+    .asset-options {
+      span.comment-count {
+        position: absolute;
+        top:0;
+        right: -2px;
+        border-radius: 2px;
+        min-width: 14px;
+        font-size: .8em;
+        line-height: 1;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 1px 2px;
+        border-width: 1px;
+        border-style: solid;
+      }
+    }
+  }
+  .rights-transcodes {
+    width: 100%;
+    margin: 0;
+    padding: 6px 30px 6px 30px;
+    position: absolute;
+    bottom: 60px;
+    button {
+      width: 100%;
+    }   
+    [mat-button].is-outlined.rights-pkg {
+      border-radius: 4px;
+    }
+  }
+  .list-price, .calculated-price, .contact-us-pricing {
+    width: 100%;
+    margin: 0;
+    padding: 6px 28px 6px 28px;
+    position: absolute;
+    bottom: 16px;
+    text-align: right;
+    span {
+      display: inline-block;
+      font-size: 1.6em;
+      font-weight: 400;
+      line-height: 1;
+      &.starting {
+        font-size: .95em;
+        margin-right: 6px;
+      }
+      &.price::first-letter {
+        font-size: .7em;
+        font-weight: 200;
+        vertical-align: top;
+      }
+    }
+  }
+  .subclip-update-button {
+    margin: 0 0 0 0;
+    min-height: 58px;
+    button {
+      margin: 10px 0;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        margin: 6px 0;
+      }
+    }
+  }
+  .cart-options {
+    padding: 10px 30px 0 0;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding: 12px 25px 0 25px;
+    }
+    button{
+      // margin-left: 4px;
+      min-width: calc(100% - 30px);
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        margin-bottom: 6px;
+        min-width: 100%;
+      }
+    }
+    button.add-to-cart  {
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        min-width: 100%;
+      }
+    }
+    .delete-from-cart {
+      margin-right: calc(-33% - 104px);
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        margin-right: 0;
+      }
+      button.mat-button {
+        margin-left: 0;
+        .mat-icon {
+          height: 26px;
+          padding-right: 3px;
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+  div > div > div.primary-info {
+    height: 100%;
+  }
+  div.advplayer > div > div.primary-info {
+    height: calc(100% - 58px);
+  }
+  div.primary-info {
+    box-shadow: none;
+    position: relative;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding: 0;
+      background-color: transparent;
+      min-height: 335px;
+    }
+    .metadata {
+      padding: 12px;
+      max-height: calc(100% - 87px);
+      overflow-y: scroll;
+      .key {
+        font-weight: 600;
+        margin: 0;
+      }
+      .value {
+        font-weight: 200;
+        margin: 0 0 3px 0;
+        font-size: .87em;
+      }
+    }
+  }
+}
+
+.responsive-video {
+  background-color:  transparent;
+  position: relative;
+  height: auto;
+  @media screen and (max-width: $layout-breakpoint-xs)  {
+    margin-bottom: 15px;
+  }
+  & > div.jw-error, & > div.no-rendition {
+    @media screen and (min-width: $layout-breakpoint-lg)  {
+      min-height: 540px;
+    }
+    @media screen and (min-width: $layout-breakpoint-md) and (max-width: $layout-breakpoint-lg)  {
+      min-height: 480px;
+    }
+    @media screen and (min-width: $layout-breakpoint-sm) and (max-width: $layout-breakpoint-md)  {
+      min-height: 400px;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm)  {
+      min-height: 320px;
+    }
+  }
+  & > div.no-rendition {
+    .no-rendition-message {
+      text-align: center;
+      padding: 28% 0 0 0;
+      margin: 0 20px;
+      font-size: 18px;
+      position: relative;
+      @media screen and (min-width: $layout-breakpoint-lg)  {
+        padding: 22% 0 0 0;
+      }
+      &::before {
+        content: "\e2c1";
+        font-family: 'Material Icons';
+        position: absolute;
+        font-size: 10em;
+        top: 6%;
+        right: 0;
+        width: 100%;
+        opacity: .08;
+      }
+    }
+  }
+  .photo-container {
+    text-align: center;
+    img {
+      max-height: 635px;
+      min-height: 380px;
+      max-width: 100%;
+      vertical-align: middle;
+      @media screen and (max-width: $layout-breakpoint-sm)  {
+        max-height: 505px;
+        min-height: 230px;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        max-height: 475px;
+        min-height: 230px;
+      }
+    }
+  }
+}
+div.primary-info-t {
+  height: 40px;
+  div.primary-content-t {
+    height: 100%;
+    & > div > div {
+      height: 100%;
+    }
+    .sd-hd {
+      height: 20px;
+      width: 28px;
+      border-radius: 2px;
+      border-width: 1px;
+      border-style: solid;
+      position: relative;
+      &::before {
+        content: "HD";
+        position: absolute;
+        top: 50%;
+        left: 53%;
+        transform: translate(-50%, -50%);
+        opacity: 0.8;
+        font-size: .94em;
+        font-weight: 600;
+        line-height: 0;
+      }
+    }
+    .sd-hd.sd {
+      width: 27px;
+      height: 18px;
+      border-radius: 50%;
+      &::before {
+        content: "SD";
+        opacity: 0.9;
+      }
+    }
+    .rights {
+      padding-left: 8px;
+      text-transform: uppercase;
+    }
+    .image.photo {
+      position: relative;
+      height: 20px;
+      width: 30px;
+      color: transparent;
+      &::before {
+        content: "\e412";
+        font-family: 'Material Icons';
+        color: rgba(mat-color($mat-grey, 100),0.4);
+        position: absolute;
+        top: -8px;
+        left: 1px;
+        font-size: 1.85em;
+      }
+    }
+  }
+}

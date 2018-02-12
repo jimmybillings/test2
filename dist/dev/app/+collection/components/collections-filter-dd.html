@@ -1,0 +1,20 @@
+<div class="collections-dd-menu">
+  <header>
+    <div flex="100" layout="row">
+        <div class="tools" flex="auto" layout-align="start center">
+          <button mat-icon-button title="{{ 'COLLECTION.DD_MENU.PREVIOUS_HOVER_TITLE' | translate }}" (click)="close.emit()"><mat-icon>arrow_back</mat-icon></button>
+        </div>
+        <h4 class="mat-headline" flex="100" layout-align="start center">
+          {{ 'COLLECTION.INDEX.FILTER_DD_MENU.HEADING' | translate }}
+        </h4>
+        <div class="tools" flex="auto" layout-align="end center">
+          <!--<button mat-icon-button title="{{ 'COLLECTION.DD_MENU.CLOSE_HOVER_TITLE' | translate }}" (click)="close.emit()"><mat-icon>close</mat-icon></button>-->
+          <button class="back" mat-icon-button title="{{ 'COLLECTION.DD_MENU.CLOSE_HOVER_TITLE' | translate }}" (click)="close.emit()"><mat-icon>arrow_drop_up</mat-icon></button>
+        </div>
+      </div>
+  </header>
+  <div class="sub-menu dd-menu-wrapper">
+    <wz-sort-component [current]="currentFilter" [items]="filterOptions" (sort)="onFilterResults($event)"></wz-sort-component>
+  </div>
+</div>
+<div class="wz-dd-click-catcher" (click)="close.emit()"></div>

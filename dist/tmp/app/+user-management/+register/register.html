@@ -1,0 +1,24 @@
+<section class="login hero" *ngIf="config">
+	<div layout="row" mat-scroll-y="" layout-align="center start">
+		<div flex-gt-lg="25" flex-gt-md="30" flex-md="40" flex-gt-sm="55" flex-gt-xs="60" flex="90">
+			<mat-card class="wz-form-card" *ngIf="!successfullySubmitted">
+				<mat-card-title>
+					{{ 'REGISTER.TITLE' | translate }}
+				</mat-card-title>
+				<mat-card-content>
+					<wz-form [items]="config.form.items" [serverErrors]="serverErrors" submitLabel="REGISTER.FORM.SUBMIT_LABEL" 
+					(formSubmit)="onSubmit($event)" (onAction)="openTermsDialog()"></wz-form>
+				</mat-card-content>
+			</mat-card>
+
+			<mat-card class="registration-confirm" *ngIf="successfullySubmitted">
+				<mat-card-title>{{ 'REGISTER.CONFIRMATION.TITLE' | translate }}</mat-card-title>
+				<mat-card-subtitle>{{ 'REGISTER.CONFIRMATION.MESSAGE' | translate }}</mat-card-subtitle>
+				<span class="email">{{newUser.emailAddress}}</span>
+			</mat-card>
+
+			<div mat-theme="docs-dark" layout="column" layout-align="center center" layout-wrap=""><span class="mat-title">{{'REGISTER.ALREADY_HAVE_ACCOUNT' | translate }} <a mat-button [routerLink]="['/user/login']" color="accent">{{'REGISTER.LOGIN' | translate }}</a></span></div>
+		</div>
+	</div>
+</section>
+

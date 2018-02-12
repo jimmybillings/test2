@@ -1,0 +1,103 @@
+<mat-nav-list>
+  <li *ngFor="let filter of filters.subFilters">
+    <div [ngSwitch]="filter.type">
+      <div *ngSwitchCase="'ExclusiveList'" class="exclusive-list">
+        <div class="filter-subhead">
+          <div class="filter-subhead-inner">
+            <div class="filter-subhead-content">
+              <span>{{filter.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <mat-list-item *ngFor="let subFilter of filter.subFilters">
+          <button mat-button (click)="applyExclusiveFilter(subFilter)" [ngClass]="{'active': subFilter.active}" color="primary">
+            {{subFilter.name}}
+            <span class="filter-count" *ngIf="counted && subFilter.count > -1">
+              &nbsp;({{subFilter.count | number}})
+            </span>
+          </button>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </div>
+
+      <span *ngSwitchCase="'None'" class="none">
+        <div class="filter-subhead" (click)="toggleFilterGroup(filter)">
+          <div class="filter-subhead-inner">
+            <div class="filter-subhead-content">
+              <span>{{filter.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <filter-component (onFilterEvent)="onFilterEvent.emit($event)" *ngIf="filter.active" [newFilters]="filter" [counted]="counted"></filter-component>
+
+        <mat-divider></mat-divider>
+      </span>
+
+      <span *ngSwitchCase="'List'" class="list">
+        <div title="{{filter.filterId}}" class="filter-subhead" (click)="toggleFilterGroup(filter)">
+          <div class="filter-subhead-inner">
+            <div class="filter-subhead-content">
+              <span>{{filter.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <filter-component (onFilterEvent)="onFilterEvent.emit($event)" *ngIf="filter.active" [newFilters]="filter" [counted]="counted"></filter-component>
+      </span>
+
+      <span *ngSwitchCase="'DateRange'" class="date-range">
+        <div class="filter-subhead">
+          <div class="filter-subhead-inner">
+            <div class="filter-subhead-content">
+              <span>{{filter.name}}</span>
+            </div>
+          </div>
+        </div>
+
+        <mat-form-field>
+          <input matInput name="start" [max]="endDate.value" [matDatepicker]="startDatePicker" placeholder="{{'SEARCH.FILTERS.DATE_RANGE_START_PLACEHOLDER' | translate}}" (dateChange)="applyDateRange($event, filter)" [formControl]="startDate">
+          <mat-hint align="start">{{'SEARCH.FILTERS.DATE_RANGE_FORMAT' | translate}}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #startDatePicker></mat-datepicker>
+        </mat-form-field>
+                
+        <mat-form-field> 
+          <input matInput name="end" [min]="startDate.value" [matDatepicker]="endDatePicker" placeholder="{{'SEARCH.FILTERS.DATE_RANGE_END_PLACEHOLDER' | translate}}" (dateChange)="applyDateRange($event, filter)" [formControl]="endDate">
+          <mat-hint align="start">{{'SEARCH.FILTERS.DATE_RANGE_FORMAT' | translate}}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #endDatePicker></mat-datepicker>
+        </mat-form-field>    
+      </span>
+
+      <span *ngSwitchCase="'Text'" class="text">
+        <mat-form-field>
+            <input matInput
+            name="filterValue"
+            color="primary"
+            placeholder="{{filter.name}}"
+            [value]=  "filter.filterValue || ''"
+            (keypress)="applyCustomValue($event, filter)">
+        </mat-form-field>
+
+        <filter-component (onFilterEvent)="onFilterEvent.emit($event)" *ngIf="filter.active" [newFilters]="filter" [counted]="counted"></filter-component>
+      </span>
+
+      <span *ngSwitchDefault>
+        <mat-checkbox
+          [disabled]="counted && filter.count < 1"
+          [checked]="filter.active"
+          color="primary"
+          (change)="toggleFilter(filter)">
+           {{filter.name}}
+           <span class="filter-count" *ngIf="counted && filter.count > -1">
+             ({{filter.count | number}})
+           </span>
+        </mat-checkbox>
+
+        <filter-component (onFilterEvent)="onFilterEvent.emit($event)" *ngIf="filter.active" [newFilters]="filter" [counted]="counted"></filter-component>
+      </span>
+    </div>
+  </li>
+</mat-nav-list>

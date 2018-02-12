@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/api/api.service.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/api/</a> api.service.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.8% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>44/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.52% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>25/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.62% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/41</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">292×</span>
+<span class="cline-any cline-yes">292×</span>
+<span class="cline-any cline-yes">292×</span>
+<span class="cline-any cline-yes">292×</span>
+<span class="cline-any cline-yes">292×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __extends = (this &amp;&amp; this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        (<span class="branch-1 cbranch-no" title="branch not covered" >{ __proto__: [] } instanceof Array </span>&amp;&amp; <span class="fstat-no" title="function not covered" ><span class="branch-2 cbranch-no" title="branch not covered" >function (d, b) {</span> <span class="cstat-no" title="statement not covered" >d.__proto__ = b; </span>})</span> ||
+<span class="fstat-no" title="function not covered" ><span class="branch-3 cbranch-no" title="branch not covered" >        function (d, b) {</span> <span class="cstat-no" title="statement not covered" >for (var p in b) <span class="cstat-no" title="statement not covered" >if (b.hasOwnProperty(p)) <span class="cstat-no" title="statement not covered" >d[p] = b[p]; </span></span></span>};</span>
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? <span class="branch-0 cbranch-no" title="branch not covered" >Object.create(b) </span>: (__.prototype = b.prototype, new __());
+    };
+})();
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : <span class="branch-1 cbranch-no" title="branch not covered" >desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,</span> d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : <span class="branch-1 cbranch-no" title="branch not covered" >c &gt; 3 ? d(target, key, r) : d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >r </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var store_1 = require("@ngrx/store");
+var http_1 = require("@angular/http");
+var api_config_1 = require("../../shared/services/api.config");
+var api_service_1 = require("../../shared/services/api.service");
+var FutureApiService = (function (_super) {
+    __extends(FutureApiService, _super);
+    function FutureApiService(http, apiConfig, ngrxStore) {
+        var _this = _super.call(this, http, apiConfig, ngrxStore) || this;
+        _this.http = http;
+        _this.apiConfig = apiConfig;
+        _this.ngrxStore = ngrxStore;
+        return _this;
+    }
+    FutureApiService.prototype.call = function (method, api, endpoint, options) {
+        var _this = this;
+        options = this.combineDefaultOptionsWith(options);
+        this.showLoadingIndicatorDependingOn(options);
+        return this.http.request(this.requestFor(method, api, endpoint, options))
+            .map(function (response) { try {
+            return response.json();
+        }
+        catch (exception) {
+            return response;
+        } })
+            .do(function () { return _this.hideLoadingIndicatorDependingOn(options); }, function (error) { return _this.hideLoadingIndicatorDependingOn(options); });
+    };
+    FutureApiService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, api_config_1.ApiConfig, store_1.Store])
+    ], FutureApiService);
+    return FutureApiService;
+}(api_service_1.ApiService));
+exports.FutureApiService = FutureApiService;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zdG9yZS9hcGkvYXBpLnNlcnZpY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsc0NBQTJDO0FBQzNDLHFDQUFvQztBQUNwQyxzQ0FBa0g7QUFHbEgsK0RBQTZEO0FBRTdELGlFQUErRDtBQUkvRDtJQUFzQyxvQ0FBVTtJQUM5QywwQkFBc0IsSUFBVSxFQUFZLFNBQW9CLEVBQVksU0FBMEI7UUFBdEcsWUFDRSxrQkFBTSxJQUFJLEVBQUUsU0FBUyxFQUFFLFNBQVMsQ0FBQyxTQUNsQztRQUZxQixVQUFJLEdBQUosSUFBSSxDQUFNO1FBQVksZUFBUyxHQUFULFNBQVMsQ0FBVztRQUFZLGVBQVMsR0FBVCxTQUFTLENBQWlCOztJQUV0RyxDQUFDO0lBRVMsK0JBQUksR0FBZCxVQUFlLE1BQXFCLEVBQUUsR0FBUSxFQUFFLFFBQWdCLEVBQUUsT0FBbUI7UUFBckYsaUJBVUM7UUFUQyxPQUFPLEdBQUcsSUFBSSxDQUFDLHlCQUF5QixDQUFDLE9BQU8sQ0FBQyxDQUFDO1FBRWxELElBQUksQ0FBQywrQkFBK0IsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUU5QyxNQUFNLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxNQUFNLEVBQUUsR0FBRyxFQUFFLFFBQVEsRUFBRSxPQUFPLENBQUMsQ0FBQzthQUN0RSxHQUFHLENBQUMsVUFBQSxRQUFRLElBQU0sSUFBSSxDQUFDO1lBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQyxJQUFJLEVBQUUsQ0FBQztRQUFDLENBQUM7UUFBQyxLQUFLLENBQUMsQ0FBQyxTQUFTLENBQUMsQ0FBQyxDQUFDO1lBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQztRQUFDLENBQUMsQ0FBQyxDQUFDLENBQUM7YUFDM0YsRUFBRSxDQUFDLGNBQU0sT0FBQSxLQUFJLENBQUMsK0JBQStCLENBQUMsT0FBTyxDQUFDLEVBQTdDLENBQTZDLEVBQ3ZELFVBQUMsS0FBdUIsSUFBSyxPQUFBLEtBQUksQ0FBQywrQkFBK0IsQ0FBQyxPQUFPLENBQUMsRUFBN0MsQ0FBNkMsQ0FDekUsQ0FBQztJQUNOLENBQUM7SUFmVSxnQkFBZ0I7UUFENUIsaUJBQVUsRUFBRTt5Q0FFaUIsV0FBSSxFQUF1QixzQkFBUyxFQUF1QixhQUFLO09BRGpGLGdCQUFnQixDQWdCNUI7SUFBRCx1QkFBQztDQWhCRCxBQWdCQyxDQWhCcUMsd0JBQVUsR0FnQi9DO0FBaEJZLDRDQUFnQiIsImZpbGUiOiJhcHAvc3RvcmUvYXBpL2FwaS5zZXJ2aWNlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgSW5qZWN0YWJsZSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgU3RvcmUgfSBmcm9tICdAbmdyeC9zdG9yZSc7XG5pbXBvcnQgeyBIdHRwLCBSZXF1ZXN0LCBSZXF1ZXN0TWV0aG9kLCBSZXF1ZXN0T3B0aW9ucywgUmVxdWVzdE9wdGlvbnNBcmdzLCBVUkxTZWFyY2hQYXJhbXMgfSBmcm9tICdAYW5ndWxhci9odHRwJztcbmltcG9ydCB7IE9ic2VydmFibGUgfSBmcm9tICdyeGpzL09ic2VydmFibGUnO1xuXG5pbXBvcnQgeyBBcGlDb25maWcgfSBmcm9tICcuLi8uLi9zaGFyZWQvc2VydmljZXMvYXBpLmNvbmZpZyc7XG5pbXBvcnQgeyBBcGksIEFwaU9wdGlvbnMsIEFwaVBhcmFtZXRlcnMsIEFwaUJvZHksIEFwaUVycm9yUmVzcG9uc2UgfSBmcm9tICcuLi8uLi9zaGFyZWQvaW50ZXJmYWNlcy9hcGkuaW50ZXJmYWNlJztcbmltcG9ydCB7IEFwaVNlcnZpY2UgfSBmcm9tICcuLi8uLi9zaGFyZWQvc2VydmljZXMvYXBpLnNlcnZpY2UnO1xuaW1wb3J0IHsgQXBwU3RhdGUgfSBmcm9tICcuLi8uLi9hcHAuc3RvcmUnO1xuXG5ASW5qZWN0YWJsZSgpXG5leHBvcnQgY2xhc3MgRnV0dXJlQXBpU2VydmljZSBleHRlbmRzIEFwaVNlcnZpY2Uge1xuICBjb25zdHJ1Y3Rvcihwcm90ZWN0ZWQgaHR0cDogSHR0cCwgcHJvdGVjdGVkIGFwaUNvbmZpZzogQXBpQ29uZmlnLCBwcm90ZWN0ZWQgbmdyeFN0b3JlOiBTdG9yZTxBcHBTdGF0ZT4pIHtcbiAgICBzdXBlcihodHRwLCBhcGlDb25maWcsIG5ncnhTdG9yZSk7XG4gIH1cblxuICBwcm90ZWN0ZWQgY2FsbChtZXRob2Q6IFJlcXVlc3RNZXRob2QsIGFwaTogQXBpLCBlbmRwb2ludDogc3RyaW5nLCBvcHRpb25zOiBBcGlPcHRpb25zKTogT2JzZXJ2YWJsZTxhbnk+IHtcbiAgICBvcHRpb25zID0gdGhpcy5jb21iaW5lRGVmYXVsdE9wdGlvbnNXaXRoKG9wdGlvbnMpO1xuXG4gICAgdGhpcy5zaG93TG9hZGluZ0luZGljYXRvckRlcGVuZGluZ09uKG9wdGlvbnMpO1xuXG4gICAgcmV0dXJuIHRoaXMuaHR0cC5yZXF1ZXN0KHRoaXMucmVxdWVzdEZvcihtZXRob2QsIGFwaSwgZW5kcG9pbnQsIG9wdGlvbnMpKVxuICAgICAgLm1hcChyZXNwb25zZSA9PiB7IHRyeSB7IHJldHVybiByZXNwb25zZS5qc29uKCk7IH0gY2F0Y2ggKGV4Y2VwdGlvbikgeyByZXR1cm4gcmVzcG9uc2U7IH0gfSlcbiAgICAgIC5kbygoKSA9PiB0aGlzLmhpZGVMb2FkaW5nSW5kaWNhdG9yRGVwZW5kaW5nT24ob3B0aW9ucyksXG4gICAgICAoZXJyb3I6IEFwaUVycm9yUmVzcG9uc2UpID0+IHRoaXMuaGlkZUxvYWRpbmdJbmRpY2F0b3JEZXBlbmRpbmdPbihvcHRpb25zKVxuICAgICAgKTtcbiAgfVxufVxuIl19
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+quote-show-component section.header {
+  header {
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) {
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+    padding-top: 6px;
+    padding-bottom: 5px;
+    position: relative;
+    .mat-display-1 {
+      margin: 0;
+      font-size: 26px;
+      & > span {
+        font-size: .75em;
+        line-height: 1;
+      }
+    }
+    .tools {
+      text-align: right;
+      max-width: 86px;
+      span.comment-count {
+        position: absolute;
+        top:0;
+        right: -2px;
+        border-radius: 2px;
+        min-width: 14px;
+        font-size: .77em;
+        line-height: 1;
+        margin-right: 0;
+        margin-left: 0;
+        padding: 1px 2px;
+        border-width: 1px;
+        border-style: solid;
+      }
+    }
+  }
+}
+.quote-summary .details {
+  .cart-total {
+    padding: 0 0 5px 10px;
+    .subtotal {
+      max-height: 20px;
+      margin-top: 26px;
+    }
+    .discount {
+      max-height: 20px;
+    }
+  }
+  @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) {
+    padding: 0 10px;
+  }
+}
+quote-show-component .project .assets {
+  padding: 0 12px 12px 12px;
+  display: flex;
+}
+quote-show-component .offline-agreement-section {
+  .offline-agreement-display {
+    margin: 10px 0;
+    opacity: .75;
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) {
+      margin: 10px 10px;
+    }
+    strong {
+      display: block;
+    }
+    span { 
+      display: block;
+      font-style: italic;
+      font-size: .94em;
+      line-height: 1.4;
+    }
+  }
+}
+commerce-component wz-comment > section {
+  padding: 6px 0 28px 0;
+}
+quotes-component .reject-quote.mat-button .mat-icon,
+.cart-total .reject-quote .mat-button .mat-icon {
+    height: 26px;
+    padding-right: 3px;
+    margin-left: -5px;
+}
+.cart-total .reject-quote {
+  @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) {
+    margin-top: 16px;
+  }
+}
+.cart-total .action-items {
+  white-space: nowrap;
+  text-align: right;
+}

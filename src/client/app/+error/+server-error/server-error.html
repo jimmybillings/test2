@@ -1,0 +1,38 @@
+<div layout="row" layout-align="center center">
+  <div flex-gt-lg="25" flex-gt-md="30" flex-md="40" flex-gt-sm="55" flex-gt-xs="60" flex="90" class="text-container">
+    <h1 class="mat-display-4">{{ 'SERVER_ERROR.TITLE' | translate }} <mat-icon>sentiment_very_dissatisfied</mat-icon></h1>
+    <h3 class="mat-display-1">{{ 'SERVER_ERROR.MESSAGE' | translate }}</h3>
+    <h5 class="mat-title">{{ 'SERVER_ERROR.SUPPORT_MSG' | translate }}
+      <a href="mailto:{{'SERVER_ERROR.SUPPORT_CONTACT' | translate }}">{{ 'SERVER_ERROR.SUPPORT_CONTACT' | translate }}</a>
+    </h5>
+    <div layout="row" layout-align="center center" class="links">
+      <button
+        mat-icon-button
+        color="accent"
+        [routerLink]="['/']">
+          <mat-icon>home</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="accent"
+        *ngIf="showCollectionsLink"
+        [routerLink]="['/collections']">
+          <mat-icon>folder_open</mat-icon>  
+      </button>
+      <button
+        mat-icon-button
+        color="accent"
+        *ngIf="showCartLink"
+        [routerLink]="['/cart']">
+          <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="accent"
+        *ngIf="showQuotesLink"
+        [routerLink]="['/quotes']">
+          <mat-icon>inbox</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="collections-dd-menu">
+  <header>
+    <div flex="100" layout="row">
+      <div class="tools" flex="auto" layout-align="start center">
+        <button mat-icon-button
+          title="{{ 'SHARING.SHARE_LINK.PREVIOUS_HOVER_TITLE' | translate }}"
+          (click)="onPreviousButtonClick()"
+        >
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+      <h4 class="mat-headline" flex="100" layout-align="start center">
+        {{ 'SHARING.SHARE_LINK.HEADING' | translate }}
+      </h4>
+      <div class="tools" flex="auto" layout-align="end center">
+        <button mat-icon-button title="{{ 'SHARING.SHARE_LINK.CLOSE_HOVER_TITLE' | translate }}" (click)="onCloseButtonClick()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="dd-menu-wrapper">
+    <div class="link" flex="100" layout="row">
+      <input 
+        id="shareLink"
+        class="link-input"
+        flex="100"
+        layout-align="start center"
+        value="{{ shareLink }}"
+        (click)="selectInputForCopy($event)" />
+      <button 
+        flex="auto"
+        layout-align="end center"
+        class="clipboard-copy"
+        wzClipboard
+        mat-icon-button
+        data-clipboard-target="#shareLink"
+        title="{{ 'SHARING.SHARE_LINK.COPY_BTN_TITLE' | translate }}" 
+        (click)="onCopyShareLinkButtonClick()">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+  </section>
+</div>
+<div class="wz-dd-click-catcher" (click)="onOutsideClick()"></div>
+

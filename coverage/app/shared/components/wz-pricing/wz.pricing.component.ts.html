@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/components/wz-pricing/wz.pricing.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/components/wz-pricing/</a> wz.pricing.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.56% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>129/135</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.68% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.87% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>37/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.41% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>104/109</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-yes">92×</span>
+<span class="cline-any cline-yes">92×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">52×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, EventEmitter, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup, AbstractControl, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { PriceAttribute, PriceOption } from '../../interfaces/commerce.interface';
+import { FormFields } from '../../interfaces/forms.interface';
+import { AppStore } from '../../../app.store';
+import { Pojo, WzEvent, SelectedPriceAttribute } from '../../interfaces/common.interface';
+import { Common } from '../../utilities/common.functions';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-pricing',
+  templateUrl: 'wz.pricing.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class WzPricingComponent implements OnDestroy {
+  public form: FormGroup;
+  public customForm: FormGroup;
+  public attributes: Array&lt;PriceAttribute&gt;;
+  public price: Observable&lt;number&gt;;
+  public _userCanCustomizeRights: boolean;
+  @Output() pricingEvent: EventEmitter&lt;WzEvent&gt; = new EventEmitter&lt;WzEvent&gt;();
+  @Input()
+  set userCanCustomizeRights(canCustomize: boolean) {
+    this._userCanCustomizeRights = canCustomize;
+    if (canCustomize) {
+      this.buildCustomForm();
+    }
+  }
+  @Input()
+  set pricingPreferences(preferences: Pojo) {
+    this._pricingPreferences = preferences;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.form) {
+      this.buildForm();
+    }
+    if (!Common.isEmpty(preferences) &amp;&amp; !this.priceBookChanged) {
+      setTimeout(() =&gt; { this.pricingEvent.emit({ type: 'CALCULATE_PRICE', payload: preferences }); }, 0);
+    }
+  }
+  private formSubscription: Subscription;
+  private storeSubscription: Subscription;
+  private _pricingPreferences: Pojo;
+&nbsp;
+  constructor(private fb: FormBuilder, private store: AppStore) {
+    this.price = this.store.select(state =&gt; state.pricing.priceForDialog);
+    this.storeSubscription = this.store.select(state =&gt; state.pricing.attributes).subscribe(attrs =&gt; this.attributes = attrs);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.formSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >    this.storeSubscription.unsubscribe();</span>
+  }
+&nbsp;
+  public onSubmit(): void {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.form.valid) <span class="cstat-no" title="statement not covered" >return;</span>
+    // When the form is opened at the project level in a cart/quote, there is no price
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.price) {
+      this.price.take(1).subscribe((price: number) =&gt; {
+        this.pricingEvent.emit({
+          type: 'APPLY_PRICE',
+          payload: {
+            price: price,
+            attributes: this.formValue,
+            updatePrefs: true,
+            preferences: this.form.value
+          }
+        });
+      });
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.pricingEvent.emit({</span>
+        type: 'APPLY_PRICE',
+        payload: {
+          attributes: this.formValue,
+          updatePrefs: true,
+          preferences: this.form.value
+        }
+      });
+    }
+  }
+&nbsp;
+  public onSubmitCustom(): void {
+    this.pricingEvent.emit({
+      type: 'APPLY_PRICE',
+      payload: {
+        attributes: this.customFormValue,
+        updatePrefs: false
+      }
+    });
+  }
+&nbsp;
+  public parentIsEmpty(currentAttribute: PriceAttribute): boolean {
+    // If the currentAttribute is the top-most parent, it should never be disabled
+    if (currentAttribute.primary) {
+      return false;
+    } else {
+      // Find the parent attribute of the currentAttribute and check that its value is not empty
+      const parent: PriceAttribute = this.findParentOf(currentAttribute);
+      return this.form.controls[parent.name].value === '';
+    }
+  }
+&nbsp;
+  public validOptionsFor(currentAttribute: PriceAttribute): Array&lt;PriceOption&gt; | void {
+    // If the parent attribute has not been selected, return;
+    if (this.parentIsEmpty(currentAttribute)) return;
+    // If the currentAttribute is the primary attribute, the valid choices are its attributeList
+    if (currentAttribute.primary) {
+      return currentAttribute.attributeList;
+    } else {
+      // Find the parent attribute of the currentAttribute
+      const parent: PriceAttribute = this.findParentOf(currentAttribute);
+      // Use the parent attribute's name to find its current form value
+      const parentFormValue: string = this.form.controls[parent.name].value;
+      // Find the valid choices array that corresponds to the previous option the user selected
+      const rawOptions: Array&lt;string&gt; = parent.validChildChoicesMap[parentFormValue];
+      // There should always be options, however if there aren't we need to alert the user the calculation went wrong
+      if (!rawOptions) {
+        this.clearForm(Object.keys(this.form.controls));
+        return;
+      }
+      // The raw options is just an array of strings that represent attribute values
+      // we need to map them back to the attributeList of the option to get the name, value, multiplier, etc;
+      const options: Array&lt;PriceOption&gt; = rawOptions.map((optionValue: string) =&gt; {
+        return this.findOption(optionValue, currentAttribute);
+      });
+      // Finally, return the valid options
+      return options;
+    }
+  }
+&nbsp;
+  public handleSelect(event: any, attribute: PriceAttribute): void {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (event.isUserInput) {
+      const controlNames: Array&lt;string&gt; = Object.keys(this.form.controls);
+      const currentControlIndex: number = controlNames.indexOf(attribute.name);
+      const controlNamesToClear: Array&lt;string&gt; = controlNames.slice(currentControlIndex + 1);
+      const controlNamesToDisable: Array&lt;string&gt; = controlNames.slice(currentControlIndex + 2);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (controlNamesToClear.length &gt; 0) this.clearForm(controlNamesToClear);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (controlNamesToDisable.length &gt; 0) this.disableForm(controlNamesToDisable);
+    }
+  }
+&nbsp;
+  private buildCustomForm(): void {
+    const primaryAttributeName: string = this.attributes.find(attribute =&gt; attribute.primary).name;
+    this.customForm = this.fb.group({
+      [primaryAttributeName]: [
+        this._pricingPreferences[primaryAttributeName] || <span class="branch-1 cbranch-no" title="branch not covered" >null,</span>
+        Validators.required
+      ],
+      attributes: [
+        this.csvFor(this.attributes),
+        Validators.compose([
+          Validators.pattern(/^(([\w ]+,[\w ]+\n)*[\w ]+,[\w ]+\n{0,1}){0,1}$/),
+          Validators.required
+        ])
+      ]
+    });
+  }
+&nbsp;
+  private csvFor(attributes: PriceAttribute[]): string {
+    return attributes.filter(attribute =&gt; !attribute.primary).reduce((csv: string, attribute: PriceAttribute) =&gt; {
+      return csv.concat(`${attribute.name},${this._pricingPreferences[attribute.name] || <span class="branch-1 cbranch-no" title="branch not covered" >''}</span>\n`);
+    }, '').trim();
+  }
+&nbsp;
+  private get customFormValue(): SelectedPriceAttribute[] {
+    const selectedOption: PriceOption = this.findOption(this.customForm.value[this.attributes[0].name], this.attributes[0]);
+    let formatted: SelectedPriceAttribute[] = [{
+      priceAttributeDisplayName: this.attributes[0].displayName,
+      priceAttributeName: this.attributes[0].name,
+      selectedAttributeName: selectedOption.name,
+      selectedAttributeValue: selectedOption.value
+    }];
+    this.customForm.value.attributes.split('\n').forEach((pair: string) =&gt; {
+      const [priceAttributeName, selectedAttributeValue] = pair.split(',').map(s =&gt; s.trim());
+      formatted.push({
+        priceAttributeDisplayName: priceAttributeName,
+        priceAttributeName,
+        selectedAttributeName: selectedAttributeValue,
+        selectedAttributeValue
+      });
+    });
+    return formatted;
+  }
+&nbsp;
+  private get formValue(): SelectedPriceAttribute[] {
+    let formatted: SelectedPriceAttribute[] = [];
+    for (let attributeName in this.form.value) {
+      const selectedAttribute: PriceAttribute = this.findAttribute(attributeName);
+      const selectedOption: PriceOption = this.findOption(this.form.value[attributeName], selectedAttribute);
+&nbsp;
+      const priceAttributeDisplayName: string = selectedAttribute.displayName;
+      const priceAttributeName: string = selectedAttribute.name;
+      const selectedAttributeName: string = selectedOption.name;
+      const selectedAttributeValue: string = selectedOption.value;
+&nbsp;
+      formatted.push({
+        priceAttributeDisplayName,
+        priceAttributeName,
+        selectedAttributeName,
+        selectedAttributeValue
+      });
+    }
+    return formatted;
+  }
+&nbsp;
+  private findAttribute(attributeName: string): PriceAttribute {
+    return this.attributes.find(attribute =&gt; attribute.name === attributeName);
+  }
+&nbsp;
+  private findParentOf(currentAttribute: PriceAttribute): PriceAttribute {
+    return this.attributes.find((attribute: PriceAttribute) =&gt; attribute.childId === currentAttribute.id);
+  }
+&nbsp;
+  private findOption(optionValue: string, attribute: PriceAttribute): PriceOption {
+    return attribute.attributeList.find((option: PriceOption) =&gt; option.value === optionValue);
+  }
+&nbsp;
+  private buildForm(): void {
+    let form: Pojo = {};
+&nbsp;
+    this.attributes.forEach((attribute: PriceAttribute, index: number) =&gt; {
+      const value: string = this._pricingPreferences[attribute.name] || '';
+      form[attribute.name] = new FormControl({
+        value: value || '',
+        disabled: value ? false : index !== 0
+      }, Validators.required);
+    });
+&nbsp;
+    this.form = this.fb.group(form);
+&nbsp;
+    this.formSubscription = this.form.valueChanges.subscribe(<span class="fstat-no" title="function not covered" >(value: string)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (this.form.valid) {</span>
+<span class="cstat-no" title="statement not covered" >        this.pricingEvent.emit({ type: 'CALCULATE_PRICE', payload: value });</span>
+      }
+    });
+  }
+&nbsp;
+  private clearForm(controlNames: Array&lt;string&gt;): void {
+    for (let controlName of controlNames) {
+      const control: AbstractControl = this.form.controls[controlName];
+      control.setValue('');
+      control.enable();
+    }
+  }
+&nbsp;
+  private disableForm(controlNames: Array&lt;string&gt;): void {
+    for (let control of controlNames) {
+      this.form.controls[control].disable();
+    }
+  }
+&nbsp;
+  // this does a comparison of the user's preferences and the current price attributes to make sure
+  // that the price book hasn't changed drastically - i.e. should we prepopulate the form. It ignores order
+  // NOTE: ['a', 'b', 'c'] === ['b', 'c', 'a'] // =&gt; true
+  public get priceBookChanged(): boolean {
+    const attributeNames: Array&lt;string&gt; = this.attributes.map((attr: PriceAttribute) =&gt; attr.name).sort();
+    const prefNames: Array&lt;string&gt; = Object.keys(this._pricingPreferences).sort();
+    return !prefNames.every((pref: string, index: number) =&gt; pref === attributeNames[index]);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

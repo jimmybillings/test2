@@ -1,0 +1,101 @@
+.commerce-billing {
+  div.addresses {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0 -12px;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0)  {
+        margin-left: 0;
+      }
+      li {
+        margin: 2px 0 0 12px;
+        display: inline-block;
+        max-width: calc(100% - 12px);
+        min-width: calc(100% - 12px);
+        @media screen and (min-width: $layout-breakpoint-lg)  {
+          max-width: calc(25% - 12px);
+          min-width: calc(25% - 12px);
+        }
+        @media screen and (min-width: $layout-breakpoint-md) and (max-width: $layout-breakpoint-lg)  {
+          max-width: calc(33.333% - 12px);
+          min-width: calc(33.333% - 12px);
+        }
+        @media screen and (min-width: $layout-breakpoint-sm) and (max-width: $layout-breakpoint-md)  {
+          max-width: calc(50% - 12px);
+          min-width: calc(50% - 12px);
+        }
+        @media screen and (max-width: $layout-breakpoint-sm)  {
+          max-width: calc(50% - 12px);
+          min-width: calc(50% - 12px);
+        }
+        @media screen and (max-width: $layout-breakpoint-xs)  {
+          min-width: 100%;
+          max-width: 100%;
+          margin: 10px 0 0 0;
+        }
+        section {
+          position: relative;
+          padding: 14px;
+          border-radius: 2px;
+          transition: $swift-ease-out;
+          min-height: 215px;
+          margin-bottom: 10px;
+          &.active {
+            @include mat-elevation(2);
+          }
+          header {
+            margin-bottom: 6px;
+            span:last-child {
+              font-size: 20px;
+              font-weight: 600;
+            }
+            span:first-child {
+              font-size: 11px;
+              font-weight: 300;
+              display: block;
+              text-transform: capitalize;
+              &.user {
+                display: none;
+              }
+            }
+          }
+          address {
+            font-size: 14px;
+            line-height: 1.55;
+            padding-top: 8px;
+            min-height: 20px;
+            span {
+              display: flex;
+            }
+            .phone {
+              font-style: normal;
+              line-height: 2.4;
+            }
+          }
+          nav.actions {
+            button {
+              margin-left: 5px;
+              &:first-child {
+                margin-left: 0;
+              }
+            }
+          }
+          .divider {
+            margin: 8px 0 7px 0;
+            padding-bottom: 7px;
+          }
+        }
+        a.mailto {
+          font-size: 13.5px;
+          font-style: italic;
+          line-height: 1; 
+          margin-bottom: 3px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

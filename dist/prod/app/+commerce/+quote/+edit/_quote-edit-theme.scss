@@ -1,0 +1,22 @@
+@mixin wz-quote-edit-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  .recipient-options-select {
+    wz-form-picklist-component,
+    wz-form-autocomplete-view {
+      background-color: mat-color($background, card);
+      &.billing-account.is-empty {
+        border-color: mat-color($foreground, disabled);
+      }
+    }
+    wz-form-autocomplete-view.billing-account.is-empty + wz-form-picklist-component.invoice-contact {
+      border-color: mat-color($foreground, disabled);
+    }
+  }
+  quote-edit-confirm-tab-component .contact-data.card {
+    background-color: mat-color($background, card);
+  }
+}

@@ -1,0 +1,29 @@
+quotes-component, orders-component {
+  commerce-header section.header {
+    padding-left: 4px;
+    padding-right: 4px;
+    header {
+      padding-top: 6px;
+      padding-bottom: 5px;
+      position: relative;
+      .mat-display-1 {
+        margin: 0;
+        width: calc(100% - 120px);
+        font-size: 26px;
+      }
+    }
+    .tools {
+      text-align: right;
+      white-space: nowrap;
+      button.collapse-search[mat-icon-button] {
+        transform: rotate(90deg);
+      }
+    }
+    header div[flex="100"] > button[mat-icon-button] {
+      margin-right: 16px;
+    }
+  }
+}
+quotes-component header wz-item-search-form {
+  right: 123px;
+}

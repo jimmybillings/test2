@@ -1,0 +1,55 @@
+@mixin wz-collection-tray-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  collection-tray {
+    & > section {
+      background-color: darken(mat-color($background, app-bar), 1%);
+      box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+      .asset-carousel {
+        color: mat-color($foreground, secondary-text);
+        background-color: rgba(darken(mat-color($background, app-bar), 50%), .06);
+      }
+      .focused-collection {
+        background-image:
+          linear-gradient(mat-color($primary, 800, .06), mat-color($primary, 800, .06)),
+          linear-gradient(rgba(mat-color($background, status-bar), 1), rgba(mat-color($background, status-bar), 1));
+        .focused {
+          a[mat-button],
+          button[mat-button] {
+            color: rgba(mat-color($foreground, secondary-text), .6);
+          }
+          .asset-count {
+            background-color: rgba(mat-color($foreground, secondary-text), .3);
+            .count {
+              @include text-contrast(mat-color($foreground, secondary-text));
+            }
+          }
+        }
+        button[mat-icon-button] {
+          color: rgba(mat-color($foreground, secondary-text), .6);
+        } 
+      }
+    }
+  }
+
+  .asset-carousel.grid ul.asset-list { 
+    & > li {  
+      .asset {   
+        background-color: mat-color($background, app-bar);
+        a.asset-thb { 
+          background-image:
+            linear-gradient(rgba(mat-color($mat-grey, 900),1), rgba(mat-color($mat-grey, 900),.6)),
+            linear-gradient(rgba(mat-color($mat-grey, 900),.5), rgba(mat-color($mat-grey, 900),1));
+        }
+        a.asset-thb::before { 
+          background-color: mat-color($foreground, base, .2);
+          background-image: none;
+          box-shadow: 
+          inset 0 -3px 0 0 mat-color($background, card, 1);           
+        } 
+      } 
+    }
+  }
+}

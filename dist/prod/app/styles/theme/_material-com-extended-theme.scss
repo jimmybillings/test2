@@ -1,0 +1,35 @@
+@mixin wz-material-com-extended-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  // This sets the defaults for dialogs. Override widths can be set on specific components.
+  // like: mat-dialog-content collection-form .wz-dialog {}
+  .mat-dialog-container .wz-dialog {
+    color: mat-color($foreground, secondary-text);
+    .mat-select-value {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+  
+  // For the notification dialog, these match the MD specs. The mat-dialog currently does not.
+  mat-dialog-container.mat-dialog-container wz-confirmation-dialog,
+  mat-dialog-container.mat-dialog-container wz-notification-dialog {
+    [mat-dialog-title] {
+      color: mat-color($foreground, text);
+    }
+    mat-dialog-content {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+
+  // menu icons are not colored as disabled when the menu item is
+  .mat-menu-content a[mat-menu-item][disabled] mat-icon.material-icons,
+  .mat-menu-content button[mat-menu-item][disabled] mat-icon.material-icons {
+    color: mat-color($foreground, disabled);
+  }
+  .mat-menu-content .divider {
+    box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+  }
+}

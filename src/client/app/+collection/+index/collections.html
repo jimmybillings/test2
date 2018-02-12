@@ -1,0 +1,112 @@
+<section class="collection-head" layout="row" layout-align="center center">
+	<header flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+		<wz-item-search-form 
+			[ngClass]="{ 'revealed' : collectionSearchIsShowing }" 
+			[hidden]="!collectionSearchIsShowing" 
+			[currentSearchQuery]="(collectionContextData | async).currentSearchQuery"
+			placeholderTxt="{{ 'COLLECTION.INDEX.SEARCH_BOX_LABEL' | translate }}"
+			(query)="search($event)" 
+			(closeSearch)="toggleCollectionSearch()">
+		</wz-item-search-form>
+		<div flex="100" layout="row" layout-align="space-between end">
+			<h2 flex="grow" class="mat-display-1">{{ 'COLLECTION.INDEX.PAGE_TITLE' | translate }}</h2>
+			<div class="asset-sort-by tools" flex="auto">
+				<button mat-icon-button
+					color="primary"
+					*ngIf="!collectionSearchIsShowing" 
+					title="{{ 'COLLECTION.DD_MENU.SEARCH_BTN_TITLE' | translate }}"
+					type="button" 
+					(click)="toggleCollectionSearch()">
+					<mat-icon *ngIf="!collectionSearchIsShowing">search</mat-icon>
+				</button>
+				<button 
+					color="primary"
+					mat-icon-button *ngIf="collectionSearchIsShowing" 
+					class="collapse-search" 
+					title="{{ 'COLLECTION.DD_MENU.COLLAPSE_SEARCH_HOVER_TITLE' | translate }}"
+					type="button" 
+					(click)="toggleCollectionSearch()">
+						<mat-icon>arrow_drop_up</mat-icon>
+				</button>
+			</div>
+		</div>
+	</header>
+</section>
+
+<div layout="row" layout-align="center start">
+	<div 
+		layout-xs="column"
+		flex="100" 
+		flex-gt-sm="95" 
+		flex-gt-md="85" 
+		flex-gt-lg="80">
+		<div 
+			class="asset-sort-by tools" 
+			flex="auto" layout-gt-xs="row" 
+			layout="column" 
+			layout-align="start start" 
+			layout-align-gt-xs="end center">
+			<div *ngIf="(collectionContextData | async).currentSearchQuery.q" class="query-details" flex="auto">
+				<span flex="none" class="search">
+					<strong>{{ 'COLLECTION.DD_MENU.SEARCH_QUERY_TITLE' | translate }}</strong>{{(collectionContextData | async).currentSearchQuery.q}}
+				</span>
+			</div>
+			<!-- <button mat-button (click)="createCollection()" title="Create Collection" color="primary" class="create-collection">
+				<mat-icon>library_add</mat-icon>Create Collection
+			</button> -->
+			<button mat-button class="is-dd" color="primary" [mat-menu-trigger-for]="filterCollectionOptions">
+				<span class="key">{{ 'COLLECTION.DD_MENU.FILTER_BY_TITLE' | translate }}</span>
+				<span class="value mat-caption">
+					{{ (collectionContextData | async).currentFilter.name | translate}}
+				</span>
+			</button>
+			<button mat-button class="is-dd" color="primary" [mat-menu-trigger-for]="sortCollectionOptions">
+				<span class="key">{{ 'COLLECTION.DD_MENU.SORTED_ON_TITLE' | translate }}</span>
+				<span class="value mat-caption">
+					{{ (collectionContextData | async).currentSort.name | translate}}
+				</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+<section layout="row" flex="100" layout-margin-gt-xs layout-align="center start">
+	<section class="collections-list" flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80" layout-margin>
+		<div layout-gt-xs="row" layout="column" layout-align="end end" layout-align-gt-xs="space-between end">
+			<div class="new-collection" flex-gt-xs="auto" flex="100">	
+				<button mat-button color="primary" (click)="createCollection()">
+					<mat-icon>add_circle_outline</mat-icon>{{ 'COLLECTION.INDEX.NEW_COLLECTION_BTN' | translate }}
+				</button>
+			</div>
+			<wz-pagination *ngIf="(collections.data | async).pagination.totalCount > 0" [pagination]="(collections.data | async).pagination">
+			</wz-pagination>
+		</div>
+
+		<!-- COLLECTION LIST -->
+		<wz-collection-item-list 
+			[collections]="(collections.data | async).items" 
+			(editCollection)="editCollection($event)"
+			[activeCollection]="(activeCollection | async).id" 
+			(setActiveCollection)="selectActiveCollection($event)" 
+			(deleteCollection)="setCollectionForDelete($event);"
+			(showShareMembers)="showShareMembers($event);"
+			(generateCollectionLink)="getAssetsForLink($event);"
+			(duplicateCollection)="onDuplicateCollection($event)"
+			(createShareDialog)="onCreateShareDialog($event)">
+		</wz-collection-item-list>
+		<wz-pagination *ngIf="(collections.data | async).pagination.totalCount > 0" [pagination]="(collections.data | async).pagination"
+			flex layout-align="end stretch">
+		</wz-pagination>
+	</section>
+</section>
+
+<mat-menu x-position="before" #filterCollectionOptions="matMenu">
+	<wz-sort-component [current]="(collectionContextData | async).currentFilter" [items]="filterOptions" (sort)="onFilterCollections($event)"></wz-sort-component>
+</mat-menu>
+
+<mat-menu x-position="before" #sortCollectionOptions="matMenu">
+	<wz-sort-component [current]="(collectionContextData | async).currentSort" [items]="sortOptions" (sort)="onSortCollections($event)"></wz-sort-component>
+</mat-menu>
+
+
+

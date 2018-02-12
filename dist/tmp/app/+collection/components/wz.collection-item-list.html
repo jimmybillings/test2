@@ -1,0 +1,119 @@
+<ul>
+  <li 
+    *ngFor="let collection of collections; let i = index" 
+    class="collection" 
+    [ngClass]="{'focused': activeCollection === collection.id}"
+    flex="100" 
+    layout="row" 
+    layout-xs="column">
+    <div flex="100" flex-gt-xs="66">
+      <div flex="100" layout="row" layout-xs="column">
+        <div flex-gt-sm="40" flex-xl="30" flex="100" layout-padding>
+          <a class="asset" [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">
+            <div class="asset-thb">
+              <div class="selected">
+                <mat-icon *ngIf="activeCollection === collection.id" title="Selected collection">star</mat-icon>
+                <mat-icon *ngIf="collectionIsShared(collection)" title="Collection is shared">share</mat-icon>
+              </div>
+              <span class="asset-id"><span class="id">{{collection.id}}</span></span>
+              <img src="{{thumbnail(collection.collectionThumbnail)}}" />
+            </div>
+          </a>
+        </div>
+        <div flex-gt-sm="60" flex-gt-lg="80" flex-gt-md="70" flex="100" layout-padding>
+          <a class="collection-name" [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">
+            <h3 class="mat-headline">{{collection.name}}
+              <span class="asset-count">
+                <span class="count">{{collection.assetsCount || 0}}</span>
+              </span>
+            </h3>
+          </a>
+          <div class="mat-caption collection-info">
+            <span *ngIf="!collectionViewerIsOwner(collection)">
+              <strong>{{ 'COLLECTION.SHOW.OWNER_LABEL' | translate }} </strong>
+              <a href="mailto:{{ collection.email }}">{{ collection.email }}</a>
+            </span>
+            <span *ngIf="collectionViewerIsOwner(collection)">
+              <strong>{{ 'COLLECTION.SHOW.OWNER_LABEL' | translate }} </strong>{{ collection.email }}
+            </span>
+            <span><strong>{{ 'COLLECTION.SHOW.ROLE_LABEL' | translate }} </strong>{{ collection.userRole }}</span>
+            <span><strong>{{ 'COLLECTION.SHOW.CREATED_LABEL' | translate }} </strong>{{ collection.createdOn | date:'short' }}</span>
+            <span><strong>{{ 'COLLECTION.SHOW.UPDATED_LABEL' | translate }} </strong>{{ collection.lastUpdated | date:'short' }}</span>
+          </div>
+
+
+          <div *ngIf="collection.tags" class="mat-caption collection-tags">
+            <strong>{{ 'COLLECTION.SHOW.TAGS_LABEL' | translate }} </strong>
+            <ul class="meta-data-tags">
+              <li class="tag mat-elevation-z0" *ngFor="let tag of collection.tags">{{tag}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div flex="100" layout="row" layout-xs="column" class="divider"></div>
+    <div flex-gt-xs="33" layout-sm="100" flex="auto" class="actions">
+      <div class="tools" hide-xs flex="100">
+        <button mat-icon-button
+          [disabled]="!(userCanEditCollection(collection) | async)"
+          title="{{ 'COLLECTION.SHOW.EDIT_BTN_TITLE' | translate }}" 
+          (click)="edit(collection)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button 
+          [disabled]="!collectionViewerIsOwner(collection)"
+          title="{{ 'COLLECTION.SHOW.SHARE_BTN_TITLE' | translate }}" 
+          (click)="onCreateShareDialog(collection)">
+          <mat-icon>share</mat-icon></button>
+        <button
+          mat-icon-button
+          title="{{ 'COLLECTION.SHARE_MEMBERS_HOVER_TITLE' | translate }}"
+          *ngIf="collectionViewerIsOwner(collection) && collectionIsShared(collection)"
+          (click)="sharedMembers(collection)">
+          <mat-icon>group</mat-icon>
+        </button>
+        <button mat-icon-button 
+          title="{{ 'COLLECTION.SHOW.MORE_BTN_TITLE' | translate }}" 
+          [mat-menu-trigger-for]="moreCollectionOptions"
+          (click)="setCurrentCollection(collection)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+      <div class="premiere-actions">
+        <button mat-button class="is-outlined" color="primary" [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">{{'COLLECTION.INDEX.VIEW_BTN_LABEL' | translate }}</button>
+        <button mat-button class="is-outlined" (click)="selectActiveCollection(collection.id)">{{'COLLECTION.INDEX.SELECT_BTN_LABEL' | translate }}</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- COMMENTING OUT THESE UNUSED ACTIONS UNTIL THEY BECOME AVAILABLE,
+  OR HAVE A PERMISSION TIED TO THEM (PER CRUX-2913) - R.E. 11/20/17 -->
+<mat-menu class="more-collections-menu" x-position="before" #moreCollectionOptions="matMenu">
+  <button *ngIf="currentCollection" mat-menu-item (click)="selectActiveCollection(currentCollection.id)">
+    <mat-icon>star_border</mat-icon>{{'COLLECTION.INDEX.MORE_DD_MENU.SELECT' | translate }}
+  </button>
+  <a *ngIf="currentCollection" mat-menu-item [routerLink]="['/collections/', currentCollection.id, {i: 1, n: 100}]" disableRipple="true">
+    <mat-icon>open_in_browser</mat-icon>{{'COLLECTION.INDEX.MORE_DD_MENU.VIEW' | translate }}
+  </a>
+  <div class="divider"></div>
+    <button mat-menu-item (click)="duplicate()">
+      <mat-icon>layers</mat-icon>{{'COLLECTION.INDEX.MORE_DD_MENU.DUPLICATE_COLLECTION' | translate }}
+    </button>
+  <!-- <button mat-menu-item disabled>
+    <mat-icon>history</mat-icon>{{'COLLECTION.INDEX.MORE_DD_MENU.HISTORY' | translate }}
+  </button> -->
+  <!-- <button (click)="generateLegacyLink()" mat-menu-item>
+    <mat-icon>link</mat-icon>{{ 'COLLECTION.COPY_LEGACY_LINK' | translate }}
+  </button> -->
+  <div *ngIf="currentCollection">
+    <div class="divider"></div>
+    <button mat-menu-item 
+      [disabled]="!collectionViewerIsOwner(currentCollection)"
+      class="delete" 
+      (click)="delete(currentCollection)">
+      <mat-icon>delete</mat-icon>{{ 'COLLECTION.INDEX.DELETE_BTN_TITLE' | translate }}
+    </button>
+  </div>
+</mat-menu>
+

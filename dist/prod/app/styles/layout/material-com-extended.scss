@@ -1,0 +1,101 @@
+ // dialog overrides
+/************************
+ * For the snackbar notification we just make it a little bit bigger.
+ * We add a custom class (wz-dialog).
+ * change background with an bk image and darken slightly.
+ * override some of the default width especially with smaller screens.
+ * added custom close button top left.
+ ************************/
+
+//  make the dark backdrop a little darker and add in the diagonal line bkg texture.
+.cdk-overlay-backdrop.cdk-overlay-dark-backdrop.cdk-overlay-backdrop-showing {
+  background-image: url("/assets/img/bk/tex/bktx_dgl_lines_light.png");
+  opacity: 0.7;
+}
+
+// This sets the defaults for dialogs. Override widths can be set on specific components.
+// like: mat-dialog-content collection-form .wz-dialog {}
+.mat-dialog-container .wz-dialog {
+  box-sizing: border-box;
+  padding: 16px 15px 16px;
+  position: relative;
+  width: 380px;
+  @media screen and (max-width: $layout-breakpoint-md) and (min-width: 0)  {
+    width: 355px;
+  }
+  @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0)  {
+    width: 340px;
+  }
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    padding: 5px 5px 8px;
+    width: 100%;
+  }
+  // close button top right corner 
+  button[mat-icon-button].close {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-size: 36px;
+    line-height: 46px;
+    opacity: .5;
+    mat-icon {
+      font-size: 1em;
+      height: 1em;
+      width: 1em;
+    }
+  }
+  [mat-dialog-title] {
+    text-align: center;
+    margin: 0 0 6px 0;
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+// Overrides for notifications.
+/************************
+ * These match the MD specs.
+ * The mat-dialog-container and wz-confirmation-dialog currently does not.
+ ************************/
+// For the notification dialog, these match the MD specs. The mat-dialog currently does not.
+mat-dialog-container.mat-dialog-container wz-confirmation-dialog,
+mat-dialog-container.mat-dialog-container wz-notification-dialog {
+  [mat-dialog-title] {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  mat-dialog-content {
+    margin-bottom: 8px;
+    line-height: 1.44;
+  }
+  mat-dialog-actions button:last-child {
+    margin-right: -12px;
+  }
+}
+
+// Overrides for material menus.
+/************************
+ * menus and menus with icons
+ * So far material does not have support for dividers in menu lists
+ ************************/
+ .mat-menu-content .divider {
+  width: 100%;
+  margin-top: 0;
+  padding-bottom: 1px;
+}
+
+// Overrides for snackbar notification.
+/************************
+ * For the snackbar notification we just make it a little bit bigger.
+ * Some complained it was, prominent enough.
+ * We add a custom class (wz-snackbar).
+ * We also display it top left through configuration.
+ ************************/
+.mat-snack-bar-container.wz-snackbar { 
+  padding: 18px 34px;
+  @include mat-elevation(2);
+  .mat-simple-snackbar {
+    font-size: 15px;
+  }
+}

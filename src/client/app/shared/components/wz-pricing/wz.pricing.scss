@@ -1,0 +1,24 @@
+.wz-dialog.pricing {
+  .mat-dialog-content {
+    margin: 0;
+    padding: 0;
+    form {
+      margin-top: 10px;
+      .input mat-select {
+        padding: 10px;
+        width: 100%;
+      }
+      .submit-btn button.submit {
+        width: 88%;
+        margin: 12px 0 0;
+      }
+    }
+    div.price-info {
+      min-height: 72px;
+      padding-top: 16px;
+      p.mat-body-2.disabled {
+        color: mat-color($mat-grey, 400);
+      }
+    }
+  }
+}

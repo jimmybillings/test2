@@ -1,0 +1,37 @@
+@mixin wz-modifiers-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  [mat-button] {
+  // outlined button
+    &.is-outlined {
+      border: 1px solid mat-color($foreground, divider);
+      &.mat-primary {
+        border: 1px solid mat-color($primary, default, .4);
+      }
+      &.mat-accent {
+        border: 1px solid mat-color($accent, 500, .4);
+      }
+      &.mat-warn {
+        border: 1px solid mat-color($warn, 500, .4);
+      }
+    }
+  // drop down indicator on a button
+    &.is-dd {
+      .mat-button-wrapper::after {
+        color: mat-color($foreground, secondary-text);
+      }
+      &.mat-primary .mat-button-wrapper::after {
+        color: contrast-color(mat-color($primary));
+      }
+      &.mat-accent .mat-button-wrapper::after {
+        color: contrast-contrast(mat-color($accent));
+      }
+      &.mat-warn .mat-button-wrapper::after {
+        color: contrast-color(mat-color($warn));
+      }
+    }
+  }
+}

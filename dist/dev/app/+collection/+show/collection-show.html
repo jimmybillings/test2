@@ -1,0 +1,189 @@
+<section class="collection-head">
+  <section
+    class="comments-section"
+    layout="row" layout-align="center start">
+    <div flex-gt-md="95" flex="100">
+      <wz-comment
+        [ngClass]="{ 'visible': showComments, 'not-visible': showComments === false }"
+        [formFields]="commentFormConfig"
+        [parentObject]="commentParentObject"
+        [userCanAddComments]="userCanEditCollection | async"
+        (toggleCommentsVisibility)="toggleCommentsVisibility()">
+      </wz-comment>
+    </div>
+  </section>
+  <section class="collections-list" layout="row" layout-align="center start">
+    <ul flex-gt-md="95" flex="100">
+      <li class="collection" flex="100" layout="row" layout-xs="column">
+        <div flex="100" flex-gt-xs="66">
+          <div flex="100" layout="row" layout-xs="column">
+            <div flex-gt-xs="40" flex-gt-md="30" flex-gt-lg="25" flex="100" layout-padding>
+              <div class="asset">
+                <div class="asset-thb">
+                  <div class="selected">
+                    <!-- <mat-icon *ngIf="activeCollection === collection.id" title="Selected collection">star</mat-icon> -->
+                    <mat-icon *ngIf="collectionIsShared" title="Collection is shared">share</mat-icon>
+                  </div>
+                  <!-- I don't think this needs to be here anymore. It was more for troubleshooting JH -->
+                  <!-- <span class="asset-id"><span class="id">{{activeCollection.id}}</span></span> -->
+                  <img *ngIf="(activeCollection.collectionThumbnail | json) != '{}'" src="{{activeCollection?.collectionThumbnail?.urls?.https}}" />
+                  <img *ngIf="(activeCollection.collectionThumbnail | json) == '{}'" src="/assets/img/tbn_missing.jpg" />
+                </div>
+              </div>
+            </div>
+            <div flex-gt-xs="60" flex-lg="70" flex="100" layout-padding>
+              <h3 class="mat-headline">{{activeCollection.name}}
+                <span class="asset-count">
+                  <span class="count">{{activeCollection.assetsCount}}</span>
+                </span>
+              </h3>
+              <div class="mat-caption collection-info">
+                <span *ngIf="!collectionViewerIsOwner">
+                  <strong>{{ 'COLLECTION.SHOW.OWNER_LABEL' | translate }} </strong>
+                  <a href="mailto:{{ activeCollection.email }}">{{ activeCollection.email }}</a>
+                </span>
+                <span *ngIf="collectionViewerIsOwner">
+                  <strong>{{ 'COLLECTION.SHOW.OWNER_LABEL' | translate }} </strong>{{ activeCollection.email }}
+                </span>
+                <span><strong>{{ 'COLLECTION.SHOW.ROLE_LABEL' | translate }} </strong>{{ activeCollection.userRole }}</span>
+                <span><strong>{{ 'COLLECTION.SHOW.CREATED_LABEL' | translate }} </strong>{{ activeCollection.createdOn | date:'short' }}</span>
+                <span><strong>{{ 'COLLECTION.SHOW.UPDATED_LABEL' | translate }} </strong>{{ activeCollection.lastUpdated | date:'short' }}</span>
+              </div>
+              <div *ngIf="activeCollection.tags" class="mat-caption collection-tags">
+                <strong>{{ 'COLLECTION.SHOW.TAGS_LABEL' | translate }} </strong>
+                <ul class="meta-data-tags">
+                  <li class="tag mat-elevation-z0" *ngFor="let tag of activeCollection.tags">{{tag}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div 
+          flex-gt-xs="33"
+          flex="100"
+          class="actions"
+          layout-align="end start" 
+          flex-order-xs="-1"
+          [ngClass]="{ 'hide-for-comments': showComments, 'comments-closed': showComments === false }">
+          <button
+            mat-icon-button
+            [disabled]="!(userCanEditCollection | async)"
+            title="{{ 'COLLECTION.SHOW.EDIT_BTN_TITLE' | translate }}"
+            (click)="editCollection()">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            [disabled]="!collectionViewerIsOwner"
+            title="{{ 'COLLECTION.SHOW.SHARE_BTN_TITLE' | translate }}"
+            (click)="createShareDialog()">
+              <mat-icon>share</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            title="{{ 'COLLECTION.SHARE_MEMBERS_HOVER_TITLE' | translate }}"
+            *ngIf="collectionViewerIsOwner && collectionIsShared"
+            (click)="showShareMembers()">
+              <mat-icon>group</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            title="{{ 'COLLECTION.SHOW.COMMENT_BTN_TITLE' | translate }}"
+            (click)="toggleCommentsVisibility()">
+              <mat-icon>mode_comment</mat-icon>
+              <span *ngIf="(commentCount | async) > 0" class="comment-count">{{commentCount| async}}</span>
+          </button>
+          <button
+            mat-icon-button
+            title="{{ 'COLLECTION.SHOW.MORE_BTN_TITLE' | translate }}"
+            [mat-menu-trigger-for]="moreShowCollectionOptions">
+              <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu class="more-collections-menu" x-position="before" #moreShowCollectionOptions="matMenu">
+            <!-- COMMENTING OUT THESE UNUSED ACTIONS UNTIL THEY BECOME AVAILABLE,
+              OR HAVE A PERMISSION TIED TO THEM (PER CRUX-2913) - R.E. 11/20/17 -->
+            <!-- <button mat-menu-item disabled>
+              <mat-icon>file_download</mat-icon>Download all comps
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>history</mat-icon>{{ 'COLLECTION.SHOW.HISTORY_BTN_TITLE' | translate }}
+            </button>
+            <div class="divider"></div> -->
+            <button mat-menu-item (click)="duplicateCollection()">
+              <mat-icon>layers</mat-icon>{{'COLLECTION.MORE_DD_MENU.DUPLICATE_COLLECTION' | translate }}
+            </button>
+            <!-- <button mat-menu-item disabled>
+              <mat-icon>import_export</mat-icon>Export collection as XML
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>print</mat-icon>Print collection asset list
+            </button>
+            <button mat-menu-item (click)="getAssetsForLink()">
+              <mat-icon>link</mat-icon>{{ 'COLLECTION.COPY_LEGACY_LINK' | translate }}
+            </button> -->
+            <div>
+              <div class="divider"></div>
+              <button
+                [disabled]="!collectionViewerIsOwner"
+                mat-menu-item
+                class="delete"
+                (click)="setCollectionForDelete()">
+                <mat-icon>delete</mat-icon>{{ 'COLLECTION.INDEX.DELETE_BTN_TITLE' | translate }}
+              </button>
+            </div>
+          </mat-menu>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
+
+<section class="asset-results-header" layout="row" layout-align="center center">
+  <header flex-lg="90" flex-gt-lg="90" flex-gt-md="95" flex="100">
+    <div layout="row" layout-align="space-between end">
+      <h2 *ngIf="activeCollection.assetsCount == 0" flex="100" class="mat-display-1 alert">
+        {{ 'COLLECTION.SHOW.EMPTY_PG_HEADING' | translate }}
+      </h2>
+      <div *ngIf="activeCollection.assetsCount > 0" class="asset-sort-by tools" flex="auto" layout-align="center end">
+        <button mat-icon-button color="primary" title="{{ ((userPreference.data | async).assetView == 'grid' ? 
+          'SEARCH.ASSET_VIEW_LIST_BTN_TITLE' : 'SEARCH.ASSET_VIEW_GRID_BTN_TITLE') | translate }}" 
+          (click)="onChangeAssetView(userPreference.state.assetView == 'grid' ? 'list' : 'grid')">
+          <mat-icon>{{ (userPreference.data | async).assetView == 'grid' ? 'view_list' : 'view_comfy' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </header>
+</section>
+
+<section class="search-results">
+  <div layout="row" mat-scroll-y="" layout-align="center start">
+    <div flex-lg="90" flex-gt-lg="90" flex-gt-md="95" flex="100">
+      <div layout-gt-md="row" layout="column" layout-align="space-between" layout-align-gt-md="space-between end">
+        <wz-pagination flex="noshrink" *ngIf="activeCollection.assets.pagination.totalCount > 0" [pagination]="activeCollection.assets.pagination" (getPage)="changePage($event)"></wz-pagination>
+      </div>
+
+      <wz-asset-grid *ngIf="(userPreference.data | async).assetView =='grid'" class="grid" 
+        [assets]="activeCollection.assets.items" 
+        [userCan]="userCan" 
+        [assetType]="'collection'"
+        [activeCollection]="activeCollection"
+        (onAddToCart)="addAssetToCartOrQuote($event)" 
+        (onEditAsset)="editAsset($event)"
+        (onAddtoDifferentCollection)="addToDifferentCollection($event)">
+      </wz-asset-grid>
+
+      <wz-asset-list *ngIf="(userPreference.data | async).assetView =='list'" class="list" 
+        [assets]="activeCollection.assets.items" 
+        [userCan]="userCan" 
+        [assetType]="'collection'"
+        [activeCollection]="activeCollection"
+        (onAddToCart)="addAssetToCartOrQuote($event)" 
+        (onEditAsset)="editAsset($event)"
+        (onAddtoDifferentCollection)="addToDifferentCollection($event)">
+      </wz-asset-list>
+
+      <wz-pagination *ngIf="activeCollection.assets.pagination.totalCount > 0" [pagination]="activeCollection.assets.pagination" (getPage)="changePage($event)"></wz-pagination>
+    </div>
+  </div>
+</section>
+

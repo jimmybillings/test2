@@ -1,0 +1,108 @@
+fee-line-items-component {
+  padding: 0 12px 0 12px;
+  display: flex;
+}
+ul.fee-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 100%;
+}
+li.fee-item {
+  margin-bottom: 12px;
+  position: relative;
+  padding: 2px;
+  border-radius: 2px;
+  transition: $swift-ease-out;
+  .fee-indicator {
+    height: 100%;
+    position: relative;
+    margin-right: 2px;
+    padding: 8px 0 8px 35px;
+    .fee-title {
+      font-weight: 500;
+      padding: 0 0 2px 0;
+      flex: 0 0 0%;
+    }
+    &::after {
+      content: "\e89c";
+      // content: "\e8b0";
+      font-family: 'Material Icons';
+      font-size: 25px;
+      font-weight: 100;
+      line-height: 25px;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      left: 6px;
+      top: 6px;
+    }
+  }
+  & > div > div  > div + div {
+    padding-left: 5px;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding-left: 8px;
+    }
+  } 
+
+  .mat-caption.fee-type {
+    font-size: 11px;
+    opacity: .7;
+  }
+
+  .fee-notes {
+    font-size: 14px;
+    line-height: 1.21;
+    margin-top: 3px;
+    margin-bottom: 11px;
+    min-height: 45px;
+  }
+
+  .fee-line-item-amount {
+    @media screen and (min-width: $layout-breakpoint-xs) {
+      position: absolute;
+      bottom: 7px;
+      right: 7px;
+      font-size: 1.1em;
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding: 10px;
+    }
+    .price::first-letter {
+      font-size: .83em;
+      vertical-align: top;
+    }
+  }
+  .actions {
+    min-height: 45px;
+    position: relative;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding-top: 4px;
+    }
+  }
+  .tools {
+    opacity: .85;
+    text-align: right;
+  }
+  .tools button {
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      margin-bottom: 3px;
+    }
+  }
+
+
+
+
+
+  .divider {
+    margin: 6px 8px 0 8px;
+    padding-bottom: 6px;
+    display: none;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      display: flex;
+      position: absolute;
+      bottom: 32px;
+      width: calc(100% - 16px);
+    }
+  }
+}

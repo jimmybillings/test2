@@ -1,0 +1,133 @@
+<!--<section *ngIf="allowEdit" class="edit-cc" layout="row" layout-align="end start">-->
+  <button  *ngIf="allowEdit" mat-button class="mini is-outlined" color="primary" (click)="editCard()">
+    {{ 'CART.CONFIRM.EDIT' | translate }}
+  </button>
+<!--</section>-->
+<form layout="column" [formGroup]="form" novalidate class="mat-inline-form" autocomplete="{{autocomplete}}" (ngSubmit)="onSubmit()" disabled>
+  <div>
+    <mat-form-field>
+      <input matInput
+      [ngClass]="{'show-errors': hasErrorType(form.controls[items[0].name])}"
+      placeholder="{{items[0].label | translate}}"
+      type="{{items[0].type}}"
+      formControlName="{{items[0].name}}"
+      [required]="isRequiredField(items[0])"
+      id="{{items[0].name}}">
+        
+       <mat-hint *ngIf="!form.controls[items[0].name].valid && !form.controls[items[0].name].pristine" [hidden]="form.controls[items[0].name].valid || form.controls[items[0].name].pristine && !submitAttempt"
+        align="start" class="error">
+        <span *ngIf="form.controls[items[0].name].hasError('required')">
+          {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:items[0].label | translate} }}
+        </span>
+        <span *ngIf="form.controls[items[0].name].hasError('serverError')">
+          {{ 'ERRORS.'+form.controls[items[0].name].errors.serverError | translate }}
+        </span>
+      </mat-hint>
+     </mat-form-field>
+  </div>
+
+  <div flex="100" layout="row" class="two-col">
+    <div flex="50">
+      <mat-form-field>
+        <input matInput
+        pattern=".{2,}"
+        maxlength="2"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[items[1].name])}"
+        placeholder="{{items[1].label | translate}}"
+        type="{{items[1].type}}"
+        formControlName="{{items[1].name}}"
+        [required]="isRequiredField(items[1])"
+        id="{{items[1].name}}">
+
+        <!--secondary field explainations (hints) there are two places for these below the field at the start and end-->
+        <mat-hint *ngIf="(form.controls[items[1].name].valid || form.controls[items[1].name].pristine) && items[1].hintTextStart" align="start">
+          {{ items[1].hintTextStart | translate }}
+        </mat-hint>
+        <mat-hint *ngIf="!form.controls[items[1].name].valid && !form.controls[items[1].name].pristine" [hidden]="form.controls[items[1].name].valid || form.controls[items[1].name].pristine && !submitAttempt" align="start" class="error">
+          <span *ngIf="form.controls[items[1].name].hasError('required')">
+            {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:items[1].label | translate} }}
+          </span>
+          <span *ngIf="form.controls[items[1].name].hasError('serverError')">
+            {{ 'ERRORS.'+form.controls[items[1].name].errors.serverError | translate }}
+          </span>
+          <span *ngIf="form.controls[items[1].name].hasError('pattern') && !form.controls[items[1].name].hasError('minlength')">
+            {{ 'ERRORS.MIN_LENGTH_EXPIRY_MONTH' | translate }}
+          </span>
+        </mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div flex="50">
+      <mat-form-field>
+        <input matInput
+        pattern=".{4,}"
+        maxlength="4"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[items[2].name])}"
+        placeholder="{{items[2].label | translate}}"
+        type="{{items[2].type}}"
+        formControlName="{{items[2].name}}"
+        [required]="isRequiredField(items[2])"
+        id="{{items[2].name}}">
+
+        <!--secondary field explainations (hints) there are two places for these below the field at the start and end-->
+        <mat-hint *ngIf="(form.controls[items[2].name].valid || form.controls[items[2].name].pristine) && items[2].hintTextStart" align="start">
+          {{ items[2].hintTextStart | translate }}
+        </mat-hint>
+        <mat-hint *ngIf="!form.controls[items[2].name].valid && !form.controls[items[2].name].pristine" [hidden]="form.controls[items[2].name].valid || form.controls[items[2].name].pristine && !submitAttempt" align="start" class="error">
+          <span *ngIf="form.controls[items[2].name].hasError('required')">
+            {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:items[1].label | translate} }}
+          </span>
+          <span *ngIf="form.controls[items[2].name].hasError('serverError')">
+            {{ 'ERRORS.'+form.controls[items[2].name].errors.serverError | translate }}
+          </span>
+          <span *ngIf="form.controls[items[2].name].hasError('pattern') && !form.controls[items[2].name].hasError('minlength')">
+            {{ 'ERRORS.MIN_LENGTH_EXPIRY_YEAR' | translate }}
+          </span>
+        </mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <input matInput
+      pattern=".{3,4}"
+      maxlength="4"
+      [ngClass]="{'show-errors': hasErrorType(form.controls[items[3].name])}"
+      placeholder="{{items[3].label | translate}}"
+      type="{{items[3].type}}"
+      formControlName="{{items[3].name}}"
+      [required]="isRequiredField(items[3])"
+      id="{{items[3].name}}">
+      <mat-hint *ngIf="!form.controls[items[3].name].valid && !form.controls[items[3].name].pristine" [hidden]="form.controls[items[3].name].valid || form.controls[items[3].name].pristine && !submitAttempt"
+        align="start" class="error">
+        <span *ngIf="form.controls[items[3].name].hasError('required')">
+          {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:items[3].label | translate} }}
+        </span>
+        <span *ngIf="form.controls[items[3].name].hasError('serverError')">
+          {{ 'ERRORS.'+form.controls[items[3].name].errors.serverError | translate }}
+        </span>
+        <span *ngIf="form.controls[items[3].name].hasError('pattern') && !form.controls[items[3].name].hasError('minlength')">
+          {{ 'ERRORS.MIN_LENGTH_CVC' | translate }}
+        </span>
+      </mat-hint>
+    </mat-form-field>
+  </div>
+
+
+	<!--
+      SHOW THE REQUIRED LEGEND IF FORM HAS AT LEAST ONE REQUIRED FIELD.
+    -->
+	<div class="indicate-required" *ngIf="hasRequiredFields(items)">
+		<span>{{ 'ERRORS.INDICATES_REQUIRED_FIELD' | translate }}</span>
+	</div>
+
+	<mat-card-actions layout="row" layout-align="end center" *ngIf="includeCancel">
+		<button mat-button type="reset" color="primary" (click)="formCancel.emit()">{{cancelLabel | translate}}</button>
+		<button mat-button type="submit" color="primary">{{submitLabel | translate}}</button>
+	</mat-card-actions>
+
+	<mat-card-actions layout="row" layout-align="center center" *ngIf="!includeCancel">
+		<button mat-raised-button type="submit" color="primary" class="conversion" [disabled]="allowEdit">{{submitLabel | translate}}</button>
+	</mat-card-actions>
+</form>

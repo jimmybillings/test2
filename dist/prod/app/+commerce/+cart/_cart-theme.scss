@@ -1,0 +1,32 @@
+@mixin wz-cart-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  $checkout-success:#558b2f;
+  
+  cart-component section.header, quote-edit-component section.header {
+    color: mat-color($foreground, text, .7);
+    box-shadow: inset 0 -1px 0 0 mat-color($foreground, divider), 0 1px 0 0 rgba(mat-color($background, card), .6);
+    .comment-count {
+      background-color: mat-color($background, card);
+      color: mat-color($foreground, text, .8);
+      border-color: mat-color($foreground, text, .4);
+    }
+  }
+  .commerce-total .select-usage-warn, .cart-total .select-usage-warn {
+    color: mat-color($warn, darker);
+    &::after {
+      color: mat-color($warn, darker);
+    }
+  }
+  button.checkout {
+    background-color: $checkout-success;
+    @include text-contrast($checkout-success);
+  }
+  .mat-tab-body-content header .commerce-heading {
+    color: rgba(mat-color($foreground, text), .8);
+  }
+}

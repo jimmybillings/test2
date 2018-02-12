@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+asset/components/asset-save-subclip.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/+asset/components/</a> asset-save-subclip.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">62.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">22.22% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.76% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>21/34</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Component, Input, Output, ViewChild,
+  EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef
+} from '@angular/core';
+import { FormFields } from '../../shared/interfaces/forms.interface';
+import { WzFormComponent } from '../../shared/modules/wz-form/wz.form.component';
+import { Capabilities } from '../../shared/services/capabilities.service';
+import { SubclipMarkers } from '../../shared/interfaces/subclip-markers';
+import { AppStore } from '../../app.store';
+import { Asset } from '../../shared/interfaces/common.interface';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'asset-save-subclip',
+  templateUrl: 'asset-save-subclip.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class AssetSaveSubclipComponent {
+  @Input() config: any;
+  @Input() public userCan: Capabilities;
+  @Input() asset: Asset;
+  @Input() activeCollectionName: string;
+  @Input() subclipMarkers: SubclipMarkers;
+  @Output() onAddSubclipToCart: EventEmitter&lt;null&gt; = new EventEmitter&lt;null&gt;();
+  @Output() ontoggleSubclipPanel: EventEmitter&lt;null&gt; = new EventEmitter&lt;null&gt;();
+&nbsp;
+  public showAssetSaveSubclip: boolean;
+  public serverErrors: any;
+  public formItems: Array&lt;any&gt; = [];
+&nbsp;
+  @ViewChild(WzFormComponent) private wzForm: WzFormComponent;
+&nbsp;
+  constructor(private store: AppStore, private changeDetector: ChangeDetectorRef) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public addSubclipToActiveCollection(comment: any)</span>: void {</span>
+<span class="cstat-no" title="statement not covered" >    this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.activeCollection.addAsset(this.asset, this.subclipMarkers))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    this.clearAndClose();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public addSubclipToCart(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.onAddSubclipToCart.emit();</span>
+<span class="cstat-no" title="statement not covered" >    this.clearAndClose();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public clearAndClose(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.formItems = this.clearForm();</span>
+<span class="cstat-no" title="statement not covered" >    this.wzForm.resetForm();</span>
+<span class="cstat-no" title="statement not covered" >    this.changeDetector.markForCheck();</span>
+<span class="cstat-no" title="statement not covered" >    this.ontoggleSubclipPanel.emit();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private clearForm() {</span>
+<span class="cstat-no" title="statement not covered" >    return this.formItems</span>
+      .map(<span class="fstat-no" title="function not covered" >(field: FormFields)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        field.value = '';</span>
+<span class="cstat-no" title="statement not covered" >        return field;</span>
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private error(error: any)</span> {
+<span class="cstat-no" title="statement not covered" >    this.serverErrors = error.json();</span>
+<span class="cstat-no" title="statement not covered" >    this.changeDetector.markForCheck();</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

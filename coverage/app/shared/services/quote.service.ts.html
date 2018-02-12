@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/quote.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> quote.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">60.36% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>67/111</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">26.67% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/15</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.31% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>22/52</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.7% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>58/94</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { ApiService } from './api.service';
+import { CartService } from './cart.service';
+import { UserService } from './user.service';
+import { Api, ApiResponse } from '../interfaces/api.interface';
+import { User } from '../interfaces/user.interface';
+import { Observable } from 'rxjs/Observable';
+import {
+  Quote,
+  Order,
+  QuoteOptions,
+  PaymentType,
+  PurchaseOptions,
+  PaymentOptions,
+  PaymentOption,
+  Project,
+  LicenseAgreements,
+  AssetLineItem
+} from '../interfaces/commerce.interface';
+import { AppStore, QuoteShowState, CheckoutState } from '../../app.store';
+import { enhanceAsset } from '../interfaces/enhanced-asset';
+&nbsp;
+@Injectable()
+export class QuoteService {
+  constructor(
+    private api: ApiService,
+    private cartService: CartService,
+    private store: AppStore,
+    private userService: UserService
+  ) { }
+&nbsp;
+  // Store Accessors
+&nbsp;
+  public get data(): Observable&lt;QuoteShowState&gt; {
+    return this.store.select(state =&gt; state.quoteShow);
+  }
+&nbsp;
+  public get state(): QuoteShowState {
+    return this.store.snapshot(state =&gt; state.quoteShow);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get quote(): Observable&lt;Quote&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.store.select(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >state.quoteShow.data)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get projects(): Observable&lt;Project[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.quote.map(<span class="fstat-no" title="function not covered" >(data: Quote)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return data.projects.map(<span class="fstat-no" title="function not covered" >(project: Project)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (project.lineItems) {</span>
+<span class="cstat-no" title="statement not covered" >          project.lineItems = project.lineItems.map(<span class="fstat-no" title="function not covered" >(lineItem: AssetLineItem)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            lineItem.asset = enhanceAsset(Object.assign(</span>
+              lineItem.asset, { uuid: lineItem.id }),
+              'quoteShow', data.id
+            );
+<span class="cstat-no" title="statement not covered" >            return lineItem;</span>
+          });
+        }
+<span class="cstat-no" title="statement not covered" >        return project;</span>
+      });
+    });
+  }
+&nbsp;
+  public get checkoutData(): Observable&lt;CheckoutState&gt; {
+    return this.store.select(state =&gt; state.checkout);
+  }
+&nbsp;
+  public get checkoutState(): CheckoutState {
+    return this.store.snapshot(state =&gt; state.checkout);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get total(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.data.map(<span class="fstat-no" title="function not covered" >(state: QuoteShowState)</span> =&gt; <span class="cstat-no" title="statement not covered" >state.data.total)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get paymentType(): Observable&lt;PaymentOption&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.checkoutData.map(<span class="fstat-no" title="function not covered" >(state: CheckoutState)</span> =&gt; <span class="cstat-no" title="statement not covered" >state.selectedPaymentType)</span>;</span>
+  }
+&nbsp;
+  public get paymentOptions(): Observable&lt;PaymentOptions&gt; {
+    return this.checkoutData.map((data: CheckoutState) =&gt; data.paymentOptions);
+  }
+&nbsp;
+  public get hasAssets(): Observable&lt;boolean&gt; {
+    return this.data.map((state: QuoteShowState) =&gt; (state.data.itemCount || <span class="branch-1 cbranch-no" title="branch not covered" >0)</span> &gt; 0);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get hasAssetLineItems(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.data.map(<span class="fstat-no" title="function not covered" >(state: QuoteShowState)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      return state.data.projects.reduce(<span class="fstat-no" title="function not covered" >(previous: number, current: Project)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return current.lineItems ? previous += current.lineItems.length : 0;</span>
+      }, 0) &gt; 0;
+    });
+  }
+&nbsp;
+  // Public Interface
+<span class="fstat-no" title="function not covered" >  public purchase(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    switch (this.checkoutState.selectedPaymentType) {</span>
+      case 'CreditCard':
+<span class="cstat-no" title="statement not covered" >        return this.purchaseWithCreditCard();</span>
+      case 'PurchaseOnCredit':
+<span class="cstat-no" title="statement not covered" >        return this.purchaseOnCredit();</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        return this.purchaseQuoteType();</span>
+    }
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public getPaymentOptions() {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.api.get(Api.Orders, `quote/paymentOptions/${this.state.data.id}`)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >(options: PaymentOptions)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.checkout.setAvailablePaymentOptions(options))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.checkout.setSelectedPaymentType(this.defaultPaymentTypeFor(options)))</span>;</span>
+      });
+  }
+&nbsp;
+  public paymentOptionsEqual(options: Array&lt;PaymentOption&gt;): Observable&lt;boolean&gt; {
+    return this.paymentOptions.map((pmtOpts: PaymentOptions) =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!pmtOpts) <span class="cstat-no" title="statement not covered" >return false;</span>
+      pmtOpts.paymentOptions.sort();
+      return options.length === pmtOpts.paymentOptions.length &amp;&amp;
+        options.sort().every((option: PaymentOption, index: number) =&gt; option === pmtOpts.paymentOptions[index]);
+    });
+  }
+&nbsp;
+  public retrieveLicenseAgreements(): Observable&lt;LicenseAgreements&gt; {
+    return this.api.get(Api.Orders, `quote/licensing/${this.state.data.id}`, { loadingIndicator: true });
+  }
+&nbsp;
+  public expireQuote(): Observable&lt;Quote&gt; {
+    let newQuote: Quote = Object.assign({}, this.state.data, { expirationDate: new Date().toISOString() });
+    return this.update(this.state.data.id, newQuote);
+  }
+&nbsp;
+  public rejectQuote(): Observable&lt;Quote&gt; {
+    return this.api.put(Api.Orders, `quote/reject/${this.state.data.id}`, { loadingIndicator: true });
+  }
+&nbsp;
+  public extendExpirationDate(newDate: string): Observable&lt;Quote&gt; {
+    const newQuote: Quote = Object.assign(
+      {},
+      this.state.data,
+      { expirationDate: new Date(newDate).toISOString(), quoteStatus: 'ACTIVE' }
+    );
+&nbsp;
+    return this.update(this.state.data.id, newQuote)
+      .do(<span class="fstat-no" title="function not covered" >quote </span>=&gt; <span class="cstat-no" title="statement not covered" >this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.quoteShow.loadSuccess(quote))</span>)</span>;
+  }
+&nbsp;
+  // Private Methods
+<span class="fstat-no" title="function not covered" >  private defaultPaymentTypeFor(options: PaymentOptions)</span>: PaymentOption {
+<span class="cstat-no" title="statement not covered" >    if (options.paymentOptions.length === 1) {</span>
+<span class="cstat-no" title="statement not covered" >      return options.paymentOptions[0];</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return 'CreditCard';</span>
+  }
+&nbsp;
+  private update(id: number, quote: Quote): Observable&lt;Quote&gt; {
+    return this.api.put(Api.Orders, `quote/${id}`, { body: quote, loadingIndicator: 'onBeforeRequest' });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private purchaseWithCreditCard(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const options: PurchaseOptions = this.purchaseOptions;</span>
+<span class="cstat-no" title="statement not covered" >    return this.api.post(</span>
+      Api.Orders,
+      `quote/${this.state.data.id}/stripe/process`,
+      { body: { options }, loadingIndicator: true }
+    ).map(<span class="fstat-no" title="function not covered" >_ </span>=&gt; <span class="cstat-no" title="statement not covered" >_ as number)</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private purchaseOnCredit(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const options: PurchaseOptions = this.addressPurchaseOptions;</span>
+<span class="cstat-no" title="statement not covered" >    return this.api.post(</span>
+      Api.Orders,
+      `quote/${this.state.data.id}/checkout/convertToOrder`,
+      { body: { options }, loadingIndicator: true }
+    ).map(<span class="fstat-no" title="function not covered" >(order: Order)</span> =&gt; <span class="cstat-no" title="statement not covered" >order.id)</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private purchaseQuoteType(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const options: PurchaseOptions = Object.assign(</span>
+      {}, { orderType: this.state.data.purchaseType },
+      this.addressPurchaseOptions
+    );
+<span class="cstat-no" title="statement not covered" >    return this.api.post(</span>
+      Api.Orders,
+      `quote/${this.state.data.id}/checkout/convertToOrder`,
+      { body: { options }, loadingIndicator: true }
+    ).map(<span class="fstat-no" title="function not covered" >(order: Order)</span> =&gt; <span class="cstat-no" title="statement not covered" >order.id)</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get purchaseOptions(): PurchaseOptions {</span>
+<span class="cstat-no" title="statement not covered" >    return Object.assign({}, this.addressPurchaseOptions, this.creditCardPurchaseOptions) as PurchaseOptions;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get addressPurchaseOptions(): PurchaseOptions {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      orderAddressId: this.checkoutState.selectedAddress.addressEntityId,
+      orderAddressType: this.checkoutState.selectedAddress.type,
+      poNumber: this.checkoutState.purchaseOrderId
+    };
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get creditCardPurchaseOptions(): PurchaseOptions {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      stripeToken: this.checkoutState.authorization.id,
+      stripeTokenType: this.checkoutState.authorization.type
+    };
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

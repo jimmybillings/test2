@@ -1,0 +1,63 @@
+<section
+  class="comments-section"
+  layout="row" layout-align="center start">
+  <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+    <wz-comment
+      [ngClass]="{ 'visible': showComments, 'not-visible': showComments === false }"
+      [formFields]="commentFormConfig"
+      [parentObject]="commentParentObject"
+      [userCanAddComments]="true"
+      (toggleCommentsVisibility)="toggleCommentsVisibility()">
+    </wz-comment>
+  </div>
+</section>
+
+<section class="header" layout="row" layout-align="center center">
+	<header layout="row" flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+    <div flex="no-grow" layout="row" layout-align="space-between end">
+			<h2 class="mat-display-1">{{ 'CART.PAGE_TITLE' | translate }}</h2>
+    </div>
+    <div 
+      class="tools" 
+      flex="auto" 
+      [ngClass]="{ 'hide-for-comments': showComments, 'comments-closed': showComments === false }">
+      <button
+        mat-icon-button
+        color="primary"
+        title="{{ 'COLLECTION.SHOW.COMMENT_BTN_TITLE' | translate }}"
+        (click)="toggleCommentsVisibility()">
+          <mat-icon>mode_comment</mat-icon>
+          <span *ngIf="(commentCount | async) > 0" class="comment-count">{{commentCount| async}}</span>
+      </button>
+    </div>
+  </header>
+</section>
+
+<section class="tabs-section">
+  <div layout="row" flex="100" layout-align="center start">
+     <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+        <mat-tab *ngFor="let tabLabelKey of tabLabelKeys; let i = index" [disabled]="!tabEnabled[i]">
+          <ng-template mat-tab-label>{{ tabLabelKey | uppercase }}</ng-template>
+          <cart-tab-component
+            *ngIf="tabLabelKey === 'cart'"
+            (notify)="onNotification($event)">
+          </cart-tab-component>
+          <cart-billing-tab-component 
+            *ngIf="tabLabelKey === 'billing'" 
+            [loaded]="selectedTabIndex === 1"
+            (notify)="onNotification($event)">
+          </cart-billing-tab-component>
+          <cart-payment-tab-component 
+            *ngIf="tabLabelKey === 'payment'"
+            (notify)="onNotification($event)">
+          </cart-payment-tab-component>
+          <cart-confirm-tab-component 
+            *ngIf="tabLabelKey === 'confirm'" 
+            (notify)="onNotification($event)">
+          </cart-confirm-tab-component>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-player/wz.player.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-player/</a> wz.player.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.4% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>246/250</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.08% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>98/102</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.92% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>47/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.21% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>219/223</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">390×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">394×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">390×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">184×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">178×</span>
+<span class="cline-any cline-yes">178×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-yes">38×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">444×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">438×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">277×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">271×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-yes">241×</span>
+<span class="cline-any cline-yes">235×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1099×</span>
+<span class="cline-any cline-yes">1075×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-yes">341×</span>
+<span class="cline-any cline-yes">340×</span>
+<span class="cline-any cline-yes">340×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-yes">60×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">377×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-yes">280×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2532×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2532×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">188×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">234×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">383×</span>
+<span class="cline-any cline-yes">219×</span>
+<span class="cline-any cline-yes">219×</span>
+<span class="cline-any cline-yes">219×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">383×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">383×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">422×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">433×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">433×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">433×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">76×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">356×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1736×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1736×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">218×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">438×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">426×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">422×</span>
+<span class="cline-any cline-yes">422×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-yes">389×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Component, ChangeDetectionStrategy, Input, Output, ElementRef, Renderer, EventEmitter, NgZone, OnDestroy
+} from '@angular/core';
+import { EnhancedAsset } from '../../../../interfaces/enhanced-asset';
+import { PlayerMode, PlaybackDirection, PlayerStateChanges } from '../../interfaces/player.interface';
+import { AppStore } from '../../../../../app.store';
+import { Pojo } from '../../../../interfaces/common.interface';
+declare var jwplayer: any;
+&nbsp;
+type AssetType = 'unknown' | 'image' | 'video' | 'html5Video';
+type MarkersPlaybackMode = 'off' | 'initializing' | 'on';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-player',
+  template: ' ',
+  // styles: ['img { width:100%; height:100%; }'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+&nbsp;
+export class WzPlayerComponent implements OnDestroy {
+  @Input() mode: PlayerMode = 'basic';
+  @Input() window: any;
+&nbsp;
+  @Input()
+  public set asset(asset: any) {
+    this.reset();
+    this.currentAsset = asset;
+    this.enhancedAsset = Object.assign(new EnhancedAsset(), asset).normalize();
+&nbsp;
+    this.enhancedAsset.isImage ? this.setupImage() : this.setupVideo();
+  }
+&nbsp;
+  public get asset(): any {
+    return this.currentAsset;
+  }
+&nbsp;
+  @Output() stateChangeRequest: EventEmitter&lt;PlayerStateChanges&gt; = new EventEmitter&lt;PlayerStateChanges&gt;();
+&nbsp;
+  private currentAsset: any;
+  private enhancedAsset: EnhancedAsset;
+  private jwPlayer: any;
+  private videoElement: any;
+  private currentAssetType: AssetType = 'unknown';
+  private markersPlaybackMode: MarkersPlaybackMode = 'off';
+  private inMarker: number = undefined;
+  private outMarker: number = undefined;
+  private videoElementListenerRemovers: any;
+  private waitingForSeek: boolean = false;
+  private pendingSeekRequest: number = null;
+&nbsp;
+  constructor(private element: ElementRef, private renderer: Renderer, private zone: NgZone, private store: AppStore) {
+    this.readOverlayConfig();
+  }
+&nbsp;
+  public ngOnDestroy(): void {
+    this.reset();
+  }
+&nbsp;
+  public togglePlayback(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    this.setPlaybackRateTo(1);
+    this.videoElement.paused ? this.videoElement.play() : this.videoElement.pause();
+  }
+&nbsp;
+  public playAtSpeed(speed: number, direction: PlaybackDirection = 'forward'): void {
+    this.verifyCustomControlsSupport();
+    if (direction === 'reverse') throw new Error('Reverse playback is not yet supported.');
+&nbsp;
+    // this.setPlaybackRateTo((direction === 'reverse' ? -1 : 1) * speed);
+    this.setPlaybackRateTo(speed);
+&nbsp;
+    if (this.videoElement.paused) this.videoElement.play();
+  }
+&nbsp;
+  public pause(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    if (!this.videoElement.paused) this.videoElement.pause();
+  }
+&nbsp;
+  public seekTo(timeInSeconds: number): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    this.videoElement.ended ? this.resetPlaybackAndSeekTo(timeInSeconds) : this.simplySeekTo(timeInSeconds);
+  }
+&nbsp;
+  public seekToInMarker(): void {
+    this.verifyCustomControlsSupport();
+    if (!this.inMarker) throw new Error('Cannot seek to in marker because it is not set.');
+&nbsp;
+    this.seekTo(this.inMarker);
+  }
+&nbsp;
+  public seekToOutMarker(): void {
+    this.verifyCustomControlsSupport();
+    if (!this.outMarker) throw new Error('Cannot seek to out marker because it is not set.');
+&nbsp;
+    this.seekTo(this.outMarker);
+  }
+&nbsp;
+  public setInMarkerToCurrentTime(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    this.inMarker = this.videoElement.currentTime;
+&nbsp;
+    if (this.outMarker &amp;&amp; this.outMarker &lt; this.inMarker) {
+      this.outMarker = this.inMarker;
+      this.emitStateChangeRequestWith({ inMarker: this.inMarker, outMarker: this.outMarker });
+    } else {
+      this.emitStateChangeRequestWith({ inMarker: this.inMarker });
+    }
+  }
+&nbsp;
+  public setOutMarkerToCurrentTime(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    if (this.markersPlaybackMode === 'on') {
+      // We have automatically just reached the out marker because we just moved it to currentTime.
+      this.videoElement.pause();
+      this.markersPlaybackMode = 'off';
+      this.emitStateChangeRequestWith({ playingMarkers: false });
+    }
+&nbsp;
+    this.outMarker = this.videoElement.currentTime;
+&nbsp;
+    if (this.inMarker &amp;&amp; this.inMarker &gt; this.outMarker) {
+      this.inMarker = this.outMarker;
+      this.emitStateChangeRequestWith({ inMarker: this.inMarker, outMarker: this.outMarker });
+    } else {
+      this.emitStateChangeRequestWith({ outMarker: this.outMarker });
+    }
+  }
+&nbsp;
+  public clearMarkers(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    if (this.markersPlaybackMode === 'on') {
+      // Clearing the markers immediately kills markers playback mode.
+      this.markersPlaybackMode = 'off';
+      this.emitStateChangeRequestWith({ playingMarkers: false });
+    }
+&nbsp;
+    this.inMarker = undefined;
+    this.outMarker = undefined;
+&nbsp;
+    this.emitStateChangeRequestWith({ inMarker: undefined, outMarker: undefined });
+  }
+&nbsp;
+  public toggleMarkersPlayback(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    if (this.markersPlaybackMode === 'on') {
+      this.togglePlayback();
+    } else if (this.markersPlaybackMode === 'off') {
+      if (!this.inMarker || !this.outMarker) throw new Error('Cannot play between markers unless they are both set.');
+&nbsp;
+      this.markersPlaybackMode = 'initializing';
+&nbsp;
+      this.seekTo(this.inMarker);
+      // ... execution continues in onSeeked().
+      // From there, markers playback stops in onSeeking() or onTimeUpdate().
+    }
+  }
+&nbsp;
+  public toggleMute(): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    this.videoElement.muted = !this.videoElement.muted;
+  }
+&nbsp;
+  public setVolumeTo(newVolume: number): void {
+    this.verifyCustomControlsSupport();
+&nbsp;
+    if (this.videoElement.muted) {
+      // We don't want to report any changes until we're all done.
+      this.stopVideoEventListenerFor('volumechange');
+      this.videoElement.muted = false;
+      this.startVideoEventListenerFor('volumechange', this.onVolumeChange);
+    }
+&nbsp;
+    // newVolume is in the range 0 to 100.  The &lt;video&gt; element needs 0 to 1.
+    this.videoElement.volume = newVolume / 100;
+  }
+&nbsp;
+  private verifyCustomControlsSupport(): void {
+    if (this.mode === 'basic') throw new Error('Basic mode does not support custom controls.');
+    if (this.currentAssetType !== 'html5Video') throw new Error('Current asset does not support custom controls.');
+  }
+&nbsp;
+  private setupVideo(): void {
+    this.currentAssetType = 'video';
+    this.jwPlayer = this.window.jwplayer(this.element.nativeElement);
+    this.setupInMarker();
+    this.setupOutMarker();
+&nbsp;
+    const autostartInAdvancedMode: boolean = !this.inMarker || !this.outMarker;
+&nbsp;
+    this.jwPlayer.setup({
+      image: this.enhancedAsset.thumbnailUrl || null,
+      file: this.enhancedAsset.clipUrl,
+      autostart: this.mode === 'basic' || autostartInAdvancedMode,
+      controls: false
+    });
+&nbsp;
+    this.jwPlayer.on('ready', () =&gt; {
+      if (this.mode === 'advanced') {
+        const jwPlayerProvider = this.jwPlayer.getProvider();
+        if (jwPlayerProvider &amp;&amp; jwPlayerProvider.name === 'html5') {
+          this.currentAssetType = 'html5Video';
+          this.jwPlayer.on('displayClick', this.togglePlayback.bind(this));
+&nbsp;
+          // Seems like the "correct" Angular-y way to do this would be to
+          // find the &lt;video&gt; tag inside 'this.element.nativeElement'.  But
+          // that doesn't seem to work, so we'll resort to this for now.
+          // ASSUMPTION:  There is one &lt;video&gt; element in the document!
+          this.videoElement = this.window.document.querySelector('video');
+          // make it harder for users to download the video by disabling the context menu, taken from
+          // https://stackoverflow.com/questions/9756837/prevent-html5-video-from-being-downloaded-right-click-saved
+          this.videoElement.oncontextmenu = () =&gt; false;
+          this.startVideoEventListeners();
+&nbsp;
+          this.emitStateChangeRequestWith({
+            ready: true,
+            canSupportCustomControls: true,
+            framesPerSecond: this.enhancedAsset.framesPerSecond,
+            inMarker: this.inMarker,
+            outMarker: this.outMarker,
+            volume: this.currentVolume
+          });
+&nbsp;
+          if (!autostartInAdvancedMode) this.toggleMarkersPlayback();
+&nbsp;
+        } else {
+          if (!autostartInAdvancedMode) this.jwPlayer.play(true);
+          this.jwPlayer.setControls(true);
+          this.emitStateChangeRequestWith({ ready: true, canSupportCustomControls: false });
+        }
+      } else {
+        // Default control setting is false, so we turn them
+        // on here if we're using the simple player.
+        this.jwPlayer.setControls(true);
+      }
+    });
+  }
+&nbsp;
+  private setupInMarker(): void {
+    this.inMarker =
+      this.enhancedAsset.inMarkerFrame &amp;&amp; this.enhancedAsset.inMarkerFrameNumber !== 0
+        ? this.enhancedAsset.inMarkerFrame.asSeconds(3)
+        : undefined;
+  }
+&nbsp;
+  private setupOutMarker(): void {
+    this.outMarker =
+      this.enhancedAsset.outMarkerFrame &amp;&amp; this.enhancedAsset.outMarkerFrameNumber !== this.enhancedAsset.durationFrameNumber
+        ? this.enhancedAsset.outMarkerFrame.asSeconds(3)
+        : undefined;
+  }
+&nbsp;
+  private startVideoEventListeners(): void {
+    this.startVideoEventListenerFor('durationchange', this.onDurationChange);
+    this.startVideoEventListenerFor('ended', this.onEnded);
+    this.startVideoEventListenerFor('pause', this.onPause);
+    this.startVideoEventListenerFor('playing', this.onPlaying);
+    this.startVideoEventListenerFor('ratechange', this.onRateChange);
+    this.startVideoEventListenerFor('timeupdate', this.onTimeUpdate);
+    this.startVideoEventListenerFor('seeked', this.onSeeked);
+    this.startVideoEventListenerFor('seeking', this.onSeeking);
+    this.startVideoEventListenerFor('volumechange', this.onVolumeChange);
+  }
+&nbsp;
+  private startVideoEventListenerFor(eventName: string, callback: Function): void {
+    if (!this.videoElementListenerRemovers) this.videoElementListenerRemovers = {};
+&nbsp;
+    // See http://stackoverflow.com/questions/35080387/dynamically-add-event-listener-in-angular-2
+    this.videoElementListenerRemovers[eventName] = this.renderer.listen(this.videoElement, eventName, callback.bind(this));
+  }
+&nbsp;
+  private stopVideoEventListeners(): void {
+    for (const eventName in this.videoElementListenerRemovers) {
+      this.stopVideoEventListenerFor(eventName);
+    }
+&nbsp;
+    this.videoElementListenerRemovers = {};
+  }
+&nbsp;
+  private stopVideoEventListenerFor(eventName: string) {
+    this.videoElementListenerRemovers[eventName]();
+  }
+&nbsp;
+  private onDurationChange(): void {
+    this.emitStateChangeRequestWith({ duration: this.videoElement.duration });
+  }
+&nbsp;
+  private onEnded(): void {
+    this.setPlaybackRateTo(1);
+  }
+&nbsp;
+  private onPause(): void {
+    this.emitStateChangeRequestWith({ playing: false });
+  }
+&nbsp;
+  private onPlaying(): void {
+    this.emitStateChangeRequestWith({ playing: true });
+  }
+&nbsp;
+  private onRateChange(): void {
+    this.emitStateChangeRequestWith({ playbackSpeed: this.videoElement.playbackRate });
+  }
+&nbsp;
+  private onSeeked(): void {
+    if (this.markersPlaybackMode === 'initializing') {
+      this.markersPlaybackMode = 'on';
+      this.emitStateChangeRequestWith({ playingMarkers: true });
+      if (this.videoElement.paused) this.videoElement.play();
+    }
+&nbsp;
+    this.waitingForSeek = false;
+&nbsp;
+    if (this.pendingSeekRequest) {
+      const newTime: number = this.pendingSeekRequest;
+      this.pendingSeekRequest = null;
+      this.seekTo(newTime);
+    }
+  }
+&nbsp;
+  private onSeeking(): void {
+    if (this.markersPlaybackMode === 'on') {
+      // Any seek immediately kills range playback mode.
+      this.markersPlaybackMode = 'off';
+      this.emitStateChangeRequestWith({ playingMarkers: false });
+    }
+  }
+&nbsp;
+  private onTimeUpdate(): void {
+    const currentTime = this.videoElement.currentTime;
+&nbsp;
+    this.emitStateChangeRequestWith({ currentTime: currentTime });
+&nbsp;
+    if (this.markersPlaybackMode === 'on' &amp;&amp; currentTime &gt;= this.outMarker) {
+      this.videoElement.pause();
+      this.markersPlaybackMode = 'off';
+      this.emitStateChangeRequestWith({ playingMarkers: false });
+&nbsp;
+      if (currentTime &gt; this.outMarker) this.seekTo(this.outMarker);
+    }
+  }
+&nbsp;
+  private onVolumeChange(): void {
+    this.emitStateChangeRequestWith({ volume: this.currentVolume });
+  }
+&nbsp;
+  private get currentVolume(): number {
+    // The &lt;video&gt; element separately tracks values for "muted" (true/false) and "volume" (0 to 1.0).
+    // To make things simpler for our event consumers, combine these into a single value from 0 to 100.
+    return this.videoElement.muted ? 0 : Math.round(this.videoElement.volume * 100);
+  }
+&nbsp;
+  private emitStateChangeRequestWith(changes: PlayerStateChanges): void {
+    // Run these in "the Angular zone" so that the change detector sees changes now, not on the next cycle.
+    this.zone.run(() =&gt; this.stateChangeRequest.emit(changes));
+  }
+&nbsp;
+  private setupImage(): void {
+    this.currentAssetType = 'image';
+    let imgWrapper: HTMLElement = document.createElement('div');
+    imgWrapper.className = 'photo-container';
+    let elem: HTMLImageElement = document.createElement('img');
+    elem.src = this.enhancedAsset.clipUrl;
+    imgWrapper.appendChild(elem);
+    this.element.nativeElement.appendChild(imgWrapper);
+  }
+&nbsp;
+  private reset(): void {
+    if (this.currentAssetType.match(/^video|html5Video$/)) {
+      if (this.currentAssetType === 'html5Video') {
+        this.stopVideoEventListeners();
+      }
+&nbsp;
+      this.videoElement = null;
+      this.jwPlayer.remove();
+      this.jwPlayer = null;
+      this.inMarker = undefined;
+      this.outMarker = undefined;
+      this.waitingForSeek = false;
+      this.pendingSeekRequest = null;
+    }
+&nbsp;
+    this.currentAssetType = 'unknown';
+    this.markersPlaybackMode = 'off';
+    this.element.nativeElement.innerHTML = '';
+  }
+&nbsp;
+  private setPlaybackRateTo(newRate: number) {
+    if (newRate !== this.videoElement.playbackRate) this.videoElement.playbackRate = newRate;
+  }
+&nbsp;
+  private resetPlaybackAndSeekTo(timeInSeconds: number): void {
+    // This is a weird state.  If we merely seek after the video has ended, we will get a 'timeupdate'
+    // event that SAYS the seek has happened, but the video stays stuck at the end.  Thus, we need to
+    // "prime the pump" and do a quick play/pause cycle first.  That seems to reset things properly so that
+    // the seek will actually update the video.
+&nbsp;
+    const oneTimeListenerRemover: Function = this.renderer.listen(this.videoElement, 'playing', () =&gt; {
+      this.videoElement.pause();
+      oneTimeListenerRemover();
+      this.simplySeekTo(timeInSeconds);
+    });
+&nbsp;
+    // Start playback, which will immediately pause and seek due to the one-time listener above.
+    this.videoElement.play();
+  }
+&nbsp;
+  private simplySeekTo(timeInSeconds: number) {
+    if (this.waitingForSeek) {
+      // If we get several seek requests while we are waiting for one to complete, we'll remember
+      // just the most recent request (throwing away all others), and seek there as soon as the current
+      // seek is done.  This lets us repeatedly seek just as fast as the browser can handle it.
+      this.pendingSeekRequest = timeInSeconds;
+&nbsp;
+    } else if (this.videoElement.currentTime === timeInSeconds) {
+      // We're already where we want to be, so we don't need to actually seek.  But let's send a state update
+      // in case consumers of this component need to be updated with the current time.
+      this.emitStateChangeRequestWith({ currentTime: timeInSeconds });
+&nbsp;
+    } else {
+      this.waitingForSeek = true;
+      this.videoElement.currentTime = timeInSeconds;
+    }
+  }
+&nbsp;
+  private readOverlayConfig(): void {
+    const components: Pojo = this.store.snapshotCloned(state =&gt; state.uiConfig.components);
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!components.hasOwnProperty('playerOverlay') || <span class="branch-1 cbranch-no" title="branch not covered" >!components.playerOverlay.hasOwnProperty('config'))</span> {
+      console.log('No playerOverlay configuration found');
+      return;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const rawConfig: Pojo = components.playerOverlay.config;</span>
+<span class="cstat-no" title="statement not covered" >    console.log('playerOverlay configuration:');</span>
+<span class="cstat-no" title="statement not covered" >    [</span>
+      'enabled', 'userDisplayText', 'position', 'fontSizeInPixels', 'textColor', 'textOpacity', 'backgroundColor',
+      'backgroundOpacity'
+    ].forEach(<span class="fstat-no" title="function not covered" >key </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >      console.log(`  ${key}: ${rawConfig[key] ? `"${rawConfig[key].value}"` : undefined}`);</span>
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<section class="profile-head" layout="row" layout-align="center center">
+  <header flex-gt-lg="80" flex-lg="80" flex-gt-sm="95" flex="100">
+    <div layout="row"  layout-align="space-between end">
+      <h2 flex="100" class="mat-display-1">{{ 'PROFILE.PAGE_TITLE' | translate }}</h2>
+    </div>
+  </header>
+</section>
+
+<section class="data-bk">
+  <div layout="row" mat-scroll-y="" layout-align="center start">
+    <div flex-gt-lg="80" flex-lg="80" flex-gt-sm="95" flex="100" layout="row" layout-wrap="" layout-align="center start">
+      <mat-tab-group>
+        <mat-tab label="'PROFILE.BASIC_INFO_TAB_LABEL' | uppercase | translate">
+          <ng-template mat-tab-label>{{'PROFILE.BASIC_INFO_TAB_LABEL' | translate }}</ng-template>
+          <!--<div layout="row" layout-align="end center">
+            <button mat-button mat-raised-button [mat-menu-trigger-for]="profileSettings" color="primary">Edit basic info</button>
+          </div>-->
+          <div class="m-data">
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.FIRST_NAME_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{user.firstName}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.LAST_NAME_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{user.lastName}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.EMAIL_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{user.emailAddress}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.ACCOUNT_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">
+                  {{userAccount}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.PASSWORD_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">
+                  <button mat-button class="is-outlined" color="primary" [routerLink]="['/user/reset-password']">{{'PROFILE.BASIC_INFO.CHANGE_PASSWORD_BTN_LABEL' | translate }}</button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div layout="row" layout-align="end center">
+            <button mat-button (click)="onClickEditBasicInfoButton()" color="primary" class="edit-basic">
+              <mat-icon class="mat-24">edit</mat-icon>
+              {{'PROFILE.BASIC_INFO.EDIT_BTN_LABEL' | translate }}
+            </button>
+          </div>
+          <div class="m-data">
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('address') + ' ' + getBillingAddressInfo('address2')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_CITY_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('city')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_STATE_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('state')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_ZIPCODE_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('zipcode')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_COUNTRY_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('country')}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{'PROFILE.BASIC_INFO.BILLING_ADDRESS_PHONE_LABEL' | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{getBillingAddressInfo('phone')}}</p>
+              </div>
+            </div>
+          </div>
+          <div layout="row" layout-align="end center">
+            <button mat-button (click)="onClickEditAddressButton()" color="primary" class="edit-basic">
+              <mat-icon class="mat-24">edit</mat-icon>
+              {{'PROFILE.BASIC_INFO.BILLING_ADDRESS_EDIT_BTN_LABEL' | translate }}
+            </button>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>

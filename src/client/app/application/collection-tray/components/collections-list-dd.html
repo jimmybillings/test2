@@ -1,0 +1,79 @@
+<div class="collections-list-dd revealed">
+  <div class="collections-dd-menu">
+    <div class="dd-menu-wrapper">
+      <header>
+        <wz-item-search-form
+          *ngIf="collectionSearchIsShowing"
+          [ngClass]="{ 'revealed' : collectionSearchIsShowing }"
+          [currentSearchQuery]="options.currentSearchQuery"
+          (query)="search($event)"
+          placeholderTxt="{{ 'COLLECTION.INDEX.SEARCH_BOX_LABEL' | translate }}"
+          (closeSearch)="showCollectionSearch()">
+        </wz-item-search-form>
+        <collections-filter-dd
+          *ngIf="collectionFilterIsShowing"
+          flex="100"
+          [currentFilter]="options.currentFilter"
+          (filter)="applyFilter($event)"
+          (close)="showCollectionFilter()">
+        </collections-filter-dd>
+        <collections-sort-dd
+          *ngIf="collectionSortIsShowing"
+          flex="100"
+          [currentSort]="options.currentSort"
+          (sort)="applySort($event)"
+          (close)="showCollectionSort()">
+        </collections-sort-dd>
+        <div flex="100" layout="row">
+          <h4 class="mat-headline" flex="100" layout-align="start center">
+            {{ 'COLLECTION.DD_MENU.HEADING' | translate }}
+          </h4>
+          <div class="tools" flex="auto" layout-align="end center">
+            <button mat-icon-button title="{{ 'COLLECTION.DD_MENU.SEARCH_BTN_TITLE' | translate }}" (click)="showCollectionSearch()"><mat-icon>search</mat-icon></button>
+            <button mat-icon-button title="{{ 'COLLECTION.DD_MENU.FILTER_BTN_TITLE' | translate }}" (click)="showCollectionFilter()"><mat-icon>filter_list</mat-icon></button>
+            <button mat-icon-button title="{{ 'COLLECTION.DD_MENU.SORT_BTN_TITLE' | translate }}" (click)="showCollectionSort()"><mat-icon>sort</mat-icon></button>
+            <button 
+              mat-icon-button 
+              title="{{ 'COLLECTION.DD_MENU.CLOSE_HOVER_TITLE' | translate }}" 
+              (click)="closeCollectionsList()">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+      </header>
+      <!-- <section class="subhead" flex="100" layout="row">
+      </section> -->
+      
+      <div class="mat-caption query-details" layout="column">
+        <span *ngIf="options.currentSearchQuery.q" flex="100" class="search">
+          <strong>{{ 'COLLECTION.DD_MENU.SEARCH_QUERY_TITLE' | translate }}</strong>{{ options.currentSearchQuery.q }}
+        </span>
+        <span *ngIf="options && options.currentFilter.label !== 'ALL'" flex="100" class="filter">
+          <strong>{{ 'COLLECTION.DD_MENU.FILTER_BY_TITLE' | translate }}</strong>{{ options.currentFilter.name | translate }}
+        </span> 
+        <span flex="100" class="sort" *ngIf="options">
+          <strong>{{ 'COLLECTION.DD_MENU.SORTED_ON_TITLE' | translate }}</strong>{{ options.currentSort.name | translate }}
+        </span> 
+      </div>
+      
+      <mat-list dense>
+        <mat-list-item *ngFor="let collection of collectionList | async" [ngClass]="{active: focusedCollection.id === collection.id}">
+          <button (click)="selectFocusedCollection(collection);">
+            <mat-icon class="select-indicator" *ngIf="focusedCollection.id === collection.id">star</mat-icon>
+            <mat-icon class="select-indicator" *ngIf="focusedCollection.id !== collection.id">star_border</mat-icon>
+            {{collection.name}}
+            <mat-icon class="not-owner right-align" title="{{ 'COLLECTION.DD_MENU.SHARED_TITLE' | translate:{role:collection.userRole} }}" *ngIf="collection.userRole !== 'owner'">shared</mat-icon>
+            <a mat-icon-button
+              *ngIf="!addToDifferentCollection"
+              color="primary"
+              class="open-collection-link"
+              title="{{ 'COLLECTION.MORE_DD_MENU.OPEN_COLLECTION' | translate }}"
+              [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">
+              <mat-icon>open_in_browser</mat-icon>
+            </a>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

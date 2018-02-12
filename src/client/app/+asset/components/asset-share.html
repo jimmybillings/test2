@@ -1,0 +1,25 @@
+<wz-share
+  class="revealed"
+  [titleKey]="shareAssetDialogTitle"
+  [formFields]="formFields"
+  [shareLink]="shareLink | async"
+  (shareLinkRequest)="onShareLinkRequest()"
+  (closeRequest)="onCloseRequest()"
+  (formSubmit)="onFormSubmit($event)"
+>
+  <div class="subclip-info" *ngIf="showSubclippingInfo" layout="column" layout-align="center">
+    <p class="in-out-markers" flex>
+      <strong>{{ 'ASSET.SHARING.SUBCLIP_IN_LABEL' | translate}}</strong>
+      <span>{{ subclipMarkers.in | timecode }}</span>
+      <strong>{{ 'ASSET.SHARING.SUBCLIP_OUT_LABEL' | translate}}</strong>
+      <span>{{ subclipMarkers.out | timecode }}</span>
+      <!-- I think it would be nice to display subclip duration -->
+      <!-- <strong>/</strong>
+      <span class="duration">{{ currentAsset.subclipDurationFrame | timecode }}</span> -->
+    </p>
+  </div>
+
+  <div class="asset-name" layout="column" layout-align="center">
+    <span flex>{{ assetName }}</span>
+  </div>
+</wz-share>

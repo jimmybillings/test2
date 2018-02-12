@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="<%= APP_BASE %>">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title><%= APP_TITLE %></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=yyxLGp2EBG">
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png?v=yyxLGp2EBG" sizes="32x32">
+  <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png?v=yyxLGp2EBG" sizes="16x16">
+  <link rel="manifest" href="/assets/favicon/manifest.json?v=yyxLGp2EBG">
+  <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=yyxLGp2EBG" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=yyxLGp2EBG">
+  <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=yyxLGp2EBG">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="theme.css">
+  <!-- inject:css -->
+  <!-- endinject -->
+</head>
+<body>
+
+
+  <wazee-digital-platform 
+    baseUrl="https://crxextapi.wzplatform.com/" 
+    portal="commerce">Loading... 
+  </wazee-digital-platform>
+
+  <script>
+  // Fixes undefined module function in SystemJS bundle
+  function module() {}
+  </script>
+  <script src="https://content.jwplatform.com/libraries/iB4kEpCA.js"></script>
+
+  <!-- shims:js -->
+  <!-- endinject -->
+
+  <% if (BUILD_TYPE === 'dev') { %>
+  <script src="<%= APP_BASE %>app/system-config.js"></script>
+  <% } %>
+
+  <!-- libs:js -->
+  <!-- endinject -->
+
+  <!-- inject:js -->
+  <!-- endinject -->
+
+  <% if (BUILD_TYPE === 'dev') { %>
+  <script>
+  System.import('<%= BOOTSTRAP_MODULE %>')
+    .catch(function (e) {
+      console.error(e.stack || e,
+        'Not expecting this error? Report it at https://github.com/mgechev/angular-seed/issues');
+    });
+  </script>
+  <% } %>
+</body>
+</html>

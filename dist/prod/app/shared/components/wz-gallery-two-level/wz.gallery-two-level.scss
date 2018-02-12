@@ -1,0 +1,319 @@
+$tr-duration: 300ms;
+
+
+two-level-view {
+  width: 100%;
+  padding: 32px 0 30px 0;
+  & > section {
+    margin: 10px 0;
+    h3 {
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 1.4em;
+      margin: 0 0  -8px 50px;
+      @media screen and (max-width: $layout-breakpoint-sm) {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+two-level-view .carousel-hover-trigger {
+  width: 100%;
+  position: relative;
+}  
+
+two-level-view .carousel {
+  font-size: 0;
+  line-height: 0;
+  padding: 16px 50px;
+  margin: 0 0 0 -4px;
+  @media screen and (min-width: $layout-breakpoint-md) {
+    margin: 0 0 0 -5px;
+  }
+  @media screen and (max-width: $layout-breakpoint-sm) {
+    padding: 16px 30px;
+  }
+  overflow-x: scroll;
+  .carousel-mask {
+    overflow-x: visible;
+    z-index: -1;
+  }
+  .carousel-previous,
+  .carousel-next {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50px;
+    @media screen and (max-width: $layout-breakpoint-sm) {
+      width: 30px;
+    }
+  }
+  .carousel-previous {
+    left: 0;
+  }
+  .carousel-next {
+    right: 0;
+  }
+  .carousel-content-0,
+  .carousel-content-1,
+  .carousel-content-2,
+  .carousel-content-3,
+  .carousel-content-4,
+  .carousel-content-5,
+  .carousel-content-6,
+  .carousel-content-7,
+  .carousel-content-8,
+  .carousel-content-9,
+  .carousel-content-10,
+  .carousel-content-11,
+  .carousel-content-12,
+  .carousel-content-13,
+  .carousel-content-14,
+  .carousel-content-15,
+  .carousel-content-16,
+  .carousel-content-17,
+  .carousel-content-18,
+  .carousel-content-19 {
+    // overflow-x: scroll;
+    white-space: nowrap;
+    transition: $tr-duration transform;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    &.active .carousel-item {
+      opacity: .5;
+      @media screen and (min-width: $layout-breakpoint-md) {
+        transform: translate3d(calc((-16.666% + 5px) * 1.16 / 2), 0, 0);
+        // transform: translate3d(- calc(16.666% * .16 / 2 - 5px), 0, 0);
+        // transform: translate3d(- calc((16.6666% + 5px) * 1.16 / 2) , 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-md) {
+        transform: translate3d(calc((-20% + 4px) * 1.16 / 2), 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-sm) {
+        // transform: translate3d(calc((-25% + 4px) * 1.16 / 2), 0, 0);
+        // transform: translate3d(calc(-25% + 4px * 1.16 / 2), 0, 0);
+        transform: translate3d(- calc(25% * .16), 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape)  {
+        transform: translate3d(- calc((33.3333% + 4px) * 1.16 / 2), 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+        transform: translate3d(- calc(50% * .16), 0, 0);
+        // transform: translate3d(- 22.52px, 0, 0);
+      }
+    }
+  }
+}
+
+two-level-view .carousel .carousel-content-0 .carousel-item,
+two-level-view .carousel .carousel-content-1 .carousel-item,
+two-level-view .carousel .carousel-content-2 .carousel-item,
+two-level-view .carousel .carousel-content-3 .carousel-item,
+two-level-view .carousel .carousel-content-4 .carousel-item,
+two-level-view .carousel .carousel-content-5 .carousel-item,
+two-level-view .carousel .carousel-content-6 .carousel-item,
+two-level-view .carousel .carousel-content-7 .carousel-item,
+two-level-view .carousel .carousel-content-8 .carousel-item,
+two-level-view .carousel .carousel-content-9 .carousel-item,
+two-level-view .carousel .carousel-content-10 .carousel-item,
+two-level-view .carousel .carousel-content-11 .carousel-item,
+two-level-view .carousel .carousel-content-12 .carousel-item,
+two-level-view .carousel .carousel-content-13 .carousel-item,
+two-level-view .carousel .carousel-content-14 .carousel-item,
+two-level-view .carousel .carousel-content-15 .carousel-item,
+two-level-view .carousel .carousel-content-16 .carousel-item,
+two-level-view .carousel .carousel-content-17 .carousel-item,
+two-level-view .carousel .carousel-content-18 .carousel-item,
+two-level-view .carousel .carousel-content-19 .carousel-item {
+
+    white-space: normal;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: bottom;
+    margin: 0 0 0 4px;
+    @media screen and (min-width: $layout-breakpoint-md) {
+      margin: 0 0 0 5px;
+      width: calc(16.6666% - 5px);
+    }
+    @media screen and (max-width: $layout-breakpoint-md) {
+      // margin: 0 0 0 4px;
+      width: calc(20% - 4px);
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) {
+      // margin: 0 0 0 4px;
+      width: calc(25% - 4px);
+      // width: 25%;
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
+      // margin: 0 0 0 4px;
+      width: calc(33.3333% - 4px);
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+      // margin: 0 0 0 4px;
+      width: calc(50% - 4px);
+    }
+    transform-origin: center center;
+    transition: $tr-duration all;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+    &:hover {
+      z-index: 2;
+      cursor: pointer;
+      transform: scale(1.16);
+      @media screen and (max-width: $layout-breakpoint-md) {
+        margin: 0 -4px 0 0;
+      }
+      @media screen and (max-width: $layout-breakpoint-sm) {
+        margin: 0 0 0 0;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
+        margin: 0 0 0 0;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+        margin: 0 0 0 0;
+      }
+      opacity: 1;
+    }
+    &:hover ~ .carousel-item {
+      opacity: .5;
+      @media screen and (min-width: $layout-breakpoint-md) {
+        transform: translate3d(calc((16.6666% - 5px) * 1.16 / 2) , 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-md) {
+        transform: translate3d(calc((20% - 4px) * 1.16 / 2), 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-sm) {
+        transform: translate3d(calc(25% * .16 * 2), 0, 0);
+        // transform: translate3d(0, 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: landscape) {
+        transform: translate3d(calc((33.3333% - 4px) * 1.16 / 2), 0, 0);
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+        transform: translate3d(calc(50% * .16), 0, 0);
+      }
+    }
+    a {
+      display: block;
+      // height: 0;
+      width: 100%;
+      position: relative;
+      padding: 56.25% 0 0 0;
+      background-image:
+        linear-gradient(rgba(mat-color($mat-grey, 900),.5), rgba(mat-color($mat-grey, 900),.1)),
+        linear-gradient(rgba(mat-color($mat-grey, 900),.2), rgba(mat-color($mat-grey, 900),.5))
+      ;
+      z-index: 0;
+      &:active {
+        cursor: pointer;
+      }
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-image:
+          radial-gradient(
+            ellipse at center, 
+            rgba(mat-color($mat-grey, 900),0.6) 0%,
+            rgba(mat-color($mat-grey, 900),0.2) 55%,
+            rgba(mat-color($mat-grey, 900),0) 100%),
+          linear-gradient(
+            to bottom, 
+            rgba(mat-color($mat-grey, 900),0.2) 0%,
+            rgba(mat-color($mat-grey, 900),0.45) 30%,
+            rgba(mat-color($mat-grey, 900),0.5) 60%,
+            rgba(mat-color($mat-grey, 900),0.2) 100%)
+        ;
+        opacity: 0.4;
+        transition: opacity 1s cubic-bezier(0.55, 0, 0.55, 0.2);
+        z-index: -1;
+      }
+      img {
+        z-index: -2;
+        position: absolute;
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        object-fit: cover;
+      }
+      section {
+        position: absolute;
+        bottom: 0;
+        left:0;
+        width: calc(100% - 20px);
+        height: calc(100% - 10px);
+        padding: 5px 10px;
+        min-height: 23.333%;
+        .item-label {
+          position: absolute;
+          width: calc(100% - 20px);
+          bottom: 24%;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 400;
+          font-size: 21px;
+          line-height: 1;
+          white-space: normal;
+          text-shadow: mat-color($mat-grey, 900, .66) 0 1px 4px;
+          z-index: 2;
+        }
+      }
+    }
+  }
+two-level-view .carousel .carousel-content-0 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-1 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-2 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-3 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-4 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-5 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-6 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-7 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-8 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-9 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-10 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-11 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-12 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-13 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-14 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-15 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-16 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-17 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-18 .carousel-item.disabled,
+two-level-view .carousel .carousel-content-19 .carousel-item.disabled {
+
+  img {
+    display: none;
+  }
+  .item-label {
+    opacity: .4;
+  } 
+  &:hover {
+    cursor: default;
+    transform: none;
+    z-index: 1;
+    @media screen and (max-width: $layout-breakpoint-md) {
+      margin: 0 0 0 4px;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) {
+      margin: 0 0 0 4px;
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) {
+      margin: 0 0 0 4px;
+    }
+  }
+  &:hover ~ .carousel-item {
+    transform: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/utilities/common.functions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/utilities/</a> common.functions.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.1% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>27/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.83% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>55/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-yes">1166×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">130×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">108×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Pojo } from '../interfaces/common.interface';
+&nbsp;
+export class Common {
+  public static deletePropertiesFromObject(object: Pojo, propertiesToDelete: Array&lt;string&gt;) {
+    Object.keys(object).forEach((item: string) =&gt; {
+&nbsp;
+      // Delete any properties on the object if
+      // they are listed in the propertiesToDelete argument.
+      if (propertiesToDelete.indexOf(item) &gt; -1) {
+        delete object[item];
+        return;
+      }
+&nbsp;
+      // If the property is another object but not
+      // an array then recusively call this function
+      // again with the propertie value.
+      if (Common.isObject(object[item])) {
+        Common.deletePropertiesFromObject(object[item], propertiesToDelete);
+      }
+&nbsp;
+      // If the properties value is an array of objects then
+      // loop over the array and recursivly call this function
+      // again for each object in the array.
+      if (Common.isArray(object[item])) {
+        object[item].forEach((item: any) =&gt; {
+          if (typeof item === 'object' &amp;&amp; !Array.isArray(item)) {
+            Common.deletePropertiesFromObject(item, propertiesToDelete);
+          }
+        });
+      }
+    });
+&nbsp;
+    return object;
+  }
+&nbsp;
+  public static urlStringToParamsObject(url: string): Pojo {
+    var hashes: string | string[] = url.split(/;(.+)/)[1];
+    hashes = (hashes) ? <span class="branch-0 cbranch-no" title="branch not covered" >hashes.split(';') </span>: [];
+    return hashes.reduce(<span class="fstat-no" title="function not covered" >(urlObj: Pojo, hash: string)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      let param: string[] = hash.split('=');</span>
+<span class="cstat-no" title="statement not covered" >      urlObj[param[0]] = param[1];</span>
+<span class="cstat-no" title="statement not covered" >      return urlObj;</span>
+    }, {});
+  }
+&nbsp;
+  public static urlParamsObjectToUrlStringParams(urlObj: Pojo): string {
+    let paramString: string = ';';
+    Object.keys(urlObj).forEach((param) =&gt; {
+      paramString = paramString + param + '=' + urlObj[param] + ';';
+    });
+    paramString = paramString.slice(0, -1);
+    return paramString;
+  }
+&nbsp;
+  public static clone&lt;T&gt;(object: T): T {
+    try {
+      return JSON.parse(JSON.stringify(object));
+    } catch (error) {
+      return object;
+    }
+  }
+&nbsp;
+  public static setMarginTop(className: string, document: Document): void {
+    const elements = document.getElementsByClassName(className);
+    if (elements.length === 0) return;
+    const scrollTopMargin: number = -1 * document.body.getBoundingClientRect().top;
+    elements[elements.length - 1].setAttribute('style', `margin-top: ${scrollTopMargin}px`);
+  }
+&nbsp;
+  public static onCollectionShowPage(url: string): boolean {
+    return url.includes('/collections/') &amp;&amp; !url.includes('/asset/');
+  }
+&nbsp;
+  public static isEmpty(obj: Object): boolean {
+    for (var prop in obj) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (obj.hasOwnProperty(prop)) return false;
+    }
+&nbsp;
+    return JSON.stringify(obj) === JSON.stringify({});
+  }
+&nbsp;
+  public static convertToDateInstance(dateString: string): Date {
+    const utcDate = new Date(dateString);
+    const offsetInMinutes = utcDate.getTimezoneOffset();
+    const offsetInMilliseconds = offsetInMinutes * 60 * 1000;
+    const fudgeFactor = 500;
+    return new Date(utcDate.getTime() + offsetInMilliseconds + fudgeFactor);
+  }
+&nbsp;
+  public static isNullOrUndefined(value: any): boolean {
+    return typeof value === 'undefined' || value === null;
+  }
+&nbsp;
+  public static isNotNullOrUndefined(value: any): boolean {
+    return !Common.isNullOrUndefined(value);
+  }
+&nbsp;
+  private static isObject(item: any): boolean {
+    return Common.isDefined(item) &amp;&amp; typeof item === 'object' &amp;&amp; !Array.isArray(item);
+  }
+&nbsp;
+  private static isArray(item: any): boolean {
+    return Common.isDefined(item) &amp;&amp; typeof item === 'object' &amp;&amp; Array.isArray(item);
+  }
+&nbsp;
+  private static isDefined(item: any): boolean {
+    return item !== null &amp;&amp; item !== undefined &amp;&amp; item !== NaN;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/aspera.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> aspera.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">29.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/37</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { Injectable } from '@angular/core';
+import { Api, ApiOptions } from '../interfaces/api.interface';
+import { AsperaSpec, AsperaSpecs } from '../interfaces/common.interface';
+import { ApiService } from '../services/api.service';
+import { AppStore } from '../../app.store';
+&nbsp;
+declare var AW4: any;
+&nbsp;
+@Injectable()
+export class AsperaService {
+  constructor(private api: ApiService, private store: AppStore) { }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public initConnect(stringifiedAsperaSpec: string)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    const id = Math.floor((Math.random() * 10000) + 1);</span>
+<span class="cstat-no" title="statement not covered" >    const CONNECT_INSTALLER = '//d3gcli72yxqn2z.cloudfront.net/connect/v4';</span>
+<span class="cstat-no" title="statement not covered" >    const asperaWeb = new AW4.Connect({</span>
+      sdkLocation: CONNECT_INSTALLER,
+      minVersion: '3.6.0',
+      id: 'aspera_web_transfers-' + id
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    const asperaInstaller = new AW4.ConnectInstaller({</span>
+      sdkLocation: CONNECT_INSTALLER
+    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    let asperaSpec: AsperaSpec = this.parse(stringifiedAsperaSpec);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    asperaWeb.addEventListener(</span>
+      AW4.Connect.EVENT.STATUS,
+<span class="fstat-no" title="function not covered" >      (eventType: any, data: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        switch (data) {</span>
+          case AW4.Connect.STATUS.INITIALIZING:
+<span class="cstat-no" title="statement not covered" >            asperaInstaller.showLaunching();</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          case AW4.Connect.STATUS.FAILED:
+<span class="cstat-no" title="statement not covered" >            asperaInstaller.showDownload();</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          case AW4.Connect.STATUS.OUTDATED:
+<span class="cstat-no" title="statement not covered" >            asperaInstaller.showUpdate();</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          case AW4.Connect.STATUS.RUNNING:
+<span class="cstat-no" title="statement not covered" >            asperaInstaller.connected();</span>
+<span class="cstat-no" title="statement not covered" >            this.handleDownload(asperaSpec, asperaWeb, id);</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
+          default:
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+      });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    asperaWeb.initSession('nodeConnect-' + id);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public getAsperaSpec(assetId: number, renditionType: string)</span>: Observable&lt;any&gt; {
+<span class="cstat-no" title="statement not covered" >    return this.api.get(</span>
+      Api.Assets,
+      `renditionType/asperaSpec/${assetId}`,
+      { parameters: { type: renditionType } }
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private handleDownload(spec: AsperaSpec, asperaWeb: any, random: number)</span> {
+<span class="cstat-no" title="statement not covered" >    spec.target_rate_kbps = 100000;</span>
+<span class="cstat-no" title="statement not covered" >    spec.authentication = 'token';</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    asperaWeb.startTransfer(spec, { 'allow_dialogs': 'yes' });</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private parse(stringifiedAsperaSpec: string)</span>: AsperaSpec {
+<span class="cstat-no" title="statement not covered" >    const parsedSpec: AsperaSpec | AsperaSpecs = JSON.parse(stringifiedAsperaSpec);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (parsedSpec.hasOwnProperty('transfer_specs')) {</span>
+<span class="cstat-no" title="statement not covered" >      return (parsedSpec as AsperaSpecs).transfer_specs[0].transfer_spec;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return parsedSpec as AsperaSpec;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/gallery-view.service.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> gallery-view.service.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.35% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">61.11% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>37/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : <span class="branch-1 cbranch-no" title="branch not covered" >desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,</span> d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : <span class="branch-1 cbranch-no" title="branch not covered" >c &gt; 3 ? d(target, key, r) : d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >r </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var api_service_1 = require("../services/api.service");
+var api_interface_1 = require("../interfaces/api.interface");
+var gallery_view_store_1 = require("../stores/gallery-view.store");
+var GalleryViewService = (function () {
+    function GalleryViewService(store, api) {
+        this.store = store;
+        this.api = api;
+    }
+    Object.defineProperty(GalleryViewService.prototype, "data", {
+        get: function () {
+            return this.store.data;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GalleryViewService.prototype, "state", {
+        get: function () {
+            return this.store.state;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GalleryViewService.prototype.load = function (path) {
+        var _this = this;
+        var query = (path &amp;&amp; path.length &gt; 0) ? this.stringifyPathForSearch(path) : null;
+        return this.api.get(api_interface_1.Api.Assets, 'galleryResult', { loadingIndicator: true, parameters: { query: query } })
+            .do(function (response) { return _this.store.replaceWith(response.list, path); });
+    };
+    GalleryViewService.prototype.stringifyPathForSearch = function (path) {
+        var _this = this;
+        return path.map(function (segment) { return _this.stringifyPathSegmentForSearch(segment); }).join(',');
+    };
+    GalleryViewService.prototype.stringifyPathSegmentForSearch = function (segment) {
+        return segment.ids.map(function (id, index) { return id + ":\"" + segment.names[index] + "\""; }).join(',');
+    };
+    GalleryViewService.prototype.selectFakeResponseFor = <span class="fstat-no" title="function not covered" >function (index) {</span>
+<span class="cstat-no" title="statement not covered" >        switch (index) {</span>
+            case 0: <span class="cstat-no" title="statement not covered" >return this.fakeLevelZeroResponse;</span>
+            case 1: <span class="cstat-no" title="statement not covered" >return this.fakeLevelTwoResponse;</span>
+            case 2: <span class="cstat-no" title="statement not covered" >return this.fakeLevelThreeResponse;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return 'Wha??';</span>
+    };
+    Object.defineProperty(GalleryViewService.prototype, "fakeLevelZeroResponse", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return "\n      {\n        \"results\": [\n          {\n            \"id\": 2,\n            \"name\": \"Highlights\",\n            \"resultCount\": 17,\n            \"hasMore\": true,\n            \"children\": [\n              {\n                \"id\": 3,\n                \"name\": \"Day 1\",\n                \"resultCount\": 17,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016040700348.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 2\",\n                \"resultCount\": 32,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016040809705.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 3\",\n                \"resultCount\": 41,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016040910496.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 4\",\n                \"resultCount\": 12,\n                \"thumbnailUrl\": \"http://mastersprogressivedl.edgesuite.net/2016/thumbnails/LDR_2016_r4_34046_2_492x277.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 5\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016040910496.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 6\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016040809705.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 3,\n                \"name\": \"Day 7\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_2016041038412.jpg\",\n                \"hasMore\": true\n              }\n            ]\n          },\n          {\n            \"id\": 5,\n            \"name\": \"Press Packets\",\n            \"resultCount\": 4,\n            \"hasMore\": true,\n            \"children\": [\n              {\n                \"id\": 6,\n                \"name\": \"Day 1\",\n                \"resultCount\": 4,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/234/7/1862347_038_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 2\",\n                \"resultCount\": 3,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 3\",\n                \"resultCount\": 4,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/212/6/1862126_026_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 4\",\n                \"resultCount\": 4,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/MVF/K/186MVFK_060_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 5\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 6\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 6,\n                \"name\": \"Day 7\",\n                \"resultCount\": 0,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg\",\n                \"hasMore\": true\n              }\n            ]\n          },\n          {\n            \"id\": 8,\n            \"name\": \"Promotional Content\",\n            \"resultCount\": 58,\n            \"hasMore\": true,\n            \"children\": [\n              {\n                \"id\": 9,\n                \"name\": \"Fly-overs\",\n                \"resultCount\": 18,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_18rANGC15-1rb0278Hc.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 9,\n                \"name\": \"Master Moments\",\n                \"resultCount\": 40,\n                \"thumbnailUrl\": \"http://www.masters.com/images/pics/large/h_masters64_palmeron18_angc_83123735_032011.jpg\",\n                \"hasMore\": true\n              },\n              {\n                \"id\": 9,\n                \"name\": \"Course Scenics\",\n                \"resultCount\": 40,\n                \"thumbnailUrl\": \"https://cdnt3m-a.akamaihd.net/tem/warehouse/186/518/1/1865181_001_lt.jpg\",\n                \"hasMore\": true\n              }\n            ]\n          }\n        ]\n      }\n    ";</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GalleryViewService.prototype, "fakeLevelTwoResponse", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return "\n      {\n        \"results\": [\n          {\n            \"id\": 4,\n            \"name\": \"Jordan Spieth\",\n            \"resultCount\": 6,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/34046.jpg\",\n            \"hasMore\": true\n          },\n          {\n            \"id\": 4,\n            \"name\": \"Danny Willett\",\n            \"resultCount\": 2,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/32139.jpg\",\n            \"hasMore\": true\n          },\n          {\n            \"id\": 4,\n            \"name\": \"Rory McIlroy\",\n            \"resultCount\": 5,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/28237.jpg\",\n            \"hasMore\": true\n          },\n          {\n            \"id\": 4,\n            \"name\": \"Dustin Johnson\",\n            \"resultCount\": 4,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/30925.jpg\",\n            \"hasMore\": true\n          },\n          {\n            \"id\": 4,\n            \"name\": \"Bryson DeChambeau\",\n            \"resultCount\": 2,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/47959.jpg\",\n            \"hasMore\": true\n          },\n          {\n            \"id\": 4,\n            \"name\": \"Jason Day\",\n            \"resultCount\": 3,\n            \"thumbnailUrl\": \"http://www.masters.com/images/players/2016/480x270/28089.jpg\",\n            \"hasMore\": true\n          }\n        ]\n      }\n    ";</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GalleryViewService.prototype, "fakeLevelThreeResponse", {
+        get: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return "\n      {\n        \"results\": [\n          {\n            \"id\": 10,\n            \"name\": \"Tee offs\",\n            \"resultCount\": 6,\n            \"thumbnailUrl\": \"\",\n            \"hasMore\": false\n          },\n          {\n            \"id\": 10,\n            \"name\": \"Drives\",\n            \"resultCount\": 2,\n            \"thumbnailUrl\": \"\",\n            \"hasMore\": false\n          },\n          {\n            \"id\": 10,\n            \"name\": \"Putts\",\n            \"resultCount\": 5,\n            \"thumbnailUrl\": \"\",\n            \"hasMore\": false\n          }\n        ]\n      }\n    ";</span>
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GalleryViewService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [gallery_view_store_1.GalleryViewStore, api_service_1.ApiService])
+    ], GalleryViewService);
+    return GalleryViewService;
+}());
+exports.GalleryViewService = GalleryViewService;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvc2VydmljZXMvZ2FsbGVyeS12aWV3LnNlcnZpY2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7QUFBQSxzQ0FBMkM7QUFHM0MsdURBQXFEO0FBQ3JELDZEQUErRDtBQUMvRCxtRUFBZ0U7QUFJaEU7SUFDRSw0QkFBb0IsS0FBdUIsRUFBVSxHQUFlO1FBQWhELFVBQUssR0FBTCxLQUFLLENBQWtCO1FBQVUsUUFBRyxHQUFILEdBQUcsQ0FBWTtJQUFJLENBQUM7SUFFekUsc0JBQVcsb0NBQUk7YUFBZjtZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQztRQUN6QixDQUFDOzs7T0FBQTtJQUVELHNCQUFXLHFDQUFLO2FBQWhCO1lBQ0UsTUFBTSxDQUFDLElBQUksQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDO1FBQzFCLENBQUM7OztPQUFBO0lBRU0saUNBQUksR0FBWCxVQUFZLElBQWlCO1FBQTdCLGlCQUtDO1FBSkMsSUFBSSxLQUFLLEdBQVcsQ0FBQyxJQUFJLElBQUksSUFBSSxDQUFDLE1BQU0sR0FBRyxDQUFDLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLHNCQUFzQixDQUFDLElBQUksQ0FBQyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUM7UUFFekYsTUFBTSxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsR0FBRyxDQUFDLG1CQUFHLENBQUMsTUFBTSxFQUFFLGVBQWUsRUFBRSxFQUFFLGdCQUFnQixFQUFFLElBQUksRUFBRSxVQUFVLEVBQUUsRUFBRSxLQUFLLEVBQUUsS0FBSyxFQUFFLEVBQUUsQ0FBQzthQUN2RyxFQUFFLENBQUMsVUFBQyxRQUFhLElBQUssT0FBQSxLQUFJLENBQUMsS0FBSyxDQUFDLFdBQVcsQ0FBQyxRQUFRLENBQUMsSUFBSSxFQUFFLElBQUksQ0FBQyxFQUEzQyxDQUEyQyxDQUFDLENBQUM7SUFDeEUsQ0FBQztJQUVNLG1EQUFzQixHQUE3QixVQUE4QixJQUFpQjtRQUEvQyxpQkFFQztRQURDLE1BQU0sQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLFVBQUMsT0FBMkIsSUFBSyxPQUFBLEtBQUksQ0FBQyw2QkFBNkIsQ0FBQyxPQUFPLENBQUMsRUFBM0MsQ0FBMkMsQ0FBQyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUMxRyxDQUFDO0lBRU8sMERBQTZCLEdBQXJDLFVBQXNDLE9BQTJCO1FBQy9ELE1BQU0sQ0FBQyxPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxVQUFDLEVBQVUsRUFBRSxLQUFhLElBQUssT0FBRyxFQUFFLFdBQUssT0FBTyxDQUFDLEtBQUssQ0FBQyxLQUFLLENBQUMsT0FBRyxFQUFqQyxDQUFpQyxDQUFDLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQ3JHLENBQUM7SUFHTyxrREFBcUIsR0FBN0IsVUFBOEIsS0FBYTtRQUN6QyxNQUFNLENBQUMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDO1lBQ2QsS0FBSyxDQUFDLEVBQUUsTUFBTSxDQUFDLElBQUksQ0FBQyxxQkFBcUIsQ0FBQztZQUMxQyxLQUFLLENBQUMsRUFBRSxNQUFNLENBQUMsSUFBSSxDQUFDLG9CQUFvQixDQUFDO1lBQ3pDLEtBQUssQ0FBQyxFQUFFLE1BQU0sQ0FBQyxJQUFJLENBQUMsc0JBQXNCLENBQUM7UUFDN0MsQ0FBQztRQUVELE1BQU0sQ0FBQyxPQUFPLENBQUM7SUFDakIsQ0FBQztJQUVELHNCQUFZLHFEQUFxQjthQUFqQztZQUNFLE1BQU0sQ0FBQyw4M0tBb0pOLENBQUM7UUFDSixDQUFDOzs7T0FBQTtJQUVELHNCQUFZLG9EQUFvQjthQUFoQztZQUNFLE1BQU0sQ0FBQyxnakRBK0NOLENBQUM7UUFDSixDQUFDOzs7T0FBQTtJQUVELHNCQUFZLHNEQUFzQjthQUFsQztZQUNFLE1BQU0sQ0FBQyxvbkJBMEJOLENBQUM7UUFDSixDQUFDOzs7T0FBQTtJQTVRVSxrQkFBa0I7UUFEOUIsaUJBQVUsRUFBRTt5Q0FFZ0IscUNBQWdCLEVBQWUsd0JBQVU7T0FEekQsa0JBQWtCLENBNlE5QjtJQUFELHlCQUFDO0NBN1FELEFBNlFDLElBQUE7QUE3UVksZ0RBQWtCIiwiZmlsZSI6ImFwcC9zaGFyZWQvc2VydmljZXMvZ2FsbGVyeS12aWV3LnNlcnZpY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBCZWhhdmlvclN1YmplY3QgfSBmcm9tICdyeGpzL0JlaGF2aW9yU3ViamVjdCc7XG5pbXBvcnQgeyBPYnNlcnZhYmxlIH0gZnJvbSAncnhqcy9PYnNlcnZhYmxlJztcbmltcG9ydCB7IEFwaVNlcnZpY2UgfSBmcm9tICcuLi9zZXJ2aWNlcy9hcGkuc2VydmljZSc7XG5pbXBvcnQgeyBBcGksIEFwaVJlc3BvbnNlIH0gZnJvbSAnLi4vaW50ZXJmYWNlcy9hcGkuaW50ZXJmYWNlJztcbmltcG9ydCB7IEdhbGxlcnlWaWV3U3RvcmUgfSBmcm9tICcuLi9zdG9yZXMvZ2FsbGVyeS12aWV3LnN0b3JlJztcbmltcG9ydCB7IEdhbGxlcnksIEdhbGxlcnlQYXRoLCBHYWxsZXJ5UGF0aFNlZ21lbnQgfSBmcm9tICcuLi9pbnRlcmZhY2VzL2dhbGxlcnktdmlldy5pbnRlcmZhY2UnO1xuXG5ASW5qZWN0YWJsZSgpXG5leHBvcnQgY2xhc3MgR2FsbGVyeVZpZXdTZXJ2aWNlIHtcbiAgY29uc3RydWN0b3IocHJpdmF0ZSBzdG9yZTogR2FsbGVyeVZpZXdTdG9yZSwgcHJpdmF0ZSBhcGk6IEFwaVNlcnZpY2UpIHsgfVxuXG4gIHB1YmxpYyBnZXQgZGF0YSgpOiBPYnNlcnZhYmxlPEdhbGxlcnk+IHtcbiAgICByZXR1cm4gdGhpcy5zdG9yZS5kYXRhO1xuICB9XG5cbiAgcHVibGljIGdldCBzdGF0ZSgpOiBHYWxsZXJ5IHtcbiAgICByZXR1cm4gdGhpcy5zdG9yZS5zdGF0ZTtcbiAgfVxuXG4gIHB1YmxpYyBsb2FkKHBhdGg6IEdhbGxlcnlQYXRoKTogT2JzZXJ2YWJsZTxBcGlSZXNwb25zZT4ge1xuICAgIGxldCBxdWVyeTogc3RyaW5nID0gKHBhdGggJiYgcGF0aC5sZW5ndGggPiAwKSA/IHRoaXMuc3RyaW5naWZ5UGF0aEZvclNlYXJjaChwYXRoKSA6IG51bGw7XG5cbiAgICByZXR1cm4gdGhpcy5hcGkuZ2V0KEFwaS5Bc3NldHMsICdnYWxsZXJ5UmVzdWx0JywgeyBsb2FkaW5nSW5kaWNhdG9yOiB0cnVlLCBwYXJhbWV0ZXJzOiB7IHF1ZXJ5OiBxdWVyeSB9IH0pXG4gICAgICAuZG8oKHJlc3BvbnNlOiBhbnkpID0+IHRoaXMuc3RvcmUucmVwbGFjZVdpdGgocmVzcG9uc2UubGlzdCwgcGF0aCkpO1xuICB9XG5cbiAgcHVibGljIHN0cmluZ2lmeVBhdGhGb3JTZWFyY2gocGF0aDogR2FsbGVyeVBhdGgpOiBzdHJpbmcge1xuICAgIHJldHVybiBwYXRoLm1hcCgoc2VnbWVudDogR2FsbGVyeVBhdGhTZWdtZW50KSA9PiB0aGlzLnN0cmluZ2lmeVBhdGhTZWdtZW50Rm9yU2VhcmNoKHNlZ21lbnQpKS5qb2luKCcsJyk7XG4gIH1cblxuICBwcml2YXRlIHN0cmluZ2lmeVBhdGhTZWdtZW50Rm9yU2VhcmNoKHNlZ21lbnQ6IEdhbGxlcnlQYXRoU2VnbWVudCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIHNlZ21lbnQuaWRzLm1hcCgoaWQ6IG51bWJlciwgaW5kZXg6IG51bWJlcikgPT4gYCR7aWR9OlwiJHtzZWdtZW50Lm5hbWVzW2luZGV4XX1cImApLmpvaW4oJywnKTtcbiAgfVxuXG4gIC8vIFRPIEJFIFJFTU9WRUQgKGFsb25nIHdpdGggdGhlIG1ldGhvZHMgaXQgY2FsbHMpXG4gIHByaXZhdGUgc2VsZWN0RmFrZVJlc3BvbnNlRm9yKGluZGV4OiBudW1iZXIpOiBzdHJpbmcge1xuICAgIHN3aXRjaCAoaW5kZXgpIHtcbiAgICAgIGNhc2UgMDogcmV0dXJuIHRoaXMuZmFrZUxldmVsWmVyb1Jlc3BvbnNlO1xuICAgICAgY2FzZSAxOiByZXR1cm4gdGhpcy5mYWtlTGV2ZWxUd29SZXNwb25zZTtcbiAgICAgIGNhc2UgMjogcmV0dXJuIHRoaXMuZmFrZUxldmVsVGhyZWVSZXNwb25zZTtcbiAgICB9XG5cbiAgICByZXR1cm4gJ1doYT8/JztcbiAgfVxuXG4gIHByaXZhdGUgZ2V0IGZha2VMZXZlbFplcm9SZXNwb25zZSgpOiBzdHJpbmcge1xuICAgIHJldHVybiBgXG4gICAgICB7XG4gICAgICAgIFwicmVzdWx0c1wiOiBbXG4gICAgICAgICAge1xuICAgICAgICAgICAgXCJpZFwiOiAyLFxuICAgICAgICAgICAgXCJuYW1lXCI6IFwiSGlnaGxpZ2h0c1wiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiAxNyxcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlLFxuICAgICAgICAgICAgXCJjaGlsZHJlblwiOiBbXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDMsXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRGF5IDFcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDE3LFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cDovL3d3dy5tYXN0ZXJzLmNvbS9pbWFnZXMvcGljcy9sYXJnZS9oXzIwMTYwNDA3MDAzNDguanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIFwiaWRcIjogMyxcbiAgICAgICAgICAgICAgICBcIm5hbWVcIjogXCJEYXkgMlwiLFxuICAgICAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMzIsXG4gICAgICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9waWNzL2xhcmdlL2hfMjAxNjA0MDgwOTcwNS5qcGdcIixcbiAgICAgICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgXCJpZFwiOiAzLFxuICAgICAgICAgICAgICAgIFwibmFtZVwiOiBcIkRheSAzXCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA0MSxcbiAgICAgICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHA6Ly93d3cubWFzdGVycy5jb20vaW1hZ2VzL3BpY3MvbGFyZ2UvaF8yMDE2MDQwOTEwNDk2LmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDMsXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRGF5IDRcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDEyLFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cDovL21hc3RlcnNwcm9ncmVzc2l2ZWRsLmVkZ2VzdWl0ZS5uZXQvMjAxNi90aHVtYm5haWxzL0xEUl8yMDE2X3I0XzM0MDQ2XzJfNDkyeDI3Ny5qcGdcIixcbiAgICAgICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgXCJpZFwiOiAzLFxuICAgICAgICAgICAgICAgIFwibmFtZVwiOiBcIkRheSA1XCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiAwLFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cDovL3d3dy5tYXN0ZXJzLmNvbS9pbWFnZXMvcGljcy9sYXJnZS9oXzIwMTYwNDA5MTA0OTYuanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIFwiaWRcIjogMyxcbiAgICAgICAgICAgICAgICBcIm5hbWVcIjogXCJEYXkgNlwiLFxuICAgICAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMCxcbiAgICAgICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHA6Ly93d3cubWFzdGVycy5jb20vaW1hZ2VzL3BpY3MvbGFyZ2UvaF8yMDE2MDQwODA5NzA1LmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDMsXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRGF5IDdcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDAsXG4gICAgICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9waWNzL2xhcmdlL2hfMjAxNjA0MTAzODQxMi5qcGdcIixcbiAgICAgICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICBdXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDUsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJQcmVzcyBQYWNrZXRzXCIsXG4gICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDQsXG4gICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZSxcbiAgICAgICAgICAgIFwiY2hpbGRyZW5cIjogW1xuICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgXCJpZFwiOiA2LFxuICAgICAgICAgICAgICAgIFwibmFtZVwiOiBcIkRheSAxXCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA0LFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cHM6Ly9jZG50M20tYS5ha2FtYWloZC5uZXQvdGVtL3dhcmVob3VzZS8xODYvMjM0LzcvMTg2MjM0N18wMzhfbHQuanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIFwiaWRcIjogNixcbiAgICAgICAgICAgICAgICBcIm5hbWVcIjogXCJEYXkgMlwiLFxuICAgICAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMyxcbiAgICAgICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHBzOi8vY2RudDNtLWEuYWthbWFpaGQubmV0L3RlbS93YXJlaG91c2UvMTg2LzU0My8xODY1NDNfMDAzX2x0LmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDYsXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRGF5IDNcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDQsXG4gICAgICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwczovL2NkbnQzbS1hLmFrYW1haWhkLm5ldC90ZW0vd2FyZWhvdXNlLzE4Ni8yMTIvNi8xODYyMTI2XzAyNl9sdC5qcGdcIixcbiAgICAgICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgXCJpZFwiOiA2LFxuICAgICAgICAgICAgICAgIFwibmFtZVwiOiBcIkRheSA0XCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA0LFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cHM6Ly9jZG50M20tYS5ha2FtYWloZC5uZXQvdGVtL3dhcmVob3VzZS8xODYvTVZGL0svMTg2TVZGS18wNjBfbHQuanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgIFwiaWRcIjogNixcbiAgICAgICAgICAgICAgICBcIm5hbWVcIjogXCJEYXkgNVwiLFxuICAgICAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMCxcbiAgICAgICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHBzOi8vY2RudDNtLWEuYWthbWFpaGQubmV0L3RlbS93YXJlaG91c2UvMTg2LzU0My8xODY1NDNfMDAzX2x0LmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDYsXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRGF5IDZcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDAsXG4gICAgICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwczovL2NkbnQzbS1hLmFrYW1haWhkLm5ldC90ZW0vd2FyZWhvdXNlLzE4Ni81NDMvMTg2NTQzXzAwM19sdC5qcGdcIixcbiAgICAgICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgICAgICB9LFxuICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgXCJpZFwiOiA2LFxuICAgICAgICAgICAgICAgIFwibmFtZVwiOiBcIkRheSA3XCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiAwLFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cHM6Ly9jZG50M20tYS5ha2FtYWloZC5uZXQvdGVtL3dhcmVob3VzZS8xODYvNTQzLzE4NjU0M18wMDNfbHQuanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgXVxuICAgICAgICAgIH0sXG4gICAgICAgICAge1xuICAgICAgICAgICAgXCJpZFwiOiA4LFxuICAgICAgICAgICAgXCJuYW1lXCI6IFwiUHJvbW90aW9uYWwgQ29udGVudFwiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA1OCxcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlLFxuICAgICAgICAgICAgXCJjaGlsZHJlblwiOiBbXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDksXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiRmx5LW92ZXJzXCIsXG4gICAgICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiAxOCxcbiAgICAgICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHA6Ly93d3cubWFzdGVycy5jb20vaW1hZ2VzL3BpY3MvbGFyZ2UvaF8xOHJBTkdDMTUtMXJiMDI3OEhjLmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDksXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiTWFzdGVyIE1vbWVudHNcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDQwLFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cDovL3d3dy5tYXN0ZXJzLmNvbS9pbWFnZXMvcGljcy9sYXJnZS9oX21hc3RlcnM2NF9wYWxtZXJvbjE4X2FuZ2NfODMxMjM3MzVfMDMyMDExLmpwZ1wiLFxuICAgICAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgICAgIH0sXG4gICAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgICBcImlkXCI6IDksXG4gICAgICAgICAgICAgICAgXCJuYW1lXCI6IFwiQ291cnNlIFNjZW5pY3NcIixcbiAgICAgICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDQwLFxuICAgICAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cHM6Ly9jZG50M20tYS5ha2FtYWloZC5uZXQvdGVtL3dhcmVob3VzZS8xODYvNTE4LzEvMTg2NTE4MV8wMDFfbHQuanBnXCIsXG4gICAgICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICAgICAgfVxuICAgICAgICAgICAgXVxuICAgICAgICAgIH1cbiAgICAgICAgXVxuICAgICAgfVxuICAgIGA7XG4gIH1cblxuICBwcml2YXRlIGdldCBmYWtlTGV2ZWxUd29SZXNwb25zZSgpOiBzdHJpbmcge1xuICAgIHJldHVybiBgXG4gICAgICB7XG4gICAgICAgIFwicmVzdWx0c1wiOiBbXG4gICAgICAgICAge1xuICAgICAgICAgICAgXCJpZFwiOiA0LFxuICAgICAgICAgICAgXCJuYW1lXCI6IFwiSm9yZGFuIFNwaWV0aFwiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA2LFxuICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9wbGF5ZXJzLzIwMTYvNDgweDI3MC8zNDA0Ni5qcGdcIixcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDQsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJEYW5ueSBXaWxsZXR0XCIsXG4gICAgICAgICAgICBcInJlc3VsdENvdW50XCI6IDIsXG4gICAgICAgICAgICBcInRodW1ibmFpbFVybFwiOiBcImh0dHA6Ly93d3cubWFzdGVycy5jb20vaW1hZ2VzL3BsYXllcnMvMjAxNi80ODB4MjcwLzMyMTM5LmpwZ1wiLFxuICAgICAgICAgICAgXCJoYXNNb3JlXCI6IHRydWVcbiAgICAgICAgICB9LFxuICAgICAgICAgIHtcbiAgICAgICAgICAgIFwiaWRcIjogNCxcbiAgICAgICAgICAgIFwibmFtZVwiOiBcIlJvcnkgTWNJbHJveVwiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA1LFxuICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9wbGF5ZXJzLzIwMTYvNDgweDI3MC8yODIzNy5qcGdcIixcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDQsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJEdXN0aW4gSm9obnNvblwiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA0LFxuICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9wbGF5ZXJzLzIwMTYvNDgweDI3MC8zMDkyNS5qcGdcIixcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDQsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJCcnlzb24gRGVDaGFtYmVhdVwiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiAyLFxuICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJodHRwOi8vd3d3Lm1hc3RlcnMuY29tL2ltYWdlcy9wbGF5ZXJzLzIwMTYvNDgweDI3MC80Nzk1OS5qcGdcIixcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiB0cnVlXG4gICAgICAgICAgfSxcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDQsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJKYXNvbiBEYXlcIixcbiAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMyxcbiAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiaHR0cDovL3d3dy5tYXN0ZXJzLmNvbS9pbWFnZXMvcGxheWVycy8yMDE2LzQ4MHgyNzAvMjgwODkuanBnXCIsXG4gICAgICAgICAgICBcImhhc01vcmVcIjogdHJ1ZVxuICAgICAgICAgIH1cbiAgICAgICAgXVxuICAgICAgfVxuICAgIGA7XG4gIH1cblxuICBwcml2YXRlIGdldCBmYWtlTGV2ZWxUaHJlZVJlc3BvbnNlKCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIGBcbiAgICAgIHtcbiAgICAgICAgXCJyZXN1bHRzXCI6IFtcbiAgICAgICAgICB7XG4gICAgICAgICAgICBcImlkXCI6IDEwLFxuICAgICAgICAgICAgXCJuYW1lXCI6IFwiVGVlIG9mZnNcIixcbiAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogNixcbiAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiXCIsXG4gICAgICAgICAgICBcImhhc01vcmVcIjogZmFsc2VcbiAgICAgICAgICB9LFxuICAgICAgICAgIHtcbiAgICAgICAgICAgIFwiaWRcIjogMTAsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJEcml2ZXNcIixcbiAgICAgICAgICAgIFwicmVzdWx0Q291bnRcIjogMixcbiAgICAgICAgICAgIFwidGh1bWJuYWlsVXJsXCI6IFwiXCIsXG4gICAgICAgICAgICBcImhhc01vcmVcIjogZmFsc2VcbiAgICAgICAgICB9LFxuICAgICAgICAgIHtcbiAgICAgICAgICAgIFwiaWRcIjogMTAsXG4gICAgICAgICAgICBcIm5hbWVcIjogXCJQdXR0c1wiLFxuICAgICAgICAgICAgXCJyZXN1bHRDb3VudFwiOiA1LFxuICAgICAgICAgICAgXCJ0aHVtYm5haWxVcmxcIjogXCJcIixcbiAgICAgICAgICAgIFwiaGFzTW9yZVwiOiBmYWxzZVxuICAgICAgICAgIH1cbiAgICAgICAgXVxuICAgICAgfVxuICAgIGA7XG4gIH1cbn1cbiJdfQ==
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

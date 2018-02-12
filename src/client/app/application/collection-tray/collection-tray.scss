@@ -1,0 +1,194 @@
+collection-tray {
+  width: 100%;
+  margin: 0;
+  & > section {
+    width: 100%;
+    .asset-carousel {
+      width: calc(100% - 500px);
+      padding: 0 0 0 0;
+      max-height: 100%;
+      min-height: 100%;
+      border: none;
+      border-radius: 0;
+    }
+    .focused-collection {
+      white-space: nowrap;
+      max-height: 100%;
+      min-height: 100%;
+      .focused {
+        margin-left: 8px;
+        width: auto;
+        white-space: nowrap;
+        @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) and (orientation: portrait)  {
+          margin-right: 5px;         
+        }
+        a[mat-button],
+        button[mat-button] {
+          @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) and (orientation: portrait)  {
+            max-width: 33px;
+            min-width: 33px;
+            overflow: hidden;
+            padding: 0 0 0 5px;         
+          }
+        }
+        a[mat-button] .mat-icon,
+        button[mat-button] .mat-icon {
+          line-height: .88;
+          margin-right: 0;
+          margin-left: 0;
+        }
+        .asset-count {
+          border-radius: 2px;
+          min-width: 24px;
+          font-size: .9em;
+          line-height: 1;
+          margin-right: 0;
+          margin-left: 6px;
+          padding: 1px 3px; 
+        }
+      }
+      button.close-tray[mat-icon-button] .mat-icon {
+        opacity: .75;
+      }
+    }
+  }
+}
+
+header.app-header.collection-tray-closed collection-tray section {
+  animation-name: slide-up-tray;
+  animation-duration: 150ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: backwards;
+  animation-delay: 50ms;
+}
+
+header.app-header collection-tray section {
+  max-height: 0;
+  overflow: hidden;
+  animation-name: slide-down-tray;
+  animation-duration: 150ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-delay: 50ms;
+}
+
+.asset-carousel.grid ul.asset-list {
+  list-style: none;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  margin: 0 0 0 0;
+  white-space: nowrap;
+  overflow-y: hidden;
+  max-height: 100%;
+  & > li {
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 0 0;
+    width: 92.444px;
+    opacity: .9;
+    transition: none;
+    .asset {
+      padding: 0;
+      padding-bottom: 0;
+      a.asset-thb {
+        display: block;
+        height: 0;
+        width: 100%;
+        position: relative;
+        padding: 56.25% 0 0 0;
+        &:hover, &:active {
+          cursor: pointer;
+        }
+        img {
+          position: absolute;
+          display: block;
+          height: 100%;
+          max-width: 100%;
+          max-height: 100%;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      }
+      a.asset-thb::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        transition: $swift-ease-out;
+        z-index: 1;
+        opacity:0
+      }
+      a.asset-thb:hover {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+    @media screen and (max-width: $layout-breakpoint-lg) {
+      width: 92.444px;
+    }
+    @media screen and (max-width: $layout-breakpoint-md) {
+      width: 92.444px;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) {
+      width: 92.444px;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) and (orientation: portrait)  {
+      width: 92.444px;
+      margin-bottom: 0;          
+    }
+  }
+  & > li:first-child {
+    margin-left: 0;
+  }
+  & > li.empty-collection {
+    position: relative;
+    font-size: .93rem;
+    margin: 0;
+    width: auto;
+    opacity: .4;
+    height: 56px;
+    display: flex;
+    span {
+      position: relative;
+      &::before {
+        content: "\e146";
+        font-family: 'Material Icons';
+        position: absolute;
+        top: 0;
+        left: -28px;
+        font-size: 1.5em;
+        opacity: .8;
+      }
+    }
+  }
+}
+
+@keyframes slide-down-tray {
+  0% {
+    max-height: 0;
+  }
+  100% {
+    max-height: 52px;
+  }
+}
+@keyframes slide-up-tray {
+  0% {
+    max-height: 52px;
+  }
+  100% {
+    max-height: 0;
+  }
+}

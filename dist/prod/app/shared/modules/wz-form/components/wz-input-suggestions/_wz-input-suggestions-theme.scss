@@ -1,0 +1,30 @@
+@mixin wz-input-suggestions-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  .suggestions-menu {
+    background-color: mat-color($background, card);
+    color: rgba(mat-color($foreground, text), .7);
+    border: 1px solid mat-color($foreground, divider);
+    .heading {
+      border-bottom: 1px solid mat-color($foreground, divider);
+    }
+    .mat-list {
+      .mat-list-item .mat-list-item-content {
+        button {
+          color: rgba(mat-color($foreground, text), .7);
+          &:hover, &:focus, &.active {
+            color: mat-color($primary);
+            background-color: rgba(mat-color($foreground, base), .1);
+          }
+        }
+      }
+      mat-list-item.focused .mat-list-item button {
+        color: mat-color($primary);
+        background-color: rgba(mat-color($foreground, base), .07);
+        box-shadow: inset 0 1px 0 0 mat-color($foreground, base), .05;
+      }
+    }
+  }
+}

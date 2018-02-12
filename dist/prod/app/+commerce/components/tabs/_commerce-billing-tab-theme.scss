@@ -1,0 +1,25 @@
+@mixin wz-commerce-billing-tab-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  .commerce-billing div.addresses ul li section {
+    background-color: rgba(mat-color($background, card), .65);
+    color: rgba(mat-color($foreground, text), .7);
+    border: 1px solid rgba(mat-color($background, card), .01);
+    &.active {
+      background-color: rgba(mat-color($background, card), 1);
+      border: 1px solid rgba(mat-color($primary, default), .6);
+    }
+    .divider {
+      box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+    }
+    .address-error {
+      color: mat-color($warn, 700);
+    }
+    .email > a.mailto {
+      color: mat-color($primary);
+    }
+  }
+}

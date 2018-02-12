@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-advanced-player/controls/marker-seek-button.component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-advanced-player/controls/</a> marker-seek-button.component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>30/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>28/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var MarkerSeekButtonComponent = (function () {
+    function MarkerSeekButtonComponent() {
+        this.request = new core_1.EventEmitter();
+    }
+    Object.defineProperty(MarkerSeekButtonComponent.prototype, "frame", {
+        get: function () {
+            return this.type === 'in' ? this.playerState.inMarkerFrame : this.playerState.outMarkerFrame;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MarkerSeekButtonComponent.prototype, "alreadyAtMarker", {
+        get: function () {
+            return this.frame &amp;&amp; this.playerState.currentFrame &amp;&amp; this.frame.frameNumber === this.playerState.currentFrame.frameNumber;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MarkerSeekButtonComponent.prototype, "class", {
+        get: function () {
+            return "seek-" + this.type;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MarkerSeekButtonComponent.prototype, "title", {
+        get: function () {
+            return this.type === 'in' ? 'ASSET.ADV_PLAYER.SEEK_IN_BTN_TITLE' : 'ASSET.ADV_PLAYER.SEEK_OUT_BTN_TITLE';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    MarkerSeekButtonComponent.prototype.onClick = function () {
+        this.request.emit({ type: 'SEEK_TO_MARKER', markerType: this.type });
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", String)
+    ], MarkerSeekButtonComponent.prototype, "type", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], MarkerSeekButtonComponent.prototype, "playerState", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], MarkerSeekButtonComponent.prototype, "request", void 0);
+    MarkerSeekButtonComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'wz-marker-seek-button',
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+            template: "\n    &lt;button mat-icon-button\n      [disabled]=\"!frame || alreadyAtMarker\" \n      class=\"mat-icon-button {{ class }}\" \n      title=\"{{ title | translate }}\" \n      (click)=\"onClick()\"&gt;\n        &lt;mat-icon&gt;keyboard_tab&lt;/mat-icon&gt;\n    &lt;/button&gt;\n  "
+        })
+    ], MarkerSeekButtonComponent);
+    return MarkerSeekButtonComponent;
+}());
+exports.MarkerSeekButtonComponent = MarkerSeekButtonComponent;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvbW9kdWxlcy93ei1wbGF5ZXIvY29tcG9uZW50cy93ei1hZHZhbmNlZC1wbGF5ZXIvY29udHJvbHMvbWFya2VyLXNlZWstYnV0dG9uLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7OztBQUFBLHNDQUFnRztBQW9CaEc7SUFmQTtRQWtCWSxZQUFPLEdBQXNDLElBQUksbUJBQVksRUFBdUIsQ0FBQztJQXFCakcsQ0FBQztJQW5CQyxzQkFBVyw0Q0FBSzthQUFoQjtZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxLQUFLLElBQUksQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxhQUFhLENBQUMsQ0FBQyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsY0FBYyxDQUFDO1FBQy9GLENBQUM7OztPQUFBO0lBRUQsc0JBQVcsc0RBQWU7YUFBMUI7WUFDRSxNQUFNLENBQUMsSUFBSSxDQUFDLEtBQUssSUFBSSxJQUFJLENBQUMsV0FBVyxDQUFDLFlBQVksSUFBSSxJQUFJLENBQUMsS0FBSyxDQUFDLFdBQVcsS0FBSyxJQUFJLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxXQUFXLENBQUM7UUFDN0gsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVyw0Q0FBSzthQUFoQjtZQUNFLE1BQU0sQ0FBQyxVQUFRLElBQUksQ0FBQyxJQUFNLENBQUM7UUFDN0IsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVyw0Q0FBSzthQUFoQjtZQUNFLE1BQU0sQ0FBQyxJQUFJLENBQUMsSUFBSSxLQUFLLElBQUksQ0FBQyxDQUFDLENBQUMsb0NBQW9DLENBQUMsQ0FBQyxDQUFDLHFDQUFxQyxDQUFDO1FBQzNHLENBQUM7OztPQUFBO0lBRU0sMkNBQU8sR0FBZDtRQUNFLElBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixFQUFFLFVBQVUsRUFBRSxJQUFJLENBQUMsSUFBSSxFQUFFLENBQUMsQ0FBQztJQUN2RSxDQUFDO0lBdEJRO1FBQVIsWUFBSyxFQUFFOzsyREFBa0I7SUFDakI7UUFBUixZQUFLLEVBQUU7O2tFQUEwQjtJQUN4QjtRQUFULGFBQU0sRUFBRTtrQ0FBVSxtQkFBWTs4REFBZ0U7SUFIcEYseUJBQXlCO1FBZnJDLGdCQUFTLENBQUM7WUFDVCxRQUFRLEVBQUUsTUFBTSxDQUFDLEVBQUU7WUFDbkIsUUFBUSxFQUFFLHVCQUF1QjtZQUNqQyxlQUFlLEVBQUUsOEJBQXVCLENBQUMsTUFBTTtZQUMvQyxRQUFRLEVBQUUsb1FBUVQ7U0FDRixDQUFDO09BRVcseUJBQXlCLENBd0JyQztJQUFELGdDQUFDO0NBeEJELEFBd0JDLElBQUE7QUF4QlksOERBQXlCIiwiZmlsZSI6ImFwcC9zaGFyZWQvbW9kdWxlcy93ei1wbGF5ZXIvY29tcG9uZW50cy93ei1hZHZhbmNlZC1wbGF5ZXIvY29udHJvbHMvbWFya2VyLXNlZWstYnV0dG9uLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3ksIElucHV0LCBPdXRwdXQsIEV2ZW50RW1pdHRlciB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5pbXBvcnQgeyBGcmFtZSB9IGZyb20gJy4uLy4uLy4uLy4uL3dhemVlLWZyYW1lLWZvcm1hdHRlci9pbmRleCc7XG5pbXBvcnQgeyBQbGF5ZXJTdGF0ZSwgTWFya2VyVHlwZSwgU2Vla1RvTWFya2VyUmVxdWVzdCB9IGZyb20gJy4uLy4uLy4uL2ludGVyZmFjZXMvcGxheWVyLmludGVyZmFjZSc7XG5cbkBDb21wb25lbnQoe1xuICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICBzZWxlY3RvcjogJ3d6LW1hcmtlci1zZWVrLWJ1dHRvbicsXG4gIGNoYW5nZURldGVjdGlvbjogQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3kuT25QdXNoLFxuICB0ZW1wbGF0ZTogYFxuICAgIDxidXR0b24gbWF0LWljb24tYnV0dG9uXG4gICAgICBbZGlzYWJsZWRdPVwiIWZyYW1lIHx8IGFscmVhZHlBdE1hcmtlclwiIFxuICAgICAgY2xhc3M9XCJtYXQtaWNvbi1idXR0b24ge3sgY2xhc3MgfX1cIiBcbiAgICAgIHRpdGxlPVwie3sgdGl0bGUgfCB0cmFuc2xhdGUgfX1cIiBcbiAgICAgIChjbGljayk9XCJvbkNsaWNrKClcIj5cbiAgICAgICAgPG1hdC1pY29uPmtleWJvYXJkX3RhYjwvbWF0LWljb24+XG4gICAgPC9idXR0b24+XG4gIGBcbn0pXG5cbmV4cG9ydCBjbGFzcyBNYXJrZXJTZWVrQnV0dG9uQ29tcG9uZW50IHtcbiAgQElucHV0KCkgdHlwZTogTWFya2VyVHlwZTtcbiAgQElucHV0KCkgcGxheWVyU3RhdGU6IFBsYXllclN0YXRlO1xuICBAT3V0cHV0KCkgcmVxdWVzdDogRXZlbnRFbWl0dGVyPFNlZWtUb01hcmtlclJlcXVlc3Q+ID0gbmV3IEV2ZW50RW1pdHRlcjxTZWVrVG9NYXJrZXJSZXF1ZXN0PigpO1xuXG4gIHB1YmxpYyBnZXQgZnJhbWUoKTogRnJhbWUge1xuICAgIHJldHVybiB0aGlzLnR5cGUgPT09ICdpbicgPyB0aGlzLnBsYXllclN0YXRlLmluTWFya2VyRnJhbWUgOiB0aGlzLnBsYXllclN0YXRlLm91dE1hcmtlckZyYW1lO1xuICB9XG5cbiAgcHVibGljIGdldCBhbHJlYWR5QXRNYXJrZXIoKTogYm9vbGVhbiB7XG4gICAgcmV0dXJuIHRoaXMuZnJhbWUgJiYgdGhpcy5wbGF5ZXJTdGF0ZS5jdXJyZW50RnJhbWUgJiYgdGhpcy5mcmFtZS5mcmFtZU51bWJlciA9PT0gdGhpcy5wbGF5ZXJTdGF0ZS5jdXJyZW50RnJhbWUuZnJhbWVOdW1iZXI7XG4gIH1cblxuICBwdWJsaWMgZ2V0IGNsYXNzKCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIGBzZWVrLSR7dGhpcy50eXBlfWA7XG4gIH1cblxuICBwdWJsaWMgZ2V0IHRpdGxlKCk6IHN0cmluZyB7XG4gICAgcmV0dXJuIHRoaXMudHlwZSA9PT0gJ2luJyA/ICdBU1NFVC5BRFZfUExBWUVSLlNFRUtfSU5fQlROX1RJVExFJyA6ICdBU1NFVC5BRFZfUExBWUVSLlNFRUtfT1VUX0JUTl9USVRMRSc7XG4gIH1cblxuICBwdWJsaWMgb25DbGljaygpOiB2b2lkIHtcbiAgICB0aGlzLnJlcXVlc3QuZW1pdCh7IHR5cGU6ICdTRUVLX1RPX01BUktFUicsIG1hcmtlclR5cGU6IHRoaXMudHlwZSB9KTtcbiAgfVxufVxuIl19
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

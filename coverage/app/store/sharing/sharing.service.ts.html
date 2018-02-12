@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/sharing/sharing.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/sharing/</a> sharing.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { visitAll } from '@angular/compiler';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { FutureApiService } from '../api/api.service';
+import { Api } from '../../shared/interfaces/api.interface';
+import { SubclipMarkers, Duration, durationFrom, bothMarkersAreSet } from '../../shared/interfaces/subclip-markers';
+import { AssetShareParameters, CollectionShareParameters, Pojo } from '../../shared/interfaces/common.interface';
+import { CurrentUserService } from '../../shared/services/current-user.service';
+&nbsp;
+@Injectable()
+export class SharingService {
+  constructor(private apiService: FutureApiService, private currentUserService: CurrentUserService) { }
+&nbsp;
+  public createAssetShareLink(assetId: number, markers: SubclipMarkers): Observable&lt;string&gt; {
+    return this.callSharingEndpointWith(this.formatAssetCreateBodyWith(assetId, markers))
+      .map(response =&gt; `${window.location.href};share_key=${response.apiKey}`);
+  }
+&nbsp;
+  public emailAssetShareLink(
+    assetId: number, markers: SubclipMarkers, parameters: AssetShareParameters, properties: Pojo
+  ): Observable&lt;null&gt; {
+    return this.callSharingEndpointWith(this.formatAssetEmailBodyWith(assetId, markers, parameters, properties))
+      .map(response =&gt; null);
+  }
+&nbsp;
+  public emailCollectionShareLink(collectionId: number, parameters: CollectionShareParameters): Observable&lt;null&gt; {
+    return this.apiService.post(Api.Identities, 'collection/share', {
+      body: {
+        userEmail: [
+          parameters.recipientEmails
+        ],
+        collections: [
+          collectionId
+        ],
+        accessLevel: parameters.accessLevel,
+        comment: parameters.comment
+      },
+      loadingIndicator: 'onBeforeRequest'
+    }).map(response =&gt; null);
+  }
+&nbsp;
+  private callSharingEndpointWith(body: AccessInfoRequestBody): Observable&lt;AccessInfoResponse&gt; {
+    return this.apiService.post(Api.Identities, 'accessInfo', { body: body });
+  }
+&nbsp;
+  private formatAssetCreateBodyWith(assetId: number, markers: SubclipMarkers, properties?: Pojo): AccessInfoRequestBody {
+    const durationProperties: Duration = this.formatTimePropertiesFrom(markers);
+    const fullProperties: Pojo = properties ? { ...durationProperties, ...properties } : durationProperties;
+    return {
+      type: 'asset',
+      accessInfo: String(assetId),
+      accessStartDate: this.formatStartDate(),
+      accessEndDate: this.formatEndDate(),
+      properties: fullProperties
+    };
+  }
+&nbsp;
+  private formatAssetEmailBodyWith(
+    assetId: number, markers: SubclipMarkers, parameters: AssetShareParameters, properties: Pojo
+  ): AccessInfoRequestBody {
+    return {
+      ...this.formatAssetCreateBodyWith(assetId, markers, properties),
+      recipientEmails: this.formatEmailReceipientsFrom(parameters.recipientEmails, parameters.copyMe),
+      comment: parameters.comment,
+      project: parameters.project
+    };
+  }
+&nbsp;
+  private formatStartDate(): string {
+    return this.isoFormatLocalDate(new Date());
+  }
+&nbsp;
+  private formatEndDate(): string {
+    const date: Date = new Date();
+    date.setDate(date.getDate() + 10);
+&nbsp;
+    return this.isoFormatLocalDate(date);
+  }
+&nbsp;
+  private isoFormatLocalDate(date: Date): string {
+    const outputDate: string = `${date.getFullYear()}-${this.pad(date.getMonth() + 1)}-${this.pad(date.getDate())}`;
+    const outputTime: string = `${this.pad(date.getHours())}:${this.pad(date.getMinutes())}:${this.pad(date.getSeconds())}`;
+    const timeZoneOffset: number = -date.getTimezoneOffset();
+    const outputTimeZoneSign: string = timeZoneOffset &gt;= 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >'+' </span>: '-';
+    const outputTimeZoneOffset: string = `${this.pad(timeZoneOffset / 60)}:${this.pad(timeZoneOffset % 60)}`;
+&nbsp;
+    return `${outputDate}T${outputTime}${outputTimeZoneSign}${outputTimeZoneOffset}`;
+  }
+&nbsp;
+  private pad(number: number): string {
+    var integer: number = Math.abs(Math.floor(number));
+    return integer &lt; 10 ? `0${integer}` : String(integer);
+  }
+&nbsp;
+  private formatTimePropertiesFrom(markers: SubclipMarkers): Duration {
+    return bothMarkersAreSet(markers) ? durationFrom(markers) : null;
+  }
+&nbsp;
+  private formatEmailReceipientsFrom(recipientsString: string, copyMe: boolean): string[] {
+    return recipientsString.split(/\s*,\s*|\s*;\s*/).concat(copyMe ? [this.currentUserService.state.emailAddress] : []);
+  }
+}
+&nbsp;
+interface AccessInfoRequestBody {
+  type: 'asset';
+  accessInfo: string;
+  accessStartDate: string;
+  accessEndDate: string;
+  properties?: Pojo;
+  recipientEmails?: string[];
+  comment?: string;
+  project?: string;
+}
+&nbsp;
+interface AccessInfoResponse {
+  apiKey: string;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<section class="contact-data overview" flex="100" layout="row">
+  <div class="contact-data" flex="100" layout="row" layout-align="space-between start">
+    <ul class="mat-caption">
+      <li [ngClass]="{expired: isExpired}">
+        <strong>{{ ( isExpired ? 'QUOTE.EXPIRED_LABEL' : 'QUOTE.EXPIRATION_LABEL') | translate }} </strong>
+        {{ salesManager.expirationDate | date:'short' }}
+      </li>
+      <li>
+        <strong>{{'QUOTE.EDIT.SALES_MANAGER_KEY' | translate}}</strong>
+        <a href="mailto:{{ salesManager.salesManager }}">{{ salesManager.salesManager }}</a>
+      </li>
+      <li *ngIf="salesManager.offlineAgreement">
+        <strong class="offline-agreement-label">{{ 'QUOTE.EDIT.OFFLINE_AGREEMENT_KEY' | translate }}</strong>
+        <span class="offline-agreement">{{ salesManager.offlineAgreement }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="recipient" flex="100" layout="column" layout-gt-xs="row" layout-align="space-between">
+  <div flex="33" class="contact-data card">
+    <h5 class="mat-title">{{ 'QUOTE.EDIT.RECIPIENT_TITLE' | translate }}</h5>
+    <ul class="mat-caption">
+      <li>
+        <strong>{{ 'QUOTE.EDIT.CUSTOMER_NAME_KEY' | translate }}</strong>{{ user.customerName }}
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.CUSTOMER_EMAIL_KEY' | translate }}</strong>
+        <a href="mailto:{{ user.email }}">{{ user.email }}</a>
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.ACCOUNT_KEY' | translate }}</strong>{{ user.accountName }}
+      </li>
+    </ul>
+  </div>
+  <div flex="33" class="contact-data card">
+    <h5 class="mat-title">{{ 'QUOTE.EDIT.BILLING_ACCOUNT_TITLE' | translate }}</h5>
+    <ul class="mat-caption">
+      <li>
+        <strong>{{ 'QUOTE.EDIT.ACCOUNT_NAME_KEY' | translate }}</strong>{{ billingAccount.name }}
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.SALES_OWNER_KEY' | translate }}</strong>
+        <a href="mailto:{{ billingAccount.salesOwner }}">{{ billingAccount.salesOwner }}</a>
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.PURCHASE_ON_CREDIT_KEY' | translate }}</strong>{{ billingAccount.purchaseOnCredit }}
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.CREDIT_EXEMPTION_KEY' | translate }}</strong>
+        {{ billingAccount.creditExemption }}
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.PAYMENT_TERMS_DAYS_KEY' | translate }}</strong>{{ billingAccount.paymentTermsDays }}
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="invoiceContact" flex="33" class="contact-data card">
+    <h5 class="mat-title">{{ 'QUOTE.EDIT.INVOICE_CONTACT_TITLE' | translate }}</h5>
+    <ul class="mat-caption">
+      <li>
+        <strong>{{ 'QUOTE.EDIT.CONTACT_NAME_KEY' | translate }}</strong>{{ invoiceContact.name | translate }}
+      </li>
+      <li>
+        <strong>{{ 'QUOTE.EDIT.CONTACT_EMAIL_KEY' | translate }}</strong>
+        <a href="mailto:{{ invoiceContact.contactEmail }}">{{ invoiceContact.contactEmail }}</a>
+      </li>
+    </ul>
+  </div>
+</section>

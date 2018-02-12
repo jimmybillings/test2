@@ -1,0 +1,12 @@
+@mixin wz-asset-data-theme($theme) {
+  $background: map-get($theme, background);
+
+  .data-bk, .tabs-section {
+    & > div > div {
+      background: rgba(mat-color($background, background),.7);
+    }
+    mat-tab-group .mat-tab-header {
+      background-color: mat-color($background, card);
+    }
+  }
+}

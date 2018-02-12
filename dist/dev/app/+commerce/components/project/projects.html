@@ -1,0 +1,58 @@
+<div *ngIf="!readOnly" flex="100" layout="row" layout-align="end center" class="add-project">
+	<button mat-button color="primary" (click)="addProject()">
+		<mat-icon>add_circle_outline</mat-icon>{{ 'CART.PROJECTS.ADD_PROJECT_BTN' | translate }}
+	</button>
+</div>
+<section class="projects">
+	<div class="project" *ngFor="let project of projects">
+		<header class="project-info" layout-gt-xs="row" layout="column">
+			<project-info-component
+				flex-gt-xs="nogrow" flex-order-xs="2"
+				[ngClass]="{'read-only' : readOnly}"
+				[readOnly]="readOnly"
+				[name]="project.name"
+				[clientName]="project.clientName"
+				[licenseStartDate]="project.licenseStartDate"
+				(click)="onEdit(project)">
+			</project-info-component>
+			<div flex="100" flex-gt-sm="30" flex-order-xs="-1">
+				<project-actions-component
+					*ngIf="!readOnly"
+					[quoteType]="quoteType"
+					[projectHasRmAssets]="projectHasRmAssets(project)"
+					[rmAssetsHaveAttributes]="rmAssetsHaveAttributes(project)"
+          [allowQuoteAdministration]="userCan.administerQuotes()"
+					(projectActionsNotify)="editProjectPrice($event, project)"
+					(remove)="onRemove(project)"
+					(edit)="onEdit(project)"
+					(bulkImport)="onClickBulkImportButton(project)"
+          (addFee)="onClickAddFeeButtonFor(project)">
+				</project-actions-component>
+				<project-price-info-component
+					*ngIf="showPricing"
+					[subtotal]="project.subTotal">
+				</project-price-info-component>
+				<project-asset-info-component
+					*ngIf="readOnly"
+					[count]="lineItemCountFor(project)">
+				</project-asset-info-component>
+			</div>
+		</header>
+
+		<line-items-component
+			[readOnly]="readOnly"
+			[lineItems]="project.lineItems"
+			[otherProjects]="projectsOtherThan(project)"
+			[userCan]="userCan"
+			[quoteType]="quoteType"
+			[rmAssetsHaveAttributes]="allRMAssetsHaveAttributes"
+			(lineItemsNotify)="delegate($event)">
+		</line-items-component>
+
+		<fee-line-items-component
+			[readOnly]="readOnly"
+			[feeLineItems]="project.feeLineItems"
+			(feeLineItemsNotify)="delegate($event)">
+		</fee-line-items-component>
+	</div>
+</section>

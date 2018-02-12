@@ -1,0 +1,68 @@
+<h5 class="mat-title">{{title | translate}}</h5>
+<form
+  layout="column" 
+  [formGroup]="form" 
+  novalidate 
+  class="mat-inline-form" 
+  autocomplete="{{autocomplete}}"
+  (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of items; let i=index">
+    <wz-input-suggestions
+      *ngIf="field.type == 'suggestions'; else elseBlock" 
+      #suggestions 
+      [fControl]="form.controls[field.name]" 
+      [rawField]="field"
+      [matchOnProperty]="matchOnProperty"
+      (newSuggestion)="onSelectSuggestion($event)">
+      <mat-input-container>
+        <input
+        matInput
+        placeholder="{{field.label | translate}}" 
+        (keydown)="suggestions.inputKeyDown($event)"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        formControlName="{{field.name}}"
+        type="text"
+        [required]="isRequiredField(field)">
+        <mat-error *ngIf="hasErrorType(form.controls[field.name])">
+          <span *ngIf="form.controls[field.name].hasError('required')">
+            {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+          </span>
+          <span *ngIf="form.controls[field.name].hasError('serverError')">
+            {{ 'ERRORS.'+form.controls[field.name].errors.serverError | translate }}
+          </span>
+        </mat-error>
+      </mat-input-container>
+    </wz-input-suggestions>
+    <ng-template #elseBlock>
+      <mat-input-container>
+        <input
+          matInput
+          class="mat-block"
+          id="{{field.name}}"
+          max="{{field.max}}"
+          min="{{field.min}}"
+          type="{{field.type}}"
+          placeholder="{{field.label | translate}}"
+          formControlName="{{field.name}}"
+          [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+          [required]="isRequiredField(field)"
+          (change)="onChange()"
+          (keyup)="onKeyUp()"
+          (blur)="onBlur()">
+            <mat-error *ngIf="!form.controls[field.name].valid" align="end">
+              <span *ngIf="shouldShowLessThanError(field)">
+                {{ 'ERRORS.LESS_THAN' | translate:{max:field.max} }}
+              </span>
+              <span *ngIf="shouldShowGreaterThanError(field)">
+                {{ 'ERRORS.GREATER_THAN' | translate:{min:field.min} }}
+              </span>
+            </mat-error>
+      </mat-input-container>
+    </ng-template>
+  </div>
+</form>
+<ul class="mat-caption">
+  <li *ngFor="let property of labels | async">
+    <strong>{{property.label | translate}}</strong>{{property.value}}
+  </li>
+</ul>

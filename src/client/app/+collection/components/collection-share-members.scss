@@ -1,0 +1,24 @@
+.mat-dialog-container collection-share-members-component .wz-dialog {
+  padding:0 5px 10px;
+}
+.mat-dialog-container collection-share-members-component .wz-dialog [mat-dialog-title] {
+  text-align: left;
+}
+collection-share-members-component {
+  .collection-name {
+    margin: -12px 0 20px 0;
+  }
+  .m-data {
+    margin-top: 6px;
+    background-color: transparent;
+  }
+  .m-data > .row .cell:first-child {
+    min-width: 245px;
+  }
+  a[href^="mailto:"] {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

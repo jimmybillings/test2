@@ -1,0 +1,152 @@
+order-show-component {
+  section.header {
+    padding-left: 4px;
+    padding-right: 4px;
+    header {
+      padding-top: 6px;
+      padding-bottom: 5px;
+      position: relative;
+      .mat-display-1 {
+        margin: 0;
+        width: calc(100% - 120px);
+        font-size: 26px;
+      }
+      .tools {
+        text-align: right;
+      }
+    }
+  }
+  section.project {
+    padding-bottom: 60px;
+  }
+}
+order-show-component .project .assets,
+order-show-component .project .fees {
+  padding: 0 12px 12px 12px;
+  display: flex;
+}
+order-show-component .project .fees {
+  padding-bottom: 0;
+}
+order-show-component .project .fees .amount,
+order-show-component .project .assets .price {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  &::first-letter {
+    font-size: .8em;
+    vertical-align: top;
+    letter-spacing: 0;
+  }
+}
+order-show-component .project li.fee-item > div > div > div  {
+  padding-right: 0;
+  .fee-indicator {
+    margin-right: -1px;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      margin-right: 8px;
+    }
+  }
+  & + div {
+    padding-left: 16px;
+  }
+}
+
+order-show-component .project li.cart-asset .transcode-icon {
+  margin-right: 6px;
+  font-size: 22px;
+  &.spinner {
+    animation-name: rotate360;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+  }
+}
+order-show-component .project li.cart-asset .tools {
+  @media screen and (max-width: $layout-breakpoint-xs)  {
+    text-align: left;
+    min-height: 72px;
+  }
+}
+order-show-component .project .project-info div {
+  padding: 8px;
+}
+order-show-component .project .project-info div:nth-child(2n) {
+  padding: 5px 0 0 0;
+  .project-subtotal {
+    padding: 0;
+  }
+}
+.order-summary {
+  .details {
+    opacity: .7;
+    margin: 11px 0 14px 4px;
+  }
+  .cart-total {
+    opacity: .9;
+    margin: 0 4px 4px 0;
+  }
+  .balance-amount > [flex] {
+    padding: 3px 5px 1px 0;
+    margin-bottom: 5px;
+    .balance > div {
+      display: block;
+      text-align: right;
+      opacity: .9;
+      strong, span  {
+        display: inline-block;
+        line-height: 1.4;
+      }
+      strong  {
+        font-weight: 500;
+      }
+      span {
+        min-width: 90px;
+        &.remaining-balance::first-letter {
+          font-size: .88em;
+          vertical-align: top;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  .order-info {
+    line-height: 1.4;
+    & > span {
+      display: flex;
+      margin: 2px 0;
+      strong {
+        padding-right: 5px;
+      }
+    }
+    & > span.offline-agreement-display {
+      display: block;
+      strong {
+        display: block;
+      }
+      span { 
+        display: block;
+        font-style: italic;
+        font-size: .94em;
+      }
+    }
+    a.indicate-refund {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      } 
+    }
+  }
+  .cart-total .subtotal {
+    margin-top: 11px;
+    margin-bottom: 2px;
+  }
+}
+order-show-component .project line-item-rights-component {
+  section.read-only {
+    margin: 2px 0 0 0;
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+      padding: 8px;
+    }
+  }
+}

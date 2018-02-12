@@ -1,0 +1,36 @@
+{
+  "test": [
+    "tslint",
+    "build.test",
+    "karma.run"
+  ],
+  "build.library.export": [
+    "build.assets.prod",
+    "build.html_css",
+    "build.js.lib.export"
+  ],
+  "build.prod.aot.publish": [
+    "initialize",
+    "check.tools",
+    "clean.prod",
+    "tslint",
+    "build.assets.prod",
+    "build.html_css",
+    "build.all.scss",
+    "copy.prod",
+    "compile.ahead.prod",
+    "build.js.prod.aot",
+    "build.bundles",
+    "build.bundles.app.aot",
+    "minify.bundles",
+    "build.index.prod",
+    "s3.publish"
+  ],
+  "publish": [
+    "s3.publish"
+  ],
+  "build.all.scss": [
+    "build.layout.scss",
+    "build.theme.scss"
+  ]
+}

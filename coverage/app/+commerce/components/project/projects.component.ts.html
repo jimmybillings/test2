@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/project/projects.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/project/</a> projects.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>89/92</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>28/30</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>76/78</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AppStore } from '../../../app.store';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Project, PurchaseType, FeeLineItem, FeeConfig, FeeConfigItem, AssetLineItem, quotesWithoutPricing
+} from '../../../shared/interfaces/commerce.interface';
+import { Capabilities } from '../../../shared/services/capabilities.service';
+import { WzDialogService } from '../../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { FormFields } from '../../../shared/interfaces/forms.interface';
+import { WzEvent } from '../../../shared/interfaces/common.interface';
+import { Common } from '../../../shared/utilities/common.functions';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'projects-component',
+  templateUrl: 'projects.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ProjectsComponent {
+  @Input() readOnly: boolean = false;
+  @Input() config: any;
+  @Input() projects: Array&lt;Project&gt;;
+  @Input() userCan: Capabilities;
+  @Input() quoteType: PurchaseType;
+  @Input() allRMAssetsHaveAttributes: boolean = true;
+  @Output() projectsNotify: EventEmitter&lt;Object&gt; = new EventEmitter&lt;Object&gt;();
+  private selectedProject: Project;
+&nbsp;
+  constructor(private dialogService: WzDialogService, private store: AppStore) { }
+&nbsp;
+  public projectsOtherThan(currentProject: Project) {
+    return this.projects.filter(project =&gt; project.id !== currentProject.id);
+  }
+&nbsp;
+  public lineItemCountFor(project: Project): number {
+    return (project.lineItems || []).length;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public editProjectPrice(message: WzEvent, payload: any)</span> {
+<span class="cstat-no" title="statement not covered" >    this.projectsNotify.emit(Object.assign(message, { payload: payload }));</span>
+  }
+&nbsp;
+  public addProject(): void {
+    this.projectsNotify.emit({ type: 'ADD_PROJECT' });
+  }
+&nbsp;
+  public onRemove(project: Project): void {
+    this.projectsNotify.emit({ type: 'REMOVE_PROJECT', payload: project });
+  }
+&nbsp;
+  public onEdit(project: Project): void {
+    if (!this.readOnly) {
+      this.selectProject(project);
+      this.projectsNotify.emit({
+        type: 'UPDATE_PROJECT',
+        payload: Object.assign({ project: project, items: this.config.form.items })
+      });
+    }
+  }
+&nbsp;
+  public onClickAddFeeButtonFor(project: Project): void {
+    this.store.dispatch(factory =&gt; factory.feeConfig.loadFeeConfig());
+    this.store.blockUntil(state =&gt; state.feeConfig.initialized).subscribe(() =&gt; {
+      this.dialogService.openFormDialog(
+        this.initializeQuoteFeeFieldsFrom(this.store.snapshotCloned(state =&gt; state.feeConfig.feeConfig)),
+        { title: 'QUOTE.ADD_FEE.HEADER', submitLabel: 'QUOTE.ADD_FEE.SUBMIT' },
+        (result: FeeLineItem) =&gt; this.addFeeTo(project, result)
+      );
+    });
+  }
+&nbsp;
+  public delegate(message: WzEvent): void {
+    this.projectsNotify.emit(message);
+  }
+&nbsp;
+  public selectProject(project: Project) {
+    this.selectedProject = project;
+    this.config.form.items = this.config.form.items.map((item: any) =&gt; {
+      item.value = this.selectedProject[item.name];
+      return item;
+    });
+  }
+&nbsp;
+  public rmAssetsHaveAttributes(project: Project): boolean {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!project.lineItems || project.lineItems.length === 0) <span class="cstat-no" title="statement not covered" >return true;</span>
+    let validAssets: boolean[] = [];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (project.lineItems) {
+      project.lineItems.forEach((lineItem: AssetLineItem) =&gt; {
+        validAssets.push(lineItem.rightsManaged === 'Rights Managed' ? !!lineItem.attributes : true);
+      });
+    }
+    return validAssets.indexOf(false) === -1;
+  }
+&nbsp;
+  public projectHasRmAssets(project: Project): boolean {
+    if (!project.lineItems || project.lineItems.length === 0) return false;
+    let validAssets: boolean[] = [];
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (project.lineItems) {
+      project.lineItems.forEach((lineItem: AssetLineItem) =&gt; {
+        validAssets.push(lineItem.rightsManaged === 'Rights Managed' ? true : false);
+      });
+    }
+    return validAssets.indexOf(true) !== -1;
+  }
+&nbsp;
+  public onClickBulkImportButton(project: Project): void {
+    this.projectsNotify.emit({ type: 'OPEN_BULK_IMPORT_DIALOG', payload: project.id });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get showPricing(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >    return !quotesWithoutPricing.includes(this.quoteType) &amp;&amp; this.allRMAssetsHaveAttributes;</span>
+  }
+&nbsp;
+  private initializeQuoteFeeFieldsFrom(feeConfig: FeeConfig): FormFields[] {
+    // This is sort of bogus, because the fields are completely dependent on UI config to be "correct".
+    // (Though it's no more bogus than expecting "this.config.addQuoteFee.items" to be present...)
+    // We'll at least check to make sure the fields are found before we try to manipulate them.
+&nbsp;
+    const fields: FormFields[] = Common.clone(this.config.addQuoteFee.items);
+    const feeTypeField: FormFields = fields.find(field =&gt; field.name === 'feeType');
+&nbsp;
+    if (feeTypeField) {
+      const options: string[] = feeConfig.items.map(configItem =&gt; configItem.name);
+      feeTypeField.options = options.join(',');
+      feeTypeField.value = options[0];
+&nbsp;
+      const amountField: FormFields = fields.find(field =&gt; field.name === 'amount');
+&nbsp;
+      if (amountField) {
+        feeTypeField.slaveFieldName = 'amount';
+        feeTypeField.slaveFieldValues = feeConfig.items.map(this.formatFeeConfigItemAmount);
+        amountField.value = feeTypeField.slaveFieldValues[0];
+      }
+    }
+&nbsp;
+    return fields;
+  }
+&nbsp;
+  private formatFeeConfigItemAmount = (configItem: FeeConfigItem) =&gt; {
+    // Update this if we ever use anything but US dollars.
+    return `${(configItem.amount || 0) * 100}` // 100 =&gt; '10000', .50 =&gt; '50', 0 =&gt; '0', undefined =&gt; '0'
+      .replace(/(\d\d)$/, '.$1')               // 10000 =&gt; '100.00', '50' =&gt; '.50', '0' =&gt; '0'
+      .replace(/^\./, '0.')                    // '100.00' =&gt; '100.00', '.50' =&gt; '0.50, '0' =&gt; '0'
+      .replace(/^0$/, '0.00');                 // '100.00' =&gt; '100.00', '0.50' =&gt; '0.50', '0' =&gt; '0.00'
+  }
+&nbsp;
+  private addFeeTo(project: Project, fee: FeeLineItem) {
+    this.projectsNotify.emit({
+      type: 'ADD_QUOTE_FEE',
+      payload: { project: project, fee: fee }
+    });
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

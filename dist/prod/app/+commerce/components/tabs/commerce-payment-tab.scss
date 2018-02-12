@@ -1,0 +1,35 @@
+cart-payment-tab-component, quote-payment-tab {
+  mat-card.cc-form {
+    mat-select:last-of-type {
+      padding-left: 12px;
+    }
+  }
+  p.instructions {
+    display: flex;
+    font-size: .9em;
+    font-weight: 300;
+    margin: 0;
+    opacity: .7;
+    padding: 5px 0 20px 0;
+  }
+  .proceed {
+    min-height: 192px;
+    min-width: 100%;
+  }
+  .account-on-hold {
+    min-height: 286px;
+  }
+  .credit-card-and-account-credit {
+    min-height: 360px;
+    mat-radio-group {
+      padding: 2px 0 0 18px;
+    }
+    mat-card.mat-card.wz-form-card,
+    mat-card {
+      margin: 38px 0 8px 0;
+      mat-card-content {
+        min-height: 150px;
+      }
+    }
+  }
+}  

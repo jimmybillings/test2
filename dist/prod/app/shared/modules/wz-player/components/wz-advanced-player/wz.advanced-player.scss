@@ -1,0 +1,71 @@
+$mat-icon-button-width: 34px;
+$mat-icon-button-height: $mat-icon-button-width;
+
+wz-advanced-player {
+  color: white;
+  .jwplayer:focus, video:focus {outline:0;}
+
+  .jwplayer {
+    .jw-media {
+      cursor: pointer;
+    }
+  }
+  .tool-bar {
+    border-top-width: 0;
+    border-top-style: solid;
+    &:last-child {
+      border-top-width: 1px;
+    }
+    section {
+      padding: 0 5px;
+    }
+    nav {
+      text-align: right;
+    }
+  }
+  .timecode {
+    display: inline-flex;
+    font-size: .75em;
+    font-weight: 300;
+    padding: 5px;
+    min-width: 61px;
+    min-height: 12px;
+    vertical-align: middle;
+    text-align: center;
+    &.duration  {
+      background-color: transparent;
+      border-color: transparent;
+      opacity: .8;
+      padding-left: 0;
+      min-width: 59px;
+    }
+    &.divider  {
+      background-color: transparent;
+      border-color: transparent;
+      opacity: .75;
+      padding: 5px 0;
+      min-width: 0;
+    }
+  }
+  [mat-button].is-outlined {
+    line-height: 23px;
+    min-width: 44px;
+    padding: 0 7px;
+    height: 25px;
+    vertical-align: middle;
+  }
+
+  [mat-icon-button] {
+    line-height: 33px;
+    height: $mat-icon-button-height;
+    width: $mat-icon-button-width;
+    position: relative;
+    &.seek-out mat-icon {
+      transform: rotate(180deg);
+      line-height: 25px;
+    }
+  }
+  button[disabled] {
+    opacity: .2;
+  }
+}

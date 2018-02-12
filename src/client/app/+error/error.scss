@@ -1,0 +1,39 @@
+section.error {
+  height: 1000px;
+  .hero {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 0;
+    min-height: 100%;
+    text-align: center;
+    .text-container {
+      margin-top: 100px;
+    }
+    .mat-display-4 {
+      font-weight: 500;
+      .mat-icon {
+        font-size: 64px;
+      }
+    }
+    .links {
+      button {
+        width: 64px;
+        height: 64px;
+        line-height: 64px;
+        .mat-button-wrapper {
+          font-size: 32px;
+          .mat-icon {
+            font-size: 32px;
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+}

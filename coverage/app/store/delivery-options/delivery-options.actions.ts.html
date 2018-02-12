@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/delivery-options/delivery-options.actions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/delivery-options/</a> delivery-options.actions.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.78% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>88/90</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>27/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.1% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>67/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Action } from '@ngrx/store';
+import { ApiErrorResponse } from '../../shared/interfaces/api.interface';
+import { DeliveryOptions, DeliveryOption } from '../../shared/interfaces/asset.interface';
+import { Asset } from '../../shared/interfaces/common.interface';
+import { SubclipMarkers } from '../../shared/interfaces/subclip-markers';
+&nbsp;
+export class ActionFactory {
+  public load(asset: Asset, shareKey?: string): Load {
+    return new Load(asset, shareKey);
+  }
+&nbsp;
+  public download(option: DeliveryOption): Download {
+    return new Download(option);
+  }
+&nbsp;
+  public downloadViaAspera(option: DeliveryOption): DownloadViaAspera {
+    return new DownloadViaAspera(option);
+  }
+&nbsp;
+  public deliver(assetId: number, option: DeliveryOption, markers: SubclipMarkers): Deliver {
+    return new Deliver(assetId, option, markers);
+  }
+}
+&nbsp;
+export class InternalActionFactory extends ActionFactory {
+  public loadSuccess(options: DeliveryOptions): LoadSuccess {
+    return new LoadSuccess(options);
+  }
+&nbsp;
+  public loadFailure(error: ApiErrorResponse): LoadFailure {
+    return new LoadFailure(error);
+  }
+&nbsp;
+  public deliverySuccess(orderId: number, option: DeliveryOption): DeliverySuccess {
+    return new DeliverySuccess(orderId, option);
+  }
+&nbsp;
+  public deliveryFailure(error: ApiErrorResponse): DeliveryFailure {
+    return new DeliveryFailure(error);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public setLoadingMessageFlag(): SetLoadingMessageFlag {</span>
+<span class="cstat-no" title="statement not covered" >    return new SetLoadingMessageFlag();</span>
+  }
+}
+&nbsp;
+export class Load implements Action {
+  public static readonly Type = '[Delivery Options] Load';
+  public readonly type = Load.Type;
+  constructor(public readonly activeAsset: Asset, public readonly shareKey: string) { }
+}
+&nbsp;
+export class LoadSuccess implements Action {
+  public static readonly Type = '[Delivery Options] Load Success';
+  public readonly type = LoadSuccess.Type;
+  constructor(public readonly options: DeliveryOptions) { }
+}
+&nbsp;
+export class LoadFailure implements Action {
+  public static readonly Type = '[Delivery Options] Load Failure';
+  public readonly type = LoadFailure.Type;
+  constructor(public readonly error: ApiErrorResponse) { }
+}
+&nbsp;
+export class Download implements Action {
+  public static readonly Type = '[Delivery Options] Download';
+  public readonly type = Download.Type;
+  constructor(public readonly option: DeliveryOption) { }
+}
+&nbsp;
+export class DownloadViaAspera implements Action {
+  public static readonly Type = '[Delivery Options] Download Via Aspera';
+  public readonly type = DownloadViaAspera.Type;
+  constructor(public readonly option: DeliveryOption) { }
+}
+&nbsp;
+export class Deliver implements Action {
+  public static readonly Type = '[Delivery Options] Deliver Asset';
+  public readonly type = Deliver.Type;
+  constructor(
+    public readonly assetId: number,
+    public readonly option: DeliveryOption,
+    public readonly markers?: SubclipMarkers
+  ) { }
+}
+&nbsp;
+export class DeliverySuccess implements Action {
+  public static readonly Type = '[Delivery Options] Delivery Success';
+  public readonly type = DeliverySuccess.Type;
+  constructor(public readonly orderId: number, public readonly option: DeliveryOption) { }
+}
+&nbsp;
+export class DeliveryFailure implements Action {
+  public static readonly Type = '[Delivery Options] Delivery Failure';
+  public readonly type = DeliveryFailure.Type;
+  constructor(public readonly error: ApiErrorResponse) { }
+}
+&nbsp;
+export class SetLoadingMessageFlag implements Action {
+  public static readonly Type = '[Delivery Options] Set Loading Message Flag';
+  public readonly <span class="cstat-no" title="statement not covered" >type = SetLoadingMessageFlag.Type;</span>
+}
+&nbsp;
+export type Any = Load | LoadSuccess | LoadFailure | Download | Deliver | DeliverySuccess | DeliveryFailure | DownloadViaAspera |
+  SetLoadingMessageFlag;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

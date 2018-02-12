@@ -1,0 +1,26 @@
+<home-hero
+  [config]="config"
+  [currentUser]="currentUser" 
+  [isVideo]="isVideo"
+  [playlist]="playlist | async"
+  (searchContext)="newSearchContext($event)"
+  [ngClass]="{'gallery-home' : currentUser.loggedIn() && config.galleryView, 'hero-v' : isVideo, 'hero-i' : !isVideo}">
+</home-hero>
+<home-highlights [config]="config" *ngIf="!currentUser.loggedIn() || !config.galleryView"></home-highlights>
+
+<section 
+  *ngIf="currentUser.loggedIn() && config.galleryView"
+  class="gallery"
+	layout="row" 
+  mat-scroll-y="" 
+  layout-align="center start">
+  <two-level-view
+    flex="100"
+    *ngIf="(data | async).numberOfLevels === 2"
+    [data]="data | async"
+    (navigate)="onNavigate($event)">
+  </two-level-view>
+</section>
+
+<home-call-to-action [config]="config" [currentUser]="currentUser"></home-call-to-action>
+<home-vendor-marquee [config]="config" *ngIf="false"></home-vendor-marquee>

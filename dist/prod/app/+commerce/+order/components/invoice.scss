@@ -1,0 +1,314 @@
+invoice-component {
+  section.header {
+    padding-left: 4px;
+    padding-right: 4px;
+    header {
+      padding-top: 6px;
+      padding-bottom: 5px;
+      position: relative;
+      .mat-display-1 {
+        margin: 0;
+        width: calc(100% - 120px);
+        font-size: 26px;
+      }
+      .tools {
+        text-align: right;
+      }
+    }
+  }
+  .logo-wrapper {
+    height: 202px;
+    width: 100%;
+    min-width: 270px;
+    padding: 2px 0 0 6px;
+    @media screen and (max-width: $layout-breakpoint-lg)  {
+      min-width: 260px;
+    }
+    @media screen and (max-width: $layout-breakpoint-md)  {
+      min-width: 210px;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm)  {
+      min-width: 125px;
+      height: 145px;
+    }
+    .logo {
+      display: flex;
+      margin: 0;
+      background-position: top left;
+      background-repeat:no-repeat;
+      background-size: 56%;
+      @media screen and (max-width: $layout-breakpoint-md)  {
+        background-size: 71%;
+      }
+      @media screen and (max-width: $layout-breakpoint-sm)  {
+        background-size: 93%;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        background-size: 30%;
+      }
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  .invoice {
+    margin-top: 32px;
+    margin-bottom: 75px;
+    padding: 34px;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      padding: 14px;
+      margin-bottom: 25px;
+    }
+    header .invoice-label {
+      margin: -8px 0 6px 0;
+    }
+    & > header + section {
+      margin: 0 0 50px 0;
+    }
+  }
+  address {
+    font-size: 14px;
+    line-height: 1.55;
+    span {
+      display: flex;
+    }
+    .phone, .email {
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 200;
+      line-height: 1.7;
+      .mat-icon {
+        font-size: 18px;
+        line-height: 1.6;
+        width: 22px;
+        opacity: .8;
+        margin-top: -3px;
+      }
+      & > a.mailto {
+        display: flex;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .identification-number {
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 200;
+      margin: 10px 0 10px 0;
+      line-height: 1;
+      & >span.key {
+        display: inline-flex;
+        font-weight: bold;
+        padding-right: 5px;
+      }
+    }
+  }
+  
+  .invoice-divider {
+    height: 0;
+    margin: 0 0 20px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  }
+  
+  .mat-title {
+    margin: 0;
+  }
+  .details {
+    &:first-child {
+      padding-right: 8px;
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        padding-right: 0;
+      }
+    }
+    &:last-child {
+      padding-left: 8px;
+      margin-bottom: 20px;
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        padding-left: 0;
+      }
+    }
+
+  }
+  .individual-name {
+    font-size: 14px;
+  }
+  .company-name {
+    margin: 0;
+    font-weight: 600;
+  }
+  .contact-container, .notes-container {
+    padding: 8px 13px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    min-height: 108px;
+    margin-bottom: 14px;
+  }
+  .payee.details .contact-container, .remit-payment .contact-container {
+    border-width: 0;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      border-width: 1px;
+    }
+  }
+  div.project {
+    margin-bottom: 18px;
+    header.project-info {
+      .mat-subheading-1 {
+        margin: 0;
+        .project-name {
+          opacity: .85;
+          font-weight: 300;
+        }
+      }
+      div.project-subtotal {
+        padding: 0;
+        span {
+          padding: 0;
+          &.total-amount {
+            display: inline-block;
+            &::first-letter {
+              font-size: .7em;
+              line-height: 1.4;
+              vertical-align: top;
+              letter-spacing: 0;
+            }
+          }
+        }
+      }
+    }
+    .offline-agreement {
+      margin-bottom: 22px;
+      font-size: .8em;
+      .value {
+        font-style: italic;
+        line-height: 1.4;
+        opacity:.75;
+      }
+    }
+    .assets {
+      padding: 0;
+      .asset-list li.project-asset-heading {
+        .mat-subheading-2 {
+          margin: 0;
+        }
+        & > div {
+          padding: 0 0 0 10px;
+        }
+        & > div:last-child {
+          padding: 0 10px 0 0;
+        }
+      }
+
+      .asset-list li.cart-asset,
+      .asset-list li.fee-item {
+        margin: 0;
+        padding: 0;
+        border-style: solid;
+        border-radius: 0;
+        border-width: 0 1px 1px 1px;
+        & > div > div[layout-padding] {
+          border-left-width: 1px; 
+          border-left-style: solid; 
+          @media screen and (max-width: $layout-breakpoint-xs)  {
+            border-left-width: 0; 
+          }
+          line-item-rights-component header {
+            display: none;
+          } 
+          &.cost {
+            .total-amount {
+              display: inline-block;
+              &::first-letter {
+                font-size: .75em;
+                line-height: 1.4;
+                vertical-align: top;
+                letter-spacing: 0;
+              }
+            }
+          }
+        }
+        &:nth-child(2) {
+          @media screen and (max-width: $layout-breakpoint-xs)  {
+            border-top-width: 1px;
+          }
+        }
+        .fee-description {
+          font-size: 14px;
+        }
+        .fee-notes {
+          font-size: 12px;
+          margin-bottom: 0;
+          min-height: unset;
+        }
+        .invoice-notes {
+          margin: 0;
+          border-left: none;
+          padding: 8px;
+          & > span {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+  .invoice-totals {
+    margin-bottom: 45px;
+    .notes-container {
+      margin-right: 16px;
+      min-height: 100%;
+    }
+    .totals-container {
+      padding: 0;
+      border-radius: 2px;
+      margin-bottom: 14px;
+      & > div {
+        width: calc(100% - 18px);
+        text-align: right;
+        line-height: 1.5;
+        padding: 3px 9px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        margin: 0;
+        font-weight: 300;
+        &:last-child {
+          border-bottom-width: 0;
+        }
+        strong {
+          font-weight: 500;
+          padding-right: 10px; 
+        }
+        .total-amount {
+          display: inline-block;
+          &::first-letter {
+            font-size: .7em;
+            line-height: 1.9;
+            vertical-align: top;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .remit-payment .details {
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+    .payee-attribute {
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 300;
+      strong {
+        font-weight: 500;
+        padding-right: 5px;
+      }
+    }
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      margin-right: 0;
+    }
+  }
+}

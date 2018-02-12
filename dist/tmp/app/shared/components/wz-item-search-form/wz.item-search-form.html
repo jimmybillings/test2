@@ -1,0 +1,25 @@
+<div layout="row" layout-align="end center">
+  <form flex="100" [formGroup]="itemSearch" (ngSubmit)="onSubmit()" class="mat-inline-form">
+    <input type="text" [placeholder]="placeholderTxt" [value]="currentSearchQuery.q" formControlName="q" />
+    <button
+      mat-icon-button type="submit"
+      disableRipple="true"
+      title="{{ 'COLLECTION.DD_MENU.SUBMIT_HOVER_TITLE' | translate }}"><mat-icon>search</mat-icon>
+    </button>
+    <span class="vertical-divider"></span>
+    <button
+      mat-icon-button
+      type="reset"
+      disableRipple="true"
+      title="{{ 'COLLECTION.DD_MENU.RESET_HOVER_TITLE' | translate }}"
+      (click)="resetSearch()"><mat-icon>close</mat-icon>
+    </button>
+  </form>
+  <div class="tools" flex="auto">
+    <button
+      mat-icon-button
+      title="{{ 'COLLECTION.DD_MENU.CLOSE_HOVER_TITLE' | translate }}"
+      (click)="closeSearch.emit()"><mat-icon>arrow_drop_up</mat-icon>
+    </button>
+  </div>
+</div>

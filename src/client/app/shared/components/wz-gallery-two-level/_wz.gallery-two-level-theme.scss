@@ -1,0 +1,49 @@
+@mixin wz-gallery-two-level-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  $bkg-color: mat-color($background, background);
+  $heading-color: mat-color($foreground, text);
+
+  two-level-view {
+    background-color: $bkg-color;
+    & > section {
+      h3 {
+        color: $heading-color;
+      }
+    }
+    .carousel {
+      .carousel-previous,
+      .carousel-next {
+        background: rgba($bkg-color, .5);
+      }
+    }
+  }
+
+  two-level-view .carousel .carousel-content-0 .carousel-item,
+  two-level-view .carousel .carousel-content-1 .carousel-item,
+  two-level-view .carousel .carousel-content-2 .carousel-item,
+  two-level-view .carousel .carousel-content-3 .carousel-item,
+  two-level-view .carousel .carousel-content-4 .carousel-item,
+  two-level-view .carousel .carousel-content-5 .carousel-item,
+  two-level-view .carousel .carousel-content-6 .carousel-item,
+  two-level-view .carousel .carousel-content-7 .carousel-item,
+  two-level-view .carousel .carousel-content-8 .carousel-item,
+  two-level-view .carousel .carousel-content-9 .carousel-item,
+  two-level-view .carousel .carousel-content-10 .carousel-item,
+  two-level-view .carousel .carousel-content-11 .carousel-item,
+  two-level-view .carousel .carousel-content-12 .carousel-item,
+  two-level-view .carousel .carousel-content-13 .carousel-item,
+  two-level-view .carousel .carousel-content-14 .carousel-item,
+  two-level-view .carousel .carousel-content-15 .carousel-item,
+  two-level-view .carousel .carousel-content-16 .carousel-item,
+  two-level-view .carousel .carousel-content-17 .carousel-item,
+  two-level-view .carousel .carousel-content-18 .carousel-item,
+  two-level-view .carousel .carousel-content-19 .carousel-item {
+    a {
+      section {
+        @include text-contrast(mat-color($mat-grey, 900), mat-color($foreground, text), mat-color($background, card));
+      }
+    }
+  }
+}

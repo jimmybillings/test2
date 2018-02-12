@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/services/player-state.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/services/</a> player-state.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>87/87</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>32/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>20/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>77/77</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">819×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">796×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">215×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">197×</span>
+<span class="cline-any cline-yes">163×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+&nbsp;
+import { Frame, TimecodeFormat, TimecodeBase } from '../../wazee-frame-formatter/index';
+import { PlayerState, PlayerStateChanges } from '../interfaces/player.interface';
+&nbsp;
+@Injectable()
+export class PlayerStateService {
+  private stateSubject: BehaviorSubject&lt;PlayerState&gt; = new BehaviorSubject(this.initialValue);
+  private changesToApply: PlayerStateChanges = {};
+&nbsp;
+  public get state(): Observable&lt;PlayerState&gt; {
+    return this.stateSubject.asObservable();
+  }
+&nbsp;
+  public get snapshot(): PlayerState {
+    return this.stateSubject.getValue();
+  }
+&nbsp;
+  public updateWith(changes: PlayerStateChanges): void {
+    this.stateSubject.next(this.createNewStateWith(changes));
+  }
+&nbsp;
+  public reset(): void {
+    this.stateSubject.next(this.initialValue);
+  }
+&nbsp;
+  private get initialValue(): PlayerState {
+    return {
+      ready: false,
+      canSupportCustomControls: true,
+      playing: false,
+      playingMarkers: false,
+      playbackSpeed: 1,
+      framesPerSecond: 29.97,
+      currentFrame: undefined,
+      durationFrame: undefined,
+      inMarkerFrame: undefined,
+      outMarkerFrame: undefined,
+      volume: 100,
+      sourceBasedOffset: '00:00:00:00',
+      timecodeFormat: TimecodeFormat.SIMPLE_TIME_CONVERSION,
+      timecodeBase: TimecodeBase.STREAM_BASED,
+      changeDetectionEnabler: 0
+    };
+  }
+&nbsp;
+  private createNewStateWith(requestedChanges: PlayerStateChanges): PlayerState {
+    // It's tempting to use Common.clone() here, but that doesn't preserve properties with explicit undefined values.
+    // (And we need inMarker and outMarker to come in as undefined because this is how markers are cleared.)
+    this.changesToApply = {};
+    Object.keys(requestedChanges).forEach((key: string) =&gt; (this.changesToApply as any)[key] = (requestedChanges as any)[key]);
+&nbsp;
+    this.handleChangeInterdependencies();
+&nbsp;
+    return {
+      ready: this.latest('ready'),
+      canSupportCustomControls: this.latest('canSupportCustomControls'),
+      playing: this.latest('playing'),
+      playingMarkers: this.latest('playingMarkers'),
+      playbackSpeed: this.latest('playbackSpeed'),
+      framesPerSecond: this.latest('framesPerSecond'),
+      currentFrame: this.newFrameFrom(this.latest('currentFrame')),
+      durationFrame: this.newFrameFrom(this.latest('durationFrame')),
+      inMarkerFrame: this.newFrameFrom(this.latest('inMarkerFrame')),
+      outMarkerFrame: this.newFrameFrom(this.latest('outMarkerFrame')),
+      volume: this.latest('volume'),
+      sourceBasedOffset: this.latest('sourceBasedOffset') || this.initialValue.sourceBasedOffset,
+      timecodeFormat: this.latest('timecodeFormat'),
+      timecodeBase: this.latest('timecodeBase'),
+      changeDetectionEnabler: this.snapshot.changeDetectionEnabler + 1
+    };
+  }
+&nbsp;
+  private handleChangeInterdependencies(): void {
+    this.handleInMarkerFrameUpdate();
+    this.handleOutMarkerFrameUpdate();
+    this.handleCurrentTimeUpdate();
+    this.handleDurationUpdate();
+    this.handleInMarkerUpdate();
+    this.handleOutMarkerUpdate();
+    this.handleMarkerOrderingIssues();
+  }
+&nbsp;
+  private handleInMarkerFrameUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('inMarkerFrameNumber')) return;
+&nbsp;
+    this.changesToApply.inMarkerFrame = this.newFrame.setFromFrameNumber(this.changesToApply.inMarkerFrameNumber);
+    delete this.changesToApply.inMarkerFrameNumber;
+  }
+&nbsp;
+  private handleOutMarkerFrameUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('outMarkerFrameNumber')) return;
+&nbsp;
+    this.changesToApply.outMarkerFrame = this.newFrame.setFromFrameNumber(this.changesToApply.outMarkerFrameNumber);
+    delete this.changesToApply.outMarkerFrameNumber;
+  }
+&nbsp;
+  private handleCurrentTimeUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('currentTime')) return;
+&nbsp;
+    this.changesToApply.currentFrame = this.newFrameFrom(this.changesToApply.currentTime);
+    delete this.changesToApply.currentTime;
+  }
+&nbsp;
+  private handleDurationUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('duration')) return;
+&nbsp;
+    this.changesToApply.durationFrame = this.newFrameFrom(this.changesToApply.duration);
+    delete this.changesToApply.duration;
+  }
+&nbsp;
+  private handleInMarkerUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('inMarker')) return;
+&nbsp;
+    this.changesToApply.inMarkerFrame = this.newFrameFrom(this.changesToApply.inMarker);
+    delete this.changesToApply.inMarker;
+  }
+&nbsp;
+  private handleOutMarkerUpdate(): void {
+    if (!this.changesToApply.hasOwnProperty('outMarker')) return;
+&nbsp;
+    this.changesToApply.outMarkerFrame = this.newFrameFrom(this.changesToApply.outMarker);
+    delete this.changesToApply.outMarker;
+  }
+&nbsp;
+  private handleMarkerOrderingIssues(): void {
+    const newInMarkerFrame: Frame = this.changesToApply.inMarkerFrame;
+&nbsp;
+    if (newInMarkerFrame) {
+      const latestOutMarkerFrame: Frame = this.latest('outMarkerFrame');
+&nbsp;
+      if (latestOutMarkerFrame &amp;&amp; newInMarkerFrame.frameNumber &gt; latestOutMarkerFrame.frameNumber) {
+        this.changesToApply.outMarkerFrame = this.newFrameFrom(newInMarkerFrame);
+      }
+&nbsp;
+      return;
+    }
+&nbsp;
+    const newOutMarkerFrame: Frame = this.changesToApply.outMarkerFrame;
+&nbsp;
+    if (newOutMarkerFrame) {
+      const latestInMarkerFrame: Frame = this.latest('inMarkerFrame');
+&nbsp;
+      if (latestInMarkerFrame &amp;&amp; newOutMarkerFrame.frameNumber &lt; latestInMarkerFrame.frameNumber) {
+        this.changesToApply.inMarkerFrame = this.newFrameFrom(newOutMarkerFrame);
+      }
+    }
+  }
+&nbsp;
+  private latest(key: string): any {
+    return this.changesToApply.hasOwnProperty(key) ? (this.changesToApply as any)[key] : (this.snapshot as any)[key];
+  }
+&nbsp;
+  private newFrameFrom(input: number | Frame): Frame {
+    if (typeof input === 'number') {
+      return this.newFrame.setFromSeconds(input);
+    } else if (!input) {
+      return undefined;
+    } else {
+      return this.newFrame.setFromFrameNumber(input.frameNumber);
+    }
+  }
+&nbsp;
+  private get newFrame(): Frame {
+    return new Frame(this.latest('framesPerSecond'), this.latest('sourceBasedOffset'));
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

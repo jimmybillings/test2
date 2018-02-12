@@ -1,0 +1,68 @@
+@mixin wz-autocomplete-search-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  wz-autocomplete-search {
+    input { 
+      color: mat-color($foreground, secondary-text);
+      background-color:  rgba(mat-color($background, app-bar), .9);
+      &::placeholder {
+        color: mat-color($foreground, hint-text);
+      }
+      &:focus {
+        background-color: lighten(mat-color($background, app-bar), 40%);
+      }
+    }
+    button[type="submit"] {
+      background-color: mat-color($accent, 800, .95);
+      &:hover {
+        background-color: mat-color($accent, 700, 1);
+      }
+      &[disabled] {
+        background-color: mat-color($accent, 800, .95);
+      }
+    }
+  }
+  // search box in the header
+  header.app-header {
+    wz-autocomplete-search {
+      form {
+        background-color: mat-color($background, app-bar);
+      }
+      button[type="submit"] {
+        background-color: mat-color($primary, 700, .45);
+      }
+      div.close-search {
+        background: mat-color($background, app-bar);
+        button[mat-icon-button] {
+          color: rgba(mat-color($foreground, secondary-text), .6);
+        }
+      }
+    }
+    button.filter-toggle {
+      background-image:
+        linear-gradient(mat-color($primary, 800, .06), mat-color($primary, 800, .06)),
+        linear-gradient(rgba(mat-color($foreground, base), .5), rgba(mat-color($foreground, base), .5))
+      ;
+      @include text-contrast(mat-color($foreground, base));
+      &:hover {
+        background-color: rgba(mat-color($foreground, base), .55);
+      }
+    }
+    button.close {
+      mat-icon.material-icons {
+        @include text-contrast(mat-color($background, background));
+      }
+    }
+  }
+  header.app-header.fixed {
+    wz-autocomplete-search {
+      button[type="submit"] mat-icon.material-icons, button.filter-toggle {
+        @include text-contrast(mat-color($primary, 700), mat-color($mat-grey, 700), mat-color($mat-grey, 100));
+      }
+    }
+  }
+}
+

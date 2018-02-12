@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/pendo.service.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> pendo.service.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>19/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>12/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.44% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : <span class="branch-1 cbranch-no" title="branch not covered" >desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,</span> d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : <span class="branch-1 cbranch-no" title="branch not covered" >c &gt; 3 ? d(target, key, r) : d(target, key))</span> || <span class="branch-1 cbranch-no" title="branch not covered" >r;</span>
+    return c &gt; 3 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >r </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var PendoService = (function () {
+    function PendoService() {
+    }
+    PendoService.prototype.initialize = function (user) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof window.pendo === 'undefined')
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        var userUniqueIdentifier = user.siteName + "-" + user.id + "-" + user.firstName.toLowerCase() + "-" + user.lastName.toLowerCase();
+        var accountUniqueIdentifier = user.siteName + "-" + user.accountId;
+        window.pendo.initialize({
+            apiKey: '7e5da402-5d29-41b0-5579-6e149b0a28f2',
+            visitor: { id: userUniqueIdentifier, email: user.emailAddress },
+            account: { id: accountUniqueIdentifier }
+        });
+    };
+    PendoService = __decorate([
+        core_1.Injectable()
+    ], PendoService);
+    return PendoService;
+}());
+exports.PendoService = PendoService;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvc2VydmljZXMvcGVuZG8uc2VydmljZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBLHNDQUEyQztBQUkzQztJQUFBO0lBWUEsQ0FBQztJQVZRLGlDQUFVLEdBQWpCLFVBQWtCLElBQVU7UUFDMUIsRUFBRSxDQUFDLENBQUMsT0FBYSxNQUFPLENBQUMsS0FBSyxLQUFLLFdBQVcsQ0FBQztZQUFDLE1BQU0sQ0FBQztRQUN2RCxJQUFJLG9CQUFvQixHQUFjLElBQUksQ0FBQyxRQUFRLFNBQUksSUFBSSxDQUFDLEVBQUUsU0FBSSxJQUFJLENBQUMsU0FBUyxDQUFDLFdBQVcsRUFBRSxTQUFJLElBQUksQ0FBQyxRQUFRLENBQUMsV0FBVyxFQUFJLENBQUM7UUFDaEksSUFBSSx1QkFBdUIsR0FBYyxJQUFJLENBQUMsUUFBUSxTQUFJLElBQUksQ0FBQyxTQUFXLENBQUM7UUFDckUsTUFBTyxDQUFDLEtBQUssQ0FBQyxVQUFVLENBQUM7WUFDN0IsTUFBTSxFQUFFLHNDQUFzQztZQUM5QyxPQUFPLEVBQUUsRUFBRSxFQUFFLEVBQUUsb0JBQW9CLEVBQUUsS0FBSyxFQUFFLElBQUksQ0FBQyxZQUFZLEVBQUU7WUFDL0QsT0FBTyxFQUFFLEVBQUUsRUFBRSxFQUFFLHVCQUF1QixFQUFFO1NBQ3pDLENBQUMsQ0FBQztJQUNMLENBQUM7SUFYVSxZQUFZO1FBRHhCLGlCQUFVLEVBQUU7T0FDQSxZQUFZLENBWXhCO0lBQUQsbUJBQUM7Q0FaRCxBQVlDLElBQUE7QUFaWSxvQ0FBWSIsImZpbGUiOiJhcHAvc2hhcmVkL3NlcnZpY2VzL3BlbmRvLnNlcnZpY2UuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBJbmplY3RhYmxlIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBVc2VyIH0gZnJvbSAnLi4vaW50ZXJmYWNlcy91c2VyLmludGVyZmFjZSc7XG5cbkBJbmplY3RhYmxlKClcbmV4cG9ydCBjbGFzcyBQZW5kb1NlcnZpY2Uge1xuXG4gIHB1YmxpYyBpbml0aWFsaXplKHVzZXI6IFVzZXIpOiB2b2lkIHtcbiAgICBpZiAodHlwZW9mICg8YW55PndpbmRvdykucGVuZG8gPT09ICd1bmRlZmluZWQnKSByZXR1cm47XG4gICAgbGV0IHVzZXJVbmlxdWVJZGVudGlmaWVyOiBzdHJpbmcgPSBgJHt1c2VyLnNpdGVOYW1lfS0ke3VzZXIuaWR9LSR7dXNlci5maXJzdE5hbWUudG9Mb3dlckNhc2UoKX0tJHt1c2VyLmxhc3ROYW1lLnRvTG93ZXJDYXNlKCl9YDtcbiAgICBsZXQgYWNjb3VudFVuaXF1ZUlkZW50aWZpZXI6IHN0cmluZyA9IGAke3VzZXIuc2l0ZU5hbWV9LSR7dXNlci5hY2NvdW50SWR9YDtcbiAgICAoPGFueT53aW5kb3cpLnBlbmRvLmluaXRpYWxpemUoe1xuICAgICAgYXBpS2V5OiAnN2U1ZGE0MDItNWQyOS00MWIwLTU1NzktNmUxNDliMGEyOGYyJyxcbiAgICAgIHZpc2l0b3I6IHsgaWQ6IHVzZXJVbmlxdWVJZGVudGlmaWVyLCBlbWFpbDogdXNlci5lbWFpbEFkZHJlc3MgfSxcbiAgICAgIGFjY291bnQ6IHsgaWQ6IGFjY291bnRVbmlxdWVJZGVudGlmaWVyIH1cbiAgICB9KTtcbiAgfVxufVxuXG4iXX0=
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

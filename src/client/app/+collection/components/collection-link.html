@@ -1,0 +1,31 @@
+<div class="wz-dialog wz-legacy-link">
+    <button mat-icon-button mat-dialog-close title="close" type="button" class="close">
+      <mat-icon>close</mat-icon>
+    </button>
+  <mat-dialog-content>
+    <h1 mat-dialog-title class="dialog-title">{{ 'COLLECTION.COPY_LEGACY_LINK' | translate }}</h1>
+    <p class="dialog-summary">{{ 'COLLECTION.COPY_LEGACY_LINK_DESCRIPTION' | translate }}</p>
+    <section class="dd-menu-wrapper">
+      <div class="link-wrapper" flex="100" layout="row">
+        <input 
+          id="legacyLink"
+          class="link-input"
+          flex="100"
+          layout-align="end center"
+          value="{{ legacyLink }}"
+          (click)="selectInputForCopy($event)" />
+        <button 
+          flex="auto"
+          layout-align="end center"
+          wzClipboard
+          class="clipboard-copy"
+          mat-icon-button
+          data-clipboard-target="#legacyLink"
+          title="{{ 'COLLECTION.COPY_LEGACY_LINK' | translate }}"
+          (click)="onCopyLegacyLinkButtonClick()">
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+    </section>
+  </mat-dialog-content>
+</div>

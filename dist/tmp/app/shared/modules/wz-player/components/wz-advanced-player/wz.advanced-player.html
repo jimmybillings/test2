@@ -1,0 +1,19 @@
+<wz-player [window]="window" [asset]="asset" [mode]="'advanced'" (stateChangeRequest)="onStateChangeRequest($event)"></wz-player>
+
+<ng-container *ngIf="assetIsVideo() && (playerState | async).canSupportCustomControls">
+  <wz-scrubber
+    layout="row"
+    [window]="window"
+    [playerState]="playerState | async"
+    (request)="handle($event)">
+  </wz-scrubber>
+  <wz-player-controlbar class="tool-bar" layout="row" 
+    [playerState]="playerState | async"
+    (request)="handle($event)">
+  </wz-player-controlbar>
+  <wz-subclip-controlbar class="tool-bar" layout="row" 
+    [playerState]="playerState | async" 
+    [displayAllControls]="displayAllControls"
+    (request)="handle($event)">
+  </wz-subclip-controlbar>
+</ng-container>

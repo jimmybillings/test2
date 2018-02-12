@@ -1,0 +1,30 @@
+div.mat-menu-panel div.mat-menu-content wz-sort-component div.dense,
+.mat-menu.dd-menu-wrapper.dense {
+  min-width: 275px;
+  .select-dd {
+    // height: 32px;
+    // flex-direction: column;
+    // justify-content: space-between;
+    button[mat-menu-item]{
+      font-size: .9em;
+      height: 32px;
+      line-height: 32px;
+      .mat-icon.material-icons {
+        opacity: 0;
+        margin-top: -8px;
+      }
+    }
+  }
+  .select-dd.active button[mat-menu-item] {
+    background-color: transparent;
+    .mat-icon.material-icons {
+      opacity: 1;
+    }
+  }
+  mat-divider {
+    margin-top: 6px;
+    margin-bottom: 6px;
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+}

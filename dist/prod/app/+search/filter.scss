@@ -1,0 +1,120 @@
+search-component mat-sidenav-container.mat-sidenav-container {
+  background-color: transparent;
+}
+.mat-sidenav {
+  width: 290px;
+  &.mat-sidenav-side.mat-sidenav-opened,
+  &.mat-sidenav-side.mat-sidenav-opening {
+    @include mat-elevation(16);
+  }
+}
+.filter {
+  .mat-nav-list {
+    padding-top: 0;
+  }
+  .exclusive-list .mat-list-item {
+    .mat-list-item-content {
+      padding: 0;
+      height: 30px;
+    }       
+    .mat-button {
+      height: 100%;
+      padding: 0 16px 0 36px;
+      text-transform: none;
+      text-align: left;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1;
+    }
+  } 
+  li {
+    list-style-type: none;
+    font-size: .94em;
+    &:last-child {
+      margin-bottom: 16px;
+    }
+    .filter-subhead {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .01em;
+      line-height: .9em;
+      &:hover {
+        cursor: pointer;
+      }
+      .filter-subhead-inner {
+        display: block;
+        padding: 14px;
+      }
+      .filter-subhead-content {
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    .exclusive-list .filter-subhead:hover {
+      cursor: default;
+      background-color: transparent;
+    }
+    .exclusive-list mat-divider:last-child {
+      margin-top: 12px;
+    }
+    mat-checkbox {
+      padding: 0 16px 10px 32px;
+      line-height: 2;
+    }
+
+    .mat-form-field {
+      margin: 4px 0 0 31px;
+      width: calc(100% - 62px);
+    }
+  }
+  .filter-count {
+    font-size: .75em;
+  }
+}
+
+.date-range {
+  .filter-subhead:hover {
+    cursor: default;
+    background-color: transparent;
+  }
+  .connector, .input-container {
+    width: calc(100% - 62px);
+    position: relative;
+  }
+  .connector {
+    display: block;
+    margin: 10px 0 -10px 30px;
+    font-size: 0.8em;
+  }
+  .input-container {
+    margin: 6px 0 16px 32px;
+    &::after {
+      content: "\e8df";
+      font-family: 'Material Icons';
+      font-size: 20px;
+      font-weight: 100;
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: .25;
+    }
+  }
+  input {
+    width: 100%;
+    // border-width: 0 0 1px 0;
+    // border-style: solid;
+    // border-image: none;
+    background-color: transparent;
+    z-index: 1; // To enable clicking the container's ::after icon.
+    padding: 4px 0 4px 0;
+    position: relative;
+    &:focus, &:active {
+      outline: none;
+      border-width: 0 0 1px 0;
+    }
+  }
+}
+
+

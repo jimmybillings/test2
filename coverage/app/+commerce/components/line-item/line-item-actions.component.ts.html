@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/line-item/line-item-actions.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/line-item/</a> line-item-actions.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.74% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>45/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.62% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.56% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>43/45</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { PurchaseType, quotesWithoutPricing } from '../../../shared/interfaces/commerce.interface';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'line-item-actions-component',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    &lt;div class="tools" flex="100"&gt;
+      &lt;button 
+        mat-icon-button
+        (click)="remove.emit()"
+        title="{{ 'CART.PROJECTS.REMOVE_ASSET_BTN_HOVER' | translate }}"&gt;
+          &lt;mat-icon&gt;remove_circle&lt;/mat-icon&gt;
+        &lt;/button&gt;
+      &lt;button
+        data-pendo="cart-lineitem_options-menu-trigger"
+        mat-icon-button
+        [mat-menu-trigger-for]="lineItemOptionsMenu"
+        title="{{ 'CART.PROJECTS.MORE_OPTIONS_BTN_HOVER' | translate }}"&gt;
+          &lt;mat-icon&gt;more_vert&lt;/mat-icon&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+&nbsp;
+    &lt;mat-menu x-position="before" #lineItemOptionsMenu="matMenu"&gt;
+      &lt;button mat-menu-item (click)="clone.emit()"&gt;
+        &lt;mat-icon&gt;layers&lt;/mat-icon&gt;{{ 'CART.PROJECTS.DUPLICATE_ASSET_BTN_LABEL' | translate }}
+      &lt;/button&gt;
+      &lt;div class="divider" *ngIf="otherProjectsExist"&gt;&lt;/div&gt;
+      &lt;button mat-menu-item *ngFor="let otherProject of otherProjects" (click)="moveTo.emit(otherProject)"&gt;
+        &lt;mat-icon&gt;swap_vert_circle&lt;/mat-icon&gt;
+        {{ 'CART.PROJECTS.MOVE_TO' | translate:{projectName: otherProject.name} | slice:0:28 }}
+      &lt;/button&gt;
+      &lt;div class="divider" *ngIf="shouldShowSubclipButton"&gt;&lt;/div&gt;
+      &lt;button mat-menu-item (click)="editMarkers.emit()" *ngIf="userCanCreateSubclips"&gt;
+        &lt;mat-icon&gt;access_time&lt;/mat-icon&gt;
+        &lt;span&gt;{{ trStringForSubclipping | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button mat-menu-item 
+        *ngIf="displayPriceButton"
+        (click)="showPricingDialog.emit()"
+        [ngClass]="{'select-usage': needsAttributes }"&gt;
+        &lt;mat-icon&gt;assignment&lt;/mat-icon&gt;
+        &lt;span&gt;{{ trStringForRightsPackage | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button
+        mat-menu-item
+        (click)="openNotesForm()"&gt;
+        &lt;mat-icon&gt;note_add&lt;/mat-icon&gt;
+        &lt;span&gt;{{ trStringForNoteButton | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;div *ngIf="userCanAdministerQuotes" class="divider"&gt;&lt;/div&gt;
+      &lt;button mat-menu-item (click)="openCostMultiplierForm.emit()" *ngIf="userCanAdministerQuotes"&gt;
+        &lt;mat-icon&gt;attach_money&lt;/mat-icon&gt;
+        &lt;span&gt;{{ trStringForCostMultiplier | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button mat-menu-item (click)="removeCostMultiplier.emit()" *ngIf="showDeleteCostMultiplierBtn"&gt;
+        &lt;mat-icon&gt;remove_circle&lt;/mat-icon&gt;
+        &lt;span&gt;{{ 'QUOTE.REMOVE_MULTIPLIER' | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;button mat-menu-item (click)="onClickAddCustomPrice()" *ngIf="userCanAdministerQuotes"&gt;
+        &lt;mat-icon&gt;monetization_on&lt;/mat-icon&gt;
+        &lt;span&gt;{{ 'QUOTE.ADD_CUSTOM_PRICE_TITLE' | translate }}&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/mat-menu&gt;
+  `
+})
+export class LineItemActionsComponent {
+  @Input() rightsReproduction: string;
+  @Input() hasAttributes: boolean;
+  @Input() otherProjects: any[];
+  @Input() userCanCreateSubclips: boolean;
+  @Input() userCanAdministerQuotes: boolean;
+  @Input() assetIsSubclipped: boolean;
+  @Input() quoteType: PurchaseType;
+  @Input() hasMultiplier: boolean;
+  @Input() hasNote: boolean;
+  @Output() showPricingDialog: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() remove: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() clone: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() moveTo: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() editMarkers: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() openCostMultiplierForm: EventEmitter&lt;null&gt; = new EventEmitter();
+  @Output() removeCostMultiplier: EventEmitter&lt;null&gt; = new EventEmitter();
+  @Output() addCustomPrice: EventEmitter&lt;null&gt; = new EventEmitter();
+  @Output() addNote: EventEmitter&lt;null&gt; = new EventEmitter();
+&nbsp;
+  public get displayPriceButton(): boolean {
+    return this.rightsReproduction === 'Rights Managed' &amp;&amp; !quotesWithoutPricing.includes(this.quoteType);
+  }
+&nbsp;
+  public get needsAttributes(): boolean {
+    return this.rightsReproduction === 'Rights Managed' &amp;&amp; !this.hasAttributes;
+  }
+&nbsp;
+  public get shouldShowSubclipButton(): boolean {
+    return this.userCanCreateSubclips &amp;&amp; this.otherProjectsExist;
+  }
+&nbsp;
+  public get otherProjectsExist(): boolean {
+    return this.otherProjects.length &gt; 0;
+  }
+&nbsp;
+  public get trStringForSubclipping(): string {
+    return this.assetIsSubclipped
+      ? 'COLLECTION.SHOW.ASSET_MORE_MENU.EDIT_SUBCLIPPING'
+      : 'COLLECTION.SHOW.ASSET_MORE_MENU.ADD_SUBCLIPPING';
+  }
+&nbsp;
+  public get trStringForCostMultiplier(): string {
+    return this.hasMultiplier
+      ? 'QUOTE.EDIT_MULTIPLIER_TITLE'
+      : 'QUOTE.ADD_MULTIPLIER_TITLE';
+  }
+&nbsp;
+  public get trStringForRightsPackage(): string {
+    return this.hasAttributes
+      ? 'QUOTE.EDIT_RIGHTS_PACKAGE_TITLE'
+      : 'QUOTE.ADD_RIGHTS_PACKAGE_TITLE';
+  }
+&nbsp;
+  public get showDeleteCostMultiplierBtn(): boolean {
+    return this.userCanAdministerQuotes &amp;&amp; this.hasMultiplier;
+  }
+&nbsp;
+  public onClickAddCustomPrice(): void {
+    this.addCustomPrice.emit();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get trStringForNoteButton(): string {</span>
+<span class="cstat-no" title="statement not covered" >    return this.hasNote ? 'QUOTE.EDIT_NOTE' : 'QUOTE.ADD_NOTE';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public openNotesForm(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.addNote.emit();</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

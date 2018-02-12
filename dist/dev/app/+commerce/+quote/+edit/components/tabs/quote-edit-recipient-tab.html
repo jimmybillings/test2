@@ -1,0 +1,59 @@
+<header flex="100" layout="row">
+  <h2 class="commerce-heading">{{'QUOTE.EDIT.RECIPIENT_TAB_PG_TITLE' | translate}}</h2>
+</header>
+<div layout="column" layout-gt-xs="row">
+  <section class="recipient-options-select" layout="column" flex="40" flex-lg="35" flex-gt-lg="30">
+    <wz-form-autocomplete-view *ngIf="user | async as user" flex="100"
+      #recipientForm
+      class="recipient"
+      autocomplete="off"
+      [ngClass]="{ 'is-empty' : !(!!user.id) }"
+      [items]="config.user"
+      [title]="'QUOTE.EDIT.RECIPIENT_TITLE'"
+      [matchOnProperty]="'emailAddress'"
+      [displayProperties]="user"
+      (formSubmit)="userSelect($event)">
+    </wz-form-autocomplete-view>
+    
+    <wz-form-autocomplete-view *ngIf="billingAccount | async as billingAccount" flex="100"
+      #billingAccountForm
+      class="billing-account"
+      autocomplete="off"
+      [ngClass]="{ 'is-empty' : !(!!billingAccount.id) }"
+      [items]="config.billingAccount"
+      [title]="'QUOTE.EDIT.BILLING_ACCOUNT_TITLE'"
+      [matchOnProperty]="'name'"
+      [displayProperties]="billingAccount"
+      (valueChange)="onEditableFieldChange($event)"
+      (formSubmit)="accountSelect($event)">
+    </wz-form-autocomplete-view>
+
+    <wz-form-picklist-component *ngIf="invoiceContact | async as invoiceContact" flex="100"
+      #invoiceContactform
+      class="invoice-contact"
+      autocomplete="off"
+      [items]="config.invoiceContact"
+      [title]="'QUOTE.EDIT.INVOICE_CONTACT_TITLE'"
+      [displayProperties]="invoiceContact"
+      (selectContact)="invoiceContactSelect($event)"
+      (checkboxChange)="onCheckboxChange($event)">
+    </wz-form-picklist-component>
+  </section>
+
+  <section class="creator-options-select" layout="column" flex="40" flex-lg="35" flex-gt-lg="30">
+    <wz-form *ngIf="(invoiceContact | async)"
+      #salesManagerForm
+      [items]="config.salesManager" 
+      [includeSubmit]="false"
+      (blur)=onBlur($event)>
+    </wz-form>
+    <button
+      [disabled]="!(allBillingSelectionComplete | async)"
+      (click)="goToNextTab()"
+      mat-raised-button
+      color="primary">
+      {{ 'QUOTE.EDIT.TO_CONFIRM_TAB_BTN' | translate }}
+    </button>
+  </section>
+  <section class="col-spacer" flex="none" flex-md="10" flex-lg="30" flex-gt-lg="40" show-gt-sm></section>
+</div>

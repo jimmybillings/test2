@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wazee-frame-formatter/time.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wazee-frame-formatter/</a> time.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.55% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.1% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>54/58</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4880×</span>
+<span class="cline-any cline-yes">4880×</span>
+<span class="cline-any cline-yes">4880×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4880×</span>
+<span class="cline-any cline-yes">4880×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5219×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">344×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">196×</span>
+<span class="cline-any cline-yes">196×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">200×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91×</span>
+<span class="cline-any cline-yes">91×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">145×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-yes">146×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">253×</span>
+<span class="cline-any cline-yes">253×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-yes">84×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">833×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export class Time {
+  private integralFramesPerSecond: number;
+  private _hours: number;
+  private _minutes: number;
+  private _seconds: number;
+  private _frames: number;
+&nbsp;
+  private readonly MINUTES_IN_AN_HOUR = 60;
+  private readonly SECONDS_IN_A_MINUTE = 60;
+  private readonly SECONDS_IN_AN_HOUR = this.SECONDS_IN_A_MINUTE * this.MINUTES_IN_AN_HOUR;
+&nbsp;
+  constructor(framesPerSecond: number) {
+    this.clear();
+    this.integralFramesPerSecond = Math.round(framesPerSecond);
+  }
+&nbsp;
+  public clear(): void {
+    this._hours = this._minutes = this._seconds = this._frames = 0;
+  };
+&nbsp;
+  public set frames(frames: number) {
+    this._frames = frames;
+  };
+&nbsp;
+  public get frames(): number {
+    this.rollComponentsIfNecessary();
+    return this._frames;
+  };
+&nbsp;
+  public addFrames(numberOfFrames: number): void {
+    this._frames += numberOfFrames;
+  };
+&nbsp;
+  public set seconds(seconds: number) {
+    this._seconds = seconds;
+  };
+&nbsp;
+  public get seconds(): number {
+    this.rollComponentsIfNecessary();
+    return this._seconds;
+  };
+&nbsp;
+  public set minutes(minutes: number) {
+    this._minutes = minutes;
+  };
+&nbsp;
+  public get minutes(): number {
+    this.rollComponentsIfNecessary();
+    return this._minutes;
+  };
+&nbsp;
+  public set hours(hours: number) {
+    this._hours = hours;
+  };
+&nbsp;
+  public get hours(): number {
+    this.rollComponentsIfNecessary();
+    return this._hours;
+  };
+&nbsp;
+  public hoursMultipleOf(value: number): boolean {
+    return (this._hours % value) === 0;
+  };
+&nbsp;
+  public minutesMultipleOf(value: number): boolean {
+    return (this._minutes % value) === 0;
+  };
+&nbsp;
+  public minutesOneOf(...minuteValues: number[]): boolean {
+    return minuteValues.some(value =&gt; value === this._minutes);
+  };
+&nbsp;
+  public asFrameNumber(): number {
+    return this.totalWholeSeconds() * this.integralFramesPerSecond + this._frames;
+  };
+&nbsp;
+  public totalWholeSeconds(): number {
+    this.rollComponentsIfNecessary();
+    return this._hours * this.SECONDS_IN_AN_HOUR + this._minutes * this.SECONDS_IN_A_MINUTE + this._seconds;
+  };
+&nbsp;
+  private rollComponentsIfNecessary(): void {
+    while (this._frames &lt; 0) {
+      this._frames += this.integralFramesPerSecond;
+      this._seconds -= 1;
+    }
+&nbsp;
+    while (this._seconds &lt; 0) {
+<span class="cstat-no" title="statement not covered" >      this._seconds += this.SECONDS_IN_A_MINUTE;</span>
+<span class="cstat-no" title="statement not covered" >      this._minutes -= 1;</span>
+    }
+&nbsp;
+    while (this._minutes &lt; 0) {
+<span class="cstat-no" title="statement not covered" >      this._minutes += this.MINUTES_IN_AN_HOUR;</span>
+<span class="cstat-no" title="statement not covered" >      this._hours -= 1;</span>
+    }
+&nbsp;
+    if (this._frames &gt;= this.integralFramesPerSecond) {
+      this._seconds += Math.floor(this._frames / this.integralFramesPerSecond);
+      this._frames %= this.integralFramesPerSecond;
+    }
+&nbsp;
+    if (this._seconds &gt;= this.SECONDS_IN_A_MINUTE) {
+      this._minutes += Math.floor(this._seconds / this.SECONDS_IN_A_MINUTE);
+      this._seconds %= this.SECONDS_IN_A_MINUTE;
+    }
+&nbsp;
+    if (this._minutes &gt;= this.MINUTES_IN_AN_HOUR) {
+      this._hours += Math.floor(this._minutes / this.MINUTES_IN_AN_HOUR);
+      this._minutes %= this.MINUTES_IN_AN_HOUR;
+    }
+  };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

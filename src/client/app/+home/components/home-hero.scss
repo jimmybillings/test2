@@ -1,0 +1,113 @@
+home-hero { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 56.25% 0 0 0;
+  &.hero-v {
+    background-color: mat-color($mat-grey, 900, .9);
+  }
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    padding-top: 104.25%;
+  }
+  @media screen and (max-width: $layout-breakpoint-sm) and (min-width: $layout-breakpoint-xs)  {
+    padding-top: 76.25%;
+  }
+  .hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: $white-87-opacity;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    & > div > div {
+      margin-top: 7.3%;
+      @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+        margin-top: -5%;
+      }
+      @media screen and (max-width: $layout-breakpoint-sm) and (min-width: $layout-breakpoint-xs)  {
+        margin-top: 4%;
+      }
+    }
+    .logo-wrapper {
+      height: 250px;
+      width: 100%;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        height: 162px;
+      }
+      .logo {
+        background-position: bottom center;
+        background-repeat:no-repeat;
+        background-size: 255px;
+        height: 255px;
+        opacity: .3;
+        @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+          background-size: 145px;
+          height: 174px;
+        }
+      }
+    }
+    .mat-headline {
+      line-height: 1.4;
+      margin-top: 1.3em;
+      margin-bottom: .9em;
+    }
+  }
+  .hero-video-container {
+    background: mat-color($mat-grey, 900, .9);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    & > div {
+      opacity: 0;
+    }
+    &.fade-in > div {
+      opacity: 1;
+      transition: opacity 2s ease-out;
+    }
+  }
+  &.hero-v > div > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+      padding-top: 48%;
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: $layout-breakpoint-xs)  {
+      padding-top: 20%;
+    }
+  }
+  &.hero-i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-image-container {
+    background: mat-color($mat-grey, 900, .9);
+    .hero-image {
+      background-position: 0 0, center center;
+      background-repeat: no-repeat, no-repeat;
+      background-size: cover, cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.jw-icon.jw-watermark:before {
+    display:none;
+}

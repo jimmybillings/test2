@@ -1,0 +1,57 @@
+@mixin wz-commerce-list-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+
+  .commerce-list {
+    li.item {
+      background-color: rgba(mat-color($background, card), .65);
+      color: rgba(mat-color($foreground, text), .7);
+      border: 1px solid rgba(mat-color($background, card), .01);
+      // &:hover {
+      //   background-color: rgba(mat-color($background, card), .95);
+      // }
+      &.focused {
+        background-color: rgba(mat-color($background, card), 1);
+        border: 1px solid rgba(mat-color($primary, default), .75);
+      }
+      .details {
+        background-color: rgba(mat-color($primary, default), .9);
+        color: mat-color($primary, default-contrast);
+      }
+      .total {
+        .indicate-refund {
+          color: mat-color($warn, darker);
+        }
+      }
+      .asset-count {
+        background-color: rgba(mat-color($foreground, secondary-text), .4);
+        .count {
+          @include text-contrast(mat-color($foreground, secondary-text));
+        }
+      }
+      .divider {
+        box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+      }
+    }
+  }
+  .status {
+    &.pending {
+      color: mat-color($mat-orange, 700);
+    }
+    &.active {
+      color: mat-color($mat-green, 700);
+    }
+    &.expired {
+      color: mat-color($warn, darker);
+    }
+    &.ordered {
+      color: mat-color($mat-blue, 700);
+    }
+    &.cancelled {
+      color: mat-color($foreground, disabled-text);
+    }
+  }
+}

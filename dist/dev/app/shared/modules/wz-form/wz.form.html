@@ -1,0 +1,379 @@
+<form
+  layout="column"
+  [formGroup]="form"
+  novalidate
+  class="mat-inline-form"
+  autocomplete="{{autocomplete}}"
+  (ngSubmit)="onSubmit()">
+	<div *ngFor="let field of items; let i=index">
+		<!--
+        START: FORM INPUT FOR TEXT, PASSWORD, EMAIL, DATE
+      -->
+    <mat-input-container *ngIf="showDefaultInputFor(field)">
+      <input
+        matInput
+        class="mat-block"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        placeholder="{{field.label | translate}}"
+        type="{{field.type}}"
+        formControlName="{{field.name}}"
+        [required]="isRequiredField(field)"
+        id="{{field.name}}"
+        (keyup)="onKeyUp()"
+        (blur)="onBlur()">
+
+			<!--secondary field explainations (hints) there are two places for these below the field at the start and end-->
+			<mat-hint *ngIf="(form.controls[field.name].valid || form.controls[field.name].pristine) && field.hintTextStart" align="start">
+				{{ field.hintTextStart | translate }}
+			</mat-hint>
+			<mat-hint *ngIf="field.hintTextEnd && !form.controls[field.name].errors" align="end">
+				{{ field.hintTextEnd | translate }}
+			</mat-hint>
+
+			<mat-error *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine" [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt"
+        align="start">
+				<span *ngIf="shouldShowRequiredError(field)">
+          {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+        </span>
+				<span *ngIf="form.controls[field.name].hasError('minlength')">
+          {{ 'ERRORS.MIN_LENGTH_REQUIRED' | translate:{charLength:form.controls[field.name]._errors.minlength.requiredLength} }}
+        </span>
+				<span *ngIf="shouldShowEmailError(field)">
+          {{ 'ERRORS.VALID_EMAIL_REQUIRED' | translate }}
+        </span>
+				<span *ngIf="form.controls[field.name].hasError('startsWithNumber')">
+          {{ 'ERRORS.NAME_ALREADY_TAKEN' | translate:{fieldName:field.label | translate} }}
+        </span>
+				<span *ngIf="form.controls[field.name].hasError('collectionNameTaken')">
+          Name is already taken
+        </span>
+				<span *ngIf="form.controls[field.name].hasError('serverError')">
+          {{ 'ERRORS.'+form.controls[field.name].errors.serverError | translate }}
+        </span>
+			</mat-error>
+		</mat-input-container>
+		<!--
+        END: FORM INPUT FOR TEXT, PASSWORD, EMAIL, DATE
+      -->
+
+    <!--    
+      START: FORM INPUT FOR NUMBER
+    -->
+    <mat-input-container *ngIf="field.type === 'number'">
+      <input
+        matInput
+        type="number"
+        class="mat-block"
+        name={{field.name}}
+        id="{{field.name}}"
+        min="{{field.min}}"
+        max="{{field.max}}"
+        formControlName="{{field.name}}"
+        placeholder="{{field.label | translate}}"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        [required]="isRequiredField(field)"
+        (change)="onKeyUp()"
+        (blur)="onBlur()">
+      <mat-error
+        *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine"
+        [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt"
+				align="start">
+        <span *ngIf="form.controls[field.name].hasError('required')">
+          {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+        </span>
+        <span *ngIf="form.controls[field.name].hasError('tooLow')">
+          {{ 'ERRORS.NUMBER_TOO_LOW' | translate:{min:field.min} }}
+        </span>
+      </mat-error>
+    </mat-input-container>
+    <!--
+      END: FORM INPUT FOR NUMBER
+    -->
+
+		<!--
+        START: FORM INPUT FOR wzdate
+      -->
+    <mat-form-field *ngIf="(field.type == 'wzdate')"> 
+      <input 
+        matInput 
+        id="{{field.name}}"
+        type="{{field.type}}"
+        name="{{field.name}}" 
+        placeholder="{{field.label | translate}}"
+        formControlName="{{field.name}}"
+        [required]="isRequiredField(field)"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        [min]="calculateDateFor(field.minimum)" 
+        [max]="calculateDateFor(field.maximum)"
+        [matDatepicker]="datePicker" 
+        readonly="true" 
+        (click)="datePicker.open()" 
+        (blur)="onBlur()"
+        >
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+		<!--
+        END: FORM INPUT FOR wzdate
+      -->
+
+		<!--
+        START: FORM INPUT FOR dollars
+      -->
+    <mat-input-container *ngIf="(field.type == 'dollars')">
+      <input matInput
+      type="text"
+      class="mat-block"
+      name="{{field.name}}"
+      [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+      placeholder="{{field.label | translate}}"
+      formControlName="{{field.name}}"
+      [required]="isRequiredField(field)"
+      id="{{field.name}}"
+      (input)="onDollarsInput($event, field)"
+      >
+    </mat-input-container>
+		<!--
+        END: FORM INPUT FOR dollars
+      -->
+
+		<!--
+        START: FORM INPUT FOR textarea
+      -->
+    <mat-input-container *ngIf="(field.type == 'textarea')">
+      <textarea
+        matInput
+        name="{{field.name}}"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        placeholder="{{field.label | translate}}"
+        formControlName="{{field.name}}"
+        [required]="isRequiredField(field)"
+        mdTextareaAutosize
+        id="{{field.name}}"
+        (blur)="onBlur()">
+      </textarea>
+      <mat-hint
+        *ngIf="(form.controls[field.name].valid || form.controls[field.name].pristine) && field.hintTextStart"
+        align="start">
+        {{ field.hintTextStart | translate }}
+      </mat-hint>
+      <mat-hint *ngIf="field.hintTextEnd && !form.controls[field.name].errors" align="end">
+        {{ field.hintTextEnd | translate }}
+      </mat-hint>
+      <mat-error *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine" [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt">
+        <span *ngIf="form.controls[field.name].hasError('required')">
+          {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+        </span>
+      </mat-error>
+    </mat-input-container>
+		<!--
+        END: FORM INPUT FOR textarea
+      -->
+
+      <!--
+        START: FORM CONFIRM PASSWORD DOUBLE FIELD
+      -->
+      <mat-input-container *ngIf="field.name == 'confirmPassword'">
+        <input matInput
+        class="mat-block"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        placeholder="{{field.label | translate}}"
+        type="password"
+        formControlName="{{field.name}}"
+        id="{{field.name}}"
+        validateEqual="newPassword">
+
+        <!--secondary field explainations (hints) there are two places for these below the field at the start and end-->
+        <mat-hint *ngIf="(form.controls[field.name].valid || form.controls[field.name].pristine) && field.hintTextStart" align="start">
+          {{ field.hintTextStart | translate }}
+        </mat-hint>
+        <mat-hint *ngIf="field.hintTextEnd && !form.controls[field.name].errors" align="end">
+          {{ field.hintTextEnd | translate }}
+        </mat-hint>
+
+        
+        <mat-error *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine"
+          [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt">
+            <span *ngIf="form.controls[field.name].hasError('required')">
+              {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+            </span>
+            <span *ngIf="form.controls[field.name].hasError('minlength')">
+              {{ 'ERRORS.MIN_LENGTH_REQUIRED' | translate:{charLength:form.controls[field.name]._errors.minlength.requiredLength} }}
+            </span>
+            <span *ngIf="form.controls[field.name].hasError('validateEqual') && !form.controls[field.name].hasError('minlength')">
+              {{ 'ERRORS.PASSWORDS_NO_MATCH' | translate }}
+            </span>    
+            <span *ngIf="form.controls[field.name].hasError('serverError')">
+              {{ 'ERRORS.'+form.controls[field.name].errors.serverError | translate }}
+            </span>  
+        </mat-error>
+      </mat-input-container>
+
+      <mat-input-container *ngIf="field.name == 'newPassword'">
+        <input matInput
+        class="mat-block"
+        [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+        placeholder="{{field.label | translate}}"
+        type="password"
+        formControlName="{{field.name}}"
+        id="{{field.name}}"
+        validateEqual="confirmPassword"
+        reverse="true">
+        
+
+        <!--secondary field explainations (hints) there are two places for these below the field at the start and end-->
+        <mat-hint *ngIf="(form.controls[field.name].valid || form.controls[field.name].pristine) && field.hintTextStart" align="start">
+          {{ field.hintTextStart | translate }}
+        </mat-hint>
+        <mat-hint *ngIf="field.hintTextEnd && !form.controls[field.name].errors" align="end">
+          {{ field.hintTextEnd | translate }}
+        </mat-hint>
+
+        <mat-error *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine"
+          [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt">
+            <span *ngIf="form.controls[field.name].hasError('required')">
+              {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+            </span>
+            <span *ngIf="form.controls[field.name].hasError('minlength')">
+              {{ 'ERRORS.MIN_LENGTH_REQUIRED' | translate:{charLength:form.controls[field.name]._errors.minlength.requiredLength} }}
+            </span>
+            <span *ngIf="form.controls[field.name].hasError('serverError')">
+              {{ 'ERRORS.'+form.controls[field.name].errors.serverError | translate }}
+            </span>   
+        </mat-error>
+      </mat-input-container>
+      <!--
+        END: FORM CONFIRM PASSWORD DOUBLE FIELD
+      -->
+
+      <!--
+        START: FORM SELECT
+      -->
+		<div *ngIf="field.type == 'select'">
+			<!-- <div class="mat-group"> -->
+      <mat-form-field>
+        <mat-select
+          [value]="field.value"
+          class="mat-block"
+          [ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+          placeholder="{{field.label | translate}}"
+          formControlName="{{field.name}}"
+          [required]="isRequiredField(field)"
+          id="{{field.name}}"
+          (change)="onSelectChange($event, field)">
+          <mat-option *ngFor="let option of parseOptions(field.options)" [value]="option">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+			<!-- </div> -->
+		</div>
+		<!--
+        END: FORM SELECT
+      -->
+
+		<!--
+        START: FORM RADIO BUTTONS
+      -->
+		<mat-radio-group *ngIf="field.type == 'radio'" layout="row" formControlName="{{field.name}}">
+			<mat-radio-button style="margin-right: 1rem;" *ngFor="let option of parseOptions(field.options)" [checked]="parseOptions(field.options)[0]==option"
+				[value]="option" class="mat-primary" (click)="radioSelect(field.name, option)">
+				{{option}}
+			</mat-radio-button>
+		</mat-radio-group>
+		<!--
+        END: FORM RADIO BUTTONS
+      -->
+
+		<!--
+        START: FORM CHECKBOX
+      -->
+		<span *ngIf="field.type == 'checkbox'" layout="row" layout-align="start center">
+			<mat-checkbox layout="row" formControlName="{{field.name}}" [checked]="field.defaultChecked" color="primary" [required]="isRequiredField(field)">
+				{{ field.label | translate }}&nbsp;
+
+				<mat-error *ngIf="!form.controls[field.name].valid && !form.controls[field.name].pristine" [hidden]="form.controls[field.name].valid || form.controls[field.name].pristine && !submitAttempt">
+					<span *ngIf="form.controls[field.name].hasError('mustBeCheckedError')">
+						{{ 'ERRORS.AGREE_TO_TOS' | translate }}
+					</span>
+				</mat-error>
+			</mat-checkbox>
+			<a *ngIf="field.name == 'tos'" class="view-tos" (click)="onAction.emit(field)">{{ field.link | translate }}</a>
+		</span>
+		<!--
+        END: FORM CHECKBOX
+      -->
+
+    <!-- 
+      START: FORM SLIDE TOGGLE
+    -->
+    <span *ngIf="field.type == 'slideToggle'" layout="row" layout-align="start center">
+      <mat-slide-toggle 
+        layout="row" 
+        formControlName="{{field.name}}" 
+        color="primary" 
+        [required]="isRequiredField(field)">
+        {{ field.label | translate }}
+      </mat-slide-toggle>
+    </span>
+    <!--
+        END: FORM SLIDE TOGGLE
+    -->
+
+      <!--
+        START: CUSTOM FOR ELEMENT FOR CREATING TAGS
+      -->
+		<wz-input-tags *ngIf="field.type == 'tags'" #tags [tags]="field.tags" [fControl]="form.controls[field.name]">
+			<input type="hidden" formControlName="{{field.name}}">
+      <mat-input-container>
+        <input matInput placeholder="{{field.label | translate}}" (keydown)="tags.submit($event)" id="{{field.name}}">
+      </mat-input-container>
+		</wz-input-tags>
+		<!--
+        END: CUSTOM FOR ELEMENT FOR CREATING TAGS
+      -->
+
+		<!--
+        START: CUSTOM FOR ELEMENT FOR SUGGESTIONS BASED ON TEXT INPUT
+      -->
+		<wz-input-suggestions
+      *ngIf="field.type == 'suggestions'"
+      #suggestions
+      [fControl]="form.controls[field.name]"
+      [rawField]="field">
+			<mat-input-container>
+        <input matInput placeholder="{{field.label | translate}}" 
+				(keydown)="suggestions.inputKeyDown($event)"
+				[ngClass]="{'show-errors': hasErrorType(form.controls[field.name])}"
+				formControlName="{{field.name}}"
+				type="text"
+				[required]="isRequiredField(field)">
+				<mat-error *ngIf="hasErrorType(form.controls[field.name])">
+          <span *ngIf="form.controls[field.name].hasError('required')">
+            {{ 'ERRORS.MISSING_REQUIRED_FIELD' | translate:{fieldName:field.label | translate} }}
+          </span>
+          <span *ngIf="form.controls[field.name].hasError('serverError')">
+            {{ 'ERRORS.'+form.controls[field.name].errors.serverError | translate }}
+          </span>
+				</mat-error>
+			</mat-input-container>
+		</wz-input-suggestions>
+	</div>
+	<!--
+      END: CUSTOM FOR ELEMENT FOR SUGGESTIONS BASED ON TEXT INPUT
+    -->
+
+	<!--
+      SHOW THE REQUIRED LEGEND IF FORM HAS AT LEAST ONE REQUIRED FIELD.
+    -->
+	<div class="indicate-required" *ngIf="hasRequiredFields(items) && includeSubmit">
+		<span>{{ 'ERRORS.INDICATES_REQUIRED_FIELD' | translate }}</span>
+	</div>
+
+	<mat-card-actions layout="row" layout-align="end center" *ngIf="showSubmitAndCancel">
+		<button mat-button type="reset" color="primary" (click)="formCancel.emit($event)">{{cancelLabel | translate}}</button>
+		<button mat-button type="submit" color="primary">{{submitLabel | translate}}</button>
+	</mat-card-actions>
+
+	<mat-card-actions layout="row" layout-align="center center" *ngIf="showSubmit">
+		<button mat-raised-button type="submit" color="primary" class="conversion">{{submitLabel | translate}}</button>
+  </mat-card-actions>
+</form>

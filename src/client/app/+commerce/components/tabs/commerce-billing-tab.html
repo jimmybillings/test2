@@ -1,0 +1,175 @@
+<div class="commerce-billing" layout="row" layout-align="center start">
+  <div *ngIf="showAddAddressForm"
+    flex-gt-lg="30"
+    flex-gt-md="35"
+    flex-md="40"
+    flex-gt-sm="55"
+    flex-gt-xs="60"
+    flex="100">
+    <mat-card class="billing-card wz-form-card" *ngIf="loaded">
+      <mat-card-content>
+        <wz-address-form-component
+          [loaded]="loaded"
+          [title]="createFormTitle('user')"
+          [address]="(orderInProgress | async).addresses[0]"
+          (onSaveAddress)="addUserAddress($event)">
+        </wz-address-form-component>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="showEditAddressForm"
+    flex-gt-lg="30"
+    flex-gt-md="35"
+    flex-md="40"
+    flex-gt-sm="55"
+    flex-gt-xs="60"
+    flex="100">
+    <mat-card class="billing-card wz-form-card">
+      <mat-card-content>
+        <wz-address-form-component
+          [loaded]="loaded"
+          [title]="'CART.BILLING.COMPLETE_ADDRESS_ERROR'"
+          [address]="(orderInProgress | async).addresses[0].address"
+          (onSaveAddress)="addUserAddress($event)">
+        </wz-address-form-component>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="!showAddAddressForm && !showEditAddressForm" flex="100" flex-gt-lg="85" class="addresses">
+    <header layout="column" layout-align="start">
+      <h2 class="commerce-heading">{{ 'CART.BILLING.SELECT_BILLING_ADDRESS' | translate }}</h2>
+    </header>
+
+    <ng-container *ngIf="(quoteInvoiceContactInfo | async) as a">
+      <ul layout="column" layout-align="start" layout-gt-xs="row">
+        <li class="billing-invoice-info">
+          <section layout="column">
+            <ng-container *ngIf="(quoteBillingAccountInfo | async) as account">
+              <header>
+                <span>{{ 'QUOTE.EDIT.BILLING_ACCOUNT_TITLE' | translate }}</span>
+                <span>{{ account.name }}</span>
+              </header>
+            </ng-container>
+            <ng-container *ngIf="a.billingInfo.address">
+              <header>
+                <span>{{ 'QUOTE.EDIT.INVOICE_CONTACT_TITLE' | translate }}</span>
+                <span>{{ a.firstName }} {{ a.lastName }}</span>
+              </header>
+              <span class="email">
+                <a class="mailto" href="mailto:{{ a.email }}">
+                  {{ a.email }}
+                </a>
+              </span>
+              <address>
+                <span class="line-1">
+                  {{ lineOneFor(a.billingInfo) }}
+                </span>
+                <span class="line-2">
+                  {{ cityFor(a.billingInfo) }}
+                  {{ stateFor(a.billingInfo) }}
+                  {{ zipcodeFor(a.billingInfo) }}
+                  {{ countryFor(a.billingInfo) }}
+                </span>
+                <span class="phone">{{ phoneFor(a.billingInfo) }}</span>
+                <span class="address-error" *ngIf="displayAddressErrors(a.addressEntityId)">
+                  {{
+                    'CART.BILLING.ADDRESS_ERROR_WARN' | translate:{addressKeys: formatAddressErrors(a) }
+                  }}
+                </span>
+              </address>
+            </ng-container>
+            <address *ngIf="!a.billingInfo.address">
+              <span>{{ 'CART.BILLING.EMPTY_ADDRESS' | translate:{type: a.type} }}</span>
+            </address>
+            <nav layout="column" class="actions">
+              <div class="divider"></div>
+              <div layout="row" layout-align="end">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="formatAndSelectAddress(a)">
+                  {{ 'CART.BILLING.SELECT_ADDRESS_BTN' | translate }}
+                </button>
+              </div>
+            </nav>
+          </section>
+        </li>
+      </ul>
+    </ng-container>
+
+    <ng-container *ngIf="(orderInProgress | async).addresses as addresses">
+      <ul layout="column" layout-align="start" layout-gt-xs="row">
+        <li *ngFor="let address of addresses" class="billing-address">
+          <section [ngClass]="{'active': address === (orderInProgress | async).selectedAddress}" layout="column">
+            <header>
+              <span class="{{address.type | lowercase}}">{{ typeFor(address) }}</span>
+              <span>{{ nameFor(address) }}</span>
+            </header>
+            <address *ngIf="address.address">
+              <span class="line-1">
+                {{ lineOneFor(address) }}
+              </span>
+              <span class="line-2">
+                {{ cityFor(address) }}
+                {{ stateFor(address) }}
+                {{ zipcodeFor(address) }}
+                {{ countryFor(address) }}
+              </span>
+              <span class="phone">{{ phoneFor(address) }}</span>
+              <span class="address-error" *ngIf="displayAddressErrors(address.addressEntityId)">
+                {{
+                  'CART.BILLING.ADDRESS_ERROR_WARN' | translate:{addressKeys: formatAddressErrors(address) }
+                }}
+              </span>
+            </address>
+            <address *ngIf="!address.address">
+              <span>{{ 'CART.BILLING.EMPTY_ADDRESS' | translate:{type: address.type} }}</span>
+            </address>
+            <nav layout="column" class="actions">
+              <div class="divider"></div>
+              <div layout="row" layout-align="end">
+                <button
+                  *ngIf="userCan.editAddress(address)"
+                  (click)="openFormFor('user', 'edit', address)"
+                  title="{{ 'CART.BILLING.EDIT_USER_ADDRESS_TITLE' | translate }}"
+                  mat-button class="is-outlined" color="primary" >
+                    {{ 'CART.BILLING.EDIT_ADDRESS_BTN' | translate }}
+                </button>
+                <button
+                  *ngIf="userCan.addAddress(address)"
+                  (click)="openFormFor('user', 'create')"
+                  title="{{ 'CART.BILLING.ADD_USER_ADDRESS_TITLE' | translate }}"
+                  mat-button class="is-outlined" color="primary" >
+                    {{ 'CART.BILLING.ADD_ADDRESS_BTN' | translate }}
+                </button>
+                <button
+                  *ngIf="userCan.editAccountAddress(address)"
+                  (click)="openFormFor('account', 'edit', address)"
+                  title="{{ 'CART.BILLING.EDIT_ACCOUNT_ADDRESS_TITLE' | translate }}"
+                  mat-button class="is-outlined" color="primary" >
+                    {{ 'CART.BILLING.EDIT_ADDRESS_BTN' | translate }}
+                </button>
+                <button
+                  *ngIf="userCan.addAccountAddress(address)"
+                  (click)="openFormFor('account', 'create', address)"
+                  title="{{ 'CART.BILLING.ADD_ACCOUNT_ADDRESS_TITLE' | translate }}"
+                  mat-button class="is-outlined" color="primary" >
+                    {{ 'CART.BILLING.ADD_ADDRESS_BTN' | translate }}
+                </button>
+                <button
+                  mat-raised-button
+                  color="primary"
+                  (click)="selectAddress(address)"
+                  [disabled]="disableSelectBtnFor(address)">
+                  {{ 'CART.BILLING.SELECT_ADDRESS_BTN' | translate }}
+                </button>
+              </div>
+            </nav>
+          </section>
+        </li>
+      </ul>
+    </ng-container>
+  </div>
+</div>

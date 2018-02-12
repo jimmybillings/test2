@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Config = JSON.parse('{"API":"https://demo.com","ENV":"DEV"}');
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvY29uZmlnL2Vudi5jb25maWcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFPYSxRQUFBLE1BQU0sR0FBYyxJQUFJLENBQUMsS0FBSyxDQUFDLG1CQUFtQixDQUFDLENBQUMiLCJmaWxlIjoiYXBwL3NoYXJlZC9jb25maWcvZW52LmNvbmZpZy5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vIEZlZWwgZnJlZSB0byBleHRlbmQgdGhpcyBpbnRlcmZhY2Vcbi8vIGRlcGVuZGluZyBvbiB5b3VyIGFwcCBzcGVjaWZpYyBjb25maWcuXG5leHBvcnQgaW50ZXJmYWNlIEVudkNvbmZpZyB7XG4gIEFQST86IHN0cmluZztcbiAgRU5WPzogc3RyaW5nO1xufVxuXG5leHBvcnQgY29uc3QgQ29uZmlnOiBFbnZDb25maWcgPSBKU09OLnBhcnNlKCc8JT0gRU5WX0NPTkZJRyAlPicpO1xuIl19

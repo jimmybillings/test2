@@ -1,0 +1,17 @@
+@mixin wz-home-hero-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  home-hero { 
+    .logo-wrapper {
+      .logo {
+        background-image: url($logo-home);
+      }
+    }
+    .hero {
+    background-image:
+      linear-gradient( rgba(mat-color($foreground, text), .55), rgba(mat-color($foreground, text), .45));
+    }
+    .hero-image {
+      background-image: url($bk-img-home);
+    }
+  }
+}

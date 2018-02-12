@@ -1,0 +1,23 @@
+  <asset-detail #target
+    [userCan]="userCan"
+    [asset]="asset"
+    [activeCollection]="activeCollection | async"
+    [usagePrice]="priceForDetails | async"
+    [window]="window.nativeWindow"
+    [searchContext]="searchContextState"
+    [assetMatchesCartAsset]="assetMatchesCartAsset"
+    [commentParentObject]="commentParentObject"
+    [commentFormConfig]="commentFormConfig"
+    [assetIsShared]="isShared"
+    (addToCart)="addAssetToCart($event)"
+    (getPriceAttributes)="getPricingAttributes($event)"
+    (onPreviousPage)="previousPage()"
+    (markersChange)="onMarkersChange($event)"
+    (updateAssetLineItem)="onUpdateAssetLineItem()"
+    (createShareDialog)="onCreateShareDialog($event)"
+    (onAddtoDifferentCollection)="addToDifferentCollection()">
+  </asset-detail>
+  <asset-data
+    [asset]="asset">
+  </asset-data>
+

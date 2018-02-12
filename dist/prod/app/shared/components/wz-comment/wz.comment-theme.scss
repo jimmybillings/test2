@@ -1,0 +1,45 @@
+@mixin wz-comment-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  .comments-section {
+    background-color: mat-color($background, card);
+  }
+
+  wz-comment .wz-comments {
+    .comments {
+      border-style: solid;
+      border-color: mat-color($foreground, divider);
+      color: mat-color($mat-grey, 700);
+      .comment {
+        .comment-head {
+          border-bottom: 1px solid mat-color($foreground, divider);
+          .avatar {
+            background-color: mat-color($background, card);
+            strong {
+              color: mat-color($foreground, text, .4);
+              font-weight: 200;
+            }
+          }
+        }
+        &.odd {
+          background-color: mat-color($mat-grey, 400, .13);
+          .avatar {
+            background-color: mat-color($background, status-bar, .8);
+          }
+        }
+        &.even {
+          background-color: mat-color($primary, darker, .15);
+        }
+      }
+    }
+  }
+  wz-comment > section > header {
+    color: mat-color($foreground, text);
+    background-color: mat-color($background, card);
+    .mat-display-1 {
+      color: mat-color($foreground, text, .7);
+    }
+  }
+}

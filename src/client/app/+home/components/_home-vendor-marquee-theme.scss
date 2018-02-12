@@ -1,0 +1,8 @@
+
+@mixin wz-home-vendor-theme($theme) {
+  home-vendor-marquee {
+      .vendor-marquee {
+        background: mat-color($mat-grey, 200, .8) url('assets/img/bk/tex/bktx_contour_lines_light.png');
+    }
+  }
+}

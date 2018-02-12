@@ -1,0 +1,33 @@
+<section class="login hero" #target *ngIf="config">
+  <div *ngIf="displayWelcomeMessage" layout="row" mat-scroll-y="" layout-align="center center">
+    <div flex-gt-md="45" flex-gt-sm="75" flex="95" class="user-message">
+      <p class="mat-headline">{{ 'LOGIN.NEW_USER' | translate }}</p>
+    </div> 
+  </div>
+  <div *ngIf="displayErrorMessage" layout="row" mat-scroll-y="" layout-align="center center">
+    <div flex-gt-md="45" flex-gt-sm="75" flex="95" class="user-message">
+      <p class="mat-headline">{{ 'NOTIFICATION.REQUIRE_LOGIN' | translate }}</p>
+    </div> 
+  </div>
+  <div layout="row" mat-scroll-y="" layout-align="center start">
+    <div flex-gt-lg="25" flex-gt-md="30" flex-md="40" flex-gt-sm="55" flex-gt-xs="60" flex="90">
+      <mat-card class="wz-form-card">
+        <mat-card-header>
+          <!--<div class="logo-wrapper">
+            <div class="logo"></div>
+          </div>-->
+        </mat-card-header>
+        <mat-card-title>
+          {{ 'LOGIN.TITLE' | translate }}
+        </mat-card-title>
+        <mat-card-content>
+          <wz-form [items]="config.form.items" submitLabel="LOGIN.FORM.SUBMIT_LABEL" (formSubmit)="onSubmit($event)"></wz-form>
+          <div layout="column" layout-align="center center" class="mat-body-2">
+            <a mat-button layout="row" flex [routerLink]="['/user/forgot-password']" color="primary">{{ 'LOGIN.FORGOT_PASSWORD' | translate }}</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <div mat-theme="docs-dark" layout="column" layout-align="start center" layout-wrap=""><span class="mat-title">{{'LOGIN.GET_ACCOUNT' | translate }} <a mat-button [routerLink]="['/user/register']" color="accent">{{'LOGIN.SIGN_UP' | translate }}</a></span></div>
+    </div>
+  </div>
+</section>

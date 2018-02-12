@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/pricing/pricing.actions.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/pricing/</a> pricing.actions.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>119/119</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>37/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>93/93</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Action } from '@ngrx/store';
+&nbsp;
+import { ApiErrorResponse } from '../../shared/interfaces/api.interface';
+import { PriceAttribute } from '../../shared/interfaces/commerce.interface';
+import { Pojo, SelectedPriceAttribute } from '../../shared/interfaces/common.interface';
+import { DefaultComponentOptions } from '../../shared/modules/wz-dialog/interfaces/wz.dialog.interface';
+import * as SubclipMarkersInterface from '../../shared/interfaces/subclip-markers';
+&nbsp;
+export class ActionFactory {
+  public resetPricing(): ResetPricing {
+    return new ResetPricing();
+  }
+&nbsp;
+  public setPriceForDetails(price: number): SetPriceForDetails {
+    return new SetPriceForDetails(price);
+  }
+&nbsp;
+  public setPriceForDialog(price: number): SetPriceForDialog {
+    return new SetPriceForDialog(price);
+  }
+&nbsp;
+  public setAppliedAttributes(appliedAttributes: SelectedPriceAttribute[]): SetAppliedAttributes {
+    return new SetAppliedAttributes(appliedAttributes);
+  }
+&nbsp;
+  public initializePricing(rightsReproduction: string, dialogOptions: DefaultComponentOptions): InitializePricing {
+    return new InitializePricing(rightsReproduction, dialogOptions);
+  }
+&nbsp;
+  public calculatePrice(
+    selectedAttributes: Pojo,
+    assetId: number,
+    subclipMarkers: SubclipMarkersInterface.SubclipMarkers
+  ): CalculatePrice {
+    return new CalculatePrice(selectedAttributes, assetId, subclipMarkers);
+  }
+}
+&nbsp;
+export class InternalActionFactory extends ActionFactory {
+  public getAttributes(
+    rightsReproduction: string,
+    dialogOptions: DefaultComponentOptions
+  ): GetAttributes {
+    return new GetAttributes(rightsReproduction, dialogOptions);
+  }
+&nbsp;
+  public openDialog(dialogOptions: DefaultComponentOptions): OpenDialog {
+    return new OpenDialog(dialogOptions);
+  }
+&nbsp;
+  public getAttributesSuccess(
+    attributes: PriceAttribute[],
+    rightsReproduction: string,
+    dialogOptions: DefaultComponentOptions
+  ): GetAttributesSuccess {
+    return new GetAttributesSuccess(attributes, rightsReproduction, dialogOptions);
+  }
+&nbsp;
+  public getAttributesFailure(error: ApiErrorResponse): GetAttributesFailure {
+    return new GetAttributesFailure(error);
+  }
+&nbsp;
+  public calculatePriceSuccess(price: number): CalculatePriceSuccess {
+    return new CalculatePriceSuccess(price);
+  }
+&nbsp;
+  public calculatePriceFailure(error: ApiErrorResponse): CalculatePriceFailure {
+    return new CalculatePriceFailure(error);
+  }
+}
+&nbsp;
+export class GetAttributes implements Action {
+  public static readonly Type = '[Pricing] Get Attributes';
+  public readonly type = GetAttributes.Type;
+  constructor(public readonly rightsReproduction: string, public readonly dialogOptions: DefaultComponentOptions) { }
+}
+&nbsp;
+export class GetAttributesSuccess implements Action {
+  public static readonly Type = '[Pricing] Get Attributes Success';
+  public readonly type = GetAttributesSuccess.Type;
+  constructor(
+    public readonly attributes: PriceAttribute[],
+    public readonly rightsReproduction: string,
+    public readonly dialogOptions: DefaultComponentOptions
+  ) { }
+}
+&nbsp;
+export class GetAttributesFailure implements Action {
+  public static readonly Type = '[Pricing] Get Attributes Failure';
+  public readonly type = GetAttributesFailure.Type;
+  constructor(public readonly error: ApiErrorResponse) { }
+}
+&nbsp;
+&nbsp;
+export class ResetPricing implements Action {
+  public static readonly Type = '[Pricing] Reset Pricing';
+  public readonly type = ResetPricing.Type;
+}
+&nbsp;
+export class SetPriceForDetails implements Action {
+  public static readonly Type = '[Pricing] Set Price For Details';
+  public readonly type = SetPriceForDetails.Type;
+  constructor(public readonly price: number) { }
+}
+&nbsp;
+export class SetPriceForDialog implements Action {
+  public static readonly Type = '[Pricing] Set Price For Dialog';
+  public readonly type = SetPriceForDialog.Type;
+  constructor(public readonly price: number) { }
+}
+&nbsp;
+export class SetAppliedAttributes implements Action {
+  public static readonly Type = '[Pricing] Set Applied Attributes';
+  public readonly type = SetAppliedAttributes.Type;
+  constructor(public readonly appliedAttributes: SelectedPriceAttribute[]) { }
+}
+&nbsp;
+export class CalculatePrice implements Action {
+  public static readonly Type = '[Pricing] Calculate Price';
+  public readonly type = CalculatePrice.Type;
+  constructor(
+    public readonly selectedAttributes: Pojo,
+    public readonly assetId: number,
+    public readonly subclipMarkers: SubclipMarkersInterface.SubclipMarkers
+  ) { }
+}
+&nbsp;
+export class CalculatePriceSuccess implements Action {
+  public static readonly Type = '[Pricing] Calculate Price Success';
+  public readonly type = CalculatePriceSuccess.Type;
+  constructor(public readonly price: number) { }
+}
+&nbsp;
+export class CalculatePriceFailure implements Action {
+  public static readonly Type = '[Pricing] Calculate Price Failure';
+  public readonly type = CalculatePriceFailure.Type;
+  constructor(public readonly error: ApiErrorResponse) { }
+}
+&nbsp;
+export class InitializePricing implements Action {
+  public static readonly Type = '[Pricing] Initialize Pricing';
+  public readonly type = InitializePricing.Type;
+  constructor(public readonly rightsReproduction: string, public readonly dialogOptions: DefaultComponentOptions) { }
+}
+&nbsp;
+export class OpenDialog implements Action {
+  public static readonly Type = '[Pricing] Open Dialog';
+  public readonly type = OpenDialog.Type;
+  constructor(public readonly dialogOptions: DefaultComponentOptions) { }
+}
+&nbsp;
+export type Any = GetAttributes | GetAttributesSuccess | GetAttributesFailure | ResetPricing | SetPriceForDetails | OpenDialog |
+  SetPriceForDialog | SetAppliedAttributes | CalculatePrice | CalculatePriceSuccess | CalculatePriceFailure | InitializePricing;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

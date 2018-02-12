@@ -1,0 +1,18 @@
+@mixin wz-fee-line-items-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  li.fee-item {
+    background-color: mat-color($background, card);
+    color: rgba(mat-color($foreground, text), .7);
+    .fee-indicator {
+      background: mat-color($primary, lighter,.8);
+      @include text-contrast(mat-color($primary, darker));
+    }
+    .divider {
+      box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+    }
+  }
+}

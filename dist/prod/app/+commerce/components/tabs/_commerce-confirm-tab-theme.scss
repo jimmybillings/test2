@@ -1,0 +1,12 @@
+@mixin wz-commerce-confirm-tab-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  cart-confirm-tab-component, quote-confirm-tab {
+    .payment,
+    .billing {
+      background-color: rgba(mat-color($background, card), .65);
+      color: rgba(mat-color($foreground, text), .7);
+    }
+  }
+}

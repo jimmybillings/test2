@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-advanced-player/controls/markers-playback-button.component.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-advanced-player/controls/</a> markers-playback-button.component.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.65% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.31% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>23/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>19/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : desc === null ? <span class="branch-0 cbranch-no" title="branch not covered" >desc = Object.getOwnPropertyDescriptor(target, key) </span>: desc, d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : c &gt; 3 ? d(target, key, r) : <span class="branch-1 cbranch-no" title="branch not covered" >d(target, key))</span> || r;
+    return c &gt; 3 &amp;&amp; r &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+var __metadata = (this &amp;&amp; this.__metadata) || function (k, v) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var MarkersPlaybackButtonComponent = (function () {
+    function MarkersPlaybackButtonComponent() {
+        this.request = new core_1.EventEmitter();
+    }
+    MarkersPlaybackButtonComponent.prototype.onClick = function () {
+        this.request.emit({ type: 'TOGGLE_MARKERS_PLAYBACK' });
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], MarkersPlaybackButtonComponent.prototype, "playerState", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], MarkersPlaybackButtonComponent.prototype, "request", void 0);
+    MarkersPlaybackButtonComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'wz-markers-playback-button',
+            changeDetection: core_1.ChangeDetectionStrategy.OnPush,
+            template: "\n    &lt;button mat-icon-button\n      [disabled]=\"!playerState.inMarkerFrame || !playerState.outMarkerFrame\"\n      title=\"{{ 'ASSET.ADV_PLAYER.PLAY_IN_OUT_BTN_TITLE' | translate }}\"\n      (click)=\"onClick()\"&gt;\n      &lt;mat-icon&gt;{{ playerState.playingMarkers &amp;&amp; playerState.playing ? 'pause_circle_filled' : 'play_circle_filled' }}&lt;/mat-icon&gt;\n    &lt;/button&gt;\n  "
+        })
+    ], MarkersPlaybackButtonComponent);
+    return MarkersPlaybackButtonComponent;
+}());
+exports.MarkersPlaybackButtonComponent = MarkersPlaybackButtonComponent;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvbW9kdWxlcy93ei1wbGF5ZXIvY29tcG9uZW50cy93ei1hZHZhbmNlZC1wbGF5ZXIvY29udHJvbHMvbWFya2Vycy1wbGF5YmFjay1idXR0b24uY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7O0FBQUEsc0NBQWdHO0FBbUJoRztJQWRBO1FBZ0JZLFlBQU8sR0FBK0MsSUFBSSxtQkFBWSxFQUFnQyxDQUFDO0lBS25ILENBQUM7SUFIUSxnREFBTyxHQUFkO1FBQ0UsSUFBSSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsRUFBRSxJQUFJLEVBQUUseUJBQXlCLEVBQUUsQ0FBQyxDQUFDO0lBQ3pELENBQUM7SUFMUTtRQUFSLFlBQUssRUFBRTs7dUVBQTBCO0lBQ3hCO1FBQVQsYUFBTSxFQUFFO2tDQUFVLG1CQUFZO21FQUFrRjtJQUZ0Ryw4QkFBOEI7UUFkMUMsZ0JBQVMsQ0FBQztZQUNULFFBQVEsRUFBRSxNQUFNLENBQUMsRUFBRTtZQUNuQixRQUFRLEVBQUUsNEJBQTRCO1lBQ3RDLGVBQWUsRUFBRSw4QkFBdUIsQ0FBQyxNQUFNO1lBQy9DLFFBQVEsRUFBRSwrV0FPVDtTQUNGLENBQUM7T0FFVyw4QkFBOEIsQ0FPMUM7SUFBRCxxQ0FBQztDQVBELEFBT0MsSUFBQTtBQVBZLHdFQUE4QiIsImZpbGUiOiJhcHAvc2hhcmVkL21vZHVsZXMvd3otcGxheWVyL2NvbXBvbmVudHMvd3otYWR2YW5jZWQtcGxheWVyL2NvbnRyb2xzL21hcmtlcnMtcGxheWJhY2stYnV0dG9uLmNvbXBvbmVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3ksIElucHV0LCBPdXRwdXQsIEV2ZW50RW1pdHRlciB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuXG5pbXBvcnQgeyBQbGF5ZXJTdGF0ZSwgUGxheWVyUmVxdWVzdCwgVG9nZ2xlTWFya2Vyc1BsYXliYWNrUmVxdWVzdCB9XG4gIGZyb20gJy4uLy4uLy4uL2ludGVyZmFjZXMvcGxheWVyLmludGVyZmFjZSc7XG5cbkBDb21wb25lbnQoe1xuICBtb2R1bGVJZDogbW9kdWxlLmlkLFxuICBzZWxlY3RvcjogJ3d6LW1hcmtlcnMtcGxheWJhY2stYnV0dG9uJyxcbiAgY2hhbmdlRGV0ZWN0aW9uOiBDaGFuZ2VEZXRlY3Rpb25TdHJhdGVneS5PblB1c2gsXG4gIHRlbXBsYXRlOiBgXG4gICAgPGJ1dHRvbiBtYXQtaWNvbi1idXR0b25cbiAgICAgIFtkaXNhYmxlZF09XCIhcGxheWVyU3RhdGUuaW5NYXJrZXJGcmFtZSB8fCAhcGxheWVyU3RhdGUub3V0TWFya2VyRnJhbWVcIlxuICAgICAgdGl0bGU9XCJ7eyAnQVNTRVQuQURWX1BMQVlFUi5QTEFZX0lOX09VVF9CVE5fVElUTEUnIHwgdHJhbnNsYXRlIH19XCJcbiAgICAgIChjbGljayk9XCJvbkNsaWNrKClcIj5cbiAgICAgIDxtYXQtaWNvbj57eyBwbGF5ZXJTdGF0ZS5wbGF5aW5nTWFya2VycyAmJiBwbGF5ZXJTdGF0ZS5wbGF5aW5nID8gJ3BhdXNlX2NpcmNsZV9maWxsZWQnIDogJ3BsYXlfY2lyY2xlX2ZpbGxlZCcgfX08L21hdC1pY29uPlxuICAgIDwvYnV0dG9uPlxuICBgXG59KVxuXG5leHBvcnQgY2xhc3MgTWFya2Vyc1BsYXliYWNrQnV0dG9uQ29tcG9uZW50IHtcbiAgQElucHV0KCkgcGxheWVyU3RhdGU6IFBsYXllclN0YXRlO1xuICBAT3V0cHV0KCkgcmVxdWVzdDogRXZlbnRFbWl0dGVyPFRvZ2dsZU1hcmtlcnNQbGF5YmFja1JlcXVlc3Q+ID0gbmV3IEV2ZW50RW1pdHRlcjxUb2dnbGVNYXJrZXJzUGxheWJhY2tSZXF1ZXN0PigpO1xuXG4gIHB1YmxpYyBvbkNsaWNrKCk6IHZvaWQge1xuICAgIHRoaXMucmVxdWVzdC5lbWl0KHsgdHlwZTogJ1RPR0dMRV9NQVJLRVJTX1BMQVlCQUNLJyB9KTtcbiAgfVxufVxuIl19
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

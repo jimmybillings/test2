@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/line-item/line-items.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/line-item/</a> line-items.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>66/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>20/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.31% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>24/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.92% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>63/65</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Project, AssetLineItem, PurchaseType, quotesWithoutPricing } from '../../../shared/interfaces/commerce.interface';
+import { Capabilities } from '../../../shared/services/capabilities.service';
+import { EnhancedAsset } from '../../../shared/interfaces/enhanced-asset';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'line-items-component',
+  templateUrl: './line-items.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class LineItemsComponent {
+  public targets: any = {};
+  public enhancedAssets: { [lineItemId: string]: EnhancedAsset } = {};
+  public items: AssetLineItem[];
+&nbsp;
+  @Input() set lineItems(items: AssetLineItem[]) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (items) {
+      this.items = items;
+      items.forEach(item =&gt; {
+        this.noteVisibilityMap[item.id] = this.hasNotes(item);
+      });
+    }
+  };
+  @Input() quoteType: PurchaseType;
+  @Input() otherProjects: Project[];
+  @Input() userCan: Capabilities;
+  @Input() readOnly: boolean = false;
+  @Input() rmAssetsHaveAttributes: boolean;
+  @Output() lineItemsNotify: EventEmitter&lt;Object&gt; = new EventEmitter&lt;Object&gt;();
+  public selectedLineItem: AssetLineItem;
+  public noteVisibilityMap: { [index: string]: boolean } = {};
+&nbsp;
+  public onMoveTo(otherProject: Project, lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({
+      type: 'MOVE_LINE_ITEM', payload: { lineItem: lineItem, otherProject: otherProject }
+    });
+  }
+&nbsp;
+  public onClone(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'CLONE_LINE_ITEM', payload: lineItem });
+  }
+&nbsp;
+  public onRemove(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'REMOVE_LINE_ITEM', payload: lineItem });
+  }
+&nbsp;
+  public onEditMarkers(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'EDIT_LINE_ITEM_MARKERS', payload: lineItem });
+  }
+&nbsp;
+  public delegate(message: any): void {
+    this.lineItemsNotify.emit(message);
+  }
+&nbsp;
+  public selectLineItem(lineItem: AssetLineItem) {
+    this.selectedLineItem = lineItem;
+  }
+&nbsp;
+  public onShowPricingDialog(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'SHOW_PRICING_DIALOG', payload: lineItem });
+  }
+&nbsp;
+  public onSelectTarget(newTarget: string, currentlySelected: string, lineItem: AssetLineItem): void {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (currentlySelected !== newTarget) {
+      this.lineItemsNotify.emit({
+        type: 'EDIT_LINE_ITEM', payload:
+          { lineItem, fieldToEdit: { selectedTranscodeTarget: newTarget } }
+      });
+    }
+  }
+&nbsp;
+  public shouldDisplayRights(lineItem: AssetLineItem): boolean {
+    return lineItem.rightsManaged === 'Rights Managed' &amp;&amp; !quotesWithoutPricing.includes(this.quoteType);
+  }
+&nbsp;
+  public shouldShowTargets(lineItem: AssetLineItem): boolean {
+    return lineItem.transcodeTargets &amp;&amp; lineItem.transcodeTargets.length &gt; 0;
+  }
+&nbsp;
+  public shouldDisplayPricing(lineItem: AssetLineItem): boolean {
+    return !quotesWithoutPricing.includes(this.quoteType) &amp;&amp;
+      (this.rmAssetHasAttributes(lineItem) || lineItem.rightsManaged === 'Royalty Free') || !!lineItem.overrideGrossAssetPrice;
+  }
+&nbsp;
+  public onOpenCostMultiplierForm(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'SHOW_COST_MULTIPLIER_DIALOG', payload: lineItem });
+  }
+&nbsp;
+  public onRemoveCostMultiplier(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'REMOVE_COST_MULTIPLIER', payload: lineItem });
+  }
+&nbsp;
+  public isSubclipped(asset: EnhancedAsset): boolean {
+    return asset.isSubclipped;
+  }
+&nbsp;
+  public onAddCustomPrice(lineItem: AssetLineItem): void {
+    this.lineItemsNotify.emit({ type: 'ADD_CUSTOM_PRICE', payload: lineItem });
+  }
+&nbsp;
+  public iconForNotesButton(lineItem: AssetLineItem): string {
+    return this.noteVisibilityMap[lineItem.id] ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+  }
+&nbsp;
+  public toggleNotesVisibilityFor(lineItem: AssetLineItem): void {
+    this.noteVisibilityMap[lineItem.id] = !this.noteVisibilityMap[lineItem.id];
+  }
+&nbsp;
+  public hasNotes(lineItem: AssetLineItem): boolean {
+    return lineItem.hasOwnProperty('notes') &amp;&amp;
+      lineItem.notes.length &gt; 0 &amp;&amp;
+      lineItem.notes[0].hasOwnProperty('notes') &amp;&amp;
+      lineItem.notes[0].notes.length &gt; 0;
+  }
+&nbsp;
+  public shouldShowNoteFor(lineItem: AssetLineItem): boolean {
+    return this.hasNotes(lineItem) &amp;&amp; !!this.noteVisibilityMap[lineItem.id];
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onAddNote(lineItem: AssetLineItem)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.lineItemsNotify.emit({ type: 'ADD_NOTE', payload: lineItem });</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public removeNotesFrom(lineItem: AssetLineItem)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.lineItemsNotify.emit({ type: 'REMOVE_NOTE', payload: lineItem });</span>
+  }
+&nbsp;
+  private rmAssetHasAttributes(lineItem: AssetLineItem): boolean {
+    return lineItem.rightsManaged === 'Rights Managed' &amp;&amp; !!lineItem.attributes;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+quote-edit-confirm-tab-component, quote-info-component {
+  .overview {
+    margin-bottom: 10px;
+  }
+  .contact-data {
+    .mat-title {
+      font-weight: 400;
+      opacity: .6;
+      margin: .3em 0;
+      line-height: 1;
+    }
+    ul {
+      list-style-type: none;
+      padding: 2px 0 0 2px;
+      margin: 0;
+      li {
+        strong  {
+          padding-right: 5px;
+        }
+        .offline-agreement {
+          font-style: italic;
+          line-height: 1.4;
+          opacity:.75;
+        }
+      }
+    }
+    &.card {
+      padding: 10px 16px 16px;
+      border-radius: 2px;
+      margin: 12px 0 12px 12px;
+      &:first-child {
+        margin-left: 0;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs)  {
+        margin: 0 0 12px 0;
+      }
+    }
+  }
+  .summary-heading {
+    margin-top: 24px;
+    margin-bottom: 3px;
+  }
+}

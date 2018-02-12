@@ -1,0 +1,352 @@
+collections-component .collection-head {
+  padding-left: 4px;
+  padding-right: 4px;
+  header {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    position: relative;
+    .mat-display-1 {
+      margin: 0;
+      font-size: 26px;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        font-size: 1.6em;
+      }
+    }
+  } 
+  .tools {
+    text-align: right;
+    white-space: nowrap;
+    button.collapse-search[mat-icon-button] {
+      transform: rotate(90deg);
+    }
+  }
+  header div[flex="100"] > button[mat-icon-button] {
+    margin-right: 16px;
+  }
+  collections-filter-dd.revealed {
+    padding-right: 40px;
+  }
+}
+collections-component .new-collection .mat-button .mat-icon {
+  height: 26px;
+  padding-right: 3px;
+}
+collections-component .query-details {
+  padding-top: 4px;
+  padding-left: 8px;
+  font-size: .77em;
+  span {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    padding-right: 30px;
+    line-height: 22px;
+    opacity: .7;
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+    }
+    &:after {
+      content: "\e152";
+      font-family: 'Material Icons';
+      font-size: 18px;
+      font-weight: 100;
+      line-height: 22px;
+      height: 22px;
+      width: 22px;
+      position: absolute;
+      left: 0;
+      top: 48%;
+      transform: translateY(-50%);
+      text-align: center;
+    }
+    &.search:after {
+      content: "\e8b6";
+    }
+    &.sort:after {
+      content: "\e164";
+    }
+    strong {
+      display: inline-block;
+      padding-right: 5px;
+      font-weight: 600;
+    }
+    &:last-child {
+      padding-right: 30px;
+    }
+  }
+}
+
+.collections-list {
+  ul {
+    margin: 0;
+    margin-top: 6px;
+    padding: 0;
+    list-style: none;
+  }
+  li.collection {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 2px;
+    border-radius: 2px;
+    transition: $swift-ease-out;
+    .actions {
+      min-height: 45px;
+      position: relative;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        min-height: 50px;
+      }
+    }
+    .tools {
+      text-align: right;
+    }
+    .premiere-actions {
+      position: absolute;
+      bottom: 7px;
+      right: 7px;
+    }
+    a.collection-name {
+      color: inherit;
+      text-decoration: none;
+    }
+    h3 {
+      margin-top: -6px;
+      margin-bottom: 6px;
+    }
+    .collection-info {
+      line-height: 1.5em;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span:nth-child(2n) {
+        text-transform: capitalize;
+        strong {
+          text-transform: initial;
+        }
+      }
+    }
+
+    .asset-count {
+      display: inline-block;
+      border-radius: 2px - 1;
+      min-width: 21px;
+      font-size: .7em;
+      line-height: 1em;
+      padding: 4px 4px;
+      display: inline-block;
+      text-align: center;
+    }
+    .mat-caption span {
+      display: block;
+    }
+    &.focused {
+      @include mat-elevation(2);
+    }
+    .divider {
+      margin: 6px 8px 0 8px;
+      padding-bottom: 6px;
+      display: none;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        display: flex;
+      }
+    }
+    .shared-members {
+      margin-top: 5px;
+      font-size: .75em;
+      padding: 1px 11px 0 11px;
+    }
+    .collection-tags {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    ul.meta-data-tags {
+        margin-top: 0;
+        display: inline-block;
+      li.tag {
+        display: inline-block;
+        padding-right: 9px;
+        padding-left: 9px;
+        margin-top: 6px;
+        margin-left: 6px;
+        line-height: 23px;
+        &:first-child {
+          margin-left: 2px;
+        }
+      }
+    }
+    .actions div:last-child {
+      text-align: right;
+    }
+  }
+  .asset .asset-thb {
+    display: block;
+    height: 0;
+    width: 100%;
+    position: relative;
+    padding: 56.25% 0 0 0;
+    position: relative;
+    img {
+      position: absolute;
+      display: block;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    // the asset id display is more for troubleshooting and can probably go away when we are ready for public consumption
+    .asset-id {
+      position: absolute;
+      bottom: 3px;
+      right: 3px;
+      z-index: 2;
+      .id {
+        padding: 3px;
+        opacity: .7;
+      }
+    }
+    .selected {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      z-index: 2;
+      line-height: 0;
+      mat-icon {
+        font-size: 30px;
+        opacity: .9;
+        margin-right: 3px;
+      }
+    }
+  }
+}
+
+// slide out collection search form
+wz-item-search-form {
+  transition: $swift-ease-out;
+  flex: 1 1 auto;
+  position: absolute;
+  top: 4px;
+  right: 42px;
+  min-width: 375px;
+  z-index: 2;
+  overflow: hidden;
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    min-width: 324px;
+  }
+  .tools {
+    display: none;
+  }
+  form {
+    padding-top: 0;
+    transition: $swift-ease-out;
+    display: flex;
+  }
+  &.revealed > div {
+    animation-name: slide;
+    animation-duration: 400ms;
+    animation-timing-function: $swift-ease-in-timing-function;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+  }
+  input {
+    border: none;
+    font-size: 1.15em;
+    width: 100%;
+    padding: 0 0 0 3%;
+    max-height: 41px;
+    min-height: 41px;
+    border-radius: 0;
+    margin-right:-87px;
+    transition: max-height 0.45s, min-height 0.35s, $swift-ease-in-out-timing-function;
+    &:focus {
+      outline: none;
+    }
+  }
+  button[type="submit"], button[type="reset"] {
+    cursor: pointer;
+    opacity: .4;
+    margin: auto 0;
+    &:focus{
+      outline: none;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .vertical-divider {
+    position:relative;
+    width: 7px;
+    &:after {
+      content:"";
+      position: absolute;
+      height: 30px;
+      width: 1px;
+      top: 7px;
+      left: 4px;
+    }
+  }
+}
+// Copy legacy link.This may change into copy share link
+.mat-dialog-container collection-delete-component .wz-dialog,
+.mat-dialog-container .wz-dialog.wz-legacy-link {
+  padding: 0 0 10px;
+  width: 420px;
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    width: 100%;
+  }
+  [mat-dialog-title] {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  p.dialog-summary {
+    margin: 0 0 12px;
+    font-size: 14px;
+  }
+}
+.wz-legacy-link {
+  .link-wrapper {
+    padding: 2px;
+    white-space: nowrap;
+    text-align: right;
+    .link-input {
+      overflow: hidden;
+      margin-right: 4px;
+      width: calc(100% - 44px);
+      max-width: calc(100% - 44px);
+      padding-top: 12px;
+      padding-right: 5px;
+      padding-bottom: 13px;
+      padding-left: 5px;
+      font-size: .9em;
+      &:focus, &:active {
+        outline: none;
+      }
+    }
+    button {
+      transition: $swift-ease-out;
+      // once they put a transition into the ::after pseudo class this can go away
+      &[mat-icon-button]:hover::after {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    margin-left:125%;
+  }
+  100% {
+    margin-left:0%;
+  }
+}

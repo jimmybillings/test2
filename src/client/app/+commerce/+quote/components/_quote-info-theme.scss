@@ -1,0 +1,17 @@
+@mixin wz-quote-info-theme($theme) {
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+  $warn: map-get($theme, warn);
+
+  quote-info-component {
+    a {
+      color: mat-color($primary, darker);
+    }
+    li.expired {
+      color: mat-color($warn, darker);
+    }
+    .contact-data.card {
+      background-color: mat-color($background, card);
+    }
+  }
+}

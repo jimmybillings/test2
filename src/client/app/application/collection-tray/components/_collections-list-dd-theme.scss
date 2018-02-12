@@ -1,0 +1,109 @@
+@mixin wz-collections-list-dd-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  .collections-list-dd, 
+  asset-share, 
+  collection-share{ 
+    .collections-dd-menu {   
+      background-color: mat-color($background, card);
+      color: rgba(mat-color($foreground, text), .7);  
+      header {   
+        box-shadow: inset 0 -1px 0 0 mat-color($foreground, divider), 0 1px 0 0 mat-color($background, card);
+        background-color: mat-color($primary, default);
+        @include text-contrast(mat-color($primary, default));
+        .tools {
+          button {
+            &:hover {
+              @include text-contrast(mat-color($primary, default));
+              background-color: mat-color($foreground, base, .1);
+            }         
+          }
+        }
+      }
+      .query-details {
+        background-color: rgba(mat-color($primary, default), .12); 
+        color: mat-color($foreground, secondary-text);
+      }
+      .mat-list[dense] {
+        .mat-list-item .mat-list-item-content {
+          button {
+            color: rgba(mat-color($foreground, text), .7);
+            box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+            &:hover, &:focus {
+              color: mat-color($primary);
+              background-color: rgba(mat-color($foreground, base), .1);
+            }
+            &[disabled] {
+              color: rgba(mat-color($foreground, text), .3);
+            }
+          }
+          &:last-child button {
+            box-shadow: inset 0 -1px 0 0 mat-color($foreground, divider);
+          }
+        }
+        mat-list-item.active .mat-list-item-content button {
+          color: mat-color($primary);
+          background-color: rgba(mat-color($foreground, base), .07);
+          box-shadow: inset 0 1px 0 0 mat-color($foreground, base), .05;
+        }
+      }
+      footer .actions {
+        [mat-button], button {
+          &:hover {
+            color: mat-color($primary);
+          }
+        }
+      }
+    }
+  }
+
+
+  .dd-menu-wrapper wz-share-link .collections-dd-menu,
+  .dd-menu-wrapper collections-filter-dd .collections-dd-menu,
+  .dd-menu-wrapper collections-sort-dd .collections-dd-menu {
+    header {
+      background-color: rgba(mat-color($foreground, base), .05);
+      @include text-contrast(mat-color($background, card), rgba(mat-color($foreground, base), .75), mat-color($background, card));
+      .tools button:hover {
+        color: mat-color($primary);
+      }
+    }
+    .sub-menu {
+      &.dd-menu-wrapper wz-sort-component div.dense {
+        .select-dd.active button[mat-menu-item] {
+          color: mat-color($primary);
+          mat-icon.material-icons {
+            color: mat-color($primary);
+          }
+        }
+      }
+    }
+  }
+
+  collections-list-dd .collections-dd-menu .dd-menu-wrapper wz-item-search-form {
+    & > div[layout] {
+      background-color: rgba(mat-color($background, card), 1);
+      box-shadow: inset 0 -1px 0 0 mat-color($foreground, divider);
+    }
+    .tools {  
+      button {
+        @include text-contrast(mat-color($background, card), rgba(mat-color($foreground, base), .75), mat-color($background, card));
+        &:hover {
+          color: mat-color($primary);
+        }
+      }
+    }
+    form {
+      button[type="submit"],button[type="reset"] {
+        mat-icon.material-icons {
+          color: mat-color($primary);
+        }
+      }
+      input {
+        background-color: rgba(mat-color($background, card), 1);
+      }
+    }
+  }
+}

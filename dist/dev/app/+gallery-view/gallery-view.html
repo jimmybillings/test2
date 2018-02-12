@@ -1,0 +1,21 @@
+<section *ngIf="(data | async).path.length > 0" class="gallery-header" layout="row" layout-align="center start">
+	<header class="wz-gallery-breadcrumb" flex-gt-lg="95" flex-lg="95" flex="100">
+    <wz-gallery-breadcrumb [path]="(data | async).path" (clickBreadcrumb)="onClickBreadcrumb($event)"></wz-gallery-breadcrumb>
+  </header>
+</section>
+<section class="gallery">
+	<div layout="row" mat-scroll-y="" layout-align="center start">
+    <one-level-view
+      flex-gt-lg="65" flex-gt-md="75" flex-gt-sm="85" flex-gt-xs="95" flex="100"
+      *ngIf="(data | async).numberOfLevels === 1"
+      [data]="data | async"
+      (navigate)="onNavigate($event)">
+    </one-level-view>
+    <two-level-view
+      flex="100"
+      *ngIf="(data | async).numberOfLevels === 2"
+      [data]="data | async"
+      (navigate)="onNavigate($event)">
+    </two-level-view>
+	</div>
+</section>

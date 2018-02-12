@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/services/gallery-view.service.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/services/</a> gallery-view.service.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">79.49% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>31/39</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">74.19% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
+import { ApiService } from '../services/api.service';
+import { Api, ApiResponse } from '../interfaces/api.interface';
+import { GalleryViewStore } from '../stores/gallery-view.store';
+import { Gallery, GalleryPath, GalleryPathSegment } from '../interfaces/gallery-view.interface';
+&nbsp;
+@Injectable()
+export class GalleryViewService {
+  constructor(private store: GalleryViewStore, private api: ApiService) { }
+&nbsp;
+  public get data(): Observable&lt;Gallery&gt; {
+    return this.store.data;
+  }
+&nbsp;
+  public get state(): Gallery {
+    return this.store.state;
+  }
+&nbsp;
+  public load(path: GalleryPath): Observable&lt;ApiResponse&gt; {
+    let query: string = (path &amp;&amp; path.length &gt; 0) ? this.stringifyPathForSearch(path) : null;
+&nbsp;
+    return this.api.get(Api.Assets, 'galleryResult', { loadingIndicator: true, parameters: { query: query } })
+      .do((response: any) =&gt; this.store.replaceWith(response.list, path));
+  }
+&nbsp;
+  public stringifyPathForSearch(path: GalleryPath): string {
+    return path.map((segment: GalleryPathSegment) =&gt; this.stringifyPathSegmentForSearch(segment)).join(',');
+  }
+&nbsp;
+  private stringifyPathSegmentForSearch(segment: GalleryPathSegment): string {
+    return segment.ids.map((id: number, index: number) =&gt; `${id}:"${segment.names[index]}"`).join(',');
+  }
+&nbsp;
+  // TO BE REMOVED (along with the methods it calls)
+<span class="fstat-no" title="function not covered" >  private selectFakeResponseFor(index: number)</span>: string {
+<span class="cstat-no" title="statement not covered" >    switch (index) {</span>
+      case 0: <span class="cstat-no" title="statement not covered" >return this.fakeLevelZeroResponse;</span>
+      case 1: <span class="cstat-no" title="statement not covered" >return this.fakeLevelTwoResponse;</span>
+      case 2: <span class="cstat-no" title="statement not covered" >return this.fakeLevelThreeResponse;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return 'Wha??';</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get fakeLevelZeroResponse(): string {</span>
+<span class="cstat-no" title="statement not covered" >    return `</span>
+      {
+        "results": [
+          {
+            "id": 2,
+            "name": "Highlights",
+            "resultCount": 17,
+            "hasMore": true,
+            "children": [
+              {
+                "id": 3,
+                "name": "Day 1",
+                "resultCount": 17,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016040700348.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 2",
+                "resultCount": 32,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016040809705.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 3",
+                "resultCount": 41,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016040910496.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 4",
+                "resultCount": 12,
+                "thumbnailUrl": "http://mastersprogressivedl.edgesuite.net/2016/thumbnails/LDR_2016_r4_34046_2_492x277.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 5",
+                "resultCount": 0,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016040910496.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 6",
+                "resultCount": 0,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016040809705.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 3,
+                "name": "Day 7",
+                "resultCount": 0,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_2016041038412.jpg",
+                "hasMore": true
+              }
+            ]
+          },
+          {
+            "id": 5,
+            "name": "Press Packets",
+            "resultCount": 4,
+            "hasMore": true,
+            "children": [
+              {
+                "id": 6,
+                "name": "Day 1",
+                "resultCount": 4,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/234/7/1862347_038_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 2",
+                "resultCount": 3,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 3",
+                "resultCount": 4,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/212/6/1862126_026_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 4",
+                "resultCount": 4,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/MVF/K/186MVFK_060_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 5",
+                "resultCount": 0,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 6",
+                "resultCount": 0,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 6,
+                "name": "Day 7",
+                "resultCount": 0,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/543/186543_003_lt.jpg",
+                "hasMore": true
+              }
+            ]
+          },
+          {
+            "id": 8,
+            "name": "Promotional Content",
+            "resultCount": 58,
+            "hasMore": true,
+            "children": [
+              {
+                "id": 9,
+                "name": "Fly-overs",
+                "resultCount": 18,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_18rANGC15-1rb0278Hc.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 9,
+                "name": "Master Moments",
+                "resultCount": 40,
+                "thumbnailUrl": "http://www.masters.com/images/pics/large/h_masters64_palmeron18_angc_83123735_032011.jpg",
+                "hasMore": true
+              },
+              {
+                "id": 9,
+                "name": "Course Scenics",
+                "resultCount": 40,
+                "thumbnailUrl": "https://cdnt3m-a.akamaihd.net/tem/warehouse/186/518/1/1865181_001_lt.jpg",
+                "hasMore": true
+              }
+            ]
+          }
+        ]
+      }
+    `;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get fakeLevelTwoResponse(): string {</span>
+<span class="cstat-no" title="statement not covered" >    return `</span>
+      {
+        "results": [
+          {
+            "id": 4,
+            "name": "Jordan Spieth",
+            "resultCount": 6,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/34046.jpg",
+            "hasMore": true
+          },
+          {
+            "id": 4,
+            "name": "Danny Willett",
+            "resultCount": 2,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/32139.jpg",
+            "hasMore": true
+          },
+          {
+            "id": 4,
+            "name": "Rory McIlroy",
+            "resultCount": 5,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/28237.jpg",
+            "hasMore": true
+          },
+          {
+            "id": 4,
+            "name": "Dustin Johnson",
+            "resultCount": 4,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/30925.jpg",
+            "hasMore": true
+          },
+          {
+            "id": 4,
+            "name": "Bryson DeChambeau",
+            "resultCount": 2,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/47959.jpg",
+            "hasMore": true
+          },
+          {
+            "id": 4,
+            "name": "Jason Day",
+            "resultCount": 3,
+            "thumbnailUrl": "http://www.masters.com/images/players/2016/480x270/28089.jpg",
+            "hasMore": true
+          }
+        ]
+      }
+    `;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get fakeLevelThreeResponse(): string {</span>
+<span class="cstat-no" title="statement not covered" >    return `</span>
+      {
+        "results": [
+          {
+            "id": 10,
+            "name": "Tee offs",
+            "resultCount": 6,
+            "thumbnailUrl": "",
+            "hasMore": false
+          },
+          {
+            "id": 10,
+            "name": "Drives",
+            "resultCount": 2,
+            "thumbnailUrl": "",
+            "hasMore": false
+          },
+          {
+            "id": 10,
+            "name": "Putts",
+            "resultCount": 5,
+            "thumbnailUrl": "",
+            "hasMore": false
+          }
+        ]
+      }
+    `;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

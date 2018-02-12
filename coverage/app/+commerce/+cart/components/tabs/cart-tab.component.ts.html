@@ -1,0 +1,1229 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/+cart/components/tabs/cart-tab.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/+commerce/+cart/components/tabs/</a> cart-tab.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.97% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>135/185</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">63.64% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>35/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">58.93% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>33/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.61% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>114/157</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
+import { Component, Inject, ChangeDetectionStrategy, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
+import { MatDialogRef } from '@angular/material';
+&nbsp;
+import { Tab } from '../../../components/tabs/tab';
+import { WzPricingComponent } from '../../../../shared/components/wz-pricing/wz.pricing.component';
+import { DefaultComponentOptions } from '../../../../shared/modules/wz-dialog/interfaces/wz.dialog.interface';
+import { AssetLineItem, LicenseAgreements, Project } from '../../../../shared/interfaces/commerce.interface';
+import { CartService } from '../../../../shared/services/cart.service';
+import { WzDialogService } from '../../../../shared/modules/wz-dialog/services/wz.dialog.service';
+import { CommerceCapabilities } from '../../../services/commerce.capabilities';
+import { UserPreferenceService } from '../../../../shared/services/user-preference.service';
+import { WindowRef } from '../../../../shared/services/window-ref.service';
+import { Feature } from '../../../../shared/interfaces/feature.interface';
+import { LicenseAgreementComponent } from '../../../components/license-agreement/license-agreement.component';
+import { Common } from '../../../../shared/utilities/common.functions';
+import { Pojo, SelectedPriceAttribute, WzEvent } from '../../../../shared/interfaces/common.interface';
+import * as SubclipMarkersInterface from '../../../../shared/interfaces/subclip-markers';
+import { WzSubclipEditorComponent } from '../../../../shared/components/wz-subclip-editor/wz.subclip-editor.component';
+import { EnhancedAsset } from '../../../../shared/interfaces/enhanced-asset';
+import { AppStore } from '../../../../app.store';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'cart-tab-component',
+  templateUrl: 'cart-tab.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class CartTabComponent extends Tab implements OnDestroy, OnInit {
+  public projects: Project[];
+  public config: any;
+  public pricingPreferences: Pojo;
+  public preferencesSubscription: Subscription;
+  private projectSubscription: Subscription;
+&nbsp;
+  constructor(
+    public userCan: CommerceCapabilities,
+    public cartService: CartService,
+    public dialogService: WzDialogService,
+    public window: WindowRef,
+    public userPreference: UserPreferenceService,
+    @Inject(DOCUMENT) public document: any,
+    private store: AppStore,
+    private detector: ChangeDetectorRef
+  ) {
+    super();
+  }
+&nbsp;
+  public ngOnInit(): void {
+    this.preferencesSubscription = this.userPreference.data.subscribe((data: any) =&gt; {
+      this.pricingPreferences = data.pricingPreferences;
+    });
+&nbsp;
+    this.projectSubscription = this.cartService.projects.subscribe(projects =&gt; {
+      this.projects = projects;
+      this.detector.markForCheck();
+    });
+&nbsp;
+    this.config = this.store.snapshotCloned(state =&gt; state.uiConfig.components.cart.config);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public ngOnDestroy() {</span>
+<span class="cstat-no" title="statement not covered" >    this.projectSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >    this.preferencesSubscription.unsubscribe();</span>
+  }
+&nbsp;
+  public onNotification(message: WzEvent): void {
+    switch (message.type) {
+      case 'ADD_PROJECT': {
+        this.cartService.addProject();
+        break;
+      }
+      case 'REMOVE_PROJECT': {
+        this.cartService.removeProject(message.payload);
+        break;
+      }
+      case 'UPDATE_PROJECT': {
+        this.updateProject(message.payload);
+        break;
+      }
+      case 'MOVE_LINE_ITEM': {
+        this.cartService.moveLineItemTo(message.payload.otherProject, message.payload.lineItem);
+        break;
+      }
+      case 'CLONE_LINE_ITEM': {
+        this.cartService.cloneLineItem(message.payload);
+        break;
+      }
+      case 'REMOVE_LINE_ITEM': {
+        this.store.dispatch(factory =&gt; factory.cart.removeAsset(message.payload.asset));
+        break;
+      }
+      case 'EDIT_LINE_ITEM': {
+        this.cartService.editLineItem(message.payload.lineItem, message.payload.fieldToEdit);
+        break;
+      }
+      case 'EDIT_LINE_ITEM_MARKERS': {
+        this.editAsset(message.payload);
+        break;
+      }
+      case 'SHOW_PRICING_DIALOG': {
+        this.showPricingDialog(message.payload);
+        break;
+      }
+      case 'EDIT_PROJECT_PRICING': {
+        this.editProjectPricing(message.payload);
+        break;
+      }
+      case 'ADD_NOTE': {
+        this.openNoteDialog(message.payload);
+        break;
+      }
+      case 'REMOVE_NOTE': {
+        this.removeNoteFrom(message.payload);
+        break;
+      }
+    };
+  }
+&nbsp;
+  public checkout(): void {
+    this.goToNextTab();
+    this.cartService.getPaymentOptions();
+  }
+&nbsp;
+  public shouldShowLicenseDetailsBtn(): boolean {
+    return this.userCan.viewLicenseAgreementsButton(this.cartService.hasAssetLineItems);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get total(): Observable&lt;number&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.cartService.total;</span>
+  }
+&nbsp;
+  public showLicenseAgreements(): void {
+    this.cartService.retrieveLicenseAgreements().take(1).subscribe((agreements: LicenseAgreements) =&gt; {
+      this.dialogService.openComponentInDialog(
+        {
+          componentType: LicenseAgreementComponent,
+          dialogConfig: { panelClass: 'license-pane', position: { top: '10%' } },
+          inputOptions: {
+            assetType: 'cart',
+            licenses: Common.clone(agreements)
+          },
+          outputOptions: [
+            {
+              event: 'close',
+              callback: <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>true,</span>
+              closeOnEvent: true
+            }
+          ]
+        }
+      );
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get userCanProceed(): boolean {</span>
+<span class="cstat-no" title="statement not covered" >    return this.rmAssetsHaveAttributes &amp;&amp; !this.cartContainsNoAssets;</span>
+  }
+&nbsp;
+  public get rmAssetsHaveAttributes(): boolean {
+    if (this.cartService.state.data.itemCount === 0) return true;
+&nbsp;
+    let validAssets: boolean[] = [];
+&nbsp;
+    this.cartService.state.data.projects.forEach((project: Project) =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (project.lineItems) {
+        project.lineItems.forEach((lineItem: AssetLineItem) =&gt; {
+          validAssets.push(lineItem.rightsManaged === 'Rights Managed' ? !!lineItem.attributes : true);
+        });
+      }
+    });
+    return validAssets.indexOf(false) === -1;
+  }
+&nbsp;
+  public get showTotal(): boolean {
+    return this.store.snapshot(factory =&gt; factory.cart.data.total &gt; 0);
+  }
+&nbsp;
+  public get cartContainsNoAssets(): boolean {
+    return (this.cartService.state.data.itemCount === 0) ? true : false;
+  }
+&nbsp;
+  public get showUsageWarning(): boolean {
+    return !this.cartContainsNoAssets &amp;&amp; !this.rmAssetsHaveAttributes;
+  }
+&nbsp;
+  private editProjectPricing(project: Project) {
+    let preferences: Pojo = project.attributes ? <span class="branch-0 cbranch-no" title="branch not covered" >this.mapAttributesToPreferences(project.attributes) </span>: this.pricingPreferences;
+    this.store.dispatch(factory =&gt; factory.pricing.setPriceForDialog(null));
+    this.store.dispatch(factory =&gt; factory.pricing.initializePricing(
+      'Rights Managed',
+      this.projectPricingOptions(preferences, project)
+    ));
+  }
+&nbsp;
+  private showPricingDialog(lineItem: AssetLineItem): void {
+    let preferences: Pojo = lineItem.attributes ? <span class="branch-0 cbranch-no" title="branch not covered" >this.mapAttributesToPreferences(lineItem.attributes) </span>: this.pricingPreferences;
+    this.store.dispatch(factory =&gt; factory.pricing.initializePricing(
+      'Rights Managed',
+      this.lineitemPricingOptions(preferences, lineItem)
+    ));
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private mapAttributesToPreferences(attributes: any)</span>: Pojo {
+<span class="cstat-no" title="statement not covered" >    if (Array.isArray(attributes)) {</span>
+      // if the attributes came from a lineItem, they are an Array of SelectedPriceAttributes
+      // we need to map them to a Pojo to pass on to the pricing component
+<span class="cstat-no" title="statement not covered" >      let mapped: any = {};</span>
+<span class="cstat-no" title="statement not covered" >      attributes.forEach(<span class="fstat-no" title="function not covered" >(attr: SelectedPriceAttribute)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        mapped[attr.priceAttributeName] = attr.selectedAttributeValue;</span>
+      });
+<span class="cstat-no" title="statement not covered" >      delete mapped['siteName'];</span>
+<span class="cstat-no" title="statement not covered" >      return mapped;</span>
+    } else {
+      // if the attributes came from a project, they are a Pojo.
+      // we do not need to map them before passing them to the pricing component
+<span class="cstat-no" title="statement not covered" >      delete attributes['siteName'];</span>
+<span class="cstat-no" title="statement not covered" >      return attributes;</span>
+    }
+  }
+&nbsp;
+  private projectPricingOptions(preferences: Pojo, project: Project): DefaultComponentOptions {
+    return {
+      componentType: WzPricingComponent,
+      inputOptions: {
+        pricingPreferences: preferences,
+        userCanCustomizeRights: this.userCan.administerQuotes()
+      },
+      outputOptions: [
+        {
+          event: 'pricingEvent',
+          callback: <span class="fstat-no" title="function not covered" >(event: WzEvent, dialogRef: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            this.applyProjectPricing(event, dialogRef, project);</span>
+          }
+        }
+      ]
+    };
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private applyProjectPricing(event: WzEvent, dialogRef: MatDialogRef&lt;WzPricingComponent&gt;, project: Project)</span> {
+<span class="cstat-no" title="statement not covered" >    switch (event.type) {</span>
+      case 'APPLY_PRICE':
+<span class="cstat-no" title="statement not covered" >        if (event.payload.updatePrefs) {</span>
+<span class="cstat-no" title="statement not covered" >          this.userPreference.updatePricingPreferences(event.payload.preferences);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.cartService.updateProjectPriceAttributes(event.payload.attributes, project);</span>
+<span class="cstat-no" title="statement not covered" >        dialogRef.close();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'ERROR':
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.error.handleCustomError(event.payload))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  }
+&nbsp;
+  private lineitemPricingOptions(preferences: Pojo, lineItem: AssetLineItem): DefaultComponentOptions {
+    return {
+      componentType: WzPricingComponent,
+      inputOptions: {
+        pricingPreferences: preferences,
+        userCanCustomizeRights: this.userCan.administerQuotes()
+      },
+      outputOptions: [
+        {
+          event: 'pricingEvent',
+          callback: <span class="fstat-no" title="function not covered" >(event: WzEvent, dialogRef: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >            this.applyPricing(event, dialogRef, lineItem);</span>
+          }
+        }
+      ]
+    };
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  private applyPricing(event: WzEvent, dialogRef: MatDialogRef&lt;WzPricingComponent&gt;, lineItem: AssetLineItem)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    switch (event.type) {</span>
+      case 'CALCULATE_PRICE':
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.pricing.calculatePrice(</span></span>
+          event.payload,
+          lineItem.asset.assetId,
+          this.markersFrom(lineItem.asset as EnhancedAsset)
+        ));
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'APPLY_PRICE':
+<span class="cstat-no" title="statement not covered" >        if (event.payload.updatePrefs) {</span>
+<span class="cstat-no" title="statement not covered" >          this.userPreference.updatePricingPreferences(event.payload.preferences);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        this.cartService.editLineItem(lineItem, { pricingAttributes: event.payload.attributes });</span>
+<span class="cstat-no" title="statement not covered" >        dialogRef.close();</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      case 'ERROR':
+<span class="cstat-no" title="statement not covered" >        this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.error.handleCustomError(event.payload))</span>;</span>
+<span class="cstat-no" title="statement not covered" >        break;</span>
+      default:
+<span class="cstat-no" title="statement not covered" >        break;</span>
+    }
+  }
+&nbsp;
+  private editAsset(lineItem: AssetLineItem) {
+    this.store.callLegacyServiceMethod(service =&gt; service.asset.getClipPreviewData(lineItem.asset.assetId))
+      .subscribe(data =&gt; {
+        this.document.body.classList.add('subclipping-edit-open');
+        lineItem.asset.clipUrl = data.url;
+        this.dialogService.openComponentInDialog(
+          {
+            componentType: WzSubclipEditorComponent,
+            dialogConfig: { width: '530px', position: { top: '14%' } },
+            inputOptions: {
+              window: this.window.nativeWindow,
+              enhancedAsset: lineItem.asset,
+              usagePrice: null
+            },
+            outputOptions: [
+              {
+                event: 'cancel',
+                callback: <span class="fstat-no" title="function not covered" >(event: any)</span> =&gt; { <span class="cstat-no" title="statement not covered" >return true; </span>},
+                closeOnEvent: true
+              },
+              {
+                event: 'save',
+                callback: <span class="fstat-no" title="function not covered" >(newMarkers: SubclipMarkersInterface.SubclipMarkers)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                  this.cartService.editLineItemMarkers(lineItem, newMarkers);</span>
+                },
+                closeOnEvent: true
+              }
+            ]
+          }
+        ).subscribe(() =&gt; {
+          this.document.body.classList.remove('subclipping-edit-open');
+        });
+      });
+  }
+&nbsp;
+  private updateProject(project: Project) {
+    this.dialogService.openFormDialog(
+      project.items,
+      {
+        dialogConfig: { position: { top: '10%' }, disableClose: false },
+        title: 'CART.PROJECTS.FORM.TITLE',
+        submitLabel: 'CART.PROJECTS.FORM.SUBMIT_LABEL',
+        autocomplete: 'off'
+      },
+<span class="fstat-no" title="function not covered" >      (data: any)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >        this.cartService.updateProject(Object.assign(project.project, data));</span>
+      }
+    );
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private calculatePrice(attributes: Pojo, lineItem: AssetLineItem)</span>: void {
+<span class="cstat-no" title="statement not covered" >    const markers: SubclipMarkersInterface.SubclipMarkers = this.markersFrom(lineItem.asset as EnhancedAsset);</span>
+<span class="cstat-no" title="statement not covered" >    this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.pricing.calculatePrice(attributes, lineItem.asset.assetId, markers))</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private markersFrom(asset: EnhancedAsset)</span>: SubclipMarkersInterface.SubclipMarkers {
+<span class="cstat-no" title="statement not covered" >    return asset.isSubclipped ? {</span>
+      in: asset.inMarkerFrame,
+      out: asset.outMarkerFrame
+    } : null;
+  }
+&nbsp;
+  private openNoteDialog(lineItem: AssetLineItem): void {
+    const hasNote: boolean = lineItem.hasOwnProperty('notes') &amp;&amp;
+      lineItem.notes.length &gt; 0 &amp;&amp;
+      lineItem.notes[0].hasOwnProperty('notes') &amp;&amp;
+      lineItem.notes[0].notes.length &gt; 0;
+&nbsp;
+    const title: string = hasNote ? 'QUOTE.EDIT_NOTE' : 'QUOTE.ADD_NOTE';
+    const label: string = hasNote ? 'QUOTE.EDIT_NOTE' : 'QUOTE.ADD_NOTE';
+    const value: string = hasNote ? lineItem.notes[0].notes[0] : '';
+&nbsp;
+    this.dialogService.openFormDialog(
+      [{ name: 'note', type: 'textarea', validation: 'REQUIRED', label, value }],
+      { title },
+<span class="fstat-no" title="function not covered" >      (form)</span> =&gt; <span class="cstat-no" title="statement not covered" >this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.cart.addNote(form.note, lineItem))</span></span>
+    );
+  }
+&nbsp;
+  private removeNoteFrom(lineItem: AssetLineItem): void {
+    this.dialogService.openConfirmationDialog({
+      title: 'CART.DELETE_NOTES.TITLE',
+      message: 'CART.DELETE_NOTES.MESSAGE',
+      accept: 'CART.DELETE_NOTES.ACCEPT',
+      decline: 'CART.DELETE_NOTES.DECLINE'
+    }, <span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.cart.removeNoteFrom(lineItem))</span>)</span>;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

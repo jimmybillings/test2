@@ -1,0 +1,114 @@
+wz-advanced-player {  
+  $scrubber-slider-height: 10px;
+  $thumb-width: 3px;
+  $scrubber-thumb-height: $scrubber-slider-height;
+  $marker-slider-height: 0;
+  $marker-thumb-height: $thumb-width;
+
+  wz-scrubber {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: $scrubber-slider-height;
+  }
+  mat-slider.mat-slider-horizontal {
+    width: 100%;
+    padding: 0;
+    vertical-align: top;
+    .mat-slider-wrapper {
+      height: $scrubber-slider-height;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: .9;
+      cursor: pointer;
+    }
+    .mat-slider-track-wrapper {
+     height: 100%; 
+    }
+    .mat-slider-track-background {
+      height: 100%;
+      width: calc(100% - #{$thumb-width});
+    }
+    .mat-slider-track-fill {
+      height: $scrubber-slider-height;
+      transition: none;
+    }
+
+    .mat-slider-thumb-container {
+      position: relative;
+      top: 0;
+      transition: none;
+    }
+
+    .mat-slider-thumb {
+      width: $thumb-width;
+      top: 0;
+      right: -$thumb-width;
+      border-radius: 0;
+      border: none;
+      transform: none;
+      transition: none;
+    }
+
+    .mat-slider-ticks-container {
+      display: none;
+    }
+
+    &.scrubber {
+      height: $scrubber-slider-height;
+
+      .mat-slider-track {
+        height: $scrubber-slider-height;
+      }
+
+      .mat-slider-track-fill {
+        height: $scrubber-slider-height;
+      }
+
+      .mat-slider-thumb {
+        height: $scrubber-thumb-height;
+      }
+    }
+
+    &.marker {
+      position: absolute;
+      height: $marker-slider-height;
+
+      .mat-slider-track-wrapper {
+        display: none;
+      }
+      .mat-slider-wrapper {
+        height: 0;
+      }
+      .mat-slider-track {
+        height: $marker-slider-height;
+      }
+
+      .mat-slider-track-fill {
+        height: $marker-slider-height;
+      }
+
+      .mat-slider-thumb {
+        height: $marker-thumb-height;
+      }
+
+      &.in {
+        top: 0;
+      }
+
+      &.out {
+        top: $scrubber-slider-height - $marker-thumb-height;
+      }
+    }
+  }
+  .hover-frame-display {
+    position: absolute;
+    top: -35px;
+    border-radius: 2px;
+    font-size: 11px;
+    line-height: 1;
+    padding: 8px 10px;
+  }
+}

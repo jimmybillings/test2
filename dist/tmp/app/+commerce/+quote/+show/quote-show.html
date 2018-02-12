@@ -1,0 +1,175 @@
+<section class="header">
+  <section
+    class="comments-section"
+    layout="row" layout-align="center start">
+    <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <wz-comment
+        [ngClass]="{ 'visible': showComments, 'not-visible': showComments === false }"
+        [formFields]="commentFormConfig"
+        [parentObject]="commentParentObject"
+        [userCanAddComments]="true"
+        (toggleCommentsVisibility)="toggleCommentsVisibility()">
+      </wz-comment>
+    </div>
+  </section>
+  <section layout="row" layout-align="center start">
+    <header flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <div flex="100" layout="row" layout-align="space-between end">
+        <div *ngIf="shouldDisplayReview" flex="grow">
+          <h2 class="mat-display-1">
+            {{ 'QUOTE.REVIEW_HEADER' | translate }} 
+            <span *ngIf="hasPurchaseType">- {{ trStringForPurchaseType | translate }}</span>
+          </h2>
+        </div>
+        <div *ngIf="shouldDisplayPurchaseHeader" flex="grow">
+          <h2 class="mat-display-1">
+            {{ 'QUOTE.PURCHASE_HEADER' | translate }} 
+            <span *ngIf="hasPurchaseType">- {{ trStringForPurchaseType | translate }}</span>
+          </h2>
+        </div>
+        <div 
+          class="tools"
+          flex="none" 
+          [ngClass]="{ 'hide-for-comments': showComments, 'comments-closed': showComments === false }">
+          <a color="primary"
+            [routerLink]="['/quotes']"
+            mat-icon-button
+            title="{{ 'QUOTE.SHOW.BACK_TO_INDEX_TITLE' | translate }}">
+            <mat-icon>inbox</mat-icon>
+          </a>
+          <button
+            mat-icon-button
+            color="primary"
+            title="{{ 'COLLECTION.SHOW.COMMENT_BTN_TITLE' | translate }}"
+            (click)="toggleCommentsVisibility()">
+              <mat-icon>mode_comment</mat-icon>
+              <span *ngIf="(commentCount | async) > 0" class="comment-count">{{ commentCount | async }}</span>
+          </button>
+        </div>
+      </div>
+    </header>
+  </section>
+</section>
+
+<section *ngIf="shouldDisplayReview" class="quote-summary">
+	<div layout="row" flex="100" layout-align="center center">
+    <div
+      class="details"
+      layout="column"
+      layout-gt-xs="row"
+      flex="100"
+      flex-gt-sm="95"
+      flex-gt-md="85"
+      flex-gt-lg="80"
+      layout-align-gt-xs="stretch">
+      <div flex="90">
+        <quote-info-component
+          [salesManager]="salesManager | async"
+          [user]="quoteRecipient | async"
+          [invoiceContact]="invoiceContact | async"
+          [billingAccount]="(quote | async).billingAccountData">
+        </quote-info-component>
+      </div>
+      <div
+        class="cart-total"
+        flex-gt-xs="10"
+        flex="100"
+        flex-order-xs="-1"
+        layout="column"
+        layout-align="space-between end">
+        <div flex="auto">
+          <h3 class="mat-subhead status {{ (quote | async).quoteStatus.toLowerCase() }}">
+            {{ (quote | async).quoteStatus }}
+          </h3>
+          <ng-container *ngIf="(quote | async).orderId as orderId">
+            <span class="mat-caption">
+              <strong>{{ 'ORDER.SHOW.ORDER_NUMBER_LABEL' | translate }}</strong>
+              <a [routerLink]="['/orders', orderId]">{{ orderId }}</a>
+            </span>
+          </ng-container>
+        </div>
+        <div flex layout="column" layout-align="end">
+          <ng-container *ngIf="hasDiscount">
+            <div flex="auto" layout="row" layout-align="end center" class="subtotal mat-headline">
+              <span class="total-label" flex="100">
+                {{ 'CART.CART_SUBTOTAL' | translate }} 
+              </span>
+              <span class="total-amount" flex="nogrow">
+                {{ (quote | async).subTotal | currency:'USD':true:'1.2-2' }}
+              </span>
+            </div>
+            <div flex="auto" layout="row" layout-align="end center" class="discount mat-headline">
+              <span class="total-label" flex="100">
+                {{ 'CART.CART_DISCOUNT' | translate }} 
+              </span>
+              <span class="total-amount" flex="nogrow">{{ (quote | async).discount }}</span>
+            </div> 
+          </ng-container>
+          <div class="total mat-headline" flex="auto" layout="row" layout-align="end end">
+            <span class="total-label">
+              {{ 'QUOTE.INDEX.TOTAL_LABEL' | translate }}
+            </span>
+            <span class="total-amount">
+              {{ (quote | async).total | currency:'USD':true:'1.2-2' }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="displayActiveOfflineAgreementToPurchaser" class="offline-agreement-section">
+  <div layout="row" flex="100" layout-align="center start">
+    <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <div class="offline-agreement-display mat-caption"
+        layout="column"
+        layout-gt-xs="row" 
+        flex="100" 
+        flex-gt-xs="65"
+        flex-gt-md="55">
+        <div>
+          <strong>{{ 'QUOTE.OFFLINE_ID_HEADER' | translate }}</strong>
+          <span>{{ offlineAgreementIds }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tabs-section" [ngClass]="{'quote-review': shouldDisplayReview}">
+  <div layout="row" flex="100" layout-align="center start">
+     <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <div *ngIf="userCan.administerQuotes()">
+        <quote-tab flex></quote-tab>
+      </div>
+      <div *ngIf="!userCan.administerQuotes()">
+        <mat-tab-group *ngIf="(quote | async).quoteStatus === 'ACTIVE'" [(selectedIndex)]="selectedTabIndex">
+          <mat-tab *ngFor="let tabLabelKey of tabLabelKeys; let i = index" [disabled]="!tabEnabled[i]">
+            <ng-template mat-tab-label>{{ tabLabelKey | uppercase }}</ng-template>
+            <quote-tab 
+              *ngIf="tabLabelKey === 'quote'"
+              (notify)="onNotification($event)">
+            </quote-tab>
+            <quote-billing-tab 
+              *ngIf="tabLabelKey === 'billing'"
+              [loaded]="selectedTabIndex === 1"
+              (notify)="onNotification($event)">
+            </quote-billing-tab>
+            <quote-payment-tab 
+              *ngIf="tabLabelKey === 'payment'"
+              (notify)="onNotification($event)">
+            </quote-payment-tab>
+            <quote-confirm-tab 
+              *ngIf="tabLabelKey === 'confirm'"
+              (notify)="onNotification($event)">
+            </quote-confirm-tab>
+          </mat-tab>
+        </mat-tab-group>
+        <div *ngIf="(quote |async).quoteStatus !== 'ACTIVE'">
+          <quote-tab flex></quote-tab>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+@mixin wz-volume-control-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  // $primary: map-get($theme, primary);
+  // $accent: map-get($theme, accent);
+
+  $volume-control-slider-color: darken(mat-color($background, background), 8%);
+
+  .volume-control {
+    background-color: rgba(lighten(mat-color($foreground, base), 21%), .65);
+    .mat-slider-vertical {
+      .mat-slider-track {      
+        background-color: rgba($volume-control-slider-color, .25);
+      }
+      .mat-slider-track-fill {
+        background-color: $volume-control-slider-color;
+      }
+      .mat-slider-thumb {
+        background-color: $volume-control-slider-color;
+      }
+    }
+  }
+}

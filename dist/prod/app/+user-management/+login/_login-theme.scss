@@ -1,0 +1,16 @@
+@mixin wz-login-theme($theme) {
+  $foreground: map-get($theme, foreground);
+
+  section.login.hero {
+    @include text-contrast(mat-color($mat-grey, 900));
+    background-image:
+      linear-gradient(mat-color($mat-grey, 900, .75), mat-color($mat-grey, 900, .5)),
+      url($bk-img-user-management);
+  }
+  .mat-card.wz-form-card {
+    color: mat-color($foreground, secondary-text);
+    .mat-select-value {
+      color: mat-color($foreground, secondary-text);
+    }
+  }
+}

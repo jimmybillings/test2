@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+commerce/components/line-item/line-item-rights.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/+commerce/components/line-item/</a> line-item-rights.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { AssetLineItem } from '../../../shared/interfaces/commerce.interface';
+import { SelectedPriceAttribute } from '../../../shared/interfaces/common.interface';
+@Component({
+  moduleId: module.id,
+  selector: 'line-item-rights-component',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template:
+    `
+  &lt;ng-container *ngIf="rightsManagedWithoutUsage"&gt;
+    &lt;section class="read-only"&gt;
+      &lt;header class="rights-managed"&gt;{{rightsManaged}}&lt;/header&gt;
+    &lt;/section&gt;
+  &lt;/ng-container&gt;
+&nbsp;
+  &lt;ng-container *ngIf="rightsManagedDisplayUsage"&gt;
+    &lt;section
+      data-pendo="cart-lineitem_pricing-btn"
+      [ngClass]="{'read-only': readOnly, 'needs-rights': !hasAttributes}"
+      (click)="showPricingDialog.emit()"&gt;
+      &lt;ng-container&gt;
+        &lt;header&gt;{{'QUOTE.RIGHTS_PACKAGE_TITLE' | translate}}&lt;/header&gt;
+        &lt;span *ngIf="!hasAttributes" class="cart-asset-metadata mat-caption"&gt;
+          &lt;strong&gt;{{'QUOTE.RIGHTS_PACKAGE_NOT_SELECTED_MSG' | translate}}&lt;/strong&gt;
+        &lt;/span&gt;
+      &lt;/ng-container&gt;
+      &lt;ng-container *ngIf="displayRmAttributes"&gt;
+        &lt;span *ngFor="let right of rights" class="cart-asset-metadata mat-caption"&gt;
+        &lt;strong&gt;{{attributeName(right)}}: &lt;/strong&gt; {{attributeValue(right)}}
+        &lt;/span&gt;
+      &lt;/ng-container&gt;
+    &lt;/section&gt;
+  &lt;/ng-container&gt;
+&nbsp;
+  &lt;ng-container *ngIf="rightsRoyaltyFree"&gt;
+    &lt;section class="read-only"&gt;
+      &lt;header class="royalty-free"&gt;{{rightsManaged}}&lt;/header&gt;
+    &lt;/section&gt;
+  &lt;/ng-container&gt;
+&nbsp;
+  `
+})
+export class LineItemRightsComponent {
+  @Input() rights: Array&lt;SelectedPriceAttribute&gt;;
+  @Input() rightsManaged: string;
+  @Input() hasAttributes: boolean;
+  @Input() readOnly: boolean = false;
+  @Input() displayRmAttributes: boolean = true;
+  @Output() showPricingDialog: EventEmitter&lt;null&gt; = new EventEmitter();
+&nbsp;
+  public attributeName(attribute: SelectedPriceAttribute): string {
+    return attribute.priceAttributeDisplayName || attribute.priceAttributeName;
+  }
+&nbsp;
+  public attributeValue(attribute: SelectedPriceAttribute): string {
+    return attribute.selectedAttributeName || attribute.selectedAttributeValue;
+  }
+&nbsp;
+  public get rightsManagedDisplayUsage(): boolean {
+    return this.rightsManaged === 'Rights Managed' &amp;&amp; this.displayRmAttributes;
+  }
+&nbsp;
+  public get rightsManagedWithoutUsage(): boolean {
+    return this.rightsManaged === 'Rights Managed' &amp;&amp; !this.displayRmAttributes;
+  }
+&nbsp;
+  public get rightsRoyaltyFree(): boolean {
+    return this.rightsManaged === 'Royalty Free';
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

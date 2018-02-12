@@ -1,0 +1,109 @@
+quote-edit-recipient-tab-component {
+
+  .recipient-options-select {
+    padding: 1% 1% 4px 0;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      padding-right: 0;
+    }
+    wz-form-picklist-component,
+    wz-form-autocomplete-view {
+      margin-top: 14px;
+      padding: 10px 16px 16px;
+      border-radius: 2px;
+      @include mat-elevation(1);
+      &:first-child {
+        margin: 0;
+      }
+      .mat-title {
+        font-weight: 400;
+        margin: 0 0 2px 0;
+        opacity: .7;
+      }
+      ul {
+        list-style-type: none;
+        padding: 2px 0 0 2px;
+        margin: 0;
+        li {
+          strong  {
+            padding-right: 5px;
+          }
+        }
+      }
+      &.recipient.is-empty {
+        ul.mat-caption {
+          opacity:.4;
+        }
+      }
+      &.billing-account.is-empty {
+        @include mat-elevation(0);
+        background-color: transparent;
+        opacity: .4;
+        border-width: 1px;
+        border-style: solid;
+        ul.mat-caption {
+          margin-top: 73px;
+        }
+        form {
+          display: none;
+        }
+      }
+    }
+    wz-form-autocomplete-view {
+      position: relative;
+      wz-form form .mat-form-field {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .suggestions-menu {
+        width: 100%;
+        top: 94px;
+      }
+    }
+
+    wz-form-autocomplete-view.billing-account.is-empty + wz-form-picklist-component.invoice-contact {
+      @include mat-elevation(0);
+      background-color: transparent;
+      opacity: .4;
+      border-width: 1px;
+      border-style: solid;
+      ul.mat-caption {
+        margin-top: 73px;
+      }
+      form, mat-checkbox {
+        display: none;
+      }
+    }
+  }
+  .col-spacer {
+    @media screen and (max-width: $layout-breakpoint-sm)  {
+      display: none;
+    }
+  }
+  .creator-options-select {
+    padding: 0 0 0 2%;
+    @media screen and (max-width: $layout-breakpoint-xs)  {
+      padding: 5% 0 0 0;
+    }
+    wz-form form .indicate-required {
+      margin-top: 6px;
+      margin-bottom: 2px;
+      opacity: .4;
+    }
+    form .mat-card-actions {
+      align-items: right;
+      align-content: right;
+      justify-content: flex-end;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+      }
+      button.conversion {
+        min-width: 60%;
+        @media screen and (max-width: $layout-breakpoint-sm)  {
+          min-width: 80%;
+        }
+      }
+    }
+  }
+}

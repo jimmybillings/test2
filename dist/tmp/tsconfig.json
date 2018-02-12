@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "removeComments": true,
+    "noLib": false,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "pretty": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "../../node_modules/@types",
+      "../../node_modules"
+    ],
+    "types": [
+      "node",
+      "jasmine",
+      "systemjs"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src",
+    "app/main-prod.ts"
+  ],
+  "compileOnSave": false,
+  "files": [
+    "/Users/jamesbillings/Wazee/wazee-ui/tools/manual_typings/project/jasmineextend.d.ts",
+    "/Users/jamesbillings/Wazee/wazee-ui/tools/manual_typings/project/sample.package.d.ts",
+    "app/main.ts"
+  ]
+}

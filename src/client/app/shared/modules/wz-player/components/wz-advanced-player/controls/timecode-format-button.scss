@@ -1,0 +1,17 @@
+wz-timecode-format-button {
+  .mat-icon-button {
+    width: 75px;
+    font-family: $mat-font-family;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 100;
+  }
+}
+
+// Note: Menu is appended to DOM outside this component!
+.timecode-format-menu {
+  .mat-menu-item {
+    font-family: $mat-font-family;
+    font-size: 13px;
+  }
+}

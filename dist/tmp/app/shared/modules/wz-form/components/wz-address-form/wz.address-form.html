@@ -1,0 +1,43 @@
+<div class="wz-dialog">
+  <button *ngIf="includeCloseButton" mat-dialog-close mat-icon-button title="close dialog" type="button" class="close">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div layout="column" layout-align="center center">
+    <h1 mat-dialog-title>{{ title | translate }}</h1>
+  </div>
+  <div layout="column" layout-align="center center">
+    <mat-form-field class="autocomplete">
+      <input
+        matInput
+        id="autocomplete"
+        placeholder="{{ 'ADDRESS_FORM.AUTOCOMPLETE_INPUT' | translate }}"
+        (focus)="geolocate()"
+        type="text"
+      />
+    </mat-form-field>
+    <form [formGroup]="addressForm" (ngSubmit)="saveAddress()">
+      <div class="address-form" layout="column" layout-align="center center">
+        <div flex="100">
+          <div *ngFor="let row of formItems" layout="row" layout-align="center center">
+            <mat-form-field flex="100" *ngFor="let field of row.fields" id={{field.name}}>
+              <input
+                matInput
+                type={{field.type}}
+                formControlName={{field.name}}
+                placeholder="{{field.label | translate}}"
+              />
+            </mat-form-field>
+          </div>
+        </div>
+        <button
+          class="submit-btn"
+          mat-raised-button
+          [disabled]="!addressFormValid"
+          color="primary"
+          type="submit">
+            Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

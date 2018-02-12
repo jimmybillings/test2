@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-asset/wz-asset.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-asset/</a> wz-asset.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.52% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>108/122</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.19% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>46/54</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.65% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>97/107</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+&nbsp;
+import { Collection } from '../../interfaces/collection.interface';
+import { Asset } from '../../interfaces/common.interface';
+import { Capabilities } from '../../services/capabilities.service';
+import { Frame } from '../../../shared/modules/wazee-frame-formatter/index';
+import { EnhancedAsset } from '../../../shared/interfaces/enhanced-asset';
+import { AppStore } from '../../../app.store';
+import { Metadatum } from '../../../shared/interfaces/commerce.interface';
+&nbsp;
+export class WzAsset implements OnInit {
+  @Output() onAddToCart = new EventEmitter();
+  @Output() onShowSpeedview = new EventEmitter();
+  @Output() onHideSpeedview = new EventEmitter();
+  @Output() onEditAsset = new EventEmitter();
+  @Output() onAddtoDifferentCollection: EventEmitter&lt;EnhancedAsset&gt; = new EventEmitter();
+&nbsp;
+  @Input() public userCan: Capabilities;
+  @Input() public assetType: string = 'search';
+  @Input() public set activeCollection(value: Collection) {
+    this._activeCollection = value;
+    this.assetIdsInActiveCollection = value.assets.items.map((x) =&gt; x.assetId);
+  };
+  @Input() public set assets(assets: EnhancedAsset[]) {
+    this._assets = assets;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get activeCollection(): Collection {</span>
+<span class="cstat-no" title="statement not covered" >    return this._activeCollection;</span>
+  }
+&nbsp;
+  public assetId: number;
+  public hasComp: boolean;
+  public showAssetName: boolean = true;
+  private _assets: EnhancedAsset[];
+  private assetIdsInActiveCollection: number[] = [];
+  private enhancedAssets: { [lookupId: string]: EnhancedAsset } = {};
+  private _activeCollection: Collection;
+&nbsp;
+  constructor(private store: AppStore, private detector: ChangeDetectorRef) { }
+&nbsp;
+  public ngOnInit(): void {
+    this.store.selectCloned(state =&gt; state.uiConfig.components.search.config)
+      .filter(config =&gt; !!config.showAssetNameGridView &amp;&amp; !!config.showAssetNameGridView.value)
+      .map(config =&gt; config.showAssetNameGridView.value)
+      .take(1).subscribe((value: 'true' | 'false') =&gt; {
+        this.showAssetName = Boolean(value);
+      });
+  }
+&nbsp;
+  public get assets(): EnhancedAsset[] {
+    return this._assets;
+  }
+&nbsp;
+  public get canAddToDifferentCollection(): boolean {
+    return this.userCan.haveCollections() &amp;&amp; this.assetType === 'collection';
+  }
+&nbsp;
+  public addToActiveCollection(asset: EnhancedAsset) {
+    this.store.dispatch(factory =&gt; factory.activeCollection.addAsset(asset));
+  }
+&nbsp;
+  public removeFromActiveCollection(asset: EnhancedAsset) {
+    this.store.dispatch(factory =&gt; factory.activeCollection.removeAsset(asset));
+  }
+&nbsp;
+  public addToDifferentCollection(asset: EnhancedAsset) {
+    this.onAddtoDifferentCollection.emit(asset);
+  }
+&nbsp;
+  public addAssetToCart(asset: EnhancedAsset) {
+    this.setAssetActiveId(asset);
+    this.onAddToCart.emit(asset);
+  }
+&nbsp;
+  public setAssetActiveId(asset: EnhancedAsset) {
+    this.assetId = asset.assetId;
+    this.hasComp = asset.hasDownloadableComp;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public loadDeliveryOptionsFor(asset: EnhancedAsset)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.assetId = asset.assetId;</span>
+<span class="cstat-no" title="statement not covered" >    this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.deliveryOptions.load(asset))</span>;</span>
+  }
+&nbsp;
+  public editAsset(asset: EnhancedAsset) {
+    this.onEditAsset.emit(asset);
+  }
+&nbsp;
+  public inCollection(asset: any): boolean {
+    return this.assetIdsInActiveCollection.indexOf(asset.assetId) &gt; -1;
+  }
+&nbsp;
+  public nameOf(asset: EnhancedAsset): string {
+    return asset.name;
+  }
+&nbsp;
+  public routerLinkFor(asset: EnhancedAsset): any[] {
+    return asset.routerLink;
+  }
+&nbsp;
+  public hasThumbnail(asset: EnhancedAsset): boolean {
+    return !!asset.thumbnailUrl;
+  }
+&nbsp;
+  public thumbnailUrlFor(asset: EnhancedAsset): string {
+    return asset.thumbnailUrl;
+  }
+&nbsp;
+  public hasTitle(asset: EnhancedAsset): boolean {
+    return !!this.titleOf(asset);
+  }
+&nbsp;
+  public titleOf(asset: EnhancedAsset): string {
+    return asset.title;
+  }
+&nbsp;
+  public hasFormatType(asset: EnhancedAsset): boolean {
+    return !!asset.formatType;
+  }
+&nbsp;
+  public formatTypeOf(asset: EnhancedAsset): string {
+    return asset.formatType;
+  }
+&nbsp;
+  public formatClassNameFor(asset: EnhancedAsset): string {
+    switch (this.formatTypeOf(asset)) {
+<span class="branch-0 cbranch-no" title="branch not covered" >      case 'High Definition': <span class="cstat-no" title="statement not covered" >return 'hd';</span></span>
+<span class="branch-1 cbranch-no" title="branch not covered" >      case 'Standard Definition': <span class="cstat-no" title="statement not covered" >return 'sd';</span></span>
+<span class="branch-2 cbranch-no" title="branch not covered" >      case 'Digital Video': <span class="cstat-no" title="statement not covered" >return 'dv';</span></span>
+      default: return 'hd';
+    }
+  }
+&nbsp;
+  public hasDuration(asset: EnhancedAsset): boolean {
+    return !!asset.subclipDurationFrame;
+  }
+&nbsp;
+  public subclipDurationFrameFor(asset: EnhancedAsset): Frame {
+    return asset.subclipDurationFrame;
+  }
+&nbsp;
+  public isImage(asset: EnhancedAsset): boolean {
+    return asset.isImage;
+  }
+&nbsp;
+  public isSubclipped(asset: EnhancedAsset): boolean {
+    return asset.isSubclipped;
+  }
+&nbsp;
+  public subclipSegmentStylesFor(asset: EnhancedAsset): object {
+    const enhancedAsset: EnhancedAsset = asset;
+&nbsp;
+    return {
+      'margin-left.%': enhancedAsset.inMarkerPercentage,
+      'width.%': enhancedAsset.subclipDurationPercentage,
+      'min-width.px': 2
+    };
+  }
+&nbsp;
+  public hasDescription(asset: EnhancedAsset): boolean {
+    return !!asset.description;
+  }
+&nbsp;
+  public descriptionOf(asset: EnhancedAsset): string {
+    return asset.description;
+  }
+&nbsp;
+  public inMarkerFrameFor(asset: EnhancedAsset): Frame {
+    return asset.inMarkerFrame;
+  }
+&nbsp;
+  public outMarkerFrameFor(asset: EnhancedAsset): Frame {
+    return asset.outMarkerFrame;
+  }
+&nbsp;
+  public canBePurchased(asset: EnhancedAsset): boolean {
+    const rights: Metadatum = asset.metaData.find((metadatum: Metadatum) =&gt;
+      metadatum.name === 'Rights.Reproduction');
+&nbsp;
+    if (!rights) return false;
+&nbsp;
+    return ['Rights Managed', 'Royalty Free'].includes(rights.value) &amp;&amp;
+      this.store.snapshot(state =&gt; state.speedPreview[asset.assetId] &amp;&amp;
+        state.speedPreview[asset.assetId].hasOwnProperty('price'));
+  }
+&nbsp;
+  public commentCountFor(asset: EnhancedAsset): Observable&lt;number&gt; {
+    return this.store.select(factory =&gt; factory.comment.counts[asset.uuid]);
+  }
+&nbsp;
+  public canBeRemoved(asset: EnhancedAsset) {
+    return this.inCollection(asset) &amp;&amp; this.assetType === 'collection';
+  }
+&nbsp;
+  public canBeAddedAgain(asset: EnhancedAsset) {
+    return this.inCollection(asset) &amp;&amp; this.assetType !== 'collection';
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  public loadPricing(asset: any)</span> {</span>
+<span class="cstat-no" title="statement not covered" >    this.store.dispatch(<span class="fstat-no" title="function not covered" >factory </span>=&gt; <span class="cstat-no" title="statement not covered" >factory.speedPreview.load(asset))</span>;</span>
+<span class="cstat-no" title="statement not covered" >    this.store.blockUntil(<span class="fstat-no" title="function not covered" >state </span>=&gt; <span class="cstat-no" title="statement not covered" >!!state.speedPreview[asset.assetId])</span></span>
+      .subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" ></span>this.detector.markForCheck())</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get userCanEditActiveCollection(): Observable&lt;boolean&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    return this.userCan.editCollection(this._activeCollection);</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

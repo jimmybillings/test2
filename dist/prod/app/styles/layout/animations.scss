@@ -1,0 +1,171 @@
+@keyframes jump {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scaleY(0.75);
+  }
+
+  40% {
+    transform: scaleY(1.25);
+  }
+
+  60% {
+    transform: scaleY(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutBottom {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(rem-calc(2000));
+  }
+}
+
+@keyframes fadeOutTop {
+  0% {
+    opacity: 1;
+    transform: height(auto); 
+  }
+  100% {
+    opacity: 0;
+    transform: height(0);
+  }
+}
+
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleout {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes scaleY {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+// this is used for a processing spinner
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+// this is used for a processing spinner - square that flips
+@keyframes rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  } 
+  100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner-bubble {
+  from{
+    width: 10px;
+    height: 10px;
+    opacity: .8;
+  }
+  to{
+     width: 90px;
+    height: 90px;
+    opacity: 0;
+  }
+}
+
+// @keyframes color-bubble){
+//   0%{color: #009DDC;}
+//   33%{color: #50B949;}
+//   66%{color: #EE2D24;}
+//   100%{color: #FEB825;}
+// }
+
+// @keyframes color-change){
+//   0%{background: #009DDC;}
+//   33%{background: #50B949;}
+//   66%{background: #EE2D24;}
+//   100%{background: #FEB825;}
+// }
+
+@keyframes rotate{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

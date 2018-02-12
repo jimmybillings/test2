@@ -1,0 +1,25 @@
+<commerce-header [type]="'ORDER'" (search)="onSearch($event)"></commerce-header>
+<section layout="row" flex="100" layout-align="center start" layout-margin-gt-xs>
+	<section class="commerce-list" flex-gt-lg="85" flex-lg="85" flex-gt-sm="95" flex="100" layout-margin>
+		<wz-pagination 
+			*ngIf="(orders | async).pagination.totalCount > 0" 
+			[pagination]="(orders | async).pagination"
+			(getPage)="changePage($event)">
+		</wz-pagination>
+		<!-- Current user has no orders-->
+		<mat-card *ngIf="(orders | async).items.length == 0">
+			<mat-card-title>You currently do not have any orders</mat-card-title>
+		</mat-card>
+		<!-- ORDER LIST -->
+		<commerce-list
+			*ngIf="(orders | async).items.length > 0"
+			[type]="'ORDER'"
+			[items]="(orders | async).items">
+		</commerce-list>
+		<wz-pagination 
+			*ngIf="(orders | async).pagination.totalCount > 0" 
+			[pagination]="(orders | async).pagination"
+			(getPage)="changePage($event)">
+		</wz-pagination>
+	</section>
+</section>

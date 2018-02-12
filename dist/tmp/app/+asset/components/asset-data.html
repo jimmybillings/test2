@@ -1,0 +1,21 @@
+<section class="data-bk">
+  <div layout="row" mat-scroll-y="" layout-align="center start">
+    <div flex-gt-xs="95" flex-gt-md="85" flex-lg="80" flex-gt-lg="75" flex="100" layout="row" layout-wrap="" layout-align="center start">
+      <mat-tab-group>
+        <mat-tab *ngFor='let key of secondaryKeys' label="translationReady(secondaryMdata[key].name) | uppercase | translate ">
+          <ng-template mat-tab-label>{{translationReady(secondaryMdata[key].name) | uppercase | translate }}</ng-template>
+          <div class="m-data" *ngFor='let sData of secondaryMdata[key].data; let i=index'>
+            <div class="row" *ngFor='let m of sData.section'>
+              <div class="cell">
+                <h5 class="mat-subheading-1">{{translationReady(m.name) | uppercase | translate }}</h5>
+              </div>
+              <div class="cell">
+                <p class="mat-subheading-1">{{m.value}}</p>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>

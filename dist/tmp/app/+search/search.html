@@ -1,0 +1,88 @@
+<mat-sidenav-container>
+	<mat-sidenav
+		#searchFilter
+		[opened]="(userPreferences.data | async).displayFilterTree && filtersAreAvailable | async"
+		align="start"
+		[mode]="(screenWidth > 600) ? 'side' : 'over'">
+		<mat-slide-toggle
+			class="count-toggle"
+			[checked]="(userPreferences.data | async).displayFilterCounts"
+			color="primary"
+			value="toggle"
+			(change)="countToggle()">
+			{{ 'SEARCH.FILTERS.FILTER_COUNT_TOOGLE_LABEL' | translate }}
+		</mat-slide-toggle>
+
+		<filter-component
+			(onFilterEvent)="filterEvent($event)"
+			class="filter"
+			[counted]="(userPreferences.data | async).displayFilterCounts"
+			[newFilters]="filter.data | async">
+		</filter-component>
+	</mat-sidenav>
+
+	<search-header
+		[hasResults]="!!(results | async).items.length"
+		[sortDefinitionItems]="(sortDefinition.data | async).sorts"
+		[currentSort]="(sortDefinition.data | async).currentSort"
+		[assetView]="(userPreferences.data | async).assetView"
+		[collectionName]="(activeCollection | async).name"
+		[canEditCollection]="canEditCollection | async"
+		[path]="path"
+		(onClickBreadcrumb)="onClickBreadcrumb($event)"
+		(onChangeAssetView)="changeAssetView($event)"
+		(clickAddAllBtn)="onClickAddAllBtn()"
+		(onSortResults)="sortResults($event)">
+	</search-header>
+
+	<section class="search-results">
+		<div layout="row" mat-scroll-y="" layout-align="center start">
+			<div flex-gt-lg="95" flex-lg="95" flex="100">
+				<div layout-gt-md="row" layout="column" layout-align="space-between" layout-align-gt-md="space-between end">
+					<breadcrumb-component
+						layout="row"
+						layout-wrap
+						layout-align="start start"
+						class="search-breadcrumbs root" 
+						[filters]="filter.data | async" 
+						(onFilterEvent)="filterEvent($event)">
+					</breadcrumb-component>
+
+					<wz-pagination
+						flex="noshrink"
+						*ngIf="(results | async).pagination.totalCount > 0"
+						[pagination]="(results | async).pagination"
+						(getPage)="changePage($event)">
+					</wz-pagination>
+				</div>
+
+				<no-results *ngIf="!(results | async).items.length"></no-results>
+
+				<content *ngIf="(results | async).items">
+					<wz-asset-grid *ngIf="(userPreferences.data | async).assetView =='grid'" class="grid" 
+						[assets]="enhancedAssets" 
+						[userCan]="userCan" 
+						[assetType]="'search'"
+						[activeCollection]="activeCollection | async"
+						(onAddToCart)="addAssetToCart($event)">
+					</wz-asset-grid>
+				
+					<wz-asset-list *ngIf="(userPreferences.data | async).assetView =='list'" class="list" 
+						[assets]="enhancedAssets" 
+						[userCan]="userCan"
+						[assetType]="'search'"
+						[activeCollection]="activeCollection | async"
+						(onAddToCart)="addAssetToCart($event)">
+					</wz-asset-list>
+				</content>
+
+				<wz-pagination
+					flex="noshrink"
+					*ngIf="(results | async).pagination.totalCount > 0"
+					[pagination]="(results | async).pagination"
+					(getPage)="changePage($event)">
+				</wz-pagination>
+			</div>
+		</div>
+	</section>
+</mat-sidenav-container>

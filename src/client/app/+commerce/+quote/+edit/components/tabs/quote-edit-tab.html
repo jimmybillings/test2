@@ -1,0 +1,57 @@
+<quote-purchase-type-component
+  flex-gt-xs="auto" 
+  flex="100" 
+  layout-gt-xs="row" 
+  layout="column" 
+  layout-align="start"
+  [quoteTypes]="purchaseTypeConfig"
+  [selectedType]="quoteType"
+  (selectQuoteType)="onSelectQuoteType($event)">
+</quote-purchase-type-component>
+
+<projects-component
+  [quoteType]="quoteType"
+  [projects]="projects"
+  [config]="config" 
+  [userCan]="userCan"
+  [allRMAssetsHaveAttributes]="rmAssetsHaveRightsPackage"
+  (projectsNotify)="onNotification($event)">
+</projects-component>
+
+<section class="cart-total" layout="row" layout-align="center center">
+  <div flex="100">
+    <div *ngIf="showDiscount" flex="100" layout="row" layout-align="end center" class="subtotal mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_SUBTOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ subTotal | async | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+    <div *ngIf="showDiscount" flex="100" layout="row" layout-align="end center" class="discount mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_DISCOUNT' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">{{ discount | async }}</span>
+    </div>
+    <div *ngIf="showTotal" flex="100" layout="row" layout-align="end center" class="total mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_TOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ total | async | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+    <div flex="100" layout="row" layout-align="center center">
+      <administer-quote-component
+        flex="100"
+        [userCanProceed]="userCanProceed"
+        [shouldShowCloneButton]="shouldShowCloneButton | async"
+        (notify)="onNotification($event)">
+      </administer-quote-component>
+    </div>
+    <div flex="100" layout="row" layout-align="end center" class='select-usage-warn' *ngIf="showUsageWarning">
+      {{ 'CART.SELECT_USAGE_WARN' | translate }}
+    </div>
+  </div>
+</section>

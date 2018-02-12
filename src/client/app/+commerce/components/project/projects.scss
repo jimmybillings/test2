@@ -1,0 +1,112 @@
+projects-component .add-project button {
+  margin: 2px 0 2px 0;
+  mat-icon {
+    padding: 0 4px 2px 0;
+  }
+}  
+
+projects-component section.header {
+  padding-left: 8px;
+  padding-right: 8px;
+  header {
+    padding-top: 6px;
+    padding-bottom: 5px;
+    position: relative;
+    .mat-display-1 {
+      margin: 0;
+      width: calc(100% - 120px);
+      font-size: 26px;
+    }
+  }
+  .tools {
+    text-align: right;
+  }
+}
+div.project {
+  margin-bottom: 0;
+  header.project-info {
+    h5[mat-display-1] {
+      margin: 0 0 0 0;
+      white-space: nowrap;
+      line-height: 1;
+      .project-label {
+        font-weight: bolder;
+      }
+      .project-name {
+        font-size: 17px;
+        font-weight: 300;
+      }
+    }
+    .project-client {
+      line-height: 1;
+    }
+    project-info-component {
+      margin: 6px 0 6px 7px;
+      padding: 0 0 0 2px;
+      position: relative;
+      transition: all .2s ease-in-out;
+      &::before {
+        content: "\e150";
+        font-family: 'Material Icons';
+        position: absolute;
+        top: 2px;
+        right: 3px;
+        font-size: 24px;
+        opacity: 0;
+      }
+      &:hover {
+        padding: 0 40px 0 3px;
+        cursor: pointer;
+        &::before {
+          opacity: .55;
+        }
+      }
+      &.read-only:hover {
+        padding: 0 0 0 2px;
+        background-color: transparent;
+        cursor: default;
+        &::before {
+          content: "";
+          opacity: 0;
+        }
+      }
+    }
+    div:nth-child(2n) {
+      // padding: 0 0 0 0;
+      text-align: right;
+    }
+    div.project-asset-count {
+      font-size: 14px;
+      padding: 3px 9px 0 0;
+    }
+    div.project-subtotal {
+      margin-top: 1px;
+      span {
+        font-size: 18px;
+        display: inline-block;
+        padding: 1px 8px 0 0;
+        &::first-letter {
+          font-size: .83em;
+          vertical-align: top;
+        }
+      }
+      strong {
+        padding-right: 5px;
+      }
+    }
+    button.is-outlined {
+      line-height: 24px;
+      min-width: 50px;
+      &.select-usage {
+        border: none;
+      }
+    }
+    button.rights-pkg .mat-icon {
+      font-size: 18px;
+      line-height: 1.32em;
+    }
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

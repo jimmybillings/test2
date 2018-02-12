@@ -1,0 +1,31 @@
+<div class="wz-dialog license-agreements">
+  <button mat-icon-button mat-dialog-close title="{{'CART.CLOSE_HOVER_TITLE' | translate}}" type="button" class="close">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h1 mat-dialog-title>
+    {{'CART.LICENSE_DIALOG_HEAD' | translate}}
+  </h1>
+  <div class="license-agreement-content">
+    <mat-tab-group>
+      <mat-tab *ngFor='let lic of _licenses'>
+        <ng-template mat-tab-label>{{ labelForLicense(lic) }}</ng-template>
+        <div flex="100" class="asset-carousel grid">
+          <ul class="asset-list" *ngIf="lic.matchingAssets">
+            <li *ngFor="let asset of lic.matchingAssets">
+              <div class="asset">
+                <a (click)="onClickLink()" flex="" class="asset-thb" [routerLink]="asset.routerLink">
+                  <img *ngIf="asset.thumbnailUrl" src="{{ asset.thumbnailUrl }}"/>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="lic.document" class="license legal-txt" [innerHtml]="lic.document.text"></div>
+        <div *ngIf="!lic.document" class="license legal-txt">
+          <h2 mat-dialog-title class="warn">{{'CART.NO_LICENSE_AVAILABLE' | translate}}</h2>
+          <h4>{{'CART.CHECKOUT_DISABLED_MSG' | translate}}</h4>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

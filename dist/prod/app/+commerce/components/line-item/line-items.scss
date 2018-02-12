@@ -1,0 +1,299 @@
+line-items-component {
+  padding: 0 12px 12px 12px;
+  display: flex;
+}
+
+ul.asset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-width: 100%;
+}
+li.cart-asset {
+  position: relative;
+  margin: 12px 0 0 0;
+  padding: 2px;
+  border-radius: 2px;
+  transition: $swift-ease-out;
+  .toggle-notes-btn {
+    button {
+      font-size: 12px;
+    }
+  }
+  .actions {
+    min-height: 45px;
+    position: relative;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding-top: 4px;
+    }
+  }
+  .tools {
+    opacity: .85;
+    text-align: right;
+  }
+  .tools button {
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      margin-bottom: 3px;
+    }
+  }
+  .asset-description {
+    font-size: 14px;
+    line-height: 15.5px;
+    margin-top: 3px;
+    margin-bottom: 11px;
+  }
+  .asset-name {
+    font-size: 11px;
+    opacity: .7;
+  }
+  .subclip-timeline {
+    margin: 5px 0 0;
+    position: relative;
+    height: 6px;
+    width: 100%;
+    .subclip-segment {
+      height: 100%;
+      position: absolute;
+    }
+  }
+  ul.subclip-data {
+    margin-top: 0;
+    list-style: none;
+    padding: 0;
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    min-width: 380px;
+    font-size: 11px;
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) and (orientation: portrait)  {
+      font-size: 10px;
+      min-width: 100%;
+    }
+    li {
+      &:first-child {
+        margin:0 0 0 4px;
+      }
+      &:nth-child(3n) {
+        margin:0 4px 0 0;
+        text-align: right;
+      }
+    }
+  }
+
+  line-item-price-component {
+    @media screen and (min-width: $layout-breakpoint-xs) {
+      position: absolute;
+      bottom: 7px;
+      right: 7px;
+      font-size: 18px;
+    }
+    .line-item-price {
+      text-align: right;
+      @media screen and (max-width: $layout-breakpoint-xs) {
+        padding: 10px;
+      }
+      .admin-price {
+        transition: all .2s ease-in-out;
+        &::after {
+          transition: all .2s ease-in-out;
+          content: "\e150";
+          font-family: 'Material Icons';
+          position: absolute;
+          bottom: 5px;
+          right: 5px;
+          font-size: 18px;
+          opacity: 0;
+        }
+        &:hover {
+          cursor: pointer;
+          transition: all .2s ease-in-out;
+          padding-right: 30px;
+          &::after {
+            opacity: .4;
+          }
+        }
+      }
+      .admin-price, .non-admin-price {
+        padding: 6px 0 4px 6px;
+        margin-top: 6px;
+        &::first-letter {
+          font-size: .78em;
+          line-height: 1.355em;
+          vertical-align: top;
+        }
+        &.select-usage::after {
+          content: " *";
+        }
+      }
+      .multiplier, .multiplier-base, .pre-discount {
+        padding-bottom: 3px;
+        font-size: 13px;
+        .label {
+          font-weight: bold;
+        }
+        @media screen and (max-width: $layout-breakpoint-xs) {
+          font-size: 12px;
+          padding: 4px 0 0 0;
+        }
+      }
+      .multiplier-base, .pre-discount {
+        opacity: .8;
+        .multiplier-base-price, .pre-discount-price {
+          padding-top: 0;
+          &::first-letter {
+            font-size: .78em;
+            line-height: 1.355em;
+            vertical-align: top;
+          }
+        }
+      }
+      .multiplier .multiplier-value, .multiplier-base .multiplier-base-price, .pre-discount, .pre-discount-price {
+        padding-left: 7px;
+      }
+    }
+  }
+  .divider {
+    margin: 6px 8px 0 8px;
+    padding-bottom: 6px;
+    display: none;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      display: flex;
+      position: absolute;
+      bottom: 32px;
+      width: calc(100% - 16px);
+    }
+  }
+  .notes {
+    margin: 2px 8px 8px 8px;
+    .note {
+      &.editable {
+        padding-right: 26px;
+        transition: all .25s ease-in-out;
+        &::before {
+          transition: all .2s ease-in-out;
+          content: "\e150";
+          font-family: 'Material Icons';
+          position: absolute;
+          right: 120px;
+          font-size: 24px;
+          opacity: 0;
+        }
+        &:hover {
+          padding-left: 4px;
+          cursor: pointer;
+          &::before {
+            right: 106px;
+            opacity: .4;
+          }
+        }
+        @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+          &:hover {
+            padding-left: 4px;
+            cursor: pointer;
+            &::before {
+              right: 16px;
+              opacity: .4;
+            }
+          }        
+        }
+      }
+      span {
+        padding: 2px 4px;
+        line-height: 1.5;
+        font-style: italic;
+      }
+    }
+    button[mat-button] {
+      opacity: .4;
+    }
+  }
+}
+line-item-transcode-select-component .read-only-transcode { 
+  margin-top: -8px; 
+  padding: 6px;
+  @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+    margin: 0;
+    padding: 0;
+  }
+}
+line-item-rights-component {
+  section {
+    margin-bottom: 12px;
+    margin-top: -2px;
+    padding: 6px;
+    position: relative;
+    transition: all .2s ease-in-out;
+    &::before {
+      transition: all .2s ease-in-out;
+      content: "\e150";
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 3px;
+      right: 34px;
+      font-size: 24px;
+      opacity: 0;
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      margin-top: 0;
+      padding: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      &::before {
+        right: 4px;
+        opacity: .4;
+      }
+    }
+
+  }
+  header {
+    position: relative;
+    font-size: .675em;
+    margin: 0 0 4px 0;
+    font-weight: 300;
+    text-transform: uppercase;
+    opacity: .75;
+    padding-left: 18px;
+    &::before {
+      content: "\e85d";
+      font-family: 'Material Icons';
+      position: absolute;
+      top: -5px;
+      left: -1px;
+      font-size: 1.475em;
+      opacity: .85;
+    }
+    &.royalty-free::before {
+      content: "\e867";
+    } 
+    &.rights-managed::before {
+      content: "\e866";
+    } 
+  }
+  span.cart-asset-metadata  { 
+    display: block;
+    line-height: 1.3em;
+  }
+  section.read-only:hover {
+    background-color: transparent;
+    cursor: default;
+    &::before {
+      content: "";
+      opacity: 0;
+    }
+  }
+}
+
+a.mat-button.is-outlined.mini,
+button.is-outlined.mini {
+  line-height: 24px;
+  min-width: 50px;
+  padding: 0 10px;
+  margin-right: 12px;
+}
+.cart-asset asset-subclip-display-component .asset-sub-clip {
+  margin-top: 14px;
+  ul.subclip-data {
+    min-width: 307px;
+  }
+}

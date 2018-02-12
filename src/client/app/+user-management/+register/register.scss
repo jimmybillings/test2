@@ -1,0 +1,41 @@
+register-component {
+  mat-card.wz-form-card {
+    mat-card-content {
+      button.terms-button {
+        position: absolute;
+        top: 380px;
+        right: 60px;
+      }
+    }
+  }
+  mat-card.registration-confirm {
+    padding: 42px;
+    margin-top:42px;
+    .email {
+      display: block;
+      font-weight: 500;
+      margin-top: -4px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+// terms agreement
+.mat-dialog-container .wz-dialog.terms-dialog {
+  padding: 4px 8px 6px;
+  width: 500px;
+  height: 70vh;
+  @media screen and (max-width: $layout-breakpoint-xs) and (orientation: portrait)  {
+    width: 100%;
+  }
+  .content {
+    font-size: .84em;
+    padding: 0 14px;
+    overflow-y: scroll;
+    height: calc(100% - 114px);
+    margin-bottom: 22px;
+  }
+  .terms-actions button.mat-primary {
+    width: 66%;
+  }
+}

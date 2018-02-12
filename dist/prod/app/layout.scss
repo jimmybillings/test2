@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import 'node_modules/normalize.css/normalize';
+
+@import 'node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import 'styles/layout/font-awesome/font-awesome';
+
+@import 'node_modules/@angular/material/theming';
+
+// these are not part of ng2material just yet, but are needed
+// hopefully these will be part of Ng2 Material, and then removed, and referenced above
+@import 'styles/common/wz-common';
+@import 'styles/layout/typography';
+@import 'styles/layout/animations';
+// import all wz component styles that are NOT themed
+@import 'styles/wazee';

@@ -1,0 +1,24 @@
+<div class="wz-speedview" [ngClass]="{'no-data': speedviewAssetInfo.noData}" [@state]="visibility | async" *ngIf="speedviewAssetInfo | async as speedviewAssetInfo">
+  <div layout="column" flex="none" *ngIf="speedviewAssetInfo.imageQuickView">
+    <div class="image-bg">
+      <img class="image-speedview" [src]="speedviewAssetInfo.url">
+    </div>
+  </div>
+  <div layout="column" flex="none" *ngIf="!speedviewAssetInfo.imageQuickView">
+    <video [src]="speedviewAssetInfo.url" width="400" height="100%" poster="{{speedviewAssetInfo.posterUrl}}"
+      autoplay name="media" type="video/mp4"></video>
+  </div>
+  <section *ngIf="!speedviewAssetInfo.noData" class="info" layout="row" layout-align="space-between none">
+    <ul flex="65" class="metadata">
+      <li *ngFor="let meta of speedviewAssetInfo.values">
+        <span *ngIf="meta.value"><strong>{{ translationReady(meta.name) | uppercase | translate }}: </strong>{{ meta.value | slice:0:36 }}</span>
+      </li>
+    </ul>
+    <div *ngIf="speedviewAssetInfo.price && speedviewAssetInfo.price > 0" flex="35" class="price-info">
+      <span class="clip-rights" *ngIf="speedviewAssetInfo.pricingType">{{ speedviewAssetInfo.pricingType | uppercase }}</span>
+    </div>
+  </section>
+  <section *ngIf="speedviewAssetInfo.noData" class="info" layout="row" layout-align="space-between none">
+      <span class="no-data">{{'ERRORS.NO_SPEED_PREVIEW_DATA' | translate}}</span>
+  </section>
+</div>

@@ -1,0 +1,21 @@
+@mixin wz-sort-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  div.mat-menu-panel div.mat-menu-content wz-sort-component div.dense,
+  .mat-menu.dd-menu-wrapper.dense {
+    .select-dd {
+      button[mat-menu-item]{
+        .mat-icon.material-icons {
+          color: mat-color($primary);
+        }
+      }
+    }
+    .select-dd.active button[mat-menu-item] {
+      color: mat-color($primary);
+    }
+    mat-divider {
+      border-top-color: mat-color($foreground, divider);
+    }
+  }
+}

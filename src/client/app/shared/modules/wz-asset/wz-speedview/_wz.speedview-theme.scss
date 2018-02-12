@@ -1,0 +1,11 @@
+@mixin wz-speedview-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .wz-speedview {
+    background-color: mat-color($background, card);
+  }
+  .wz-speedview.no-data > div {
+    background-color: mat-color($foreground, base, .8);
+  }
+}

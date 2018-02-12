@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+search/search-header.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">app/+search/</a> search-header.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>24/24</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+&nbsp;
+export type ResultsView = 'grid' | 'list';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'search-header',
+  template: `
+    	&lt;section class="search-header" layout="row" layout-align="center center"&gt;
+        &lt;header flex-gt-lg="95" flex-lg="95" flex="100"&gt;
+          &lt;div layout="row" layout-align="space-between end"&gt;
+            &lt;wz-gallery-breadcrumb
+              *ngIf="path"
+              [path]="path"
+              (clickBreadcrumb)="onClickBreadcrumb.emit($event)"&gt;
+            &lt;/wz-gallery-breadcrumb&gt;
+            &lt;h2 *ngIf="!hasResults" flex="100" class="mat-display-1 alert"&gt; 
+              {{ 'SEARCH.NO_RESULTS.PG_HEADING' | translate }}
+            &lt;/h2&gt;
+            &lt;div *ngIf="hasResults" class="asset-sort-by tools" flex="auto"&gt;
+              &lt;button mat-button class="is-dd" color="primary" [mat-menu-trigger-for]="assetSortMenu"&gt;
+                &lt;span class="key"&gt;{{'SEARCH.SORT_BTN_LABEL' | translate }}&lt;/span&gt;
+                &lt;span class="value mat-caption"&gt;
+                  {{ currentSort.name }}
+                &lt;/span&gt;
+              &lt;/button&gt;
+              &lt;mat-menu x-position="before" #assetSortMenu="matMenu"&gt;
+                &lt;wz-sort-component 
+                  [current]="currentSort" 
+                  [items]="sortDefinitionItems" 
+                  (sort)="onSortResults.emit($event)"&gt;
+                &lt;/wz-sort-component&gt;
+              &lt;/mat-menu&gt;
+              &lt;button
+                mat-icon-button
+                color="primary"
+                title="{{ titleForAssetViewBtn | translate }}" 
+                (click)="onClickAssetViewBtn()"&gt;
+                &lt;mat-icon&gt;{{ iconForAssetViewBtn }}&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;button
+                [disabled]="!canEditCollection"
+                mat-icon-button
+                color="primary"
+                title="{{ 'SEARCH.ADD_ALL_TO_COLLECTION.BTN_TITLE' | translate:{ collectionName:collectionName } }}"
+                (click)="onClickAddAllBtn()"&gt;
+                &lt;mat-icon&gt;library_add&lt;/mat-icon&gt;  
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/header&gt;
+      &lt;/section&gt;
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class SearchHeaderComponent {
+  @Input() hasResults: boolean = true;
+  @Input() sortDefinitionItems: any;
+  @Input() currentSort: any;
+  @Input() assetView: ResultsView = 'grid';
+  @Input() path: any;
+  @Input() collectionName: string;
+  @Input() canEditCollection: boolean;
+  @Output() onChangeAssetView: EventEmitter&lt;ResultsView&gt; = new EventEmitter();
+  @Output() onSortResults: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() onClickBreadcrumb: EventEmitter&lt;any&gt; = new EventEmitter();
+  @Output() clickAddAllBtn: EventEmitter&lt;null&gt; = new EventEmitter();
+&nbsp;
+  public get titleForAssetViewBtn(): string {
+    return this.assetView === 'grid' ?
+      'SEARCH.ASSET_VIEW_LIST_BTN_TITLE' :
+      'SEARCH.ASSET_VIEW_GRID_BTN_TITLE';
+  }
+&nbsp;
+  public get iconForAssetViewBtn(): string {
+    return this.assetView === 'grid' ? 'view_list' : 'view_comfy';
+  }
+&nbsp;
+  public onClickAssetViewBtn(): void {
+    const newViewValue: ResultsView = this.assetView === 'grid' ? 'list' : 'grid';
+    this.onChangeAssetView.emit(newViewValue);
+  }
+&nbsp;
+  public onClickAddAllBtn(): void {
+    this.clickAddAllBtn.emit();
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

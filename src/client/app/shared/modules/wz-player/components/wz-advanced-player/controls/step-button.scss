@@ -1,0 +1,49 @@
+wz-step-button {    
+  .mat-icon-button[mat-icon-button] {
+    height: 31px;
+    width: 31px;
+    margin: 0 1px;
+    line-height: 1.55;
+    mat-icon {
+      line-height: 16px;
+      height: 16px;
+      margin-left: 10px;
+      position: relative;
+      &.material-icons {
+        font-size: 16px;
+      }
+      &::before {
+        content: "5s";
+        font-family: $mat-font-family;
+        font-size: 11px;
+        line-height: 1.5;
+        font-weight: 100;
+        position: absolute;
+        margin-left: -9px;
+        margin-top: .033em;
+      }
+      &.one-frame::before {
+        content: "1f";
+        margin-left: -8px;
+      }
+      &.one-second::before {
+        content: "1s";
+      }
+    }
+    &.reverse mat-icon {
+      transform: rotate(180deg);
+      margin-left: -14px;
+      &::before {
+        transform: rotate(180deg);
+        margin-top: -1px;
+        // line-height: 1.5;
+      }
+      &.one-frame::before {
+        margin-left: -8px;
+      }
+      &.five-second::before {
+        margin-left: -10px;
+      }
+    } 
+  }
+}

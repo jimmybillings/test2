@@ -1,0 +1,98 @@
+<ul class="asset-list">
+  <ng-container *ngFor="let lineItem of items">
+    <li class="cart-asset" flex="100" layout="column">
+      <div layout="row" layout-xs="column">
+        <div flex="100" flex-gt-xs="60" layout="column" layout-align="space-between">
+          <cart-asset-component [asset]="lineItem.asset"></cart-asset-component>
+          <ng-container *ngIf="hasNotes(lineItem)">
+            <div layout-padding class="toggle-notes-btn">			
+              <button
+                mat-button
+                title="{{ 'QUOTE.SHOW_NOTES' | translate }}"
+                (click)="toggleNotesVisibilityFor(lineItem)">
+                <span>{{ 'QUOTE.SHOW_NOTES' | translate }}</span>
+                <mat-icon>{{ iconForNotesButton(lineItem) }}</mat-icon>
+              </button>
+            </div>
+          </ng-container>
+        </div>
+        <div flex-gt-xs="30" flex-gt-sm="25" flex="auto" layout-padding>
+          <line-item-rights-component
+            [displayRmAttributes]="shouldDisplayRights(lineItem)"
+            [readOnly]="readOnly"
+            [rightsManaged]="lineItem.rightsManaged"
+            [rights]="lineItem.attributes"
+            [hasAttributes]="!!lineItem.attributes"
+            (showPricingDialog)="onShowPricingDialog(lineItem)">
+          </line-item-rights-component>
+          <line-item-transcode-select-component
+            *ngIf="shouldShowTargets(lineItem)"
+            [readOnly]="readOnly"
+            [transcodeTargets]="lineItem.transcodeTargets"
+            [selectedTarget]="lineItem.selectedTranscodeTarget"
+            (selectTarget)="onSelectTarget($event, lineItem.selectedTranscodeTarget, lineItem)">
+          </line-item-transcode-select-component>
+        </div>
+        <div flex-gt-xs="20" flex="auto" class="actions" flex-order-xs="-3">
+          <line-item-actions-component
+            *ngIf="!readOnly"
+            [rightsReproduction]="lineItem.rightsManaged"
+            [hasAttributes]="!!lineItem.attributes"
+            [otherProjects]="otherProjects"
+            [userCanCreateSubclips]="userCan.createSubclips(lineItem.asset)"
+            [userCanAdministerQuotes]="userCan.administerQuotes()"
+            [assetIsSubclipped]="isSubclipped(lineItem.asset)"
+            [quoteType]="quoteType"
+            [hasMultiplier]="lineItem.multiplier > 1"
+            [hasNote]="hasNotes(lineItem)"
+            (showPricingDialog)="onShowPricingDialog(lineItem)"
+            (clone)="onClone(lineItem)"
+            (moveTo)="onMoveTo($event, lineItem)"
+            (editMarkers)="onEditMarkers(lineItem)"
+            (openCostMultiplierForm)="onOpenCostMultiplierForm(lineItem)"
+            (removeCostMultiplier)="onRemoveCostMultiplier(lineItem)"
+            (addCustomPrice)="onAddCustomPrice(lineItem)"
+            (addNote)="onAddNote(lineItem)"
+            (remove)="onRemove(lineItem)">
+          </line-item-actions-component>
+          <div *ngIf="!readOnly" flex="100" layout="row" layout-xs="column" class="divider"></div>
+          <line-item-price-component
+            *ngIf="shouldDisplayPricing(lineItem)"
+            [price]="lineItem.price"
+            [itemPrice]="lineItem.itemPrice"
+            [grossAssetPrice]="lineItem.grossAssetPrice"
+            [multiplier]="lineItem.multiplier"
+            [rightsManaged]="lineItem.rightsManaged"
+            [hasAttributes]="!!lineItem.attributes"
+            [overrideGrossAssetPrice]="lineItem.overrideGrossAssetPrice"
+            [userCanAdministerQuotes]="userCan.administerQuotes()"
+            [readonly]="readOnly"
+            (addCustomPrice)="onAddCustomPrice(lineItem)">
+          </line-item-price-component>
+        </div>
+      </div>
+      <div
+        class="notes"
+        layout="column"
+        layout-gt-xs="row"
+        *ngIf="shouldShowNoteFor(lineItem)">
+        <div
+          class="note"
+          layout="row"
+          layout-align="start center"
+          flex="100"
+          (click)="onAddNote(lineItem)"
+          [ngClass]="{'editable': !readOnly }">
+          <span class="mat-caption">{{ lineItem.notes[0].notes[0] }}</span>
+        </div>
+        <button
+          *ngIf="!readOnly"
+          title="Delete Usage Notes"
+          mat-button
+          (click)="removeNotesFrom(lineItem)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </li>
+  </ng-container>
+</ul>

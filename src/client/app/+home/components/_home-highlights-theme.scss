@@ -1,0 +1,34 @@
+@mixin wz-home-highlights-theme($theme) {
+  $background: map-get($theme, background);
+
+  home-highlights {
+    .mrkt-collections {
+      background-color:  mat-color($background, app-bar);
+    }
+  }
+
+  home-highlights {
+    .mrkt-collections {
+      .mrkt-collections__highlight {
+        &:nth-child(1n) .mrkt-collections__highlight_img {
+          background-image: url('assets/img/highlights/1_sports.jpg');
+        }
+        &:nth-child(2n) .mrkt-collections__highlight_img{
+          background-image: url('assets/img/highlights/2_drone.jpg');
+        }
+        &:nth-child(3n) .mrkt-collections__highlight_img{
+          background-image: url('assets/img/highlights/hl_life_story.jpg');
+        }
+        &:nth-child(4n) .mrkt-collections__highlight_img{
+          background-image: url('assets/img/highlights/4_film_illustration.jpg');
+        }
+        &:nth-child(5n) .mrkt-collections__highlight_img{
+          background-image: url('assets/img/highlights/5_screens.jpg');
+        }
+        &:nth-child(6n) .mrkt-collections__highlight_img{
+          background-image: url('assets/img/highlights/hl_jfk_historic.jpg');
+        }
+      }
+    }
+  }
+}

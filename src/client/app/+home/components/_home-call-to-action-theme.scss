@@ -1,0 +1,20 @@
+@mixin wz-home-call-to-action-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  home-call-to-action {
+    .mrkt-call-to-action {
+      background-color: mat-color($primary, darker);
+      color: mat-color($primary, darker-contrast);
+      background-image: url('/assets/img/bk/tex/bktx_dgl_lines_light.png');
+    }
+    .conversion {
+      &[mat-button] {
+        background-color: mat-color($accent, darker, .8);
+        &:hover {
+          background-color: mat-color($accent, darker, .8);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<section class="header">
+  <section
+    class="comments-section"
+    layout="row" layout-align="center start">
+    <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <wz-comment
+        [ngClass]="{ 'visible': showComments, 'not-visible': showComments === false }"
+        [formFields]="commentFormConfig"
+        [parentObject]="commentParentObject"
+        (toggleCommentsVisibility)="toggleCommentsVisibility()">
+      </wz-comment>
+    </div>
+  </section>
+  <section layout="row" layout-align="center start">
+    <header flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <div flex="100" layout="row" layout-align="space-between end" layout-align-xs="start">
+        <div flex="no-grow">
+          <h2 class="mat-display-1">{{ 'QUOTE.CREATE_HEADER' | translate }}</h2>
+          <span class="bulk-order" flex="nogrow" *ngIf="hasBulkOrderId | async">
+            <span>{{ 'QUOTE.BULK_ORDER_NAME' | translate }}</span> {{hasBulkOrderId | async}}
+          </span>
+        </div>
+        <div 
+          class="tools"
+          flex="auto" 
+          layout-align="end center"
+          [ngClass]="{ 'hide-for-comments': showComments, 'comments-closed': showComments === false }">
+          <a color="primary" [routerLink]="['/quotes']" mat-icon-button color="primary" title="{{ 'QUOTE.SHOW.BACK_TO_INDEX_TITLE' | translate }}">
+            <mat-icon>inbox</mat-icon>
+          </a>
+          <button
+            mat-icon-button
+            color="primary"
+            title="{{ 'QUOTE.COMMENTS_BTN_TITLE' | translate }}"
+            (click)="toggleCommentsVisibility()">
+              <mat-icon>mode_comment</mat-icon>
+              <span *ngIf="(commentCount | async) > 0" class="comment-count">{{ commentCount | async }}</span>
+          </button>
+          <button mat-icon-button color="primary" [mat-menu-trigger-for]="quoteOptionsMenu" title="{{ 'QUOTE.MORE_OPTIONS_TITLE' | translate }}">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+        </div>
+        <mat-menu x-position="before" #quoteOptionsMenu="matMenu">
+          <button mat-menu-item (click)="addBulkOrderId()">
+            <mat-icon>bookmark_border</mat-icon>{{ bulkOrderIdActionLabel | translate }}
+          </button>
+          <button mat-menu-item (click)="editDiscount()">
+            <mat-icon>monetization_on</mat-icon>{{ discountActionLabel | translate }}
+          </button>
+          <div class="divider"></div>
+          <button mat-menu-item
+            [disabled]="!shouldShowCloneButton | async"
+            (click)="onCloneQuote()">
+            <mat-icon>layers</mat-icon>{{ 'QUOTE.CLONE_QUOTE' | translate }}
+          </button>
+          <button mat-menu-item
+            (click)="onCreateQuote()">
+            <mat-icon>control_point_duplicate</mat-icon>{{ 'QUOTE.SAVE_AND_NEW' | translate }}
+          </button>
+          <div class="divider"></div>
+          <button mat-menu-item
+            (click)="onOpenDeleteQuoteDialog()">
+            <mat-icon>delete</mat-icon>{{ 'QUOTE.DELETE_BTN' | translate }}
+          </button>
+        </mat-menu>
+      </div>
+    </header>
+  </section>
+</section>
+
+
+<section class="tabs-section quote-section">
+  <div layout="row" flex="100" layout-align="center start">
+    <div flex="100" flex-gt-sm="95" flex-gt-md="85" flex-gt-lg="80">
+      <mat-tab-group [(selectedIndex)]="selectedTabIndex">
+        <mat-tab *ngFor="let tabLabelKey of tabLabelKeys; let i = index" [disabled]="!tabEnabled[i]">
+          <ng-template mat-tab-label>{{ tabLabelKey | uppercase }}</ng-template>
+          <quote-edit-tab-component
+            *ngIf="tabLabelKey === 'quote'"
+            (notify)="onNotification($event)"
+            [projects]="projects">
+          </quote-edit-tab-component>
+          <quote-edit-recipient-tab-component
+            *ngIf="tabLabelKey === 'recipient'"
+            (notify)="onNotification($event)">
+          </quote-edit-recipient-tab-component>
+          <quote-edit-confirm-tab-component 
+          *ngIf="tabLabelKey === 'confirm'" 
+          (notify)="onNotification($event)"
+          [projects]="projects">
+        </quote-edit-confirm-tab-component>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>
+

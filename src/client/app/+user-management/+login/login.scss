@@ -1,0 +1,58 @@
+section.login.hero {
+  div.user-message {
+    text-align: center;
+    p {
+      margin-top: 25px;
+      @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) {
+      }
+    }
+  }
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  background-position: 0 0, 0 0, center center;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-size: auto, cover, cover;
+  margin-bottom: 0;
+  min-height: 1000px;
+  & > div {
+    margin-top: 11px;
+  }
+}
+.mat-card.wz-form-card {
+  @include mat-elevation(0);
+  padding: 36px 40px 36px 40px;
+  @media screen and (max-width: $layout-breakpoint-xs) {
+    padding: 24px 22px 24px 22px;
+  }
+  margin: 8px 0;
+  mat-card-title {
+    text-align: center;
+  }
+  button[mat-icon-button].close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 36px;
+    opacity: .5;
+    mat-icon {
+      font-size: 36px;
+      height: 36px;
+      width: 36px;
+      line-height: .835
+    }
+  }
+}
+
+mat-card-header .logo-wrapper {
+  height: 60px;
+  width: 100%;
+  .logo {
+    background-position: top center;
+    background-repeat:no-repeat;
+    background-size: 170px;
+    height: 70px;
+    opacity: .5;
+  }
+}

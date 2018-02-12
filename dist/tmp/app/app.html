@@ -1,0 +1,38 @@
+<div class="app">
+  <app-loading-indicator></app-loading-indicator>
+  <header [ngClass]="{
+    'fixed': headerIsFixed | async,
+    'collection-tray-closed': !(userPreference.data | async).collectionTrayIsOpen,
+    'search-closed': !(userPreference.data | async).searchIsOpen
+    }" class="app-header">
+    <app-nav
+      [currentUser]="currentUser"
+      [userPreference]="userPreference"
+      [config]="headerConfig | async"
+      [userCan]="userCan"
+      [cartSize]="cartCount | async"
+      (onLogOut)="logout()">
+    </app-nav>
+    <collection-tray
+      *ngIf="userCan.viewCollectionTray()"
+      [userPreference]="userPreference"
+      [urlPath]="state">
+    </collection-tray>
+     <wz-autocomplete-search
+      *ngIf="headerCanBeFixed | async"
+      [currentUser]="currentUser"
+      [userPreference]="userPreference"
+      [state]="state"
+      [config]="searchBoxConfig | async"
+      (searchContext)="newSearchContext($event)"
+      (toggleFilterTree)="toggleFilterTreePreference()">
+    </wz-autocomplete-search>
+  </header>
+  <div [ngClass]="{
+    'collection-tray-closed': !(userPreference.data | async).collectionTrayIsOpen,
+    'search-closed': !(userPreference.data | async).searchIsOpen
+    }" class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer [config]="footerConfig | async"></app-footer>
+</div>

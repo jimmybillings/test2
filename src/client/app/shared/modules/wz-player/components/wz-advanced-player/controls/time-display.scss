@@ -1,0 +1,42 @@
+wz-time-display {
+  div {
+    display: inline-flex;
+    line-height: 1.05;
+
+    input {
+      display: inline-flex;
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-size: .75em;
+      font-weight: 300;
+      padding: 5px;
+      min-width: 61px;
+      width: 65px;
+      min-height: 12px;
+      vertical-align: middle;
+      text-align: center;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      width: 11px;
+      height: 11px;
+      color: white;
+      background-color: transparent;
+      border: none;
+    }
+
+    &.editing {
+      border: 1px solid white;
+
+      input {
+        cursor: auto;
+      }
+    }
+  }
+}

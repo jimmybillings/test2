@@ -1,0 +1,11 @@
+@mixin wz-breadcrumb-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .breadcrumbs {
+    .breadcrumb {
+      background-color: rgba(mat-color($background, card), .4);
+      color: rgba(mat-color($foreground, base), .7);
+    }
+  }
+}

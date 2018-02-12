@@ -1,0 +1,43 @@
+<div class="collections-dd-menu">
+  <div class="dd-menu-wrapper">
+    <header>
+      <wz-share-link *ngIf="shareLinkIsOpen" flex="100" [shareLink]="shareLink" (closeRequest)="onShareLinkCloseRequest()">
+      </wz-share-link>
+      
+      <div flex="100" layout="row">
+        <h4 class="mat-headline" flex="100" layout-align="start center">
+          {{ titleKey | translate }}
+        </h4>
+        <div *ngIf="allowShareLink" class="tools" flex="auto" layout-align="end center">
+          <button mat-icon-button title="{{ 'SHARING.SHARE_LINK_BTN_TITLE' | translate }}" (click)="openShareLink()">
+            <mat-icon>link</mat-icon>
+          </button>
+        </div>
+        <button 
+          mat-icon-button 
+          title="{{ 'SHARING.SHARE_LINK.CLOSE_HOVER_TITLE' | translate }}" 
+          (click)="onFormCancel()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </header>
+
+    <ng-content></ng-content>
+
+    <div class="form-panel" layout="column">
+      <div class="wz-form-card">
+        <mat-card-content>
+          <wz-form 
+            [items]="formFields"
+            includeCancel="true"
+            cancelLabel="SHARING.FORM.CANCEL_BTN_LABEL"
+            submitLabel="SHARING.FORM.SUBMIT_BTN_LABEL"
+            (formCancel)="onFormCancel()"
+            (formSubmit)="onFormSubmit($event)">
+          </wz-form>
+        </mat-card-content>
+      </div>
+    </div>
+  </div>
+</div>
+

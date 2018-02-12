@@ -1,0 +1,59 @@
+@mixin wz-app-nav-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  header.app-header {
+    
+    background-color:rgba(mat-color($primary, 900), .3);
+    // border-bottom: solid 1px rgba(contrast-color(mat-color($primary, 900)), .25);
+    
+    a.home-link > .logo-wrapper {
+      .logo img {
+        background-image: url($logo-header);
+      }
+    }
+    &.fixed {
+      @media (min-height: 875px) {
+        background-color:rgba(mat-color($background, app-bar), .95);
+        @include text-contrast(mat-color($background, app-bar), mat-color($foreground, secondary-text), mat-color($background, app-bar));
+        a.home-link > .logo-wrapper .logo img {
+          background-image: url($logo-header-fixed);
+        }
+      }
+    }
+  }
+
+  header.app-header [mat-button],
+  header.app-header [mat-icon-button] {
+    @include text-contrast(mat-color($mat-grey, 900), mat-color($foreground, secondary-text), mat-color($background, app-bar));
+  }
+
+  header.app-header mat-toolbar:not(.mat-menu-toolbar) .mat-button {
+    &.mat-accent {
+      color: rgba(mat-color($accent, 500), .8);
+    }
+  }
+
+  a[mat-icon-button].cart,
+  button[mat-icon-button].cart {
+    .asset-count {
+      background-color: rgba(mat-color($warn, 700), .9);
+      .count {
+        @include text-contrast(mat-color($warn, 900));
+      }
+    }
+  }
+
+  header.app-header.fixed [mat-button],
+  header.app-header.fixed [mat-icon-button] {
+    @media (min-height: 875px) {
+      @include text-contrast(mat-color($background, app-bar), mat-color($foreground, secondary-text), mat-color($background, app-bar));
+      &:hover {
+        background-color: rgba(mat-color($background, hover), .08);
+      }
+    }
+  }
+}

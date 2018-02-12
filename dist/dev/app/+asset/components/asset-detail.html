@@ -1,0 +1,292 @@
+<!-- there probably should be some kind of toggle for theater mode (dark background where preview is VS light)-->
+
+<section class="comments-section" layout="row" layout-align="center">
+  <div flex-gt-xs="95" 
+    flex-gt-md="85" 
+    flex-lg="80" 
+    flex-gt-lg="75" 
+    flex="100" 
+    layout-gt-xs="row" 
+    layout="column">
+    <wz-comment
+      flex
+      *ngIf="canComment"
+      [ngClass]="{ 'visible': showComments, 'not-visible': showComments === false }"
+      [formFields]="commentFormConfig"
+      [parentObject]="commentParentObject"
+      [userCanAddComments]="userCanAddComments | async"
+      (toggleCommentsVisibility)="toggleCommentsVisibility()">
+    </wz-comment>
+  </div>
+</section>
+<section class="preview-bk theater">
+  <div layout="row" layout-align="center" class="breadcrumb-container">
+    <div 
+      flex-gt-xs="95" 
+      flex-gt-md="85" 
+      flex-lg="80" 
+      flex-gt-lg="75" 
+      flex="100" 
+      layout-gt-xs="row" 
+      layout="column">
+      <div flex="noshrink" class="breadcrumb" flex-order-xs="2">
+        <!-- this maybe reintroduced when user comes from a page by clicking the collection tray asset from any page other than collection show page (look at referrer url and the asset.type)-->
+        <!-- <a
+          class="back-to-search"
+          *ngIf="hasPageHistory && asset.type == 'collection'"
+          title="Back to search results"
+          mat-icon-button 
+          (click)="previousPage()">
+            <mat-icon>arrow_back</mat-icon>
+        </a> -->
+        <a
+          mat-button
+          [routerLink]="routerLinkForAssetParent">
+          {{ breadcrumbLabel[0] | uppercase | translate:{id: breadcrumbLabel[1]} }}
+        </a>
+        <span class="breadcrumb-separator"></span>
+        <span class="breadcrumb-current">{{assetName}}</span>
+        <ng-container *ngIf="asset.timeStart">
+          <span class="breadcrumb-timecode-separator"></span>
+          <span class="breadcrumb-current timecode">{{asset.inMarkerFrame | timecode }} - {{asset.outMarkerFrame | timecode }}</span>
+        </ng-container>
+      </div>
+
+      <div
+        class="toolbar-actions" 
+        flex="auto" flex-order-xs="-1"
+        [ngClass]="{ 'hide-for-comments': showComments, 'comments-closed': showComments === false }">
+        <nav class="asset-options" flex layout-align="end stretch">
+          <!-- OPEN METADATA IN CORE -->
+          <a mat-icon-button
+            class="core-link"
+            *ngIf="userCan.editClips() && asset.type != 'collection'" 
+            href="https://core.wazeedigital.com/video/edit/{{ assetName }}.do" 
+            target="_blank"
+            title="{{ 'COLLECTION.SHOW.ASSET_MORE_MENU.OPEN_IN_CORE' | translate }}">
+            <mat-icon>tune</mat-icon>
+          </a>
+          <button
+            *ngIf="showDownloadButton"
+            data-pendo='asset-detail_download-btn'
+            [disabled]="!(hasDeliveryOptions | async)"
+            mat-icon-button
+            [mat-menu-trigger-for]="downloadCompMenu"
+            title="{{ 'COLLECTION.SHOW.DOWNLOAD_BTN_TITLE_ENABLED' | translate }}">
+              <mat-icon>file_download</mat-icon>
+          </button>
+
+          <button
+            title="{{ 'ASSET.DETAIL.BUTTON.GO_TO_SEARCH_ASSET_DETAILS' | translate }}"
+            *ngIf="canGoToSearchAssetDetails && asset.type != 'collection'"
+            mat-icon-button
+            (click)="goToSearchAssetDetails()">
+            <mat-icon>find_in_page</mat-icon>
+          </button>
+
+          <button
+            mat-icon-button
+            *ngIf="canShare"
+            title="{{ shareButtonLabelKey | translate }}"
+            (click)="onCreateShareDialog()">
+            <mat-icon>share</mat-icon>
+          </button>
+
+          <button mat-icon-button
+            (click)="toggleCommentsVisibility()"
+            *ngIf="canComment"
+            title="{{ 'ASSET.DETAIL.COMMENTS_BTN_TITLE' | translate }}">
+              <mat-icon>mode_comment</mat-icon>
+              <span *ngIf="(commentCount | async) > 0" class="comment-count">{{commentCount| async}}</span>
+          </button>
+
+          <ng-container *ngIf="userCan.haveCollections()">
+            <button
+              data-pendo='asset-detail_add-to-collection-btn'
+              mat-icon-button 
+              *ngIf="canAddToActiveCollection"
+              [disabled]="!(userCanEditCollection | async)" 
+              title="{{ 'COLLECTION.ADD_TO_COLLECTION_HOVER_TITLE' | translate:{collectionName: activeCollectionName} }}"
+              (click)="addAssetToActiveCollection()">
+              <mat-icon>add_box</mat-icon>
+            </button>
+            <button mat-icon-button 
+              *ngIf="canAddAgainToActiveCollection"
+              [disabled]="!(userCanEditCollection | async)" 
+              title="{{ 'COLLECTION.ADD_AGAIN_TO_COLLECTION_HOVER_TITLE' | translate:{collectionName: activeCollectionName} }}"
+              (click)="addAssetToActiveCollection()">
+              <mat-icon>library_add</mat-icon>
+            </button>
+            <button mat-icon-button 
+              *ngIf="canRemoveFromActiveCollection"  
+              [disabled]="!(userCanEditCollection | async)"
+              title="{{ 'COLLECTION.REMOVE_FROM_COLLECTION_HOVER_TITLE' | translate:{collectionName: activeCollectionName} }}"
+              (click)="removeAssetFromActiveCollection()">
+              <mat-icon>remove_circle</mat-icon>
+            </button>
+          </ng-container>
+
+          <button mat-icon-button 
+            *ngIf="canAddToDifferentCollection"
+            title="{{'COLLECTION.SHOW.ASSET_MORE_BTN_TITLE' | translate}}"
+            [mat-menu-trigger-for]="moreOptionsAssetMenu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu x-position="before" y-position="below" #moreOptionsAssetMenu="matMenu">
+
+            <button
+              *ngIf="canAddToDifferentCollection"
+              mat-menu-item
+              (click)="addToDifferentCollection()">
+                <mat-icon>content_copy</mat-icon>
+              <span>{{ 'COLLECTION.SHOW.ADD_TO_DIFFERENT_COLLECTION' | translate}}</span>
+            </button>
+
+            <button
+              *ngIf="canGoToSearchAssetDetails"
+              mat-menu-item
+              (click)="goToSearchAssetDetails()">
+              <mat-icon>find_in_page</mat-icon>
+              <span>{{ 'ASSET.DETAIL.BUTTON.GO_TO_SEARCH_ASSET_DETAILS' | translate }}</span>
+            </button>
+
+            <a mat-menu-item 
+              class="core-link"
+              *ngIf="userCan.editClips()" 
+              href="https://core.wazeedigital.com/video/edit/{{ assetName }}.do" 
+              target="_blank">
+              <mat-icon>tune</mat-icon>
+              <span>{{ 'COLLECTION.SHOW.ASSET_MORE_MENU.OPEN_IN_CORE' | translate }}</span>
+            </a>
+          </mat-menu> 
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div layout="row" layout-align="center">
+    <div flex-gt-xs="95" flex-gt-md="85" flex-lg="80" flex-gt-lg="75" flex="100" layout="row" layout-xs="column">
+      <div flex-gt-xs="66" flex="100" flex-order-xs="2">
+        <div flex="" layout="column" class="primary-info-t">
+          <div class="primary-content-t" layout="row">
+            <div flex="auto">
+              <div layout="row" layout-wrap="" layout-align="start center">
+                <div [ngClass]="{hd: asset.primary[2].value == 'High Definition', sd: asset.primary[2].value == 'Standard Definition'}" class="sd-hd"
+                  *ngIf='asset.primary[2].value != null'>
+                </div>
+                <div [ngClass]="{image: asset.primary[0].value == 'Image'}" class="photo"
+                  *ngIf="asset.primary[0].value != null && asset.primary[0].value == 'Image'">
+                </div>
+                <div flex="none" class="rights mat-caption">{{rights}}</div>
+                <div flex="none" class="restriction-banner" *ngIf="asset.primary[4].value != null && asset.primary[4].value != 'Needs calculation'">{{asset.primary[4].value}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div layout="row" flex="" layout-align="center">
+    <div flex-gt-xs="95" flex-gt-md="85" flex-lg="80" flex-gt-lg="75" flex="100" layout="row" layout-xs="column">
+      <div *ngIf="hasRendition && showAdvancedPlayer" flex-gt-xs="66" flex="100" layout="column" class="responsive-video">
+        <wz-advanced-player
+          [window]="window"
+          [asset]="asset"
+          (markersInitialization)="onPlayerMarkersInitialization($event)"
+          (markerChange)="onPlayerMarkerChange($event)">
+        </wz-advanced-player>
+        <div
+          class="subclip-update-button" 
+          layout="column" 
+          layout-align="center center"
+          layout-align-gt-xs="end end">
+          <button *ngIf="canEditCollectionSubclipMarkers && userCanEditCollection | async"
+            [disabled]="!canUpdateInActiveCollection"
+            class="is-outlined"
+            title="{{ collectionSubclipButtonHoverTxt | translate}}"
+            mat-button
+            (click)="updateAssetInActiveCollection()"
+            color="primary">
+            {{ collectionSubclipButtonLabel | translate }}
+          </button>
+        </div>
+      </div>
+      <div *ngIf="hasRendition && !showAdvancedPlayer" flex-gt-xs="66" flex="100" class="responsive-video">
+        <wz-player [window]="window" [asset]="asset"></wz-player>
+      </div>
+      <div *ngIf="!hasRendition" flex-gt-xs="66" flex="100" class="responsive-video">
+        <div class="no-rendition">
+          <div class="no-rendition-message">{{'ASSET.DETAIL.NO_RENDITION_AVAILABLE' | translate}}</div>
+        </div>
+      </div>
+      <div flex-gt-xs="33" flex="100">
+        <div flex="" layout="column" class="primary-info {{ asset.type }}">
+          <div class="metadata" layout="column" layout-align="start start">
+            <ng-container *ngFor="let field of primaryAssetFields">
+              <div flex="100">
+                <h5 class="mat-subheading-1 key">{{ translationReady(field.name) | uppercase | translate }}:</h5>
+                <p class="mat-caption value">{{ field.value }}</p>
+              </div>
+            </ng-container>
+          </div>
+          <section *ngIf="canPerformCartActions" layout="column" layout-align="center center" class="rights-transcodes">
+            <mat-form-field *ngIf="canSelectTranscodeTarget">
+              <mat-select
+                (change)="onSelectTarget($event)" 
+                [(ngModel)]="selectedTarget" 
+                placeholder="{{ 'ASSET.TRANSCODE_TARGETS.FORM_PLACEHOLDER' | translate }}">
+                <mat-option *ngFor="let target of asset.transcodeTargets" [value]="target">
+                  {{ 'ASSET.TRANSCODE_TARGETS.' + target | translate }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button
+              *ngIf="canEditOrApplyRights"
+              (click)="getPricingAttributes()"
+              class="rights-pkg is-outlined"
+              mat-button>
+              {{ 'PRICING.CALCULATE_HEADING' | translate }}
+            </button>
+          </section>
+          <section layout="column" layout-align="center center">
+            <div *ngIf="canShowPrice" class="list-price">
+              <span class="price">
+                {{ price | currency:'USD':true:'1.2-2' }}
+              </span>
+            </div>
+            <div *ngIf="canShowNoPricingAvailableNotice" class="contact-us-pricing">
+              {{ 'ASSET.DETAIL.CONTACT_US_PRICING' | translate }}
+            </div>
+          </section>
+        </div>
+        <div class="cart-options" 
+          flex="noshrink" 
+          layout="column" 
+          layout-gt-xs="row"
+          layout-align="end end">
+          <button *ngIf="canUpdateCartAsset"
+            [disabled]="assetMatchesCartAsset"
+            mat-raised-button
+            (click)="updateCartAsset()"
+            flex-order-xs="2"
+            color="primary">
+            {{ updateCartAssetButtonLabelKey | translate }}
+          </button>
+          <button mat-raised-button
+            class="add-to-cart"
+            color="primary"
+            data-pendo='asset-detail_add-to-cart-btn'
+            *ngIf="canAddToCart"
+            flex-order-xs="-1"
+            (click)="addAssetToCart()">
+            {{ addToCartOrQuoteButtonLabelKey | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<mat-menu x-position="before" #downloadCompMenu="matMenu">
+  <wz-delivery-options [assetId]="asset.assetId" [markers]="subclipMarkers"></wz-delivery-options>
+</mat-menu>

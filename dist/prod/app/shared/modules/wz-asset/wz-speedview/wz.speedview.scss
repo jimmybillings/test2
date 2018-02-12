@@ -1,0 +1,92 @@
+.wz-speedview {
+  padding: 12px 12px 10px 12px;
+  @include mat-elevation(6);
+  div.image-bg {
+    width: 400px;
+    height: 225px;
+    position: relative;
+    background-image: linear-gradient(rgba(mat-color($mat-grey, 900),1), rgba(mat-color($mat-grey, 900),.6)),
+      linear-gradient(rgba(mat-color($mat-grey, 900),.5), rgba(mat-color($mat-grey, 900),1));
+    img.image-speedview {
+      position: absolute;
+      display: block;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+  img.tbn_missing {
+    width: 100%;
+  }
+  video {
+    min-height: 225px;
+    max-height: 225px;
+    background-image: linear-gradient(rgba(mat-color($mat-grey, 900),1), rgba(mat-color($mat-grey, 900),.6)),
+      linear-gradient(rgba(mat-color($mat-grey, 900),.5), rgba(mat-color($mat-grey, 900),1));
+  }
+  .info {
+    min-height: 55px;
+    min-width: 100%;
+    padding: 5px 1px 0;
+    position: relative;
+    ul.metadata {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      li {
+        font-size: .75em;
+        line-height: 1.48;
+        opacity: .75;
+      }
+    }
+    .price-info {
+      opacity: .75;
+      text-align: right;
+      .clip-rights {
+        font-size: 0.875em;
+        margin-right: -1px;
+        text-transform: uppercase;
+      }
+      .price {
+        display: block;
+        position: absolute;
+        bottom: -3px;
+        right: 0;
+        font-size: 1.78em;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -.044em;
+        &::first-letter {
+          font-size: .6em;
+          font-weight: 200;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+
+.wz-speedview.no-data > div > video {
+  opacity: .25
+}
+
+.wz-speedview.no-data section.info .no-data {
+  opacity: .75;
+  position: relative;
+  padding: 6px 0 0 30px;
+  margin-top: 8px;
+  line-height: 1;
+  &::before {
+    content: "\e001";
+    font-family: 'Material Icons';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 25px;
+  }
+}

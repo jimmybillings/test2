@@ -1,0 +1,86 @@
+
+<section layout="row" flex="100" layout-align="start" class="header-tray">
+  <div flex="100" class="asset-carousel grid">
+    <ul class="asset-list" *ngIf="collection.assets">
+      <li *ngIf="collection.assets.items.length === 0"
+        class="empty-collection"
+        layout="row"
+        flex="100"
+        layout-align="center center">
+          <span>{{ 'COLLECTION.EMPTY_COLLECTION_MSG' | translate }}</span>
+      </li>
+
+      <li *ngFor="let asset of collection.assets.items">
+        <div class="asset">
+          <a *ngIf="hasId(asset)" flex="" [routerLink]="routerLinkFor(asset)" class="asset-thb">
+            <img *ngIf="hasThumbnail(asset)" src="{{ thumbnailUrlFor(asset) }}"/>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div layout="row" flex="auto" layout-align="end center" class="focused-collection">
+    <nav class="focused" *ngIf="collection.name">
+      <a
+        mat-button
+        data-pendo="collection-tray_collection-name"
+        [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">
+        <mat-icon>folder_special</mat-icon>
+          {{collection.name}}
+        <span class="asset-count" *ngIf="collection.assets">
+          <span class="count" *ngIf="collection.assets">{{collection.assetsCount}}</span>
+          <span class="count" *ngIf="!collection.assets">0</span>
+        </span>
+      </a>
+    </nav>
+
+    <button
+      mat-icon-button
+      data-pendo="collection-tray_collection-menu-trigger"
+      flex="none"
+      title="{{ 'COLLECTION.TRAY.MORE_BTN_TITLE' | translate }}"
+      [mat-menu-trigger-for]="moreCollectionTrayOptions">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+
+    <div flex="none" class="close-btn-wrapper"> 
+      <button
+        flex="none"
+        mat-icon-button
+        class="close-tray"
+        (click)="toggleCollectionTray()"
+        title="{{ 'COLLECTION.TRAY.CLOSE_BTN_TITLE' | translate }}">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu x-position="before" #moreCollectionTrayOptions="matMenu">
+      <button
+        data-pendo="collection-tray-menu_new-btn"
+        mat-menu-item
+        (click)="createCollection()">
+        <mat-icon>add_circle_outline</mat-icon>{{ 'COLLECTION.MORE_DD_MENU.CREATE_NEW' | translate }}
+      </button>
+
+      <button
+        data-pendo="collection-tray-menu_change-focused-btn"
+        mat-menu-item
+        (click)="createCollectionlistDialog()">
+        <mat-icon>folder_special</mat-icon>{{ 'COLLECTION.MORE_DD_MENU.CHANGE_SELECTED' | translate }}
+      </button>
+      <a
+        mat-menu-item
+        *ngIf="collection.id"
+        data-pendo="collection-tray-menu_view-focused-link"
+        [routerLink]="['/collections/', collection.id, {i: 1, n: 100}]">
+        <mat-icon>open_in_browser</mat-icon>{{ 'COLLECTION.MORE_DD_MENU.OPEN_SELECTED' | translate }}
+      </a>
+      <a mat-menu-item [routerLink]="['/collections/']">
+        <mat-icon>folder_open</mat-icon>{{ 'COLLECTION.MORE_DD_MENU.VIEW_ALL' | translate }}
+      </a>
+    </mat-menu>
+  </div>
+</section>
+
+

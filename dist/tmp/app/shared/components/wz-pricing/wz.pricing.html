@@ -1,0 +1,93 @@
+<div class="wz-dialog pricing">
+  <button mat-dialog-close mat-icon-button title="close dialog" type="button" class="close"><mat-icon>close</mat-icon></button>
+  <h1 mat-dialog-title>{{ 'PRICING.CALCULATE_HEADING' | translate }}</h1>
+  <ng-container *ngIf="_userCanCustomizeRights">
+    <mat-tab-group>
+      <mat-tab label="{{ 'PRICING.PRICEBOOK_TAB_LABEL' | translate }}">
+        <mat-dialog-content> 
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <mat-form-field *ngFor="let attribute of attributes">
+              <mat-select
+                required
+                placeholder="{{attribute.displayName}}"
+                formControlName="{{attribute.name}}">
+                <mat-option
+                  *ngFor="let option of validOptionsFor(attribute)"
+                  (onSelectionChange)="handleSelect($event, attribute)"
+                  [value]="option.value">
+                    {{ option.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div class="submit-btn" layout="row" layout-align="center center">
+              <button [disabled]="!form.valid" class="submit" mat-button mat-raised-button color="primary" type="submit">
+                {{ 'PRICING.CALCULATE_BTN_LABEL' | translate }}
+              </button>
+            </div>
+          </form>
+          <div class="price-info" layout="row" layout-align="center center">
+            <p *ngIf="price | async" class="mat-body-3">{{ price | async | currency:'USD':true:'1.2-2' }}</p>
+          </div>
+        </mat-dialog-content>
+      </mat-tab>
+      <mat-tab label="{{ 'PRICING.CUSTOM_ATTRIBUTES_TAB_LABEL' | translate }}">
+        <form [formGroup]="customForm" (ngSubmit)="onSubmitCustom()">
+          <mat-form-field>
+            <mat-select
+              [required]="true"
+              formControlName="{{attributes[0].name}}"
+              placeholder="{{attributes[0].name}}">
+              <mat-option
+                *ngFor="let option of validOptionsFor(attributes[0])"
+                [value]="option.value">
+                  {{ option.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <textarea
+              matInput
+              matTextareaAutosize
+              placeholder="{{ 'PRICING.CUSTOM_ATTRIBUTES_INPUT_PLACEHOLDER' | translate }}"
+              formControlName="attributes"
+              [required]="true">
+            </textarea>
+          </mat-form-field>
+          <div class="submit-btn" layout="row" layout-align="center center">
+            <button [disabled]="!customForm.valid" class="submit" mat-button mat-raised-button color="primary" type="submit">
+              {{ 'PRICING.CALCULATE_BTN_LABEL' | translate }}
+            </button>
+          </div>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </ng-container>
+
+  <ng-container *ngIf="!_userCanCustomizeRights">
+    <mat-dialog-content> 
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field *ngFor="let attribute of attributes">
+          <mat-select
+            required
+            placeholder="{{attribute.displayName}}"
+            formControlName="{{attribute.name}}">
+            <mat-option
+              *ngFor="let option of validOptionsFor(attribute)"
+              (onSelectionChange)="handleSelect($event, attribute)"
+              [value]="option.value">
+                {{ option.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="submit-btn" layout="row" layout-align="center center">
+          <button [disabled]="!form.valid" class="submit" mat-button mat-raised-button color="primary" type="submit">
+            {{ 'PRICING.CALCULATE_BTN_LABEL' | translate }}
+          </button>
+        </div>
+      </form>
+      <div class="price-info" layout="row" layout-align="center center">
+        <p *ngIf="price | async" class="mat-body-3">{{ price | async | currency:'USD':true:'1.2-2' }}</p>
+      </div>
+    </mat-dialog-content>
+  </ng-container>
+</div>

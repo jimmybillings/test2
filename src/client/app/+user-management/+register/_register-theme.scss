@@ -1,0 +1,20 @@
+@mixin wz-register-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+
+  register-component {
+    mat-card.registration-confirm {
+      .email {
+        color:  mat-color($primary, default);
+      }
+    }
+  }
+
+  // terms agreement
+  .mat-dialog-container .wz-dialog.terms-dialog {
+    .content {
+      border: 1px solid mat-color($foreground, divider); 
+      color: rgba(mat-color($foreground, text),.7);
+    }
+  }
+}

@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/interfaces/enhanced-asset.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/interfaces/</a> enhanced-asset.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>130/132</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.69% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>104/111</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.62% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>41/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>120/122</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">450×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">996×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">418×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">253×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">415×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">74×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1046×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">391×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">922×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">247×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1440×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">867×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">867×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">400×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2197×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">204×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">467×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">203×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-yes">182×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">862×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5106×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5106×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2148×</span>
+<span class="cline-any cline-yes">2148×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">402×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">405×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">460×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">412×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">417×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">656×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">915×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">41×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32757×</span>
+<span class="cline-any cline-yes">31317×</span>
+<span class="cline-any cline-yes">10521×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40307×</span>
+<span class="cline-any cline-yes">40307×</span>
+<span class="cline-any cline-yes">29877×</span>
+<span class="cline-any cline-yes">29877×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9371×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Frame, TimecodeFormat } from '../../shared/modules/wazee-frame-formatter/index';
+import { SubclipMarkers } from '../interfaces/subclip-markers';
+import * as commerce from '../interfaces/commerce.interface';
+import * as common from '../interfaces/common.interface';
+&nbsp;
+interface InternalCache {
+  [index: string]: any;
+}
+&nbsp;
+export type AssetType = 'collection' | 'quoteEdit' | 'search' | 'quoteShow' | 'order' | 'cart';
+export type AccessPath = 'ContentFilter' | 'ParentObject' | 'ShareUser';
+&nbsp;
+export function enhanceAsset(asset: commerce.Asset | common.Asset, type: AssetType, parentId?: Number | string): EnhancedAsset {
+  return Object.assign(new EnhancedAsset(), asset, { type, parentId }).normalize();
+}
+&nbsp;
+export class EnhancedAsset implements commerce.Asset, common.Asset {
+  // defined in two or more of the following sources
+  public readonly assetId: number;
+  public readonly type?: AssetType;
+  public readonly parentId?: number;
+  public readonly uuid?: string;
+  public readonly timeStart?: number;
+  public readonly timeEnd?: number;
+  public clipUrl?: string;  // not readonly because we might have to update after instantiation
+  public readonly hasDownloadableComp?: boolean;
+  public readonly name: string;  // clip name in common.Asset, something else in clip API response
+  public readonly primary?: Array&lt;{ value: string }&gt; | commerce.Metadatum[];
+  public readonly transcodeTargets?: string[];
+  public readonly accessPath: AccessPath;
+&nbsp;
+  // defined in commerce.Asset only
+  public readonly assetName?: string;
+  public readonly assetDuration?: number;
+  public readonly metadata?: commerce.Metadatum[];
+  public readonly rightsManaged?: string;
+  public readonly supplierId?: number;
+  public readonly supplierName?: string;
+  public readonly thumbnailUrl?: string;
+&nbsp;
+  // defined in common.Asset only
+  public readonly metaData?: commerce.Metadatum[];
+  public readonly thumbnail?: { name: string, urls: common.AssetUrls };
+  public readonly smallPreview?: { name: string, urls: common.AssetUrls };
+  public readonly detailTypeMap?: any;
+&nbsp;
+  // defined by API response to clip/&lt;id&gt;/clipData
+  public readonly clipThumbnailUrl?: string;
+  public readonly common?: commerce.Metadatum[];
+  public readonly filter?: string;
+  public readonly price?: number;
+  public readonly resourceClass?: string;
+  public readonly secondary?: object[];
+&nbsp;
+&nbsp;
+  private calculationCache: InternalCache = {};
+&nbsp;
+  //// asset duration
+&nbsp;
+  public get durationFrame(): Frame {
+    return this.getCached('durationFrame');
+  }
+&nbsp;
+  public get durationFrameNumber(): number {
+    return this.frameNumberFrom(this.durationFrame);
+  }
+&nbsp;
+  public get durationMilliseconds(): number {
+    return this.getCached('durationMilliseconds');
+  }
+&nbsp;
+  //// subclip duration
+&nbsp;
+  public get subclipDurationFrame(): Frame {
+    return this.getCached('subclipDurationFrame');
+  }
+&nbsp;
+  public get subclipDurationFrameNumber(): number {
+    return this.frameNumberFrom(this.subclipDurationFrame);
+  }
+&nbsp;
+  public get subclipDurationMilliseconds(): number {
+    return this.millisecondsFrom(this.subclipDurationFrame);
+  }
+&nbsp;
+  public get subclipDurationPercentage(): number {
+    return this.percentageFor(this.subclipDurationFrame);
+  }
+&nbsp;
+  //// in marker
+&nbsp;
+  public get inMarkerFrame(): Frame {
+    return this.getCached('inMarkerFrame');
+  }
+&nbsp;
+  public get inMarkerFrameNumber(): number {
+    return this.frameNumberFrom(this.inMarkerFrame);
+  }
+&nbsp;
+  public get inMarkerMilliseconds(): number {
+    return this.millisecondsFrom(this.inMarkerFrame);
+  }
+&nbsp;
+  public get inMarkerPercentage(): number {
+    return this.percentageFor(this.inMarkerFrame);
+  }
+&nbsp;
+  //// out marker
+&nbsp;
+  public get outMarkerFrame(): Frame {
+    return this.getCached('outMarkerFrame');
+  }
+&nbsp;
+  public get outMarkerFrameNumber(): number {
+    return this.frameNumberFrom(this.outMarkerFrame);
+  }
+&nbsp;
+  public get outMarkerMilliseconds(): number {
+    return this.millisecondsFrom(this.outMarkerFrame);
+  }
+&nbsp;
+  public get outMarkerPercentage(): number {
+    return this.percentageFor(this.outMarkerFrame);
+  }
+&nbsp;
+  //// metadata
+&nbsp;
+  public getMetadataValueFor(metadataName: string): string {
+    return this.findMetadataValueFor(metadataName);
+  }
+&nbsp;
+  public convertMetadataValueFor(metadataName: string, converter: (value: string) =&gt; any): any {
+    const value: string = this.getMetadataValueFor(metadataName);
+&nbsp;
+    return value ? converter(value) : undefined;
+  }
+&nbsp;
+  //// other assorted information
+&nbsp;
+  public get subclipMarkers(): SubclipMarkers {
+    return {
+      in: this.timeStart &amp;&amp; this.timeStart &gt;= 0 ? this.inMarkerFrame : undefined,
+      out: this.timeEnd &amp;&amp; this.timeEnd &gt;= 0 ? this.outMarkerFrame : undefined
+    };
+  }
+&nbsp;
+  public get title(): string {
+    return this.getCached('title');
+  }
+&nbsp;
+  public get description(): string {
+    return this.getCached('description');
+  }
+&nbsp;
+  public get formatType(): string {
+    return this.getCached('formatType');
+  }
+&nbsp;
+  public get isImage(): boolean {
+    return this.resourceClass === 'Image';
+  }
+&nbsp;
+  public get framesPerSecond(): number {
+    return this.getCached('framesPerSecond');
+  }
+&nbsp;
+  public get isSubclipped(): boolean {
+    return this.timeStart &gt;= 0 || this.timeEnd &gt;= 0;
+  }
+&nbsp;
+  public get routerLink(): any[] {
+    return this.getCached('routerLink');
+  }
+&nbsp;
+  public get isViewable(): boolean {
+    return this.accessPath === 'ContentFilter';
+  }
+&nbsp;
+  public get isChildOfViewableObject(): boolean {
+    return this.accessPath === 'ParentObject';
+  }
+&nbsp;
+  //// for initialization -- merges differently defined asset properties into a normalized set
+&nbsp;
+  public normalize(): EnhancedAsset {
+    // make 'assetName' available as 'name'
+    if (!this.name &amp;&amp; !!this.assetName) Object.assign(this, { name: this.assetName });
+&nbsp;
+    // make the deeply nested thumbnail URL available as 'thumbnailUrl'
+    if (!this.thumbnailUrl &amp;&amp; !!this.thumbnail &amp;&amp; !!this.thumbnail.urls &amp;&amp; !!this.thumbnail.urls.https) {
+      Object.assign(this, { thumbnailUrl: this.thumbnail.urls.https });
+    }
+&nbsp;
+    // make 'clipThumbnailUrl' available as 'thumbnailUrl'
+    if (!this.thumbnailUrl &amp;&amp; !!this.clipThumbnailUrl) {
+      Object.assign(this, { thumbnailUrl: this.clipThumbnailUrl });
+    }
+&nbsp;
+    // ensure that 'timeStart' and 'timeEnd' are numbers (commerce.Asset), not strings (common.Asset)
+    Object.assign(this, { timeStart: parseInt(`${this.timeStart}`), timeEnd: parseInt(`${this.timeEnd}`) });
+&nbsp;
+    // pull 'resourceClass' from metadata if it wasn't passed in explicitly
+    if (!this.resourceClass) {
+      Object.assign(this, { resourceClass: this.getMetadataValueFor('Resource.Class') });
+    }
+&nbsp;
+    // make 'metaData' (uppercase D) available as 'metadata' (lowercase d)
+    if (!this.metadata &amp;&amp; !!this.metaData) {
+      Object.assign(this, { metadata: this.metaData });
+    }
+&nbsp;
+    // make 'primary' available as 'metadata'
+    if (!this.metadata &amp;&amp; !!this.primary) {
+      Object.assign(this, { metadata: this.primary });
+    }
+&nbsp;
+    if (this.detailTypeMap &amp;&amp; this.detailTypeMap.common &amp;&amp; Object.keys(this.detailTypeMap.common).length &gt; 0) {
+      Object.assign(this, this.detailTypeMap);
+    }
+&nbsp;
+    return this;
+  }
+&nbsp;
+  //// private methods
+&nbsp;
+  private getCached(key: string): any {
+    if (!this.calculationCache.hasOwnProperty(key)) this.calculationCache[key] = this.calculateValueFor(key);
+&nbsp;
+    return this.calculationCache[key];
+  }
+&nbsp;
+  private calculateValueFor(key: string): any {
+    switch (key) {
+      case 'description':
+        // TODO: Site config should set the name of the metadata that holds whichever description field the current site
+        // wants to use, and this function should call this.getMetadataFor() with that metadata name.
+        // But for now, we must rely on the site config to place the 'description' metadata into array location 1.
+        return this.findMetadataValueAtIndex(1);
+&nbsp;
+      case 'durationFrame':
+        return this.framesPerSecond &amp;&amp; this.durationMilliseconds
+          ? this.newFrame.setFromSeconds(this.durationMilliseconds / 1000)
+          : undefined;
+&nbsp;
+      case 'durationMilliseconds':
+        return this.convertMetadataValueFor('Format.Duration', value =&gt; {
+          // If value is formatted as 'HH:MM:SS', add ';00' to make it 'HH:MM:SS;FF', and treat it as a timecode.
+          // Otherwise, treat it as a numeric value of milliseconds.
+          return value.indexOf(':') === -1
+            ? parseInt(value)
+            : (this.framesPerSecond
+              ? this.millisecondsFrom(this.newFrame.setFromString(`${value};00`, TimecodeFormat.SIMPLE_TIME_CONVERSION))
+              : undefined);
+        });
+&nbsp;
+      case 'formatType':
+        return this.getMetadataValueFor('TE.DigitalFormat');
+&nbsp;
+      case 'framesPerSecond':
+        return this.convertMetadataValueFor('Format.FrameRate', value =&gt; parseFloat(value));
+&nbsp;
+      case 'inMarkerFrame':
+        return this.framesPerSecond
+          ? this.newFrame.setFromSeconds(this.timeStart &gt;= 0 ? this.timeStart / 1000 : 0)
+          : undefined;
+&nbsp;
+      case 'outMarkerFrame':
+        return this.framesPerSecond
+          ? (this.timeEnd &gt;= 0 ? this.newFrame.setFromSeconds(this.timeEnd / 1000) : this.durationFrame)
+          : undefined;
+&nbsp;
+      case 'routerLink':
+        return this.createRouterLink();
+&nbsp;
+      case 'subclipDurationFrame':
+        return this.framesPerSecond &amp;&amp; this.inMarkerFrame &amp;&amp; this.outMarkerFrame
+          ? this.newFrame.setFromFrameNumber(this.outMarkerFrameNumber - this.inMarkerFrameNumber)
+          : undefined;
+&nbsp;
+      case 'title':
+        // TODO: Site config should set the name of the metadata that holds whichever title field the current site
+        // wants to use, and this function should call this.getMetadataFor() with that metadata name.
+        // But for now, we must rely on the site config to place the 'title' metadata into array location 0.
+        return this.findMetadataValueAtIndex(0);
+&nbsp;
+<span class="branch-10 cbranch-no" title="branch not covered" >      default:</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(`Value calculation for '${key}' is missing.`);</span>
+    }
+  }
+&nbsp;
+&nbsp;
+  private createRouterLink(): any[] {
+    switch (this.type) {
+      case 'collection':
+        return [`/collections/${this.parentId}/asset/${this.uuid}`];
+&nbsp;
+      case 'quoteEdit':
+        return [`/active-quote/asset/${this.uuid}`];
+&nbsp;
+      case 'search':
+        return [`/search/asset/${this.assetId}`];
+&nbsp;
+      case 'quoteShow':
+        return [`/quotes/${this.parentId}/asset/${this.uuid}`];
+&nbsp;
+      case 'order':
+        return [`/orders/${this.parentId}/asset/${this.uuid}`];
+&nbsp;
+      case 'cart':
+        return [`/cart/asset/${this.uuid}`];
+    }
+  }
+&nbsp;
+  private get newFrame(): Frame {
+    return new Frame(this.framesPerSecond);
+  }
+&nbsp;
+  private frameNumberFrom(frame: Frame): number {
+    return frame ? frame.asFrameNumber() : undefined;
+  }
+&nbsp;
+  private millisecondsFrom(frame: Frame): number {
+    return frame ? frame.asMilliseconds() : undefined;
+  }
+&nbsp;
+  private percentageFor(frame: Frame): number {
+    return frame &amp;&amp; this.durationFrameNumber ? this.frameNumberFrom(frame) * 100 / this.durationFrameNumber : 0;
+  }
+&nbsp;
+  private findMetadataValueFor(metadataName: string, object: any = this): string {
+    if (object !== Object(object)) return undefined;
+    if (object.name === metadataName &amp;&amp; object.hasOwnProperty('value')) return object.value;
+&nbsp;
+    for (var key of Object.keys(object)) {
+      if (object[key]) {
+        const value: string = this.findMetadataValueFor(metadataName, object[key]);
+        if (value) return value;
+      }
+    }
+&nbsp;
+    return undefined;
+  }
+&nbsp;
+  private findMetadataValueAtIndex(index: number): string {
+    return this.metadata &amp;&amp; this.metadata[index] ? this.metadata[index].value : undefined;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  private get routerParameters(): any {</span>
+<span class="cstat-no" title="statement not covered" >    return Object.assign(</span>
+      {},
+      this.uuid ? { uuid: this.uuid } : null,
+      this.timeStart &gt;= 0 ? { timeStart: this.timeStart } : null,
+      this.timeEnd &gt;= 0 ? { timeEnd: this.timeEnd } : null
+    );
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

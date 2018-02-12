@@ -1,0 +1,8 @@
+@mixin wz-input-tags-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  
+  .wz-tags ul li {  
+    background-color: rgba(mat-color($foreground, secondary-text), .12);
+    color: mat-color($foreground, secondary-text);
+  }
+}

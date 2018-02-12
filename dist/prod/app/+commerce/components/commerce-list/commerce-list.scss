@@ -1,0 +1,171 @@
+.commerce-list {
+  .new-quote .mat-button .mat-icon {
+    height: 26px;
+    padding-right: 3px;
+  }
+  ul {
+    margin: 0;
+    margin-top: 6px;
+    padding: 0;
+    list-style: none;
+  }
+  li.item {
+    position: relative;
+    margin-bottom: 12px;
+    padding: 2px;
+    border-radius: 2px;
+    transition: $swift-ease-out;
+    .mat-headline {
+      margin-bottom: 0;
+    }
+    &.focused {
+      @include mat-elevation(2);
+    }
+    // &:hover {
+    //   cursor: pointer;
+    // }
+    .details {
+      padding: 7px 10px;
+      margin: 7px 2px 7px 7px;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        margin-right: 7px;
+      }
+      .item-number {
+        position: relative;
+        padding: 0 0 6px 40px;
+        &::after {
+          content: "\e873";
+          font-family: 'Material Icons';
+          font-size: 45px;
+          font-weight: 100;
+          line-height: 40px;
+          height: 40px;
+          width: 40px;
+          position: absolute;
+          left: -7px;
+          top: 2px;
+          opacity:.3;
+        }
+        span {
+          display: block;
+          &.number {
+            font-size: 24px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .total {
+      text-align: right;
+      padding-right: 8px;
+      padding-left: 8px;
+      padding-top: 2px;
+      position: relative;
+      min-height: 100%;
+      .total-label {
+        letter-spacing: -.05em;
+        font-weight: 100;
+        letter-spacing: 0;
+      }
+      .total-amount {
+        letter-spacing: -.05em;
+        display: inline-block;
+        &::first-letter {
+          font-size: .68em;
+          line-height: 1.7;
+          vertical-align: top;
+          letter-spacing: 0;
+        }
+      }
+      .balance {
+        margin: 3px 1px 0 0;
+        & > div {
+          display: block;
+          text-align: right;
+          opacity: .9;
+          line-height: 1.4;
+          strong, span  {
+            display: inline-block;
+          }
+          strong  {
+            font-weight: 500;
+          }
+          span {
+            min-width: 68px;
+            &.remaining-balance::first-letter {
+              font-size: .88em;
+              vertical-align: top;
+              letter-spacing: 0;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+      a, button {
+        margin-bottom: 10px;
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        & > div {
+          padding-top: 12px;
+        }
+      }
+    }
+    .projects {
+      margin-top: 18px;
+      position: relative;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    h3 {
+      margin-top: -6px;
+      margin-bottom: 6px;
+      .project-label {
+        font-weight: 300;
+      }
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        padding-right: 34px;
+      }
+    }
+    .item-info {
+      line-height: 1.5em;
+    }
+    .asset-count {
+      display: inline-block;
+      border-radius: 2px - 1;
+      min-width: 21px;
+      font-size: .7em;
+      line-height: 1;
+      padding: 4px 4px;
+      text-align: center;
+      vertical-align: text-top;
+      margin-top: 2px;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        position: absolute;
+        right: 0;
+        top: 4px;
+      }
+    }
+    .mat-caption span {
+      display: block;
+    }
+    .divider {
+      margin: 6px 8px 0 8px;
+      padding-bottom: 6px;
+      display: none;
+      @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+        display: flex;
+      }
+    }
+  }
+}
+.status {
+  margin: 0;
+  letter-spacing: .04em;
+  font-weight: 600;
+  text-align: right;
+  padding-top: 5px;
+}

@@ -1,0 +1,23 @@
+home-call-to-action {
+  .mrkt-call-to-action {
+    min-height: 440px;
+    text-align: center;
+    .mat-display-1 {
+      margin: .6em 0 .9em 0;
+    }
+  }
+  // this should go in some kind of glb scss file
+  .conversion {
+    &[mat-button] {
+      font-size: 18px;
+      min-width: 300px;
+      padding: 4px 40px;
+      border: 1px solid transparent;
+      transition: $swift-ease-in;
+      &:hover {
+        border: 1px solid $white-87-opacity;
+        @include mat-elevation(2);
+      }
+    }
+  }
+}

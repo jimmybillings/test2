@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-advanced-player/controls/scrubber.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-advanced-player/controls/</a> scrubber.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>99/99</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>31/31</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>92/92</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import {
+  Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, EventEmitter, ElementRef, Renderer, ChangeDetectorRef
+} from '@angular/core';
+&nbsp;
+import { Frame } from '../../../../wazee-frame-formatter/index';
+import { PlayerState, PlayerSeekRequest } from '../../../interfaces/player.interface';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-scrubber',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: `
+    &lt;ng-container *ngIf="readyToDisplay"&gt;
+      &lt;mat-slider
+        class="scrubber"
+        min="0"
+        max="{{ largestFrameNumber }}"
+        value="{{ currentFrameNumber }}"
+        (input)="onSliderInput()"
+        (mouseover)="onMouseOver()"
+        (mouseout)="onMouseOut()"
+        (mousedown)="onMouseDown()"&gt;
+      &lt;/mat-slider&gt;
+&nbsp;
+      &lt;mat-slider
+        *ngIf="inMarkerIsSet"
+        [disabled]="true"
+        class="marker in"
+        min="0"
+        max="{{ largestFrameNumber }}"
+        value="{{ inMarkerFrameNumber }}"
+        (click)="onInMarkerClick()"
+        (mouseover)="onMouseOver()"
+        (mouseout)="onMouseOut()"&gt;
+      &lt;/mat-slider&gt;
+&nbsp;
+      &lt;mat-slider
+        *ngIf="outMarkerIsSet"
+        [disabled]="true"
+        class="marker out"
+        min="0"
+        max="{{ largestFrameNumber }}"
+        value="{{ outMarkerFrameNumber }}"
+        (click)="onOutMarkerClick()"
+        (mouseover)="onMouseOver()"
+        (mouseout)="onMouseOut()"&gt;
+      &lt;/mat-slider&gt;
+&nbsp;
+      &lt;span *ngIf="hoverFrameDisplayIsVisible" class="hover-frame-display" [style.left.px]="hoverFrameDisplayPosition"&gt;
+        {{ hoverFrame | playerTimecode:playerState }}
+      &lt;/span&gt;
+    &lt;/ng-container&gt;
+  `
+})
+&nbsp;
+export class ScrubberComponent implements OnInit, OnDestroy {
+  @Input() window: any;
+  @Input() playerState: PlayerState;
+  @Output() request: EventEmitter&lt;PlayerSeekRequest&gt; = new EventEmitter&lt;PlayerSeekRequest&gt;();
+&nbsp;
+  private scrubbing: boolean = false;
+  private hovering: boolean = false;
+  private _hoverFrameDisplayPosition: number = 0;
+  private _hoverFrame: Frame;
+  private documentMouseMoveListenerRemover: Function;
+  private documentMouseUpListenerRemover: Function;
+&nbsp;
+  constructor(private elementRef: ElementRef, private renderer: Renderer, private changeDetector: ChangeDetectorRef) { }
+&nbsp;
+  public ngOnInit(): void {
+    const document = this.window.document;
+&nbsp;
+    this.documentMouseMoveListenerRemover = this.renderer.listen(document, 'mousemove', this.onMouseMove.bind(this));
+    this.documentMouseUpListenerRemover = this.renderer.listen(document, 'mouseup', this.onMouseUp.bind(this));
+  }
+&nbsp;
+  public ngOnDestroy(): void {
+    this.documentMouseMoveListenerRemover();
+    this.documentMouseUpListenerRemover();
+  }
+&nbsp;
+  public get readyToDisplay(): boolean {
+    return this.durationIsSet &amp;&amp; this.currentFrameIsSet;
+  }
+&nbsp;
+  public get largestFrameNumber(): number {
+    return this.durationIsSet ? this.playerState.durationFrame.frameNumber - 1 : undefined;
+  }
+&nbsp;
+  public get currentFrameNumber(): number {
+    return this.currentFrameIsSet ? this.playerState.currentFrame.frameNumber : undefined;
+  }
+&nbsp;
+  public get inMarkerIsSet(): boolean {
+    return !!this.playerState &amp;&amp; !!this.playerState.inMarkerFrame;
+  }
+&nbsp;
+  public get inMarkerFrameNumber(): number {
+    return this.inMarkerIsSet ? this.playerState.inMarkerFrame.frameNumber : undefined;
+  }
+&nbsp;
+  public get outMarkerIsSet(): boolean {
+    return !!this.playerState &amp;&amp; !!this.playerState.outMarkerFrame;
+  }
+&nbsp;
+  public get outMarkerFrameNumber(): number {
+    return this.outMarkerIsSet ? this.playerState.outMarkerFrame.frameNumber : undefined;
+  }
+&nbsp;
+  public onSliderInput(): void {
+    this.request.emit({ type: 'SEEK_TO_FRAME', frame: this._hoverFrame });
+  }
+&nbsp;
+  public onMouseOver(): void {
+    this.hovering = true;
+  }
+&nbsp;
+  public onMouseOut(): void {
+    this.hovering = false;
+  }
+&nbsp;
+  public onMouseDown(): void {
+    this.scrubbing = true;
+  }
+&nbsp;
+  public onInMarkerClick(): void {
+    this.request.emit({ type: 'SEEK_TO_MARKER', markerType: 'in' });
+  }
+&nbsp;
+  public onOutMarkerClick(): void {
+    this.request.emit({ type: 'SEEK_TO_MARKER', markerType: 'out' });
+  }
+&nbsp;
+  public get hoverFrameDisplayIsVisible(): boolean {
+    return this.hovering || this.scrubbing;
+  }
+&nbsp;
+  public get hoverFrameDisplayPosition(): number {
+    return this._hoverFrameDisplayPosition;
+  }
+&nbsp;
+  public get hoverFrame(): Frame {
+    return this._hoverFrame;
+  }
+&nbsp;
+  private onMouseMove(event: any): void {
+    if (!this.hoverFrameDisplayIsVisible) return;
+&nbsp;
+    this.updateHoverFrameDisplayWith(event.pageX);
+    this.changeDetector.markForCheck();  // Because this event is tracked outside the component.
+  }
+&nbsp;
+  private onMouseUp(): void {
+    this.scrubbing = false;
+    this.changeDetector.markForCheck();  // Because this event is tracked outside the component.
+  }
+&nbsp;
+  private get durationIsSet(): boolean {
+    return !!this.playerState &amp;&amp; !!this.playerState.durationFrame;
+  }
+&nbsp;
+  private get currentFrameIsSet(): boolean {
+    return !!this.playerState &amp;&amp; !!this.playerState.currentFrame;
+  }
+&nbsp;
+  private updateHoverFrameDisplayWith(pageMouseX: number): void {
+    const relativeMouseX: number = pageMouseX - this.scrubberPageOffset;
+    const children: any[] = Array.from(this.elementRef.nativeElement.children);
+    const scrubber: any = this.findByClassNameIn(children, 'scrubber');
+    const frameDisplay: any = this.findByClassNameIn(children, 'hover-frame-display');
+&nbsp;
+    this.updateHoverFrameWith(relativeMouseX, scrubber);
+    this.updateHoverFrameDisplayPositionWith(relativeMouseX, scrubber, frameDisplay);
+  }
+&nbsp;
+  private get scrubberPageOffset(): number {
+    let totalOffset = 0;
+    let element = this.elementRef.nativeElement;
+&nbsp;
+    while (element) {
+      totalOffset += element.offsetLeft;
+      element = element.offsetParent;
+    }
+&nbsp;
+    return totalOffset;
+  }
+&nbsp;
+  private findByClassNameIn(elementChildren: any, className: string): any {
+    return elementChildren.find((child: any) =&gt; Array.from(child.classList).indexOf(className) &gt; -1);
+  }
+&nbsp;
+  private updateHoverFrameWith(relativeMouseX: number, scrubber: any): void {
+    const scrubberTrack: any = this.findByClassNameIn(Array.from(scrubber.children), 'mat-slider-wrapper');
+    const scrubberTrackWidth: number = scrubberTrack.offsetWidth;
+&nbsp;
+    let newFrameNumber: number = Math.round(relativeMouseX * this.playerState.durationFrame.frameNumber / scrubberTrackWidth);
+    newFrameNumber = this.constrainTo(0, this.playerState.durationFrame.frameNumber, newFrameNumber);
+&nbsp;
+    this._hoverFrame =
+      new Frame(this.playerState.framesPerSecond, this.playerState.sourceBasedOffset).setFromFrameNumber(newFrameNumber);
+  }
+&nbsp;
+  private updateHoverFrameDisplayPositionWith(relativeMouseX: number, scrubber: any, frameDisplay: any): void {
+    const computedStyle: any = this.window.getComputedStyle(frameDisplay);
+    const width: number =
+      parseFloat(computedStyle.getPropertyValue('width'))
+      + parseFloat(computedStyle.getPropertyValue('border-left-width'))
+      + parseFloat(computedStyle.getPropertyValue('border-right-width'))
+      + parseFloat(computedStyle.getPropertyValue('padding-left'))
+      + parseFloat(computedStyle.getPropertyValue('padding-right'));
+&nbsp;
+    const unconstrainedPosition: number = relativeMouseX - (width / 2);
+    const minimumPosition: number = 0;
+    const maximumPosition: number = scrubber.offsetWidth - width;
+&nbsp;
+    this._hoverFrameDisplayPosition = this.constrainTo(minimumPosition, maximumPosition, unconstrainedPosition);
+  }
+&nbsp;
+  private constrainTo(minimumAllowed: number, maximumAllowed: number, value: number) {
+    return Math.max(minimumAllowed, Math.min(maximumAllowed, value));
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<div flex="100" flex-gt-lg="85" class="place-order">
+  <header layout="column" layout-align="start">
+    <h2 class="commerce-heading">{{ 'CART.CONFIRM.PAGE_TITLE' | translate }}</h2>
+  </header>
+
+  <div layout="column" layout-gt-xs="row" class="billing-payment">
+    <section class="billing" flex="auto">
+      <div layout="row" layout-align="space-between">
+        <h5 class="mat-title">{{ 'CART.CONFIRM.BILLING_TITLE' | translate }}</h5>
+        <button mat-button class="mini is-outlined" color="primary" (click)="goToTab(1)">{{ 'CART.CONFIRM.EDIT' | translate }}</button>
+      </div>
+      <ng-container *ngIf="(orderInProgress | async).selectedAddress as selectedAddress">
+        <div class="name"><strong>{{selectedAddress.name}}</strong></div>
+        <address *ngIf="selectedAddress.address.address">
+          <span class="line-1">
+            {{ lineOneFor(selectedAddress) }}
+          </span>
+          <span class="line-2">
+            {{ cityFor(selectedAddress) }}
+            {{ stateFor(selectedAddress) }}
+            {{ zipcodeFor(selectedAddress) }}
+            {{ countryFor(selectedAddress) }}
+          </span>
+          <span class="phone">{{ phoneFor(selectedAddress) }}</span>
+        </address>
+      </ng-container>
+    </section>
+    <section *ngIf="showPricing | async" class="payment" flex="auto">
+      <div layout="row" layout-align="space-between">
+        <h5 class="mat-title">{{ 'CART.CONFIRM.PAYMENT_TITLE' | translate }}</h5>
+        <button mat-button class="mini is-outlined" color="primary" (click)="goToTab(2)">{{ 'CART.CONFIRM.EDIT' | translate }}</button>
+      </div>
+      <div class="payment-info">
+        <div 
+          class="credit-card"
+          *ngIf="(orderInProgress | async).authorization.card.last4 && (paymentType | async) === 'CreditCard'">
+          <span class="indicate-cc">
+            <strong>{{ (orderInProgress | async).authorization.card.brand }}:</strong>
+            ending in {{ (orderInProgress | async).authorization.card.last4 }}
+          </span>
+          <span class="expires">
+            <strong>{{ 'CART.CONFIRM.EXPIRES' | translate }}</strong>
+            {{ (orderInProgress | async).authorization.card.exp_month }}/{{ (orderInProgress | async).authorization.card.exp_year }}
+          </span>
+        </div>
+        <div class="purchase-on-credit" *ngIf="(paymentType | async) === 'PurchaseOnCredit'">
+          <span class="indicate-credit">
+            <strong>{{ 'CART.CONFIRM.PURCHASE_ON_CREDIT' | translate }}</strong>
+          </span>
+        </div>
+        <div class="purchase-order-id" *ngIf="purchaseOrderId | async">
+          <span>
+            <strong>{{ 'CART.CONFIRM.PURCHASE_ORDER_ID' | translate }}</strong>
+            {{purchaseOrderId | async}}
+          </span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<h5 class="mat-title order-summary">{{ 'CART.CONFIRM.ORDER_TITLE' | translate }}</h5>
+<button *ngIf="!(data | async).expirationDate" mat-button class="mini is-outlined" color="primary" (click)="goToTab(0)">
+  {{ 'CART.CONFIRM.EDIT' | translate }}
+</button>
+<projects-component
+  flex="100"
+  [readOnly]="true"
+  [projects]="projects | async"
+  [quoteType]="(paymentType | async)"
+  [userCan]="userCan">
+</projects-component>
+
+<section class="commerce-total" layout="column" layout-align="end end">
+  <ng-container *ngIf="showPricing | async">
+    <div *ngIf="hasDiscount" flex="100" layout="row" layout-align="end center" class="subtotal mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_SUBTOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ (data | async).subTotal | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+    <div *ngIf="hasDiscount" flex="100" layout="row" layout-align="end center" class="discount mat-headline">
+      <span class="total-label" flex="100">
+        {{ 'CART.CART_DISCOUNT' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">{{ (data | async).discount }}</span>
+    </div> 
+    <div class="total mat-headline" layout="row" flex="100" layout-align="end center">
+      <span class="total-label" flex="100">
+        {{ 'CART.CONFIRM.TOTAL' | translate }} 
+      </span>
+      <span class="total-amount" flex="nogrow">
+        {{ (data | async).total | currency:'USD':true:'1.2-2' }}
+      </span>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="quoteIsTrial | async">
+    <div flex="100" layout="row" layout-align="end center" class="trial mat-headline">
+      <span class="trial-msg" flex="100">
+        {{ 'QUOTE.TRIAL_USE_ONLY_MSG' | translate }}
+      </span>
+    </div>
+  </ng-container>
+  <div *ngIf="shouldShowLicenseDetailsBtn()" flex="100" class="license-agreement-ckbox">
+    <mat-checkbox [(ngModel)]="licensesAreAgreedTo" color="primary">
+      {{'CART.CONFIRM.AGREE_TO_LIC_PLEDGE_TXT' | translate}}
+    </mat-checkbox>
+  </div>
+  <div flex="100">
+    <button
+      mat-button
+      color="primary"
+      class="is-outlined"
+      *ngIf="shouldShowLicenseDetailsBtn()"
+      (click)="showLicenseAgreements()">
+      {{ 'CART.SHOW_LICENSES_BTN_LABEL' | translate }}
+    </button>
+    <button
+      mat-raised-button
+      class="checkout"
+      (click)="purchase()"
+      [disabled]="!canPurchase">
+      {{ 'CART.CONFIRM.PURCHASE_BTN' | translate }}
+    </button>
+  </div>
+</section>

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/application/collection-tray/components/collections-list-dd.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">app/application/collection-tray/components/</a> collections-list-dd.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.06% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>66/68</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.45% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>21/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.77% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>60/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+&nbsp;
+import { Collection, CollectionSummaryItem, CollectionUserRole } from '../../../shared/interfaces/collection.interface';
+import { CollectionsService } from '../../../shared/services/collections.service';
+import { CollectionContextService } from '../../../shared/services/collection-context.service';
+import { Common } from '../../../shared/utilities/common.functions';
+import { AppStore } from '../../../app.store';
+import { Observable } from 'rxjs/Observable';
+import { EnhancedAsset } from '../../../shared/interfaces/enhanced-asset';
+&nbsp;
+/**
+ * Directive that renders a list of collections
+ */
+@Component({
+  moduleId: module.id,
+  selector: 'collections-list-dd',
+  templateUrl: 'collections-list-dd.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class CollectionListDdComponent implements OnInit, OnDestroy {
+  @Input() focusedCollection: Collection;
+  @Input() roleFilter: CollectionUserRole[] = ['owner', 'editor', 'viewer'];
+  @Input() editMode: boolean = false;
+  @Output() close = new EventEmitter();
+  @Output() onAddAssetToCollection: EventEmitter&lt;Collection&gt; = new EventEmitter();
+  public options: any;
+  public collectionFilterIsShowing: boolean = false;
+  public collectionSortIsShowing: boolean = false;
+  public collectionSearchIsShowing: boolean = false;
+  private optionsSubscription: Subscription;
+  private loadCollectionsSubscription: Subscription;
+&nbsp;
+  constructor(
+    public router: Router,
+    public collections: CollectionsService,
+    public collectionContext: CollectionContextService,
+    private store: AppStore
+  ) { }
+&nbsp;
+  ngOnInit(): void {
+    this.loadCollectionsSubscription = this.collections.data
+      .take(1)
+      .filter((collections) =&gt; collections.items.length === 0)
+      .subscribe(() =&gt; this.collections.load().subscribe());
+    this.optionsSubscription = this.collectionContext.data.subscribe(data =&gt; this.options = data);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  ngOnDestroy(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.optionsSubscription.unsubscribe();</span>
+<span class="cstat-no" title="statement not covered" >    this.loadCollectionsSubscription.unsubscribe();</span>
+  }
+&nbsp;
+  public closeCollectionsList(collection?: Collection) {
+    this.close.emit(collection);
+  }
+&nbsp;
+  public get collectionList(): Observable&lt;CollectionSummaryItem[]&gt; {
+    return this.collections.data
+      .map(data =&gt; data.items)
+      .map(items =&gt; {
+        if (this.editMode) {
+          items = items.filter(item =&gt; item.id !== this.focusedCollection.id);
+        }
+        return items.filter(item =&gt; this.roleFilter.includes(item.userRole));
+      });
+  }
+&nbsp;
+  public selectFocusedCollection(collection: Collection) {
+    if (!this.editMode) {
+      if (Common.onCollectionShowPage(this.router.url)) {
+        this.navigateToCollectionShow(collection.id);
+      } else {
+        this.store.dispatch(factory =&gt; factory.activeCollection.set(collection.id));
+      }
+    }
+    this.closeCollectionsList(collection);
+  }
+&nbsp;
+  public applyFilter(filter: any) {
+    this.collectionContext.updateCollectionOptions({ currentFilter: filter });
+    this.collections.load(filter.access).subscribe();
+    this.showCollectionFilter();
+  }
+&nbsp;
+  public applySort(sort: any) {
+    this.collectionContext.updateCollectionOptions({ currentSort: sort });
+    this.collections.load(sort.sort).subscribe();
+    this.showCollectionSort();
+  }
+&nbsp;
+  public search(query: any) {
+    this.collectionContext.updateCollectionOptions({ currentSearchQuery: query });
+    this.collections.load(query).subscribe();
+  }
+&nbsp;
+  public showCollectionFilter() {
+    this.collectionFilterIsShowing = !this.collectionFilterIsShowing;
+  }
+&nbsp;
+  public showCollectionSort() {
+    this.collectionSortIsShowing = !this.collectionSortIsShowing;
+  }
+&nbsp;
+  public showCollectionSearch() {
+    this.collectionSearchIsShowing = !this.collectionSearchIsShowing;
+  }
+&nbsp;
+  private navigateToCollectionShow(collectionId: number): void {
+    this.router.navigate(['/collections/', collectionId, { i: 1, n: 100 }]);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

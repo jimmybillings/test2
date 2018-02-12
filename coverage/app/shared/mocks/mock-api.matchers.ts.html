@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/mocks/mock-api.matchers.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/shared/mocks/</a> mock-api.matchers.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>91/91</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>34/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>80/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">108×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">61×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">72×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">61×</span>
+<span class="cline-any cline-yes">54×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">106×</span>
+<span class="cline-any cline-yes">103×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">92×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">124×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">108×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">82×</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Api } from '../interfaces/api.interface';
+&nbsp;
+const messageWith: Function = (expected: string, expectedValue: string, but: string, actualValues?: string): string =&gt; {
+  return `${expected} ${expectedValue}, ${but}${actualValues ? ` ${actualValues}` : ''}.`;
+};
+&nbsp;
+const expectedCalledWith: string = 'Expected spy to have been called with';
+const expectedNotCalledWith: string = 'Expected spy not to have been called with';
+const butNeverCalled: string = 'but it was never called';
+const butWas: string = 'but it was';
+const butWasNot: string = 'but it was not';
+const butCalledWith: string = `but it was called with`;
+&nbsp;
+const apiToString: Function = (api: Api): string | Api =&gt; {
+  return api.constructor.name === 'Number' ? `Api.${Api[api]}` : api;
+};
+&nbsp;
+const apiExpectationFormatterFor: Function = (displayName: string): Function =&gt; {
+  return (expected: Api) =&gt; `${displayName} = ${apiToString(expected)}`;
+};
+&nbsp;
+const objectExpectationFormatterFor: Function = (displayName: string): Function =&gt; {
+  return (expected: Object) =&gt; `${displayName} =\n${JSON.stringify(expected, null, 2)}\n`;
+};
+&nbsp;
+const booleanExpectationFormatterFor: Function = (displayName: string): Function =&gt; {
+  return (expected: boolean) =&gt; `${displayName} = ${expected}`;
+};
+&nbsp;
+const stringExpectationFormatterFor: Function = (displayName: string): Function =&gt; {
+  return (expected: string) =&gt; `${displayName} = '${expected}'`;
+};
+&nbsp;
+const objectArgumentMapperFor: Function = (optionKey: string): Function =&gt; {
+  return (call: jasmine.CallInfo) =&gt; `\n${JSON.stringify(call.args[2][optionKey], null, 2)}`;
+};
+&nbsp;
+const objectJoiner: string = '\n- and -';
+&nbsp;
+const apiArgumentMapperFor: Function = (argumentPosition: number) =&gt; {
+  return (call: jasmine.CallInfo) =&gt; apiToString(call.args[argumentPosition]);
+};
+&nbsp;
+const booleanArgumentMapperFor: Function = (optionKey: string): Function =&gt; {
+  return (call: jasmine.CallInfo) =&gt; call.args[2][optionKey];
+};
+&nbsp;
+const stringArgumentMapperFor: Function = (optionKeyOrArgumentPosition: string | number): Function =&gt; {
+  if (typeof optionKeyOrArgumentPosition === 'number') {
+    return (call: jasmine.CallInfo) =&gt; `'${call.args[optionKeyOrArgumentPosition]}'`;
+  } else {
+    return (call: jasmine.CallInfo) =&gt; `'${call.args[2][optionKeyOrArgumentPosition]}'`;
+  }
+};
+&nbsp;
+const indefiniteArticleFor: Function = (noun: string): string =&gt; {
+  return 'aeiou'.split('').indexOf(noun.charAt(0)) &gt; -1 ? 'an' : 'a';
+};
+&nbsp;
+const matcherFor: Function = (
+  argumentPosition: number,
+  expectationFormatter: Function,
+  argumentMapper: any
+): jasmine.CustomMatcher =&gt; {
+  return {
+    compare: (spy: jasmine.Spy, expected: Api | string): jasmine.CustomMatcherResult =&gt; {
+      const result: jasmine.CustomMatcherResult = { pass: false, message: '' };
+      const allCalls: jasmine.CallInfo[] = spy.calls.all();
+      const actualValues: string = allCalls.map(argumentMapper).join(', ');
+&nbsp;
+      const expectedValue: string = expectationFormatter(expected);
+&nbsp;
+      if (allCalls.length === 0) {
+        result.pass = false;
+        result.message = messageWith(expectedCalledWith, expectedValue, butNeverCalled);
+&nbsp;
+        return result;
+      }
+&nbsp;
+      result.pass = allCalls.some(call =&gt; call.args[argumentPosition] === expected);
+      result.message = result.pass ?
+        messageWith(expectedNotCalledWith, expectedValue, butWas) :
+        messageWith(expectedCalledWith, expectedValue, butCalledWith, actualValues);
+&nbsp;
+      return result;
+    }
+  };
+};
+&nbsp;
+const optionMatcherFor: Function = (
+  optionKey: string,
+  expectationFormatter: Function,
+  argumentMapper: any,
+  argumentJoiner: string = ', '
+): jasmine.CustomMatcher =&gt; {
+  return {
+    compare: (spy: jasmine.Spy, expected?: Object): jasmine.CustomMatcherResult =&gt; {
+      const result: jasmine.CustomMatcherResult = { pass: false, message: '' };
+&nbsp;
+      const allCalls: jasmine.CallInfo[] = spy.calls.all();
+      const allCallsWithOption: jasmine.CallInfo[]
+        = allCalls.filter(call =&gt; call.args.length &gt; 2 &amp;&amp; call.args[2].hasOwnProperty(optionKey));
+      const actualValues: string = allCallsWithOption.map(argumentMapper).join(argumentJoiner);
+&nbsp;
+      const expectationIsSpecific: boolean = typeof expected !== 'undefined';
+      const specificValue: string = expectationFormatter(expected);
+      const unspecificValue: string = `${indefiniteArticleFor(optionKey)} ${optionKey} option`;
+&nbsp;
+      const butNeverCalledUnspecifically: string = `${butNeverCalled} with any ${optionKey} option`;
+&nbsp;
+      if (allCalls.length === 0) {
+        result.pass = false;
+        result.message = messageWith(expectedCalledWith, expectationIsSpecific ? specificValue : unspecificValue, butNeverCalled);
+&nbsp;
+        return result;
+      }
+&nbsp;
+      if (!expectationIsSpecific) {
+        result.pass = allCallsWithOption.length &gt; 0;
+        result.message = result.pass ?
+          messageWith(expectedNotCalledWith, unspecificValue, butCalledWith, actualValues) :
+          messageWith(expectedCalledWith, unspecificValue, butWasNot);
+&nbsp;
+        return result;
+      }
+&nbsp;
+      if (allCallsWithOption.length === 0) {
+        result.pass = false;
+        result.message = messageWith(expectedCalledWith, specificValue, butNeverCalledUnspecifically);
+&nbsp;
+        return result;
+      }
+&nbsp;
+      result.pass = allCallsWithOption.some(call =&gt; JSON.stringify(call.args[2][optionKey]) === JSON.stringify(expected));
+      result.message = result.pass ?
+        messageWith(expectedNotCalledWith, specificValue, butWas) :
+        messageWith(expectedCalledWith, specificValue, butCalledWith, actualValues);
+&nbsp;
+      return result;
+    }
+  };
+};
+&nbsp;
+export const mockApiMatchers: jasmine.CustomMatcherFactories = {
+  toHaveBeenCalledWithApi: (): jasmine.CustomMatcher =&gt; {
+    return matcherFor(0, apiExpectationFormatterFor('api'), apiArgumentMapperFor(0));
+  },
+&nbsp;
+  toHaveBeenCalledWithEndpoint: (): jasmine.CustomMatcher =&gt; {
+    return matcherFor(1, stringExpectationFormatterFor('endpoint'), stringArgumentMapperFor(1));
+  },
+&nbsp;
+  toHaveBeenCalledWithBody: (): jasmine.CustomMatcher =&gt; {
+    return optionMatcherFor('body', objectExpectationFormatterFor('body'), objectArgumentMapperFor('body'), objectJoiner);
+  },
+&nbsp;
+  toHaveBeenCalledWithParameters: (): jasmine.CustomMatcher =&gt; {
+    return optionMatcherFor('parameters', objectExpectationFormatterFor('parameters'), objectArgumentMapperFor('parameters'), objectJoiner);
+  },
+&nbsp;
+  toHaveBeenCalledWithLoading: (): jasmine.CustomMatcher =&gt; {
+    return optionMatcherFor('loadingIndicator', booleanExpectationFormatterFor('loadingIndicator'),
+      booleanArgumentMapperFor('loadingIndicator'));
+  },
+&nbsp;
+  toHaveBeenCalledWithHeaderType: (): jasmine.CustomMatcher =&gt; {
+    return optionMatcherFor('headerType', stringExpectationFormatterFor('headerType'), stringArgumentMapperFor(1));
+  },
+&nbsp;
+  toHaveBeenCalledWithOverridingToken: (): jasmine.CustomMatcher =&gt; {
+    return optionMatcherFor('overridingToken', stringExpectationFormatterFor('overridingToken'),
+      stringArgumentMapperFor('overridingToken'));
+  }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

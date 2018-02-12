@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/store/router/router.effects.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/store/router/</a> router.effects.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.5% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>78/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.72% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>59/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-yes">39×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Injectable } from '@angular/core';
+import { Effect, Actions } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+&nbsp;
+import * as RouterActions from './router.actions';
+import * as UiConfigActions from '../ui-config/ui-config.actions';
+import { Common } from '../../shared/utilities/common.functions';
+import { Pojo } from '../../shared/interfaces/common.interface';
+import { bothMarkersAreSet, durationFrom } from '../../shared/interfaces/subclip-markers';
+&nbsp;
+@Injectable()
+export class RouterEffects {
+  @Effect({ dispatch: false })
+  public goToLogin: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToLogin.Type)
+    .do((action: RouterActions.GoToLogin) =&gt; this.router.navigate([this.LoginPath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToLoginWithRedirect: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToLoginWithRedirect.Type)
+    .do((action: RouterActions.GoToLoginWithRedirect) =&gt; {
+      const currentPath: string = this.location.path();
+      if (currentPath.split(';')[0] !== this.LoginPath) {
+        localStorage.setItem(this.RedirectUrlKey, currentPath);
+        this.router.navigate([this.LoginPath, { requireLogin: true }]);
+      }
+    });
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToPageNotFound: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToPageNotFound.Type)
+    .do((action: RouterActions.GoToPageNotFound) =&gt; this.router.navigate([this.PageNotFoundPath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToSearchAssetDetails: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToSearchAssetDetails.Type)
+    .do((action: RouterActions.GoToSearchAssetDetails) =&gt;
+      this.router.navigate([
+        this.SearchAssetDetailsPath,
+        action.assetId,
+        bothMarkersAreSet(action.markers) ? durationFrom(action.markers) : {}
+      ])
+    );
+&nbsp;
+  @Effect({ dispatch: false })
+  public followRedirect: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.FollowRedirect.Type)
+    .do((action: RouterActions.FollowRedirect) =&gt; {
+      const redirectUrl: string = localStorage.getItem(this.RedirectUrlKey);
+&nbsp;
+      if (redirectUrl) {
+        this.router.navigateByUrl(redirectUrl);
+        localStorage.removeItem(this.RedirectUrlKey);
+      } else {
+        this.router.navigate([this.RootPath]);
+      }
+    });
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToQuotes: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToQuotes.Type)
+    .do(() =&gt; this.router.navigate([this.QuotesPath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToQuoteById: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToQuoteById.Type)
+    .do(<span class="fstat-no" title="function not covered" >(action: RouterActions.GoToQuoteById)</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      return this.router.navigate([this.QuotesPath, action.quoteId]);</span>
+    });
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToCollection: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToCollection.Type)
+    .do((action: RouterActions.GoToCollection) =&gt; {
+      this.router.navigate([this.CollectionsPath, action.collectionId, { i: action.page, n: action.perPage }]);
+    });
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToActiveQuote: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToActiveQuote.Type)
+    .do((action: RouterActions.GoToActiveQuote) =&gt; this.router.navigate([this.ActiveQuotePath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToCart: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToCart.Type)
+    .do((action: RouterActions.GoToCart) =&gt; this.router.navigate([this.CartPath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public initialNavigation: Observable&lt;Action&gt; = this.actions.ofType(UiConfigActions.LoadSuccess.Type)
+    .do(<span class="fstat-no" title="function not covered" >(action: UiConfigActions.LoadSuccess)</span> =&gt; <span class="cstat-no" title="statement not covered" >this.router.initialNavigation())</span>;
+&nbsp;
+  @Effect({ dispatch: false })
+  public addMarkersToUrl: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.AddMarkersToUrl.Type)
+    .do((action: RouterActions.AddMarkersToUrl) =&gt; {
+      let params: Pojo = Common.urlStringToParamsObject(this.router.routerState.snapshot.url);
+      params.timeStart = action.timeStart;
+      params.timeEnd = action.timeEnd;
+      this.location.go(`${this.SearchAssetDetailsPath}/${action.assetId}${Common.urlParamsObjectToUrlStringParams(params)}`);
+    });
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToBadRequest: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToBadRequest.Type)
+    .do(() =&gt; this.router.navigate([this.BadRequestPath]));
+&nbsp;
+  @Effect({ dispatch: false })
+  public goToServerError: Observable&lt;Action&gt; = this.actions.ofType(RouterActions.GoToServerError.Type)
+    .do(() =&gt; this.router.navigate([this.ServerErrorPath]));
+&nbsp;
+  private readonly LoginPath: string = '/user/login';
+  private readonly PageNotFoundPath: string = '/error/404';
+  private readonly BadRequestPath: string = '/error/400';
+  private readonly ServerErrorPath: string = '/error/500';
+  private readonly QuotesPath: string = '/quotes';
+  private readonly RootPath: string = '/';
+  private readonly RedirectUrlKey: string = 'RouterEffects.RedirectUrl';
+  private readonly SearchAssetDetailsPath: string = '/search/asset';
+  private readonly CollectionsPath: string = '/collections';
+  private readonly ActiveQuotePath: string = '/active-quote';
+  private readonly CartPath: string = '/cart';
+&nbsp;
+  constructor(private actions: Actions, private router: Router, private location: Location) { }
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

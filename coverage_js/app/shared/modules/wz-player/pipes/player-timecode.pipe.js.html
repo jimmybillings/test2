@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/pipes/player-timecode.pipe.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/pipes/</a> player-timecode.pipe.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.65% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">65.63% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">96×</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+var __decorate = (this &amp;&amp; this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c &lt; 3 ? target : <span class="branch-1 cbranch-no" title="branch not covered" >desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc,</span> d;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof Reflect === "object" &amp;&amp; typeof Reflect.decorate === "function") <span class="cstat-no" title="statement not covered" >r = Reflect.decorate(decorators, target, key, desc);</span>
+    else for (var i = decorators.length - 1; i &gt;= 0; i--) <span class="missing-if-branch" title="else path not taken" >E</span>if (d = decorators[i]) r = (c &lt; 3 ? d(r) : <span class="branch-1 cbranch-no" title="branch not covered" >c &gt; 3 ? d(target, key, r) : d(target, key))</span> || <span class="branch-1 cbranch-no" title="branch not covered" >r;</span>
+    return c &gt; 3 &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >r </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >Object.defineProperty(target, key, r),</span> r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var index_1 = require("../../wazee-frame-formatter/index");
+var common_functions_1 = require("../../../utilities/common.functions");
+var PlayerTimecodePipe = (function () {
+    function PlayerTimecodePipe() {
+    }
+    PlayerTimecodePipe.prototype.transform = function (frame, state, format, base) {
+        if (!frame)
+            return '';
+        var chosenFormat = common_functions_1.Common.isNullOrUndefined(format)
+            ? (state ? state.timecodeFormat : index_1.TimecodeFormat.SIMPLE_TIME_CONVERSION)
+            : format;
+        var chosenBase = common_functions_1.Common.isNullOrUndefined(base)
+            ? (state ? state.timecodeBase : index_1.TimecodeBase.STREAM_BASED)
+            : base;
+        return frame.asString(chosenFormat, chosenBase);
+    };
+    PlayerTimecodePipe = __decorate([
+        core_1.Pipe({ name: 'playerTimecode' })
+    ], PlayerTimecodePipe);
+    return PlayerTimecodePipe;
+}());
+exports.PlayerTimecodePipe = PlayerTimecodePipe;
+&nbsp;
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcC9zaGFyZWQvbW9kdWxlcy93ei1wbGF5ZXIvcGlwZXMvcGxheWVyLXRpbWVjb2RlLnBpcGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQSxzQ0FBb0Q7QUFHcEQsMkRBQXdGO0FBQ3hGLHdFQUE2RDtBQUc3RDtJQUFBO0lBZ0JBLENBQUM7SUFmUSxzQ0FBUyxHQUFoQixVQUFpQixLQUFZLEVBQUUsS0FBa0IsRUFBRSxNQUF1QixFQUFFLElBQW1CO1FBQzdGLEVBQUUsQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDO1lBQUMsTUFBTSxDQUFDLEVBQUUsQ0FBQztRQUV0QixJQUFNLFlBQVksR0FDaEIseUJBQU0sQ0FBQyxpQkFBaUIsQ0FBQyxNQUFNLENBQUM7WUFDOUIsQ0FBQyxDQUFDLENBQUMsS0FBSyxDQUFDLENBQUMsQ0FBQyxLQUFLLENBQUMsY0FBYyxDQUFDLENBQUMsQ0FBQyxzQkFBYyxDQUFDLHNCQUFzQixDQUFDO1lBQ3hFLENBQUMsQ0FBQyxNQUFNLENBQUM7UUFFYixJQUFNLFVBQVUsR0FDZCx5QkFBTSxDQUFDLGlCQUFpQixDQUFDLElBQUksQ0FBQztZQUM1QixDQUFDLENBQUMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxZQUFZLENBQUMsQ0FBQyxDQUFDLG9CQUFZLENBQUMsWUFBWSxDQUFDO1lBQzFELENBQUMsQ0FBQyxJQUFJLENBQUM7UUFFWCxNQUFNLENBQUMsS0FBSyxDQUFDLFFBQVEsQ0FBQyxZQUFZLEVBQUUsVUFBVSxDQUFDLENBQUM7SUFDbEQsQ0FBQztJQWZVLGtCQUFrQjtRQUQ5QixXQUFJLENBQUMsRUFBRSxJQUFJLEVBQUUsZ0JBQWdCLEVBQUUsQ0FBQztPQUNwQixrQkFBa0IsQ0FnQjlCO0lBQUQseUJBQUM7Q0FoQkQsQUFnQkMsSUFBQTtBQWhCWSxnREFBa0IiLCJmaWxlIjoiYXBwL3NoYXJlZC9tb2R1bGVzL3d6LXBsYXllci9waXBlcy9wbGF5ZXItdGltZWNvZGUucGlwZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBpcGUsIFBpcGVUcmFuc2Zvcm0gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcblxuaW1wb3J0IHsgUGxheWVyU3RhdGUgfSBmcm9tICcuLi9pbnRlcmZhY2VzL3BsYXllci5pbnRlcmZhY2UnO1xuaW1wb3J0IHsgRnJhbWUsIFRpbWVjb2RlRm9ybWF0LCBUaW1lY29kZUJhc2UgfSBmcm9tICcuLi8uLi93YXplZS1mcmFtZS1mb3JtYXR0ZXIvaW5kZXgnO1xuaW1wb3J0IHsgQ29tbW9uIH0gZnJvbSAnLi4vLi4vLi4vdXRpbGl0aWVzL2NvbW1vbi5mdW5jdGlvbnMnO1xuXG5AUGlwZSh7IG5hbWU6ICdwbGF5ZXJUaW1lY29kZScgfSlcbmV4cG9ydCBjbGFzcyBQbGF5ZXJUaW1lY29kZVBpcGUgaW1wbGVtZW50cyBQaXBlVHJhbnNmb3JtIHtcbiAgcHVibGljIHRyYW5zZm9ybShmcmFtZTogRnJhbWUsIHN0YXRlOiBQbGF5ZXJTdGF0ZSwgZm9ybWF0PzogVGltZWNvZGVGb3JtYXQsIGJhc2U/OiBUaW1lY29kZUJhc2UpOiBzdHJpbmcge1xuICAgIGlmICghZnJhbWUpIHJldHVybiAnJztcblxuICAgIGNvbnN0IGNob3NlbkZvcm1hdDogVGltZWNvZGVGb3JtYXQgPVxuICAgICAgQ29tbW9uLmlzTnVsbE9yVW5kZWZpbmVkKGZvcm1hdClcbiAgICAgICAgPyAoc3RhdGUgPyBzdGF0ZS50aW1lY29kZUZvcm1hdCA6IFRpbWVjb2RlRm9ybWF0LlNJTVBMRV9USU1FX0NPTlZFUlNJT04pXG4gICAgICAgIDogZm9ybWF0O1xuXG4gICAgY29uc3QgY2hvc2VuQmFzZTogVGltZWNvZGVCYXNlID1cbiAgICAgIENvbW1vbi5pc051bGxPclVuZGVmaW5lZChiYXNlKVxuICAgICAgICA/IChzdGF0ZSA/IHN0YXRlLnRpbWVjb2RlQmFzZSA6IFRpbWVjb2RlQmFzZS5TVFJFQU1fQkFTRUQpXG4gICAgICAgIDogYmFzZTtcblxuICAgIHJldHVybiBmcmFtZS5hc1N0cmluZyhjaG9zZW5Gb3JtYXQsIGNob3NlbkJhc2UpO1xuICB9XG59XG4iXX0=
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:44 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../sorter.js"></script>
+</body>
+</html>

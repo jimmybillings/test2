@@ -1,0 +1,15 @@
+@mixin wz-pagination-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  wz-pagination {
+    .divider {
+      box-shadow: -1px 0 0 0 rgba(mat-color($foreground, divider), 1) inset, 1px 0 0 0 rgba(mat-color($background, background),.7);
+    }
+    button[mat-icon-button] {
+      &:hover {
+        background-color: rgba(mat-color($foreground, base), .08);
+      }
+    }
+  }
+}

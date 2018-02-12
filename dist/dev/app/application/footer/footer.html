@@ -1,0 +1,322 @@
+<!-- WPT HEADER -->
+<ng-container *ngIf="config && (config.template.value === 'wpt')">
+  <div layout="row" layout-align="start center" class="glb">
+    <div flex=""></div>
+    <!-- LOGO -->
+    <div flex-gt-lg="85" flex-lg="95" flex="100" layout="row" layout-wrap="" layout-padding="">
+      <div
+        hide=""
+        show-gt-md=""
+        flex-gt-md="25"
+        flex="100"
+        layout="column"
+        layout-align="start center"
+        layout-align-gt-md="start start">
+        <a [routerLink]="['/']" class="logo-wrapper"><div class="logo"></div></a>
+      </div>
+      <!-- SALES -->
+      <div flex-gt-sm="25" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start" class="sales">
+        <h3 class="mat-title">US & RoW</h3>
+        <h5 class="mat-subheading-1">Johnny McMahon</h5>
+        <mat-list>
+          <mat-list-item>
+            <div mat-button class="phone">
+              <p class="phone-icon mat-body-1">+1 (323) 470-1788<mat-icon>phone_iphone</mat-icon></p>
+            </div>
+          </mat-list-item>
+          <mat-list-item><a mat-button href="mailto:John.mcmahon@wpt.com">
+            <p class="email-icon mat-body-1">John.mcmahon@wpt.com<mat-icon>mail</mat-icon></p></a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- CONTACT -->
+      <div flex-gt-sm="25" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start" class="sales">
+        <h3 class="mat-title">Europe</h3>
+        <h5 class="mat-subheading-1">Richard Sarris</h5>
+        <mat-list>
+          <mat-list-item>
+            <div mat-button class="phone">
+              <p class="phone-icon mat-body-1">+44 (0) 750 785 0882<mat-icon>phone_iphone</mat-icon></p>
+            </div>
+          </mat-list-item>
+          <mat-list-item><a mat-button href="mailto:Richard.sarris@wpt.com">
+            <p class="email-icon mat-body-1">Richard.sarris@wpt.com<mat-icon>mail</mat-icon></p></a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- SOCIAL -->
+      <div flex-gt-sm="25" flex="100" layout="column" layout-align="start center" layout-align-gt-md="start start">
+        <h3 class="mat-title">{{'FOOTER.COMMUNITY' | translate }}</h3>
+        <ul class="social">
+          <li>
+            <a href="https://www.facebook.com/WazeeDigital" target="_blank" class="facebook">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/wazee_digital" target="_blank" class="twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/114252139629653219287/about" target="_blank" class="google-plus">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/company/wazeedigital?trk=top_nav_home" target="_blank" class="linkedin">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/thoughtequity" target="_blank" class="youtube">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div flex=""></div>
+  </div>
+</ng-container>
+
+<!-- BASIC HEADER -->
+<ng-container *ngIf="!config || (config.template.value === 'basic')">
+  <div layout="row" layout-align="center start" class="glb">
+    <div
+      flex-gt-lg="80"
+      flex-lg="90"
+      flex-gt-md="95"
+      flex="100"
+      layout="row"
+      layout-align="center start"
+      layout-wrap=""
+      layout-padding="">
+      <!-- LOGO -->      
+      <div
+        hide
+        hide-sm
+        show-gt-sm=""
+        flex-gt-sm="15"
+        flex="100"
+        layout="column"
+        layout-align="start center"
+        layout-align-gt-md="start start">
+        <a [routerLink]="['/']" class="logo-wrapper"><div class="logo"></div></a>
+      </div>
+      <!-- CONTACT -->
+      <div flex-gt-sm="20" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start">
+        <h3 class="mat-title">{{'FOOTER.OFFICE' | translate }}</h3>
+        <ng-container *ngIf="!showContacts">
+          <p class="mat-caption">{{'FOOTER.ADDRESS' | translate }}</p>
+        </ng-container>
+        <ng-container *ngIf="showContacts">
+          <div class="contact" *ngFor="let contact of contacts">
+            <p class="mat-body-2" *ngIf="show(contact.department)">{{ contact.department }}</p>
+            <p class="mat-caption" *ngIf="show(contact.name)">{{ contact.name }}</p>
+            <p class="mat-caption" *ngIf="show(contact.title)">{{ contact.title }}</p>
+            <a class="email" *ngIf="show(contact.email)" href="{{ 'mailto:' + contact.email }}">
+              <p class="mat-caption">{{ contact.email }}</p>              
+            </a>
+          </div>
+        </ng-container>
+        <p class="mat-caption">
+          <a flex="" href="{{'FOOTER.SUPPORT_URL' | translate }}" target="_blank" title="Help" class="footer-link">
+            {{'FOOTER.SUPPORT_LABEL' | translate }}
+          </a>
+        </p>
+      </div>
+      <!-- SALES -->
+      <div flex-gt-sm="25" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start" class="sales">
+        <h3 class="mat-title">{{'FOOTER.SALES' | translate }}</h3>
+        <mat-list>
+          <mat-list-item>
+            <a mat-button href="{{'mailto:'+('FOOTER.SALES_EMAIL' | translate) }}">
+              <p class="email-icon mat-body-1">{{'FOOTER.SALES_EMAIL' | translate }}<mat-icon>mail</mat-icon></p>
+            </a>
+          </mat-list-item>
+          <mat-list-item>
+            <div mat-button class="phone">
+              <p class="phone-icon mat-body-1">{{'FOOTER.SALES_PHONE_NUMBER' | translate }}<mat-icon>phone_iphone</mat-icon></p>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- LEGAL -->
+      <ng-container *ngIf="privacyPolicyExists">
+        <div flex-gt-sm="15" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start">
+          <h3 class="mat-title">{{ 'FOOTER.LEGAL_TITLE' | translate }}</h3>
+          <p class="mat-caption">
+            <a
+              flex=""
+              [routerLink]="['/privacy-policy']"
+              title="{{ 'FOOTER.PRIVACY_POLICY_LINK_TITLE' | translate }}"
+              class="footer-link">
+              {{ 'FOOTER.PRIVACY_POLICY_LINK' | translate }}
+            </a>
+          </p>
+        </div>
+      </ng-container>
+      <!-- SOCIAL -->
+      <div flex-gt-sm="20" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start">
+        <h3 class="mat-title">{{'FOOTER.COMMUNITY' | translate }}</h3>
+        <ul class="social">
+          <li class="facebook">
+            <a href="{{'FOOTER.SOCIAL_URL_FACEBOOK' | translate }}" target="_blank" class="facebook">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="{{'FOOTER.SOCIAL_URL_TWITTER' | translate }}" target="_blank" class="twitter">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="google-plus">
+            <a href="{{'FOOTER.SOCIAL_URL_GOOGLE' | translate }}" target="_blank" class="google-plus">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="linkedin">
+            <a href="{{'FOOTER.SOCIAL_URL_LINKEDIN' | translate }}" target="_blank" class="linkedin">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="youtube">
+            <a href="{{'FOOTER.SOCIAL_URL_YOUTUBE' | translate }}" target="_blank" class="youtube">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="instagram">
+            <a href="{{'FOOTER.SOCIAL_URL_INSTAGRAM' | translate }}" target="_blank" class="instagram">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div layout="row" layout-align="center start" class="glb powered-by">
+    <div
+      flex-gt-lg="80"
+      flex-lg="90"
+      flex-gt-md="95"
+      flex="100"
+      layout="row"
+      layout-align-gt-xs="start center"
+      layout-wrap="">
+      <ul class="logos">
+        <li class="wazee">
+          <a href="{{'FOOTER.POWERED_BY.WAZEE_URL' | translate }}" target="_blank">
+            <span></span>
+          </a>
+        </li>
+        <li class="base-media">
+          <a href="{{'FOOTER.POWERED_BY.BASE_MEDIA_URL' | translate }}" target="_blank">
+            <span></span>
+          </a>
+        </li>
+      </ul>
+      <div layout="column" layout-gt-xs="row">
+        <h5 class="mat-caption italic">{{'FOOTER.POWERED_BY.DMH' | translate }}</h5>
+        <h5 class="mat-caption">
+          <strong>{{'FOOTER.POWERED_BY.WAZEE' | translate }}</strong>
+          <span class="and separator">{{'FOOTER.POWERED_BY.AND' | translate }}</span>
+          <strong>{{'FOOTER.POWERED_BY.BASE_MEDIA' | translate }}</strong>
+        </h5>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- SUPPORT ONLY HEADER -->
+<ng-container *ngIf="config && (config.template.value === 'supportOnly')">
+    <div layout="row" layout-align="center start" class="glb">
+    <div flex=""></div>
+    <!-- LOGO -->
+    <div
+      flex-gt-lg="80"
+      flex-lg="85"
+      flex-gt-md="95"
+      flex="100"
+      layout="row"
+      layout-wrap=""
+      layout-padding="">
+      <div
+        hide
+        hide-sm
+        show-gt-sm=""
+        flex-gt-sm="25"
+        flex="100"
+        layout="column"
+        layout-align="end start"
+        layout-align-gt-md="end start">
+          <a [routerLink]="['/']" class="logo-wrapper"><div class="logo"></div></a>
+      </div>
+      <!-- SUPPORT -->
+      <div
+        flex-gt-sm="50"
+        flex="100"
+        layout="column"
+        layout-align="center center"
+        layout-align-gt-md="start start"
+        class="sales">
+        <mat-list>
+          <h3 class="mat-title">{{'FOOTER.SUPPORT_HEADING' | translate }}</h3>
+          <mat-list-item>
+            <a mat-button href="{{'mailto:'+('FOOTER.SUPPORT_EMAIL' | translate) }}">
+              <p class="email-icon mat-body-1">{{'FOOTER.SUPPORT_EMAIL' | translate }}<mat-icon>mail</mat-icon></p>
+            </a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- LEGAL -->
+      <ng-container *ngIf="privacyPolicyExists">
+        <div flex-gt-sm="15" flex="100" layout="column" layout-align="start stretch" layout-align-gt-md="start start">
+          <h3 class="mat-title">{{ 'FOOTER.LEGAL_TITLE' | translate }}</h3>
+          <p class="mat-caption">
+            <a
+              flex=""
+              [routerLink]="['/privacy-policy']"
+              title="{{ 'FOOTER.PRIVACY_POLICY_LINK_TITLE' | translate }}"
+              class="footer-link">
+              {{ 'FOOTER.PRIVACY_POLICY_LINK' | translate }}
+            </a>
+          </p>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

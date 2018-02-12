@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/shared/modules/wz-player/components/wz-advanced-player/wz.advanced-player.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">all files</a> / <a href="index.html">app/shared/modules/wz-player/components/wz-advanced-player/</a> wz.advanced-player.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>85/85</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>44/44</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>76/76</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">69×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">69×</span>
+<span class="cline-any cline-yes">69×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">137×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">137×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">46×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">27×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, Input, Output, ViewChild, EventEmitter } from '@angular/core';
+&nbsp;
+import { PlayerStateService } from '../../services/player-state.service';
+import { WzPlayerComponent } from '../wz-player/wz.player.component';
+import { SubclipMarkers } from '../../../../interfaces/subclip-markers';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+import { Frame } from '../../../wazee-frame-formatter/index';
+import { PlayerState, PlayerStateChanges, PlayerRequest } from '../../interfaces/player.interface';
+import { EnhancedAsset } from '../../../../interfaces/enhanced-asset';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'wz-advanced-player',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [PlayerStateService],
+  templateUrl: './wz.advanced-player.html'
+})
+&nbsp;
+export class WzAdvancedPlayerComponent implements OnInit, OnDestroy {
+  @Input() window: any;
+  @Input() displayAllControls: boolean = true;
+  @Input()
+  public set asset(newAsset: EnhancedAsset) {
+    this.playerStateService.reset();
+    this.playerStateService.updateWith({ sourceBasedOffset: newAsset.getMetadataValueFor('Format.TimeStart') });
+    this.currentState = null;
+    this.playerReady = false;
+    this.currentAsset = newAsset;
+  }
+&nbsp;
+  @Output() markersInitialization: EventEmitter&lt;SubclipMarkers&gt; = new EventEmitter&lt;SubclipMarkers&gt;();
+  @Output() markerChange: EventEmitter&lt;SubclipMarkers&gt; = new EventEmitter&lt;SubclipMarkers&gt;();
+&nbsp;
+  @ViewChild(WzPlayerComponent) player: WzPlayerComponent;
+&nbsp;
+  private playerStateSubscription: Subscription;
+  private currentAsset: EnhancedAsset = null;
+  private currentState: PlayerState = null;
+  private playerReady: boolean = false;
+&nbsp;
+  public get asset(): EnhancedAsset {
+    return this.currentAsset;
+  }
+&nbsp;
+  public assetIsVideo(): boolean {
+    return !!this.currentAsset &amp;&amp; this.currentAsset.resourceClass !== 'Image';
+  }
+&nbsp;
+  constructor(private playerStateService: PlayerStateService) { }
+&nbsp;
+  public get playerState(): Observable&lt;any&gt; {
+    return this.playerStateService.state;
+  }
+&nbsp;
+  public ngOnInit(): void {
+    this.playerStateSubscription = this.playerStateService.state.subscribe(this.onStateChange.bind(this));
+  }
+&nbsp;
+  public ngOnDestroy(): void {
+    this.playerStateSubscription.unsubscribe();
+  }
+&nbsp;
+  public onStateChangeRequest(changes: PlayerStateChanges): void {
+    this.playerStateService.updateWith(changes);
+  }
+&nbsp;
+  public handle(request: PlayerRequest): void {
+    switch (request.type) {
+      case 'CLEAR_MARKERS':
+        this.player.clearMarkers();
+        break;
+      case 'PLAY_AT_SPEED':
+        this.player.playAtSpeed(request.speed, request.direction);
+        break;
+      case 'PAUSE':
+        this.player.pause();
+        break;
+      case 'SEEK_TO_FRAME':
+        if (request.frame) this.player.seekTo(request.frame.asSeconds());
+        break;
+      case 'SEEK_TO_TIME_STRING':
+        if (request.time) this.player.seekTo(this.toSeconds(request.time));
+        break;
+      case 'SEEK_TO_MARKER':
+        request.markerType === 'in' ? this.player.seekToInMarker() : this.player.seekToOutMarker();
+        break;
+      case 'SET_MARKER_TO_CURRENT_FRAME':
+        request.markerType === 'in' ? this.player.setInMarkerToCurrentTime() : this.player.setOutMarkerToCurrentTime();
+        break;
+      case 'SET_VOLUME':
+        this.player.setVolumeTo(request.volume);
+        break;
+      case 'TOGGLE_MARKERS_PLAYBACK':
+        this.player.toggleMarkersPlayback();
+        break;
+      case 'TOGGLE_MUTE':
+        this.player.toggleMute();
+        break;
+      case 'TOGGLE_PLAYBACK':
+        this.player.togglePlayback();
+        break;
+      case 'CHANGE_TIMECODE_DISPLAY':
+        this.playerStateService.updateWith({ timecodeFormat: request.format, timecodeBase: request.base });
+        break;
+    }
+  }
+&nbsp;
+  private onStateChange(newState: PlayerState) {
+    if (!this.playerReady &amp;&amp; newState.ready) {
+      this.markersInitialization.emit({ in: newState.inMarkerFrame, out: newState.outMarkerFrame });
+      this.playerReady = true;
+    } else if (this.markersChangedIn(newState)) {
+      this.markerChange.emit({ in: newState.inMarkerFrame, out: newState.outMarkerFrame });
+    }
+&nbsp;
+    this.currentState = newState;
+  }
+&nbsp;
+  private markersChangedIn(newState: PlayerState): boolean {
+    if (!this.currentState) return false;
+&nbsp;
+    return !this.areEqual(newState.inMarkerFrame, this.currentState.inMarkerFrame) ||
+      !this.areEqual(newState.outMarkerFrame, this.currentState.outMarkerFrame);
+  }
+&nbsp;
+  private areEqual(frame1: Frame, frame2: Frame): boolean {
+    if (frame1 &amp;&amp; !frame2) return false;
+    if (!frame1 &amp;&amp; frame2) return false;
+    if (!frame1 &amp;&amp; !frame2) return true;
+&nbsp;
+    return frame1.frameNumber === frame2.frameNumber;
+  }
+&nbsp;
+  private toSeconds(time: string): number {
+    return new Frame(this.currentState.framesPerSecond, this.currentState.sourceBasedOffset)
+      .setFromString(time, this.currentState.timecodeFormat, this.currentState.timecodeBase)
+      .asSeconds(3);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

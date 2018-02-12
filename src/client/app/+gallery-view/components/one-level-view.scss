@@ -1,0 +1,106 @@
+one-level-view {
+  width: 100%;
+  display: block;
+  padding: 16px;
+}
+one-level-view ul {
+  list-style: none;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  margin: 0 0 0 -1%;
+  min-height: 100%;
+  & > li {
+    font-size: 1em;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 1% 0 3.75% 1%;
+    width: 32.333%;
+    transition: $swift-ease-out;
+    @media screen and (max-width: $layout-breakpoint-md) {
+      width: 32.3333%
+    }
+    @media screen and (max-width: $layout-breakpoint-sm) {
+      width: 49%;      
+    }
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      width: 99%;
+      margin-bottom: 7%;          
+    }
+    a.item {
+      display: block;
+      height: 0;
+      width: 100%;
+      position: relative;
+      padding: 56.25% 0 0 0;
+      transition: $swift-ease-out;
+      &:hover, &:active {
+        cursor: pointer;
+        section.item-hover-effect {
+          @include mat-elevation(1);
+          // box-shadow: 0 1px 3px 0 rgba(mat-color($mat-grey, 900), .4);
+        }
+      }
+      img {
+        position: absolute;
+        display: block;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        // width: 100%;
+        // if you want to stretch 4:3 SD thumbs
+      }
+      section.item-info {
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        left:0;
+        width: 100%;
+        padding: 5px 10px;
+        min-height: 23.333%;
+        .item-label {
+          font-size: 18px;
+          line-height: 27px;
+          text-transform: uppercase;
+        }
+      }
+      section.item-hover-effect {
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 4px solid transparent;
+        transition: $swift-ease-out;
+        transition: 300ms all;
+        transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+      }
+    }
+  }
+}
+
+one-level-view ul li.disabled {
+  a {
+    opacity: .6;
+    img {
+      display: none;
+    }
+    &:hover, &:active {
+      cursor: default;
+      section.item-hover-effect {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+    .item-label {
+      opacity: .4;
+    }
+  }
+}

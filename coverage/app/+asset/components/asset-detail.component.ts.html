@@ -1,0 +1,1361 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for app/+asset/components/asset-detail.component.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">app/+asset/components/</a> asset-detail.component.ts
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.85% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>221/233</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">98.26% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>113/115</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">89.02% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>73/82</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.19% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>198/208</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-yes">425×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-yes">49×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-yes">232×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">16×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258×</span>
+<span class="cline-any cline-yes">66×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">474×</span>
+<span class="cline-any cline-yes">474×</span>
+<span class="cline-any cline-yes">376×</span>
+<span class="cline-any cline-yes">376×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">126×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">97×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">29×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">19×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy, ViewChild, OnInit } from '@angular/core';
+import { Collection } from '../../shared/interfaces/collection.interface';
+import { Cart, Project, Metadatum } from '../../shared/interfaces/commerce.interface';
+import { Asset, Pojo, UiConfigComponents } from '../../shared/interfaces/common.interface';
+import { Capabilities } from '../../shared/services/capabilities.service';
+import { MatMenuTrigger } from '@angular/material';
+import { SubclipMarkers, durationFrom } from '../../shared/interfaces/subclip-markers';
+import { Observable } from 'rxjs/Observable';
+import { Frame } from '../../shared/modules/wazee-frame-formatter/index';
+import { AppStore, ActionFactoryMapper, PricingState } from '../../app.store';
+import { EnhancedAsset, AssetType } from '../../shared/interfaces/enhanced-asset';
+import { CommentParentObject } from '../../shared/interfaces/comment.interface';
+import { FormFields } from '../../shared/interfaces/forms.interface';
+import { SearchParams } from '../../shared/interfaces/search.interface';
+import { AssetShareDialogOptions } from '../../shared/interfaces/asset.interface';
+&nbsp;
+@Component({
+  moduleId: module.id,
+  selector: 'asset-detail',
+  templateUrl: 'asset-detail.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+&nbsp;
+export class AssetDetailComponent implements OnInit {
+  @Input() public set asset(asset: EnhancedAsset) {
+    this._asset = asset;
+    if (asset.transcodeTargets) this.selectedTarget = asset.transcodeTargets[0];  // Is this what we want for all asset types?
+    this.setAssetCollectionMembershipFlags();
+  }
+&nbsp;
+  @Input() public set activeCollection(collection: Collection) {
+    this._activeCollection = collection;
+    this.activeCollectionName = collection.name;
+    this.setAssetCollectionMembershipFlags();
+  }
+&nbsp;
+  @Input() public userCan: Capabilities;
+  @Input() public usagePrice: number;
+  @Input() public window: Window;
+  @Input() public searchContext: SearchParams;
+  @Input() public assetMatchesCartAsset: boolean;
+  @Input() public commentParentObject: CommentParentObject;
+  @Input() public commentFormConfig: FormFields;
+  @Input() public assetIsShared: boolean;
+  @Output() addToCart = new EventEmitter();
+  @Output() getPriceAttributes = new EventEmitter();
+  @Output() onPreviousPage = new EventEmitter();
+  @Output() createShareDialog: EventEmitter&lt;AssetShareDialogOptions&gt; = new EventEmitter();
+  @Output() onAddtoDifferentCollection: EventEmitter&lt;null&gt; = new EventEmitter();
+&nbsp;
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  public shareFormFields: FormFields[];
+  public selectedTarget: string;
+  public showAssetSaveSubclip: boolean = false;
+  public subclipMarkers: SubclipMarkers;
+  public activeCollectionName: string;
+  public showComments: boolean;
+  public hasDeliveryOptions: Observable&lt;boolean&gt;;
+  @Output() public updateAssetLineItem: EventEmitter&lt;null&gt; = new EventEmitter();
+  @Output() private markersChange: EventEmitter&lt;SubclipMarkers&gt; = new EventEmitter();
+  private _asset: EnhancedAsset;
+  private _activeCollection: Collection;
+  private activeCollectionContainsAssetId: boolean = false;
+  private activeCollectionContainsAssetUuid: boolean = false;
+  private pageSize: number;
+&nbsp;
+  constructor(private store: AppStore) { }
+&nbsp;
+  ngOnInit() {
+    const config: UiConfigComponents = this.store.snapshotCloned(state =&gt; state.uiConfig.components);
+    this.pageSize = parseInt(config.global.config.pageSize.value);
+    this.shareFormFields = config.assetSharing.config.form.items;
+    this.setDeliveryOptionsFlag();
+  }
+&nbsp;
+  public get asset(): EnhancedAsset {
+    return this._asset;
+  }
+&nbsp;
+  public get hasPageHistory() {
+    return this.window.history.length &gt; 2;
+  }
+&nbsp;
+  public previousPage() {
+    this.onPreviousPage.emit();
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get hasRendition() {</span>
+<span class="cstat-no" title="statement not covered" >    return !!this._asset.clipUrl;</span>
+  }
+&nbsp;
+  public get routerLinkForAssetParent(): any[] {
+    switch (this._asset.type) {
+      case 'collection': {
+        return ['/collections', this._asset.parentId, { i: 1, n: this.pageSize }];
+      }
+&nbsp;
+      case 'search': {
+        return ['/search', this.searchContext];
+      }
+&nbsp;
+      case 'quoteEdit': {
+        return ['/active-quote'];
+      }
+&nbsp;
+      case 'quoteShow': {
+        return ['/quotes', this._asset.parentId];
+      }
+&nbsp;
+      case 'order': {
+        return ['/orders', this._asset.parentId];
+      }
+&nbsp;
+      case 'cart': {
+        return ['/cart'];
+      }
+    }
+  }
+&nbsp;
+  public get breadcrumbLabel(): Array&lt;string&gt; {
+    switch (this._asset.type) {
+      case 'collection': {
+        return [this.activeCollectionName, ''];
+      }
+&nbsp;
+      case 'order':
+      case 'quoteShow': {
+        return [`asset.detail.breadcrumb_${this._asset.type}`, String(this._asset.parentId)];
+      }
+&nbsp;
+      default: {
+        return [`asset.detail.breadcrumb_${this._asset.type}`, ''];
+      }
+    }
+  }
+&nbsp;
+  public get canAddToActiveCollection(): boolean {
+    return this.userCan.editCollections() &amp;&amp;
+      !this.activeCollectionContainsAssetId &amp;&amp;
+      this.assetTypeIsOneOf('collection', 'search');
+  }
+&nbsp;
+  public get canRemoveFromActiveCollection(): boolean {
+    return this._asset.type === 'collection' &amp;&amp; this.activeCollectionContainsAssetUuid;
+  }
+&nbsp;
+  public get userCanEditCollection(): Observable&lt;boolean&gt; {
+    return this.userCan.editCollection(this._activeCollection);
+  }
+&nbsp;
+  public get canAddAgainToActiveCollection(): boolean {
+    return (this._asset.type === 'search' &amp;&amp; this.activeCollectionContainsAssetId) ||
+      (this._asset.type === 'collection' &amp;&amp; (this.activeCollectionContainsAssetId || this.showAssetSaveSubclip));
+  }
+&nbsp;
+  public get canUpdateInActiveCollection(): boolean {
+    return this._asset.type === 'collection' &amp;&amp; this.showAssetSaveSubclip &amp;&amp; this.activeCollectionContainsAssetUuid &amp;&amp;
+      !this._activeCollection.assets.items.some((collectionAsset: Asset) =&gt; {
+        const duration = durationFrom(this.subclipMarkers);
+        return collectionAsset.timeStart === duration.timeStart &amp;&amp; collectionAsset.timeEnd === duration.timeEnd;
+      });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onPlayerMarkersInitialization(initialMarkers: SubclipMarkers)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.subclipMarkers = initialMarkers;</span>
+<span class="cstat-no" title="statement not covered" >    this.showAssetSaveSubclip = false;</span>
+<span class="cstat-no" title="statement not covered" >    this.markersChange.emit(initialMarkers);</span>
+  }
+&nbsp;
+  public onPlayerMarkerChange(newMarkers: SubclipMarkers): void {
+    this.subclipMarkers = newMarkers;
+    this.showAssetSaveSubclip = this.markersAreDefined;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.markersAreDefined &amp;&amp; this._asset.type === 'search') {
+<span class="cstat-no" title="statement not covered" >      this.store.dispatch(<span class="fstat-no" title="function not covered" >(factory)</span> =&gt; <span class="cstat-no" title="statement not covered" >factory.asset.updateMarkersInUrl(this.subclipMarkers, this._asset.assetId))</span>;</span>
+    }
+    this.markersChange.emit(newMarkers);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public toggleAssetSaveSubclip(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.showAssetSaveSubclip = !this.showAssetSaveSubclip;</span>
+  }
+&nbsp;
+  public addAssetToActiveCollection(): void {
+    this.store.dispatch(
+      factory =&gt; factory.activeCollection.addAsset(this._asset, this.subclipMarkers ? this.subclipMarkers : null)
+    );
+    this.showAssetSaveSubclip = false;
+  }
+&nbsp;
+  public onCreateShareDialog() {
+    this.createShareDialog.emit({
+      enhancedAsset: this._asset,
+      subclipMarkers: this.subclipMarkers,
+      formFields: this.shareFormFields
+    });
+  }
+&nbsp;
+  public removeAssetFromActiveCollection(): void {
+    this.store.dispatch(factory =&gt; factory.dialog.showConfirmation(
+      {
+        title: 'COLLECTION.REMOVE_ASSET.TITLE',
+        message: 'COLLECTION.REMOVE_ASSET.MESSAGE',
+        accept: 'COLLECTION.REMOVE_ASSET.ACCEPT',
+        decline: 'COLLECTION.REMOVE_ASSET.DECLINE'
+      },
+      () =&gt; this.store.dispatch(factory =&gt; factory.activeCollection.removeAsset(this._asset))
+    ));
+  }
+&nbsp;
+  public updateAssetInActiveCollection(): void {
+    this.store.dispatch(factory =&gt; factory.activeCollection.updateAssetMarkers(this._asset, this.subclipMarkers));
+  }
+&nbsp;
+  public addAssetToCart(): void {
+    this.addToCart.emit({
+      assetId: this._asset.assetId,
+      markers: this.markersAreDefined ? this.subclipMarkers : null,
+      selectedTranscodeTarget: this.selectedTarget
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public getPricingAttributes(): void {</span>
+<span class="cstat-no" title="statement not covered" >    this.getPriceAttributes.emit(this.rights);</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public onSelectTarget(target: any)</span>: void {
+<span class="cstat-no" title="statement not covered" >    this.selectedTarget = target.value;</span>
+  }
+&nbsp;
+  public get canComment(): boolean {
+    return this.assetTypeIsOneOf('cart', 'quoteEdit', 'quoteShow', 'collection', 'order');
+  }
+&nbsp;
+  public get canShare(): boolean {
+    return this.assetTypeIsOneOf('search') &amp;&amp; this.userCan.createAccessInfo();
+  }
+&nbsp;
+  public get showAdvancedPlayer(): boolean {
+    return this.userCan.viewAdvancedPlayer(this.asset, this.assetIsShared);
+  }
+&nbsp;
+  public get shareButtonLabelKey(): string {
+    return this.markersAreDefined ? 'ASSET.DETAIL.SHARING_SUBCLIP_BTN_TITLE' : 'ASSET.DETAIL.SHARING_BTN_TITLE';
+  }
+&nbsp;
+  public get rights(): string {
+    return this._asset.getMetadataValueFor('Rights.Reproduction');
+  }
+&nbsp;
+  public get canShowPrice(): boolean {
+    return (this.isRoyaltyFreeWithValidPrice || this.isRightsManagedWithValidPrice);
+  }
+&nbsp;
+  public get canShowNoPricingAvailableNotice(): boolean {
+    return (this.assetTypeIsOneOf('order', 'quoteShow')) ? <span class="branch-0 cbranch-no" title="branch not covered" >false </span>:
+      (this.isRoyaltyFree || this.isRightsManaged) &amp;&amp; !this._asset.hasOwnProperty('price');
+  }
+&nbsp;
+  public get price(): number {
+    if (this.isRoyaltyFreeWithValidPrice) return this._asset.price;
+    if (this.isRightsManagedWithValidPrice) return this.usagePrice;
+    return null;
+  }
+&nbsp;
+  public get canPerformCartActions(): boolean {
+    return this.userCan.haveCart() &amp;&amp; (this.isRoyaltyFree || this.isRightsManaged) &amp;&amp; this._asset.hasOwnProperty('price');
+  }
+&nbsp;
+  public get canSelectTranscodeTarget(): boolean {
+    return this.isRoyaltyFree &amp;&amp; this.userCan.addToCart() &amp;&amp; !!this._asset.transcodeTargets;
+  }
+&nbsp;
+  public get canEditOrApplyRights(): boolean {
+    return (this._asset.type !== 'order' &amp;&amp; this._asset.type !== 'quoteShow')
+      &amp;&amp; this.isRightsManaged &amp;&amp; this.userCan.calculatePrice();
+  }
+&nbsp;
+  public get canUpdateCartAsset(): boolean {
+    return this.assetTypeIsOneOf('cart', 'quoteEdit');
+  }
+&nbsp;
+  public get canUpdateCollectionAsset(): boolean {
+    return this.assetTypeIsOneOf('collection');
+  }
+&nbsp;
+  public get canEditCollectionSubclipMarkers(): boolean {
+    return this.canUpdateCollectionAsset &amp;&amp; this.markersAreDefined;
+  }
+  public get collectionSubclipButtonHoverTxt(): string {
+    const active: string = this.canUpdateInActiveCollection ? 'ACTIVE' : 'DISABLED';
+    const markers: string = this._asset.isSubclipped ? 'UPDATE' : 'ADD_NEW';
+&nbsp;
+    return `ASSET.DETAIL.BUTTON.${markers}.SUBCLIP.${active}`;
+  }
+  public get collectionSubclipButtonLabel(): string {
+    const markers: string = this._asset.isSubclipped ? 'UPDATE' : 'ADD_NEW';
+&nbsp;
+    return `ASSET.DETAIL.BUTTON.${markers}.SUBCLIP.COLLECTION`;
+  }
+&nbsp;
+  public get updateCartAssetButtonLabelKey(): string {
+    const subclipOrAsset: string = this.markersAreDefined ? 'SUBCLIP' : 'ASSET';
+    const quoteOrCart: string = this.isQuoteUser ? 'QUOTE' : 'CART';
+&nbsp;
+    return `ASSET.DETAIL.BUTTON.UPDATE.${subclipOrAsset}.${quoteOrCart}`;
+  }
+&nbsp;
+  public updateCartAsset(): void {
+    this.updateAssetLineItem.emit();
+  }
+&nbsp;
+  public get canAddToCart(): boolean {
+    return this.userCan.addToCart() &amp;&amp; this.canBePurchased(this.asset)
+      &amp;&amp; this.assetTypeIsOneOf('search', 'collection');
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public get primaryAssetFields(): Metadatum | { value: string }[] {</span>
+<span class="cstat-no" title="statement not covered" >    return this.asset.primary.slice(4, -1).filter(<span class="fstat-no" title="function not covered" >field </span>=&gt; <span class="cstat-no" title="statement not covered" >field.value !== null)</span>;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  public translationReady(field: any)</span> {
+<span class="cstat-no" title="statement not covered" >    return 'assetmetadata.' + field.replace(/\./g, '_');</span>
+  }
+&nbsp;
+  public get addToCartOrQuoteButtonLabelKey(): string {
+    const onMatchingPage: boolean = this.isQuoteUser ? this._asset.type === 'quoteEdit' : this._asset.type === 'cart';
+    const operation: string = onMatchingPage ? 'ADD_NEW' : 'ADD';
+    const subclipOrAsset: string = this.markersAreDefined ? 'SUBCLIP' : 'ASSET';
+    const quoteOrCart: string = this.isQuoteUser ? 'QUOTE' : 'CART';
+&nbsp;
+    return `ASSET.DETAIL.BUTTON.${operation}.${subclipOrAsset}.${quoteOrCart}`;
+  }
+&nbsp;
+  public get canGoToSearchAssetDetails(): boolean {
+    return this.assetTypeIsOneOf('cart', 'collection', 'order', 'quoteEdit', 'quoteShow') &amp;&amp;
+      this.asset.isViewable;
+  }
+&nbsp;
+  public goToSearchAssetDetails(): void {
+    this.store.dispatch(factory =&gt; factory.router.goToSearchAssetDetails(this._asset.assetId, this.subclipMarkers));
+  }
+&nbsp;
+  public toggleCommentsVisibility(): void {
+    this.showComments = !this.showComments;
+  }
+&nbsp;
+  public get userCanAddComments(): Observable&lt;boolean&gt; {
+    switch (this.commentParentObject.objectType) {
+      case 'collection':
+        return this.userCan.editCollection(this._activeCollection);
+      default:
+        return Observable.of(true);
+    }
+  }
+&nbsp;
+  public get commentCount(): Observable&lt;number&gt; {
+    return this.store.select(state =&gt; state.comment[state.comment.activeObjectType].pagination.totalCount);
+  }
+&nbsp;
+  public get showDownloadButton(): boolean {
+    return this.assetTypeIsOneOf('quoteEdit', 'quoteShow', 'search', 'collection', 'cart') &amp;&amp;
+      this.asset.isViewable;
+  }
+&nbsp;
+  public get assetName(): string {
+    return this._asset.common[5].value;
+  }
+&nbsp;
+  public get canAddToDifferentCollection(): boolean {
+    return this.userCan.haveCollections() &amp;&amp; this.assetTypeIsOneOf('collection');
+  }
+&nbsp;
+  public addToDifferentCollection(): void {
+    this.onAddtoDifferentCollection.emit();
+  }
+&nbsp;
+  private canBePurchased(asset: EnhancedAsset): boolean {
+    const rights: string = asset.getMetadataValueFor('Rights.Reproduction');
+    if (!rights) return false;
+&nbsp;
+    return ['Rights Managed', 'Royalty Free'].includes(rights) &amp;&amp;
+      this.store.snapshot(state =&gt; state.asset.activeAsset.assetId &amp;&amp;
+        state.asset.activeAsset.hasOwnProperty('price'));
+  }
+&nbsp;
+  private assetTypeIsOneOf(...assetTypes: AssetType[]) {
+    return assetTypes.includes(this._asset.type);
+  }
+&nbsp;
+  private setAssetCollectionMembershipFlags(): void {
+    if (!this._activeCollection || !this._asset) {
+      this.activeCollectionContainsAssetId = this.activeCollectionContainsAssetUuid = false;
+      return;
+    }
+&nbsp;
+    const collectionItems: Asset[] = this._activeCollection.assets.items;
+&nbsp;
+    this.activeCollectionContainsAssetId =
+      collectionItems.some((collectionAsset: Asset) =&gt; collectionAsset.assetId === this._asset.assetId);
+&nbsp;
+    this.activeCollectionContainsAssetUuid =
+      !!this._asset.uuid &amp;&amp; collectionItems.some((collectionAsset: Asset) =&gt; collectionAsset.uuid === this._asset.uuid);
+  }
+&nbsp;
+  private get isQuoteUser(): boolean {
+    return this.userCan.administerQuotes();
+  }
+&nbsp;
+  private get isRoyaltyFree(): boolean {
+    return this.rights === 'Royalty Free';
+  }
+&nbsp;
+  private get isRightsManaged(): boolean {
+    return this.rights === 'Rights Managed';
+  }
+&nbsp;
+  private get isRightsManagedWithValidPrice(): boolean {
+    return this.isRightsManaged &amp;&amp; ((this.usagePrice !== null &amp;&amp; this.usagePrice !== undefined &amp;&amp; this.usagePrice &gt; 0));
+  }
+&nbsp;
+  private get isRoyaltyFreeWithValidPrice(): boolean {
+    return this.isRoyaltyFree &amp;&amp; this._asset.hasOwnProperty('price') &amp;&amp; this._asset.price &gt; 0;
+  }
+&nbsp;
+  private get markersAreDefined(): boolean {
+    return !!this.subclipMarkers &amp;&amp; !!this.subclipMarkers.in &amp;&amp; !!this.subclipMarkers.out;
+  }
+&nbsp;
+  private setDeliveryOptionsFlag(): void {
+    this.hasDeliveryOptions = this.store.select(state =&gt; state.deliveryOptions.hasDeliveryOptions);
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Feb 09 2018 23:34:45 GMT-0700 (MST)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

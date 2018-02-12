@@ -1,0 +1,66 @@
+@mixin wz-line-items-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  li.cart-asset {
+    background-color: mat-color($background, card);
+    color: rgba(mat-color($foreground, text), .7);
+    .subclip-timeline {
+      background-color: darken(mat-color($background, status-bar), 10%);
+      .subclip-segment {
+        background-color: rgba(mat-color($accent, darker), .6);
+      }
+    }
+    ul.subclip-data {
+      color: mat-color($foreground, secondary-text);
+      background-color: rgba(mat-color($primary), .1);
+    }
+    .multiplier {
+      color: mat-color($primary, lighter);
+    }
+    .admin-price {
+      &:hover {
+        background-color: rgba(mat-color($primary, darker), .075);
+      }
+    }
+    .non-admin-price.select-usage {
+      color: lighten(mat-color($warn, darker), 30%);
+      &::after {
+        color: mat-color($warn, darker);
+      }
+    }
+    .divider {
+      box-shadow: inset 0 1px 0 0 mat-color($foreground, divider);
+    }
+    .notes {
+      @include text-contrast(mat-color($mat-grey, 200));
+      background-color: mat-color($mat-grey, 200, .75);
+      .note {
+        &.editable {
+          &:hover {
+            background-color: mat-color($mat-grey, 300);
+          }
+        }
+      }
+    }
+  }
+  line-item-rights-component {
+    section {
+      &:hover {
+        background-color: rgba(mat-color($primary, darker), .075);
+      }
+      &.needs-rights {
+        color: mat-color($warn, darker);
+      }
+    }
+  }
+  button.mat-menu-item.select-usage {
+    color: mat-color($warn, darker);
+    .mat-icon {
+      color: mat-color($warn, darker);
+    }
+  }
+}

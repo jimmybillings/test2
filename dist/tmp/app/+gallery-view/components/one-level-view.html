@@ -1,0 +1,12 @@
+<ul class="x">
+  <li *ngFor="let result of data.results" [ngClass]="{disabled: result.resultCount === 0}" (click)="onClick(result)">
+    <a flex="" class="item">
+      <img *ngIf="result.thumbnailUrl" src="{{result.thumbnailUrl}}" />
+      <section class="item-info">
+        <div class="item-label">{{ result.name }}</div>
+        <!--<div class="item-country">{{ result.country }}</div>-->
+      </section>
+      <section class="item-hover-effect"></section>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,64 @@
+asset-save-subclip {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: calc(100% - 10px);
+  height: calc(100% + 40px);
+  z-index: 2;
+  // margin-top: -40px;
+  padding: 24px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  @include mat-elevation(6);
+  @media screen and (min-width: $layout-breakpoint-sm) {
+    max-height: calc(100% + 40px);
+    max-width: calc(33% - 4px);
+  }
+  .mat-dialog-container {
+    box-shadow: none;
+    padding: 0;
+    overflow: inherit;
+    .wz-dialog {
+      width: 100%;
+      padding: 14px 0 12px;
+      .wz-dialog-title {
+        margin: 0 0 2px;
+        font-size: 22px;
+        font-weight: 400;
+      }
+      .collection-name {
+        margin: 0;
+        opacity: .588;
+      }
+      .in-out-markers {
+        margin: 18px 0 0;
+        font-size: 11px;
+        strong {
+          padding: 3px 1px 3px 0;
+        }
+        span {
+          padding: 3px 4px;
+          &:nth-child(2) {
+            margin-right: 26px;
+          }
+        }
+      }
+      wz-form {
+        font-size: 14px;
+        form {
+          padding-top: 10px;
+          .mat-select-trigger {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    footer {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding: 20px 0 24px;
+    }
+  }
+}

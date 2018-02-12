@@ -1,0 +1,115 @@
+@mixin wz-asset-detail-theme($theme) {
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  section.preview-bk {
+    .breadcrumb-container {
+      box-shadow: inset 0 -1px 0 0 mat-color($foreground, base, .5), 0 1px 0 0 mat-color($background, card, .1);
+      .breadcrumb {
+        @include text-contrast(mat-color($foreground, base));
+      }
+    }
+    &.theater {
+      background-image:
+        linear-gradient(mat-color($foreground, base, .57), mat-color($foreground, base, .56)),
+        linear-gradient(mat-color($primary, 900, .07), mat-color($primary, 700, .07)),
+        linear-gradient(mat-color($foreground, base, .57), mat-color($foreground, base, .56))
+      ;
+      &::after {
+        background-image: url("/assets/img/bk/tex/bktx_dgl_lines_light.png");
+      }
+      .mat-raised-button.mat-primary[disabled] {
+        color: mat-color($mat-grey, 50, .4);
+        background-color: mat-color($mat-grey, 400, .15);
+      }
+      .view-details-pg {
+        @include text-contrast(mat-color($foreground, base));
+      }
+    }
+    .preview::before {
+      background-color: rgba(mat-color($mat-grey, 50), 1);
+    }
+    .toolbar-actions {
+      nav.asset-options {
+        button[mat-icon-button], a[mat-icon-button] {
+          @include text-contrast(mat-color($foreground, base));
+          &:disabled {
+            mat-icon {
+              color: rgba(mat-color($background, background),.2);
+            }
+          }
+        }
+        .comment-count {
+          background-color: mat-color($primary);
+          @include text-contrast(mat-color($primary));
+          border-color: mat-color($background, card, 0);
+        }
+      }
+    }
+    div.primary-info {
+      @include text-contrast(mat-color($foreground, base));
+      background-color: rgba(mat-color($foreground, base), .1);
+      .contact-us-pricing {
+        color: rgba(mat-color($accent, 500), .75);
+      }
+      mat-select {
+        .mat-select-placeholder.mat-floating-placeholder,
+        .mat-select-value,
+        .mat-select-arrow {
+          color: mat-color($background, background, .7);
+        }
+      }
+      .mat-form-field-placeholder {
+        color: mat-color($background, background, .54);
+      }
+      .mat-form-field-underline {
+        background-color: mat-color($background, background, .2);
+      }
+    }
+    .rights-transcodes [mat-button].is-outlined.rights-pkg {
+      color: mat-color($mat-grey, 50, .6);
+      box-shadow: inset 0 0 1px 0 mat-color($mat-grey, 50, .8);
+    }
+  }
+
+  .responsive-video .photo-container {
+    background-image: linear-gradient(mat-color($foreground, base, .17), mat-color($foreground, base, .16));
+  }
+  div.primary-info-t {
+    @include text-contrast(mat-color($foreground, base));
+    div.primary-content-t {
+      .sd-hd {
+        border-color: rgba(mat-color($background, app-bar), .4);
+        background-color: rgba(mat-color($foreground, base), .3);
+      }
+      .sd-hd.sd {
+        border-color: rgba(mat-color($foreground, base), 0);
+        background-color: rgba(mat-color($background, card), .5);
+        &::before {
+          color: mat-color($foreground, text);
+        }
+      }
+      .image.photo::before {
+        color: rgba(mat-color($mat-grey, 100),0.4);
+      }
+    }
+  }
+  .responsive-video div.no-rendition {
+    background-image: linear-gradient(mat-color($foreground, base, .57), mat-color($foreground, base, .36));
+    .no-rendition-message {
+      color:mat-color($background, background, .72);
+    }
+  }
+  .subclip-update-button {
+    [mat-button].is-outlined.mat-primary {
+      color: mat-color($primary, lighter, .8);
+      border-color: mat-color($primary, lighter, .5);
+    }
+    [mat-button].is-outlined.mat-primary[disabled] {
+      color: mat-color($primary, lighter, .25);
+      border-color: mat-color($primary, lighter, .2);
+    }
+  }
+}

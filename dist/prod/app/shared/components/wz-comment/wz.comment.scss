@@ -1,0 +1,212 @@
+wz-comment {
+  max-height: 0;
+  display: flex;
+  overflow: hidden;
+  & > section {
+    width: 100%;
+    padding: 6px 17px 28px 17px;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding: 6px 0 28px 0;
+    }
+  }
+  header {
+    position: relative;
+    z-index: 1;
+    padding: 3px 0 0 1px;
+    margin: 3px -9px 5px 0;
+    .mat-display-1 {
+      margin: 0;
+      width: calc(100% - 120px);
+      font-size: 26px;
+    }
+    .actions.close {
+      button[mat-button].close {
+        position: absolute;
+        right: 0;
+        top: 3px;
+        font-size: 24px;
+        line-height: 34px;
+        opacity: .6;
+        transition: opacity 300ms cubic-bezier(0.55, 0, 0.55, 0.2);
+        mat-icon {
+          font-size: 1em;
+          height: 1em;
+          width: 1em;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        &:hover .mat-button-focus-overlay,
+        .mat-button-focus-overlay {
+            opacity: 0;
+        }
+        .close-btn-label {
+          font-size: 15px;
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+      }
+    }
+    &.comments-header {
+      @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+  .space-between {
+    min-width: 24px;
+    min-height: 24px;
+    @media screen and (max-width: $layout-breakpoint-sm) and (min-width: $layout-breakpoint-xs) {
+      min-width: 14px;
+    }
+  }
+  .new-comment .mat-card.wz-form-card {
+    margin: 0;
+    // padding: 20px 30px 30px;
+    padding: 0;
+    box-shadow: none;
+  }  
+  .comments {
+    max-height: 282px;
+    min-height: 282px;
+    overflow-y: scroll;
+    border-width: 0;
+    .comment {
+      .comment-head {
+        margin: 0 20px;
+        padding: 4px 0;
+        font-size: .8em;
+        // button[mat-icon-button] mat-icon {
+        //   @include mat-title();
+        // }
+        div.avatar {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          max-width: 40px;
+          max-height: 40px;
+          margin-right: 10px;
+          border-radius: 50%;
+          strong {
+            width: 94%;
+            height: 50%;
+            font-size: 1.4em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25% 0 0 -47%;
+            text-align: center;
+          }
+        }
+        .actions  {
+          max-width: 80px;
+        }
+      }
+      .comment-body {
+        padding: 12px 20px 16px 20px;
+        font-size: .8em;
+        line-height: 1.4em;
+      }
+    }
+  }
+  .empty-comment-container {
+    border-width: 1px;
+    text-align: center;
+    & > div {
+      min-height: 278px;
+      & > div {
+        opacity: .6;
+        margin-top: 50px;
+        .mat-display-1 {
+          margin: 0;
+        }
+      }
+    } 
+  }
+
+  &.not-visible {
+    overflow: hidden;
+    max-height: 0;
+    animation-name: slide-up;
+    animation-duration: 300ms;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: none;
+    transition: padding 200ms cubic-bezier(0.55, 0, 0.55, 0.2) 500ms;
+  }
+  &.visible {
+    max-height: none;
+    overflow: hidden;
+    animation-name: slide-down;
+    animation-duration: 500ms;
+    animation-timing-function: $swift-ease-in-timing-function;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-delay: .2s;
+    @media screen and (max-width: $layout-breakpoint-xs) and (min-width: 0) and (orientation: portrait)  {
+      padding: 0 8px;
+    }
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    max-height: 0;
+    opacity: 1;
+  }
+  100% {
+    max-height: 600px;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    max-height: 600px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+// animations to show/hide header action items specific to the page
+asset-detail .toolbar-actions.hide-for-comments,
+commerce-component header .tools.hide-for-comments,
+cart-component header .tools.hide-for-comments,
+orders-component header .tools.hide-for-comments,
+order-show-component header .tools.hide-for-comments,
+quote-edit-component header .tools.hide-for-comments,
+quotes-component header .tools.hide-for-comments,
+quote-show-component header .tools.hide-for-comments,
+.collection-head .actions.hide-for-comments {
+  transition: opacity 100ms linear;
+  opacity: 0
+}
+
+asset-detail .toolbar-actions.comments-closed,
+cart-component header .tools.comments-closed,
+orders-component header .tools.comments-closed,
+order-show-component header .tools.comments-closed,
+quote-edit-component header .tools.comments-closed,
+quotes-component header .tools.comments-closed,
+quote-show-component header .tools.comments-closed,
+.collection-head .actions.comments-closed {
+  animation-name: fadeIn;
+  animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: backwards;
+  animation-delay: .35s;
+}
+
+
+quote-show-component section.header header.comments-header {
+  @media screen and (max-width: $layout-breakpoint-sm) and (min-width: 0) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
